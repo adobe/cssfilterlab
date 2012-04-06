@@ -316,7 +316,7 @@ Permissions beyond the scope of this license, pertaining to the examples of code
             shaders.push(filterConfig);
         });
         
-        $("#shaders").sortable({
+        $("#builtin_shaders, #custom_shaders").sortable({
             distance: 15,
             axis: 'y',
             items: 'li',
@@ -338,7 +338,8 @@ Permissions beyond the scope of this license, pertaining to the examples of code
             }
         });
 
-        $("#shaders li").disableSelection();
+        $("#builtin_shaders li").disableSelection();
+        $("#custom_shaders li").disableSelection();
         
         $('#menu').click(function (evt) {
             if (evt.target.nodeName.toLowerCase() === 'li') {
@@ -412,6 +413,8 @@ Permissions beyond the scope of this license, pertaining to the examples of code
         $('#tools_menu1 li').tabToggle($('#tools_panel .content > div'), {selectedClass: "selected"}).bind("click", function(e){
              toggleSlideUpDown($('#tools_panel .content'), true) 
         }); 
+
+        $('#content input').tabToggle($('#container > div')); 
         
         $('#tools_toggle').bind("click", function(){
             toggleSlideUpDown($('#tools_panel .content'));
@@ -470,6 +473,7 @@ Permissions beyond the scope of this license, pertaining to the examples of code
                 src="images/html5_css3_styling.svg" width="45" height="45" name=
                 "css3-img" alt="css-logo">
             </div>
+            <div style="display: none;">Foo bar baz</div>
         </div>
         
         <div class="panel" id="tools_panel">
@@ -479,6 +483,7 @@ Permissions beyond the scope of this license, pertaining to the examples of code
                     <li>Timeline</li>
                     <li>Filter output</li>
                     <li>Animation output</li>
+                    <li>Content</li>
                 </ul>
                 
                 <ul class="tabs" id="tools_menu2">
@@ -524,16 +529,21 @@ Permissions beyond the scope of this license, pertaining to the examples of code
                 <div id="animation">
                     <div id="animation-code" class="code"></div>
                 </div>
+                <div id="content">
+                    <h2>Content type</h2>
+                    <input type="radio" name="content_type" id="content_type_html" checked/>
+                    <label for="content_type_html">HTML content (text + images)</label>
+                    <input type="radio" name="content_type" id="content_type_video"/>
+                    <label for="content_type_video">HTML video</label>
+                </div>
             </div>  
             
         </div>
-        
-        
-       
+          
         <div id="menu"> 
-            <h2>Built-in filters</h2>
+            <h2>Shaders for built-in filters</h2>
 
-            <ul id="shaders">
+            <ul id="builtin_shaders">
                 <li id="grayscale">grayscale</li>
 
                 <li id="sepia">sepia</li>
@@ -553,7 +563,7 @@ Permissions beyond the scope of this license, pertaining to the examples of code
                 <li id="gaussian-vert">blur (vertical)</li>
             </ul>
             <h2>Custom shaders</h2>
-            <ul>
+            <ul id="custom_shaders">
                 <li id="burn">burn</li>
                 
                 <li id="dissolve">dissolve</li>
