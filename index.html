@@ -414,7 +414,21 @@ Permissions beyond the scope of this license, pertaining to the examples of code
              toggleSlideUpDown($('#tools_panel .content'), true) 
         }); 
 
-        $('#content input').tabToggle($('#container > div')); 
+        $('#content input').tabToggle($('#container > div'));
+        $('#trailer_video').bind('click', function(e) {
+            var video = e.target;
+            if (video.paused) {
+                video.play();
+            } else {
+                video.pause();
+            }
+        });
+        $('#label_content_html').bind('click', function(e) {
+            var video = $('#trailer_video')[0];
+            if (!video.paused) {
+                video.pause();
+            }
+        })
         
         $('#tools_toggle').bind("click", function(){
             toggleSlideUpDown($('#tools_panel .content'));
@@ -538,7 +552,7 @@ Permissions beyond the scope of this license, pertaining to the examples of code
                 <div id="content">
                     <h2>Content type</h2>
                     <input type="radio" name="content_type" id="content_type_html" checked/>
-                    <label for="content_type_html">HTML content (text + images)</label>
+                    <label id="label_content_html" for="content_type_html">HTML content (text + images)</label>
                     <input type="radio" name="content_type" id="content_type_video"/>
                     <label for="content_type_video">HTML video</label>
                 </div>
