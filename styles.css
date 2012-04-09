@@ -72,7 +72,7 @@ h1#title {
 }
 
 
-#multi-col > h2 {
+#video > h2, #multi-col > h2 {
     -webkit-break-before: column;
     break-before: column;
     color: #eb3d3c;
@@ -87,6 +87,27 @@ h1#title {
 
 #multi-col > p {
 	text-indent: 3ex;
+}
+
+#trailer_video {
+	margin: 1em auto auto 2em;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	box-shadow: 2px 2px 6px 3px rgba(0, 0, 0, 0.25);
+}
+
+#content input[type='radio'] {
+	display: none;
+}
+
+#content input+label {
+	padding: 0.5em;
+	border: 1px solid #1f1f1f;
+	border-radius: 4px;
+}
+#content input:checked+label {
+	background-color: #1f1f1f;
 }
 
 #container {
@@ -125,9 +146,7 @@ h1#title {
 	margin-bottom: 2em;
 }
 
-#css3-img {
-	bottom: -8px;
-	right: 5px;
+#video-img, #css3-img {
 	display: block;
 	margin-left: auto;
 	margin-top: 25px;
@@ -139,7 +158,6 @@ h1#title {
 	padding: 10px;
 	position: absolute;
 	width: 30px;
-	height: 30px;
 	height: 30px;
 	bottom: -10px;
 	right: 20px;
