@@ -106,40 +106,6 @@ mat4 rotate(vec3 a) {
     return rotateX(a.x) * rotateY(a.y) * rotateZ(a.z);
 }
 
-mat4 rotateDir1(vec3 u, float f) {
-    u = normalize(u);
-    f /= 2.0;
-
-    // Taken from WebKit's TransformationMatrix implementation
-    float sinA = sin(f);
-    float cosA = cos(f);
-    float sinA2 = sinA * sinA;
-
-    float x2 = u.x * u.x;
-    float y2 = u.y * u.y;
-    float z2 = u.z * u.z;
-
-    return mat4(1.0 - 2.0 * (y2 + z2) * sinA2, 2.0 * (u.x * u.y * sinA2 + u.z * sinA * cosA), 2.0 * (u.x * u.z * sinA2 - u.y * sinA * cosA), 0.0,
-        2.0 * (u.y * u.x * sinA2 - u.z * sinA * cosA), 1.0 - 2.0 * (z2 + x2) * sinA2, 2.0 * (u.y * u.z * sinA2 + u.x * sinA * cosA), 0.0,
-        2.0 * (u.z * u.x * sinA2 + u.y * sinA * cosA), 2.0 * (u.z * u.y * sinA2 - u.x * sinA * cosA), 1.0 - 2.0 * (x2 + y2) * sinA2, 0.0,
-        0.0, 0.0, 0.0, 1.0);
-}
-
-mat4 rotateDir2(vec3 u, float f)
-{
-    u = normalize(u);
-    // http://en.wikipedia.org/wiki/Rotation_matrix#Rotation_matrix_from_axis_and_angle
-    float cosF = cos(f);
-    float sinF = sin(f);
-    return mat4(
-            cosF + u.x * u.x * (1.0 - cosF), u.y * u.x * (1.0 - cosF) + u.z * sinF, u.z * u.x * (1.0 - cosF) - u.y * sinF, 0.0,
-            u.x * u.y * (1.0 - cosF) - u.z * sinF, cosF + u.y *  u.y * (1.0 - cosF), u.z * u.y * (1.0 - cosF) + u.x * sinF, 0.0,
-            u.x * u.z * (1.0 - cosF) + u.y * sinF, u.y * u.z * (1.0 - cosF) - u.x * sinF, cosF + u.z * u.z * (1.0 - cosF), 0.0,
-            0.0, 0.0, 0.0, 1.0
-        );
-}
-
-
 /**
  * Random function based on the tile coordinate. This will return the same value
  * for all the vertices in the same tile (i.e., two triangles)
