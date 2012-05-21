@@ -32,7 +32,8 @@ float tileHeight = u_textureSize.y / u_meshSize.y;
 
 const float maxRotation = 80.0 * 3.14 / 180.0;
 
-mat4 perspectiveMatrix(float p) {
+mat4 perspectiveMatrix(float p)
+{
     float perspective = - 1.0 / p;
     return mat4(
 	1.0, 0.0, 0.0, 0.0,
