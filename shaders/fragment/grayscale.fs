@@ -6,14 +6,21 @@ Permissions beyond the scope of this license, pertaining to the examples of code
 
 precision mediump float;
 
-// This uniform values is passed in using CSS.
 uniform float amount;
 
 void main()
 {
-    float oneMinusAmount = 1.0 - amount;
-    css_ColorMatrix = mat4((0.2126 + 0.7874 * oneMinusAmount), (0.7152 - 0.7152 * oneMinusAmount), (0.0722 - 0.0722 * oneMinusAmount), 0.0,
-                           (0.2126 - 0.2126 * oneMinusAmount), (0.7152 + 0.2848 * oneMinusAmount), (0.0722 - 0.0722 * oneMinusAmount), 0.0,
-                           (0.2126 - 0.2126 * oneMinusAmount), (0.7152 - 0.7152 * oneMinusAmount), (0.0722 + 0.9278 * oneMinusAmount), 0.0,
-                           0.0, 0.0, 0.0, 1.0);
+    const vec3 grayFactor = vec3(0.2127, 0.7152, 0.0722);
+
+    vec3 m1 = mix(vec3(1.0), grayFactor, amount);
+    vec3 m0 = mix(vec3(0.0), grayFactor, amount);
+
+    mat4 colorMatrix = mat4(
+        vec4(m1.r, m0.g, m0.b, 0.0),
+        vec4(m0.r, m1.g, m0.b, 0.0),
+        vec4(m0.r, m0.g, m1.b, 0.0),
+        vec4(0.0, 0.0, 0.0, 1.0)
+    );
+
+    css_ColorMatrix = colorMatrix;
 }
