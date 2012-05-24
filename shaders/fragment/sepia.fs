@@ -21,9 +21,9 @@ mat4 transposeMatrix(mat4 m)
 void main()
 {
     // Mix between the identity matrix and the sepia matrix by amount.
-    mat4 id = mat4(1.0);
+    const mat4 id = mat4(1.0);
 
-    mat4 sepia = mat4(
+    const mat4 sepia = mat4(
         0.393, 0.349, 0.272, 0.0,
         0.769, 0.686, 0.168, 0.0,
         0.189, 0.168, 0.131, 0.0,
