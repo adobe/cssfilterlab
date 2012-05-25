@@ -20,10 +20,10 @@ mat4 transposeMatrix(mat4 m)
 
 void main()
 {
-    // Mix between the identity matrix and the sepia matrix by amount.
-    const mat4 id = mat4(1.0);
+    // Mix between the identity matrix and the sepia tone matrix by amount.
+    mat4 id = mat4(1.0);
 
-    const mat4 sepia = mat4(
+    css_ColorMatrix = mat4(
         0.393, 0.349, 0.272, 0.0,
         0.769, 0.686, 0.168, 0.0,
         0.189, 0.168, 0.131, 0.0,
@@ -31,9 +31,8 @@ void main()
     );
 
     for (int i = 0; i < 4; i++)
-        sepia[i] = mix(id[i], sepia[i], amount);
+        css_ColorMatrix[i] = mix(id[i], css_ColorMatrix[i], amount);
 
-    // TODO: Fix.
-    //css_ColorMatrix = sepia;
-    css_ColorMatrix = transposeMatrix(sepia);
+    // TODO: Remove.
+    css_ColorMatrix = transposeMatrix(css_ColorMatrix);
 }
