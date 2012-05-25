@@ -10,5 +10,5 @@ uniform float amount;
 
 void main()
 {
-    css_BlendColor = vec4(1.0 - amount);
+    css_BlendColor = vec4(amount);
 }
