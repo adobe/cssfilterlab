@@ -6,11 +6,18 @@ Permissions beyond the scope of this license, pertaining to the examples of code
 
 (function () {
 	
-function color() {
+function builtin(fn, params) {
+	return {
+		fn: fn,
+		params: params
+	};
+}
+
+function color(isCss) {
 	return {
 		type: 'color',
 		mixer: mixVector,
-		generator: generateVector
+		generator: isCss ? generateColor : generateVector
 	};
 }
 
@@ -31,8 +38,37 @@ function range(min, max, step) {
     };
 }
 
+function units(unit, value) {
+	value.unit = unit;
+	return value;
+}
+
 function checkbox() {
     return range(0, 1, 1);
+}
+
+function builtinPercent(fn) {
+	return {
+		type: builtin(fn, ["amount"]),
+	    params: {
+	        amount: 0
+	    },
+	    config: {
+	        amount: units("%", range(0, 100, 1))
+	    }
+	};
+}
+
+function builtinDeg(fn) {
+	return {
+		type: builtin(fn, ["angle"]),
+	    params: {
+	        angle: 0
+	    },
+	    config: {
+	        angle: units("deg", range(0, 360, 1))
+	    }
+	};
 }
 
 function normalAmountConfig (defaultValue, min, max, step) {
@@ -61,22 +97,22 @@ function normalAmountConfig (defaultValue, min, max, step) {
 	    }
 	};
 };
+
 window.filterMargins = "50px 100px 200px 50px";
 window.filterConfigs = {
     'drop-shadow': {
-        hasVertex: true,
-        hasFragment: true,
+    	type: builtin("drop-shadow", ["offset_x", "offset_y", "radius", "flood_color"]),
         params: {
-            radius: 5.0,
             offset_x: 5.0,
             offset_y: 5.0,
-            flood_color: [0.0, 0.0, 0.0, 0.5]
+            radius: 5.0,
+            flood_color: [1.0, 1.0, 1.0, 0.5]
         },
         config: {
-            radius: range(1, 10, 0.01),
-            offset_x: range(0, 20, 0.01),
-            offset_y: range(0, 20, 0.01),
-            flood_color: color()
+            offset_x: units("px", range(0, 100, 0.01)),
+            offset_y: units("px", range(0, 100, 0.01)),
+            radius: units("px", range(0, 10, 0.01)),
+            flood_color: color(true)
         }
     },
     gamma: {
@@ -91,49 +127,25 @@ window.filterConfigs = {
             offset: range(0, 1.0, 0.01)
         }
     },
-    "gaussian-horiz": {
+    "blur": {
+    	type: builtin("blur", ["deviation"]),
         params: {
             deviation: 3.0
         },
         config: {
-            deviation: {
-                type: 'range',
-                min: 0,
-                max: 10,
-                step: 1,
-                generator: generateBlurKernel
-            }
+            deviation: units("px", range(0, 10, 0.5))
         }
     },
     
-    "gaussian-vert": {
-        params: {
-            deviation: 3.0
-        },
-        config: {
-            deviation: {
-                type: 'range',
-                min: 0,
-                max: 10,
-                step: 1,
-                generator: generateBlurKernel
-            }
-        }
-    },
-    grayscale: normalAmountConfig(0.5),
+    grayscale: builtinPercent("grayscale"),
     dissolve: normalAmountConfig(0.25, 0, 1, 0.001),
-    'hue-rotate': {
-        params: {
-            angle: 180
-        },
-        config: {
-            angle: range(0, 360, 0.01)
-        }
-    },
-    invert: normalAmountConfig(1),
-    opacity: normalAmountConfig(0.25),
-    saturate: normalAmountConfig(0.5, 0, 5),
-	sepia: normalAmountConfig(0.5),
+    'hue-rotate': builtinDeg("hue-rotate"),
+    invert: builtinPercent("invert"),
+    opacity: builtinPercent("opacity"),
+    saturate: builtinPercent("saturate"),
+	sepia: builtinPercent("sepia"),
+	brightness: builtinPercent("brightness"),
+	contrast:  builtinPercent("contrast"),
 	sharpen: {
 		params: {
 			radius: 5.0,
