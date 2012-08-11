@@ -220,7 +220,6 @@ h1#title {
 
 #menu li .filter-name {
 	font-size: 1.2em;
-	min-height: 1.5em;
 }
 
 #menu li .delete-filter {
@@ -229,8 +228,9 @@ h1#title {
     position: relative;
     left: -10px;
     background: #333333;
-    width: 25px;
+    width: 20px;
     border-radius: 25px;
+    font-size: 10px;
 }
 
 #menu li .delete-filter:hover {
