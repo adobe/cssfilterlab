@@ -200,7 +200,7 @@ h1#title {
 	font-size: 12px;
 	font-weight: bold;
 	margin: 0px;
-	padding-left: 20px;
+	padding-left: 15px;
 	padding-top: 5px;
 	padding-bottom: 5px;
     -webkit-transition-property: height, top, bottom, left, width;
@@ -256,7 +256,24 @@ h1#title {
 
 #menu li.current > .config {
 	display: block;
-} 
+}
+
+#filter-stock li:hover {
+	text-decoration: underline;
+}
+
+#menu li.builtin-filter {
+	border-left: rgba(255, 0, 0, 0.2) 5px solid;
+}
+
+#menu li.custom-filter {
+	border-left: rgba(0, 255, 0, 0.2) 5px solid;
+}
+
+#menu #filter-list-empty {
+	color: #ccc;
+	font-weight: normal;
+}
 
 .value-editor {
     width: 20px;
