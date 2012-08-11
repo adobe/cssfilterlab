@@ -57,17 +57,17 @@ table.paramsTable .param-color td.color-preview {
     text-align: left;
 }
 
-table.paramsTable .param-color td.color-name {
+table.paramsTable .param-color td:nth-child(1) {
     min-width: 14px;
     max-width: 14px;
 }
 
-table.paramsTable .param-color td.color-range {
-    min-width: 80px;
-    max-width: 80px;
+table.paramsTable .param-color td:nth-child(2) {
+    min-width: 100px;
+    max-width: 100px;
 }
 
-table.paramsTable .param-color td.color-label {
+table.paramsTable .param-color td:nth-child(3) {
     min-width: 25px;
 }
 
