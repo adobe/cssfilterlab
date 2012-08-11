@@ -50,11 +50,11 @@ function checkbox() {
     return range(0, 1, 1);
 }
 
-function builtinPercent(fn) {
+function builtinPercent(fn, defaultValue) {
 	return {
 		type: builtin(fn, ["amount"]),
 	    params: {
-	        amount: 0
+	        amount: defaultValue || 0
 	    },
 	    config: {
 	        amount: units("%", range(0, 100, 1))
@@ -62,11 +62,11 @@ function builtinPercent(fn) {
 	};
 }
 
-function builtinDeg(fn) {
+function builtinDeg(fn, defaultValue) {
 	return {
 		type: builtin(fn, ["angle"]),
 	    params: {
-	        angle: 0
+	        angle: defaultValue || 0
 	    },
 	    config: {
 	        angle: units("deg", range(0, 360, 1))
@@ -139,15 +139,15 @@ window.filterConfigs = {
         }
     },
     
-    grayscale: builtinPercent("grayscale"),
+    grayscale: builtinPercent("grayscale", 50),
     dissolve: normalAmountConfig(0.25, 0, 1, 0.001),
-    'hue-rotate': builtinDeg("hue-rotate"),
-    invert: builtinPercent("invert"),
-    opacity: builtinPercent("opacity"),
+    'hue-rotate': builtinDeg("hue-rotate", 180),
+    invert: builtinPercent("invert", 100),
+    opacity: builtinPercent("opacity", 50),
     saturate: builtinPercent("saturate"),
-	sepia: builtinPercent("sepia"),
-	brightness: builtinPercent("brightness"),
-	contrast:  builtinPercent("contrast"),
+	sepia: builtinPercent("sepia", 100),
+	brightness: builtinPercent("brightness", 25),
+	contrast:  builtinPercent("contrast", 50),
 	sharpen: {
 		params: {
 			radius: 5.0,
