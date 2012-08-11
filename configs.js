@@ -111,9 +111,9 @@ window.filterConfigs = {
             flood_color: [1.0, 1.0, 1.0, 0.5]
         },
         config: {
-            offset_x: units("px", range(0, 100, 0.01)),
-            offset_y: units("px", range(0, 100, 0.01)),
-            radius: units("px", range(0, 10, 0.01)),
+            offset_x: units("px", range(-100, 100, 0.01)),
+            offset_y: units("px", range(-100, 100, 0.01)),
+            radius: units("px", range(0, 20, 0.01)),
             flood_color: color(true)
         }
     },
