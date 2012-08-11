@@ -189,7 +189,7 @@ window.filterConfigs = {
 	    },
 	    config: {
 	        k: {
-	            type: 'controlPoints',
+	            type: 'warp',
 	            generator: 'warpArray',
 	            mixer: 'mixVectorOfVectors'
 	        },
