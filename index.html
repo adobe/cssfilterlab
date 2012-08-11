@@ -9,26 +9,28 @@ Permissions beyond the scope of this license, pertaining to the examples of code
 
 <html dir="ltr" lang="en">
 <head>
-    <!--link href='http://fonts.googleapis.com/css?family=Merienda+One' rel=
-    'stylesheet' type='text/css'>
-    <link href=
-    'http://fonts.googleapis.com/css?family=Fanwood+Text:400,400italic' rel=
-    'stylesheet' type='text/css'-->
-    <link rel="stylesheet" type="text/css" href="styles.css">
-
     <title>CSS shaders studio</title>
     <script src="lib/jquery/jquery-1.6.2.min.js" type="text/javascript"></script>
     <script src="lib/jquery/jquery-ui-1.8.16.custom.min.js" type="text/javascript"></script>    
     <script src="lib/jquery/jquery.tabToggle-min.js" type="text/javascript"></script>
     
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <link rel="stylesheet" type="text/css" href="lib/params.css">
-    <script type="text/javascript" src="lib/warp.js"></script>
-    <script type="text/javascript" src="lib/gaussian.js"></script>
+    <link rel="stylesheet" type="text/css" href="style/styles.css">
+    <link rel="stylesheet" type="text/css" href="style/params.css">
+    <script type="text/javascript" src="configs.js"></script>
+    <script type="text/javascript" src="lib/utils.js"></script>
+    <script type="text/javascript" src="lib/application.js"></script>
+    <script type="text/javascript" src="lib/mixers.js"></script>
+    <script type="text/javascript" src="lib/keyframe.js"></script>
+    <script type="text/javascript" src="lib/filter.js"></script>
+    <script type="text/javascript" src="lib/filter_list.js"></script>
+    <script type="text/javascript" src="lib/config.js"></script>
+    <script type="text/javascript" src="lib/animation.js"></script>
     <script type="text/javascript" src="lib/timeline.js"></script>
-    <script type="text/javascript" src="lib/params.js"></script>
-    <script type="text/javascript" src="configs.js"></script> 
-    <script type="text/javascript" src="lib/main.js"></script>
+    <script type="text/javascript" src="lib/inline_editor.js"></script>
+    <script type="text/javascript" src="lib/base_control.js"></script>
+    <script type="text/javascript" src="lib/range_control.js"></script>
+    <script type="text/javascript" src="lib/color_scheme.js"></script>
+    <script type="text/javascript" src="lib/css_generators.js"></script>
 </head>
 
 <body>
@@ -139,47 +141,10 @@ Permissions beyond the scope of this license, pertaining to the examples of code
         </div>
           
         <div id="menu"> 
-            <h2>Shaders for built-in filters</h2>
+            <h2>Filters</h2>
 
-            <ul id="builtin_shaders">
-                <li id="grayscale">grayscale</li>
+            <ul id="filter-list">
 
-                <li id="sepia">sepia</li>
-
-                <li id="saturate">saturate</li>
-
-                <li id="hue-rotate">hue-rotate</li>
-
-                <li id="invert">invert</li>
-
-                <li id="opacity">opacity</li>
-
-                <li id="brightness">brightness</li>
-
-                <li id="contrast">contrast</li>
-
-                <li id="blur">blur</li>
-
-                <li id="drop-shadow">drop-shadow</li>
-            </ul>
-            <h2>Custom shaders</h2>
-            <ul id="custom_shaders">
-                <li id="gamma">gamma</li>
-
-                <li id="burn">burn</li>
-                
-                <li id="dissolve">dissolve</li>
-            
-                <li id="warp">warp</li>
-                
-                <li id="fold">fold</li>
-
-                <li id="quad-explosion">quad-explosion</li>
-                
-                <li id="quad-shuffle">quad-shuffle</li>
-                
-                <li id="rolling-scroll">rolling scroll</li>
-                
             </ul>
             
         </div>

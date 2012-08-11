@@ -224,7 +224,7 @@ h1#title {
     height: 15px;
     top: 1px;
     right: 15px;
-    background: url(images/dragger.svg);
+    background: url(../images/dragger.svg);
     cursor: -webkit-grab;
 }
 
@@ -298,24 +298,24 @@ h1#title {
 		padding:1px 0; 
 		margin-top:-12px; 
 		margin-bottom:20px;
-		background: url(images/icons/P_Play_Lg_N_D.png) center center no-repeat; 
+		background: url(../images/icons/P_Play_Lg_N_D.png) center center no-repeat; 
 		border:1px solid #1f1f1f;   
 	}
 	
 	#timeline .controls .play.active{
-		background: url(images/icons/P_Stop_Lg_R_D.png) center center no-repeat;  
+		background: url(../images/icons/P_Stop_Lg_R_D.png) center center no-repeat;  
 		background-color:#1f1f1f;   
 		
 	}
 	
 	#timeline .controls .next, 
 	#timeline .controls .prev{
-		background: url(images/icons/P_KeynavNext_14x11_D_D.png) center center no-repeat;   
+		background: url(../images/icons/P_KeynavNext_14x11_D_D.png) center center no-repeat;   
 	}
 	
 	#timeline .controls .next.active,
 	#timeline .controls .prev.active{
-		background: url(images/icons/P_KeynavNext_14x11_N_D.png) center center no-repeat;   
+		background: url(../images/icons/P_KeynavNext_14x11_N_D.png) center center no-repeat;   
 	}
 	
 	#timeline .controls .prev{ 
@@ -324,11 +324,11 @@ h1#title {
 	
 	#timeline .controls .toggle{
 		margin:0 4px;   
-		background: url(images/icons/P_KeynavKey_11x14_N_D.png) center center no-repeat;   
+		background: url(../images/icons/P_KeynavKey_11x14_N_D.png) center center no-repeat;   
 	}
 	
 	#timeline .controls .toggle.active{ 
-		background: url(images/icons/P_KeynavKey_11x14_S_D.png) center center no-repeat;   
+		background: url(../images/icons/P_KeynavKey_11x14_S_D.png) center center no-repeat;   
 	}
     
 #timeline .keyframes {  
@@ -389,12 +389,12 @@ h1#title {
     width: 11px;
     height: 14px;
 	cursor:-webkit-grab; 
-    background-image: url(images/icons/P_KeynavKey_11x14_N.png);
+    background-image: url(../images/icons/P_KeynavKey_11x14_N.png);
     background-repeat: no-repeat;
 }
 
 #timeline .keyframe.selected {
-    background-image: url(images/icons/P_KeynavKey_11x14_S_D.png);  
+    background-image: url(../images/icons/P_KeynavKey_11x14_S_D.png);  
 }
 
 #timeline .play_head{
@@ -404,7 +404,7 @@ h1#title {
 	margin-top:-32px;   
     width: 12px;
     height: 16px;
-    background-image: url(images/icons/P_TimelineCompMarker_Sm_N_D.png);
+    background-image: url(../images/icons/P_TimelineCompMarker_Sm_N_D.png);
     background-repeat: no-repeat;
 	cursor:-webkit-grab;
 }
@@ -479,19 +479,19 @@ ul.tabs li.selected{
 }
 
 #target_selector{
-	background: url(images/icons/Cur_Target_9_9.png) center center no-repeat;
+	background: url(../images/icons/Cur_Target_9_9.png) center center no-repeat;
 }
 
 #target_selector.active{
-	background: url(images/icons/Cur_Target_9_9_Active.png) center center no-repeat;
+	background: url(../images/icons/Cur_Target_9_9_Active.png) center center no-repeat;
 } 
 
 #tools_toggle{
-	background: url(images/icons/P_GraphEd_OptionsMenu_22x15_N_D.png) center center no-repeat;
+	background: url(../images/icons/P_GraphEd_OptionsMenu_22x15_N_D.png) center center no-repeat;
 }
 
 #tools_toggle.active{
-	background: url(images/icons/P_GraphEd_OptionsMenu_22x15_R_D.png) center center no-repeat;
+	background: url(../images/icons/P_GraphEd_OptionsMenu_22x15_R_D.png) center center no-repeat;
 }
 
 .panel{ 

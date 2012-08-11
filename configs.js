@@ -16,16 +16,19 @@ function builtin(fn, params) {
 function color(isCss) {
 	return {
 		type: 'color',
-		mixer: mixVector,
-		generator: isCss ? generateColor : generateVector
+		mixer: 'mixVector',
+		generator: isCss ? 'color' : 'vector'
 	};
 }
 
 function transform() {
     return {
         type: 'transform',
-        generator: generateTransform,
-        mixer: mixHash(mixNumber)
+        generator: 'transform',
+        mixer: {
+        	fn: 'mixHash',
+        	params: ['mixNumber']
+        }
     };
 }
 
@@ -98,7 +101,6 @@ function normalAmountConfig (defaultValue, min, max, step) {
 	};
 };
 
-window.filterMargins = "50px 100px 200px 50px";
 window.filterConfigs = {
     'drop-shadow': {
     	type: builtin("drop-shadow", ["offset_x", "offset_y", "radius", "flood_color"]),
@@ -175,7 +177,7 @@ window.filterConfigs = {
 	    mesh: "20 20",
 	    meshBox: "border-box",
 	    params: {
-	        k: generateWarpPoints(),
+	        k: null,
 	        matrix: {
 	            rotationX: 0,
 	            rotationY: 0,
@@ -188,13 +190,13 @@ window.filterConfigs = {
 	    config: {
 	        k: {
 	            type: 'controlPoints',
-	            generator: generateWarpArray,
-	            mixer: mixVectorOfVectors
+	            generator: 'warpArray',
+	            mixer: 'mixVectorOfVectors'
 	        },
 	        factor: {
 	            type: 'hidden',
-	            generator: generateFilterArray,
-	            mixer: dontMix
+	            generator: 'filterArray',
+	            mixer: 'dontMix'
 	        },
 	        matrix: transform(),
 	        useColoredBack: checkbox(),
