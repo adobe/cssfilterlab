@@ -218,12 +218,30 @@ h1#title {
 	border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+#menu li .filter-name {
+	font-size: 1.2em;
+	min-height: 1.5em;
+}
+
+#menu li .delete-filter {
+    float:left;
+    padding: 3px;
+    position: relative;
+    left: -10px;
+    background: #333333;
+    width: 25px;
+    border-radius: 25px;
+}
+
+#menu li .delete-filter:hover {
+	background: #cc0000;
+}
+
 #menu li .dragpoint {
-    position: absolute;
+    float:right;
     width: 20px;
     height: 15px;
-    top: 1px;
-    right: 15px;
+    margin-right: 10px;
     background: url(../images/dragger.svg);
     cursor: -webkit-grab;
 }
