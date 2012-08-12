@@ -234,7 +234,7 @@ window.filterConfigs = {
 	"fold": {
 	    hasVertex: true,
 	    hasFragment: true,
-	    mesh: "40 7",
+	    mesh: "40 8",
 	    meshBox: "border-box",
 	    params: {
 	        matrix: {
