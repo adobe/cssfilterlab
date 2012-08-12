@@ -275,6 +275,15 @@ h1#title {
 	font-weight: normal;
 }
 
+#animations-container {
+	/* JS will make this visible if File API is available. */
+	display: none;
+}
+
+#animation-store-buttons {
+	margin-left: 10px;
+}
+
 .value-editor {
     width: 20px;
     padding: 0px;
