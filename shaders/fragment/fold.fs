@@ -9,11 +9,15 @@ precision mediump float;
 varying float v_lighting;
 
 // This uniform value is passed in using CSS.
-uniform float t;
+uniform vec4 backColor;
+uniform float useColoredBack;
 
 const float PI = 3.1415;
 
 void main()
 {
-    css_BlendColor = vec4(vec3(v_lighting), 1.0);
+	if (!gl_FrontFacing && useColoredBack >= 0.5)
+        css_BlendColor = vec4(vec3(v_lighting), 1.0) * backColor;
+    else
+	    css_BlendColor = vec4(vec3(v_lighting), 1.0);
 }
