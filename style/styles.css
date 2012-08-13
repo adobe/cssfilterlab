@@ -570,7 +570,7 @@ ul.tabs li.selected{
 .panel .header{
 	overflow:hidden;
 }
-.panel button{
+.panel button#resetTimelineButton{
 	float:right;
 }      
 
@@ -672,8 +672,44 @@ ul.tabs li.selected{
 }
 
 #shader-editor .code-panel {
+	position: relative;
 	background: white;
 	height: 100%;
+}
+
+#shader-editor .code-panel .code-view {
+	position: absolute;
+	left: 0px;
+	right: 0px;
+	top: 0px;
+	bottom: 65px;
+}
+
+#shader-editor .code-panel .code-bottom {
+	position: absolute;
+	left: 0px;
+	right: 0px;
+	height: 59px;
+	bottom: 0px;
+	border-top: 1px solid #ccc;
+	padding-top: 5px;
+	padding-left: 15px;
+	padding-right: 5px;
+	color: #333;
+	overflow: auto;
+}
+
+#shader-editor .code-panel .code-bottom pre {
+	margin: 0;
+}
+
+#shader-editor .code-panel.config-editor .code-view {
+	bottom: 45px;
+}
+
+#shader-editor .code-panel.config-editor .code-bottom {
+	height: 39px;
+	text-align: right;
 }
 
 .ui-dialog {
