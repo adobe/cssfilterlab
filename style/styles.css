@@ -685,6 +685,17 @@ ul.tabs li.selected{
 	bottom: 65px;
 }
 
+#shader-editor .code-panel .code-view .error-line {
+	background: rgba(255, 0, 0, 0.7);
+	color: white;
+	border: 1px solid rgba(190, 0, 0, 1);
+}
+
+#shader-editor .code-panel .code-view .error-bookmark {
+	font-weight: bold;
+	background: rgba(255, 0, 0, 0.5);
+}
+
 #shader-editor .code-panel .code-bottom {
 	position: absolute;
 	left: 0px;
@@ -717,6 +728,7 @@ ul.tabs li.selected{
 	border-radius: 10px;
 	border: 1px solid #ccc;
 	padding: 10px;
+	padding-top: 0px;
 	-webkit-box-shadow: 0px 0px 10px white;
 }
 
@@ -724,7 +736,10 @@ ul.tabs li.selected{
 	color: white;
 	font-weight: bold;
 	font-size: 1.2em;
-	padding:5px;
+	padding: 5px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	cursor: move;
 }
 
 .ui-dialog-titlebar-close {
