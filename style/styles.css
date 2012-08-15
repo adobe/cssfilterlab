@@ -4,13 +4,6 @@ This work is licensed under a Creative Commons Attribution-Noncommercial-Share A
 Permissions beyond the scope of this license, pertaining to the examples of code included within this work are available at Adobe http://www.adobe.com/communities/guidelines/ccplus/commercialcode_plus_permission.html .
 */
 
-@font-face {
-  font-family: 'Lobster';
-  font-style: normal;
-  font-weight: normal;
-  src: local('Lobster'), url('http://themes.googleusercontent.com/static/fonts/lobster/v3/aC971nPl5R8TiGBPHS_HNwLUuEpTyoUstqEm5AMlJo4.ttf') format('truetype');
-}
-
 html {
     padding: 0;
     margin: 0;
@@ -39,15 +32,13 @@ body {
 
 h1#title {
     margin: 0px;
-    font-family: 'Lobster', sans-serif;
     font-size: 40px;
-    text-shadow: 3px 3px 3px;
     background: -webkit-linear-gradient(top, #1f1f1f, #373737);
-    -webkit-box-shadow: -6px 0 6px rgba(0, 0, 0, 0.5);
     line-height: 2em;
     padding-left: 25px;
     width: 100%;
-    color: white;
+    color: #eee;
+    text-shadow: 2px 2px 2px black;
     position: relative;
     z-index: 100;
 }
