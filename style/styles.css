@@ -248,35 +248,79 @@ h1#title {
 	display: block;
 }
 
-#filter-stock li .customize-link{
-	float:right;
-	margin-right: 15px;
-	font-weight: normal;
-}
-
 #animations li:hover,
 #filter-list li .filter-name:hover,
-#filter-stock li .filter-label:hover,
 #filter-stock li .customize-link:hover {
 	cursor:pointer;
 	text-decoration: underline;
 }
 
-#menu li.builtin-filter {
+#filter-stock .filter-item:hover {
+	cursor: pointer;
+}
+
+#menu li.builtin-filter,
+#menu .filter-item.builtin-filter {
 	border-left: rgba(255, 0, 0, 0.2) 5px solid;
 }
 
-#menu li.custom-filter {
+#menu li.custom-filter,
+#menu .filter-item.custom-filter {
 	border-left: rgba(0, 255, 0, 0.2) 5px solid;
 }
 
-#menu li.forked-filter {
+#menu li.forked-filter,
+#menu .filter-item.forked-filter {
 	border-left: rgba(0, 0, 255, 0.2) 5px solid;	
 }
 
 #menu #filter-list-empty {
 	color: #ccc;
 	font-weight: normal;
+}
+
+#filter-stock .filter-item {
+	display: block;
+	border-bottom: 1px solid #555;
+}
+
+#filter-stock .filter-item:after {
+	display: block;
+	content: "";
+	clear: both;
+}
+
+#filter-stock div.custom-filter:first-child {
+	border: 10px solid green;
+}
+
+#filter-stock .filter-item .filter-preview {
+	float: left;
+	width: 75px;
+	height: 50px;
+	margin: 5px;
+	background: url(../images/planes.jpg) center center no-repeat;
+	background-size: 75px 50px;
+}
+
+#filter-stock .filter-item .filter-label {
+	float: left;
+	font-weight: bold;
+	margin-left: 10px;
+	line-height: 60px;
+	vertical-align: center;
+	text-align: center;
+	color: white;
+}
+
+#filter-stock .filter-item .add-link,
+#filter-stock .filter-item .customize-link {
+	float: right;
+	margin-top: 15px;
+}
+
+#filter-stock .filter-item .add-link {
+	margin-right: 20px;
 }
 
 #animations-container {

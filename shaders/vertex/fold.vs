@@ -55,5 +55,5 @@ void main()
     vec4 ray = normalize(lightSource - vertex);
     v_lighting = max(dot(ray, normal), mix(1.0, 0.2, sqrt(t)));
 
-    gl_Position = u_projectionMatrix * perspective(1000.0) * vertex;
+    gl_Position = u_projectionMatrix * perspective(0.5) * vertex;
 }

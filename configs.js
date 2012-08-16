@@ -50,14 +50,14 @@ function checkbox() {
     return range(0, 1, 1);
 }
 
-function builtinPercent(fn, defaultValue) {
+function builtinPercent(fn, defaultValue, maxValue) {
 	return {
 		type: builtin(fn, ["amount"]),
 	    params: {
 	        amount: defaultValue || 0
 	    },
 	    config: {
-	        amount: units("%", range(0, 100, 1))
+	        amount: units("%", range(0, maxValue || 100, 1))
 	    }
 	};
 }
@@ -139,12 +139,12 @@ window.filterConfigs = {
         }
     },
     
-    grayscale: builtinPercent("grayscale", 50),
+    grayscale: builtinPercent("grayscale", 100),
     dissolve: normalAmountConfig(0.25, 0, 1, 0.001),
     'hue-rotate': builtinDeg("hue-rotate", 180),
     invert: builtinPercent("invert", 100),
     opacity: builtinPercent("opacity", 50),
-    saturate: builtinPercent("saturate"),
+    saturate: builtinPercent("saturate", 1000, 1000),
 	sepia: builtinPercent("sepia", 100),
 	brightness: builtinPercent("brightness", 25),
 	contrast:  builtinPercent("contrast", 50),
@@ -239,15 +239,15 @@ window.filterConfigs = {
 	    params: {
 	        matrix: {
 	            rotationX: 0,
-	            rotationY: 0,
+	            rotationY: -24,
 	            rotationZ: 0
 	        },
-	        t: 0,
-	        spins: 0.5,
-	        phase: 0,
-	        mapDepth: 0.5,
-	        mapCurve: 0.09,
-	        minSpacing: 0.15,
+	        t: 0.5,
+	        spins: 1.5,
+	        phase: -0.7,
+	        mapDepth: 0.07,
+	        mapCurve: -0.32,
+	        minSpacing: 0.37,
 	        useColoredBack: 1,
 	        backColor: [1.0, 1.0, 1.0, 1.0],
 	    },
