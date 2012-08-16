@@ -270,6 +270,10 @@ h1#title {
 	border-left: rgba(0, 255, 0, 0.2) 5px solid;
 }
 
+#menu li.forked-filter {
+	border-left: rgba(0, 0, 255, 0.2) 5px solid;	
+}
+
 #menu #filter-list-empty {
 	color: #ccc;
 	font-weight: normal;
