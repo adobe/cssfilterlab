@@ -168,8 +168,7 @@ h1#title {
 
 #filter-list li.current,
 #animations li.current {
-	background-color: #1f1f1f;
-	-webkit-box-shadow: inset 0 0 6px #070707, inset 0 0 3px #070707, 0 1px 0 #5B5B5B;
+	background-color: #3B3F41;
 	border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
