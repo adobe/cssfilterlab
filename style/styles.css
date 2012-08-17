@@ -241,6 +241,7 @@ h1#title {
 
 #filter-stock-list {
 	padding-bottom: 50px;
+	min-width: 350px;
 }
 
 #filter-stock .filter-item:first-child {
