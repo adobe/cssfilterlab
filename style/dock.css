@@ -1,0 +1,116 @@
+#dock-view {
+	position: absolute;
+	top: 80px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+}
+
+.panel-view {
+	display: none;
+}
+
+.panel-view.active {
+	-webkit-flex: 1;
+	display: block;
+	border-top: 1px solid #6a6a6a;
+	background: #535353;
+	color: white;
+	z-index: 0;
+}
+
+.panel-tab-list {
+	display: -webkit-flex;
+	-webkit-flex: none;
+	background: -webkit-linear-gradient(top, #3C3C3C 0%, #373737 100%);
+	height: 20px;
+	border-bottom: 1px solid #282828;
+}
+
+.panel-tab {
+	padding: 3px;
+	padding-left: 8px;
+	padding-right: 8px;
+	border-top: 1px solid #4a4a4a;
+	border-right: 1px solid #282828;
+	color: white;
+	font-size: 11px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.panel-tab:hover {
+	background: #454545;
+}
+
+.panel-tab.active {
+	position: relative;
+	z-index: 10;
+	border-top: 1px solid #6a6a6a;
+	background: #535353;
+	border-bottom: 2px solid #535353;
+	height: 13px;
+}
+
+.panel-container {
+	z-index: 0;
+	-webkit-flex: 1;
+	display: -webkit-flex;
+	-webkit-flex-direction: column;
+}
+
+.panel-column {
+	display: -webkit-flex;
+	-webkit-flex: 1;
+	-webkit-align-items: stretch;
+}
+
+.panel-column.horizontal,
+.panel-column.horizontal > .panel-column-items,
+.dock-root {
+	-webkit-flex-direction: row;
+}
+
+.panel-column.vertical,
+.panel-column.vertical > .panel-column-items {
+	-webkit-flex-direction: column;
+}
+
+.panel-colum-handle {
+	-webkit-flex: none;
+}
+
+.panel-column.horizontal > .panel-column-handle {
+	width: 9px;
+	border-left: 1px solid #474747;
+	background: -webkit-linear-gradient(left, #393939 0%, #323232 100%);
+}
+
+.panel-column.vertical > .panel-column-handle {
+	height: 9px;
+	border-top: 1px solid #474747;
+	background: -webkit-linear-gradient(top, #393939 0%, #323232 100%);
+}
+
+.panel-column-items,
+.dock-root {
+	display: -webkit-flex;
+	-webkit-flex: 1;
+}
+
+.panel-column.horizontal > .panel-column-items > .panel-separator,
+.dock-root > .panel-separator {
+	width: 5px;
+	-webkit-flex: none;
+	border-left: 1px solid #282828;
+	border-right: 1px solid #282828;
+	background: #3a3a3a;
+}
+
+.panel-column.vertical > .panel-column-items > .panel-separator {
+	height: 5px;
+	-webkit-flex: none;
+	border-top: 1px solid #282828;
+	border-bottom: 1px solid #282828;
+	background: #3a3a3a;
+}
