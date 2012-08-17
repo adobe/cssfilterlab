@@ -9,15 +9,12 @@ html {
     margin: 0;
     font-family: Helvetica Neue, Tahoma, sans-serif;
     font-size: 12px;
-    color: #0e5270;
     height: 100%;
 }
 
 body { 
-	background: #1f1f1f;
-    padding: 0px;
+	padding: 0px;
     margin: 0px;
-    height: 100%;
     overflow: hidden;
 }
 
@@ -43,19 +40,31 @@ h1#title {
     z-index: 100;
 }
 
-#studio-area {
-    position: absolute;
-    width: 600px;
-    top: 80px;
-    left: 0px;
-    bottom: 0px;
-    margin-left: 350px;
-    margin-right: auto;
-    padding: 40px;
-	z-index: 20;
+.filter-frame {
+	background: #333;
 }
 
-#multi-col {
+#container {
+	color: black;
+	position: relative;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5px;
+    font-size: 12px;
+	font-style: normal;
+    padding-bottom: 30px;
+    margin-top: 35px;
+    padding: 20px;
+    border: 6px solid #33ccff;
+    background: white;
+    border-radius: 10px;
+	text-align: justify;
+	background: white;
+	width: 600px;	
+}
+
+#container #multi-col {
     -webkit-column-count: 2;
     -o-column-count: 2;
     column-count: 2;
@@ -63,7 +72,7 @@ h1#title {
 }
 
 
-#video > h2, #multi-col > h2 {
+#container #multi-col > h2 {
     -webkit-break-before: column;
     break-before: column;
     color: #eb3d3c;
@@ -76,46 +85,8 @@ h1#title {
 	text-align: center;
 }
 
-#multi-col > p {
+#container #multi-col > p {
 	text-indent: 3ex;
-}
-
-#trailer_video {
-	margin: 1em auto auto 2em;
-	margin-left: auto;
-	margin-right: auto;
-	display: block;
-	box-shadow: 2px 2px 6px 3px rgba(0, 0, 0, 0.25);
-}
-
-#content input[type='radio'] {
-	display: none;
-}
-
-#content input+label {
-	padding: 0.5em;
-	border: 1px solid #1f1f1f;
-	border-radius: 4px;
-}
-#content input:checked+label {
-	background-color: #1f1f1f;
-}
-
-#container {
-    padding: 10px;
-    margin-bottom: 5px;
-    font-size: 12px;
-	font-style: normal;
-    position: relative;
-    padding-bottom: 30px;
-    margin-top: 0px;
-    padding: 20px;
-    border: 6px solid #33ccff;
-    background: white;
-    border-radius: 10px;
-	text-align: justify;
-	background: white;
-	position: relative;
 }
  
 #svg-img {
@@ -137,7 +108,7 @@ h1#title {
 	margin-bottom: 2em;
 }
 
-#video-img, #css3-img {
+#css3-img {
 	display: block;
 	margin-left: auto;
 	margin-top: 25px;
@@ -154,20 +125,15 @@ h1#title {
 	right: 20px;
 } 
 
-#menu {
-	position: absolute;
-	top: 0;
-	left: -350px;
-	width: 350px;
-	bottom: 0px;
-	overflow-y: auto;
-	overflow-x: hidden;
-	background-color: #373737;
-	z-index: 1;
-	-webkit-box-shadow: inset 0 0 6px #070707;
-} 
+#filter-list,
+#animations {
+	padding: 0px;
+	margin: 0px;
+	padding-bottom: 100px;
+}
 
-#menu h2, #menu label {
+#filter-list h2, 
+#filter-list label {
 	color: #777;         
 	margin: 10px 0 5px;
 	padding:0 0 0 10px;
@@ -175,12 +141,9 @@ h1#title {
 	font-size: 14px;
 	font-weight: normal;
 }
-#menu ul {
-	padding: 0px;
-	margin-top: 0px;
-} 
 
-#menu li {
+#filter-list li,
+#animations li {
     position: relative;
 	list-style: none;
 	color: white;
@@ -196,23 +159,24 @@ h1#title {
     -webkit-transition-property: height, top, bottom, left, width;
 }
 
-
-#menu li:hover {
+#filter-list li:hover,
+#animations li:hover {
 	color: white;
 	font-weight: bold;
 }
 
-#menu li.current {
+#filter-list li.current,
+#animations li.current {
 	background-color: #1f1f1f;
 	-webkit-box-shadow: inset 0 0 6px #070707, inset 0 0 3px #070707, 0 1px 0 #5B5B5B;
 	border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-#menu li .filter-name {
+#filter-list li .filter-name {
 	font-size: 1.2em;
 }
 
-#menu li .delete-filter {
+#filter-list li .delete-filter {
     float:left;
     padding: 3px;
     position: relative;
@@ -223,11 +187,11 @@ h1#title {
     font-size: 10px;
 }
 
-#menu li .delete-filter:hover {
+#filter-list li .delete-filter:hover {
 	background: #cc0000;
 }
 
-#menu li .dragpoint {
+#filter-list li .dragpoint {
     float:right;
     width: 20px;
     height: 15px;
@@ -236,15 +200,15 @@ h1#title {
     cursor: -webkit-grab;
 }
 
-#menu li.dragging, #menu li.dragging .dragpoint {
+#filter-list li.dragging, #menu li.dragging .dragpoint {
     cursor: -webkit-grabbing;
 }
 
-#menu li > .config {
+#filter-list li > .config {
 	display: none;
 }
 
-#menu li.current > .config {
+#filter-list li.current > .config {
 	display: block;
 }
 
@@ -255,24 +219,28 @@ h1#title {
 	text-decoration: underline;
 }
 
-#menu li.builtin-filter,
-#menu .filter-item.builtin-filter {
+#filter-list li.builtin-filter,
+#filter-stock .filter-item.builtin-filter {
 	border-left: rgba(255, 0, 0, 0.2) 5px solid;
 }
 
-#menu li.custom-filter,
-#menu .filter-item.custom-filter {
+#filter-list li.custom-filter,
+#filter-stock .filter-item.custom-filter {
 	border-left: rgba(0, 255, 0, 0.2) 5px solid;
 }
 
-#menu li.forked-filter,
-#menu .filter-item.forked-filter {
+#filter-list li.forked-filter,
+#filter-stock .filter-item.forked-filter {
 	border-left: rgba(0, 0, 255, 0.2) 5px solid;	
 }
 
-#menu #filter-list-empty {
+#filter-list #filter-list-empty {
 	color: #ccc;
 	font-weight: normal;
+}
+
+#filter-stock-list {
+	padding-bottom: 50px;
 }
 
 #filter-stock .filter-item:first-child {
@@ -325,7 +293,8 @@ h1#title {
 }
 
 #animation-store-buttons {
-	margin-left: 10px;
+	margin-top: 5px;
+	margin-left: 5px;
 	margin-bottom: 10px;
 }
 
@@ -359,16 +328,14 @@ h1#title {
 }
 
 #timeline {
-	position:relative;  
-	height:20px;
-	padding-left:60px;
+	padding: 10px;
 } 
 
 	#timeline .controls{  
 		top:14px;    
 		left:0;
-		position:absolute; 
-		height:20px;
+		position:relative; 
+		xheight:20px;
 		width:50px;
 	} 
 	
@@ -383,7 +350,7 @@ h1#title {
 	#timeline .controls .play{
 		float:none;
 		clear:both;
-		width:42px; 
+		width:42px;
 		padding:1px 0; 
 		margin-top:-12px; 
 		margin-bottom:20px;
@@ -422,13 +389,16 @@ h1#title {
     
 #timeline .keyframes {  
     position: relative;
+    margin-top: -10px;
+    margin-left: 60px;
+    margin-right: 20px;
 }
 
-#timeline .time{
+#timeline .time {
 	height:16px;  
 	margin-top:-8px; 
-	margin-bottom:18px; 
-	border-bottom:1px dashed #555;  
+	margin-bottom:2px; 
+	border-bottom:1px dashed #ccc;  
 	padding-bottom:3px;
 	position:relative;
 }   
@@ -531,13 +501,6 @@ button:hover {
     background: -webkit-linear-gradient(top, #474747, #373737);
 }   
 
-#tools_panel{ 
-	position:absolute;
-	bottom:0;  
-	left:0;
-	z-index:1;
-}
-
 ul.tabs,
 ul.tabs li{
 	margin:0;
@@ -566,69 +529,11 @@ ul.tabs li.selected{
 	text-indent:-999em;
 }
 
-#target_selector{
-	background: url(../images/icons/Cur_Target_9_9.png) center center no-repeat;
-}
-
-#target_selector.active{
-	background: url(../images/icons/Cur_Target_9_9_Active.png) center center no-repeat;
-} 
-
-#tools_toggle{
-	background: url(../images/icons/P_GraphEd_OptionsMenu_22x15_N_D.png) center center no-repeat;
-}
-
-#tools_toggle.active{
-	background: url(../images/icons/P_GraphEd_OptionsMenu_22x15_R_D.png) center center no-repeat;
-}
-
-.panel{ 
-	color:#ccc; 
-	width:100%;  
-}   
-
-.panel .header{
-	border-bottom:1px solid #555;
-}
-
-.panel .content{ 
-	background:#373737; 
-	padding:1em;
-	height:120px;
-} 
-
-.panel .content textarea{  
-	width:100%;
-	display:block;
-}   
-
-.panel .header{
-	overflow:hidden;
-}
-.panel button#resetTimelineButton{
-	float:right;
-}      
-
-.panel .tools_menu1{
-	float:left;     
-}
-
-.panel .tools_menu2{
-	float:right;     
-}                 
-
-.panel .tools_menu1 li{
-	padding: 0.5em 1em 0.5em 1em;
-}
-
-#output, #animation {
-    height: 100%;
-    overflow: auto;
-/*    background: #FFFAD5;*/
-}
 
 .code {
-    color: #fff;font-size:120%;
+    color: #fff;
+    font-size:120%;
+    padding: 10px;
 } 
 
 .code a{

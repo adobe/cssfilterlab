@@ -67,7 +67,7 @@ Permissions beyond the scope of this license, pertaining to the examples of code
     <h1 id="title">CSS Filter Studio</h1>
 
    
-    <div id="container" class="shaded">
+    <div id="container">
         <div id="multi-col">
             <h2 id="dialog-title" style=
             "-webkit-column-break-before: always">The Creative Web</h2>
@@ -132,23 +132,25 @@ Permissions beyond the scope of this license, pertaining to the examples of code
         <button id="resetTimelineButton">Reset animation</button>
     </div>  
       
-    <ul id="filter-list">
-        <li id="filter-list-empty">No filter activated. Add a filter from the list below.</li>
-    </ul>
+    <div id="active-filters">
+        <ul id="filter-list">
+            <li id="filter-list-empty">No filter activated. Add a filter from the list below.</li>
+        </ul>
+    </div>
 
     <div id="filter-stock">
+        <div id="filter-stock-list">
+        </div>
     </div>
 
     <div id="animations-container">
-        <h2>Presets</h2>
-        <ul id="animations">
-        </ul>
         <div id="animation-store-buttons">
             <button id="save-animation">Save as</button>
             <button id="delete-animation">Delete</button>
         </div>
+        <ul id="animations">
+        </ul>
     </div>
-
 
     <div class="panel" id="shader-editor">
         <div class="header">
