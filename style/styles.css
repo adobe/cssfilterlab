@@ -46,6 +46,7 @@ h1#title {
 
 #container {
 	color: black;
+	-webkit-user-select: auto;
 	position: relative;
     padding: 10px;
     margin-left: auto;
@@ -535,6 +536,7 @@ ul.tabs li.selected{
     color: #fff;
     font-size:120%;
     padding: 10px;
+    -webkit-user-select: auto;
 } 
 
 .code a{
