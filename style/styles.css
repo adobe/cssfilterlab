@@ -215,23 +215,23 @@ h1#title {
 
 #animations li:hover,
 #filter-list li .filter-name:hover,
-#filter-stock li .customize-link:hover {
+.filter-stock li .customize-link:hover {
 	cursor:pointer;
 	text-decoration: underline;
 }
 
 #filter-list li.builtin-filter,
-#filter-stock .filter-item.builtin-filter {
+.filter-stock .filter-item.builtin-filter {
 	border-left: rgba(255, 0, 0, 0.2) 5px solid;
 }
 
 #filter-list li.custom-filter,
-#filter-stock .filter-item.custom-filter {
+.filter-stock .filter-item.custom-filter {
 	border-left: rgba(0, 255, 0, 0.2) 5px solid;
 }
 
 #filter-list li.forked-filter,
-#filter-stock .filter-item.forked-filter {
+.filter-stock .filter-item.forked-filter {
 	border-left: rgba(0, 0, 255, 0.2) 5px solid;	
 }
 
@@ -240,27 +240,27 @@ h1#title {
 	font-weight: normal;
 }
 
-#filter-stock-list {
+.filter-stock-list {
 	padding-bottom: 50px;
 	min-width: 350px;
 }
 
-#filter-stock .filter-item:first-child {
+.filter-stock .filter-item:first-child {
 	border-top: 1px solid #555;
 }
 
-#filter-stock .filter-item {
+.filter-stock .filter-item {
 	display: block;
 	border-bottom: 1px solid #555;
 }
 
-#filter-stock .filter-item:after {
+.filter-stock .filter-item:after {
 	display: block;
 	content: "";
 	clear: both;
 }
 
-#filter-stock .filter-item .filter-preview {
+.filter-stock .filter-item .filter-preview {
 	float: left;
 	width: 75px;
 	height: 50px;
@@ -269,7 +269,7 @@ h1#title {
 	background-size: 75px 50px;
 }
 
-#filter-stock .filter-item .filter-label {
+.filter-stock .filter-item .filter-label {
 	float: left;
 	font-weight: bold;
 	margin-left: 10px;
@@ -279,13 +279,13 @@ h1#title {
 	color: white;
 }
 
-#filter-stock .filter-item .add-link,
-#filter-stock .filter-item .customize-link {
+.filter-stock .filter-item .add-link,
+.filter-stock .filter-item .customize-link {
 	float: right;
 	margin-top: 15px;
 }
 
-#filter-stock .filter-item .add-link {
+.filter-stock .filter-item .add-link {
 	margin-right: 20px;
 }
 
