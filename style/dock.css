@@ -15,7 +15,7 @@
 	-webkit-flex: 1;
 	display: block;
 	border-top: 1px solid #6a6a6a;
-	background: #535353;
+	background: #494D4E;
 	color: white;
 	z-index: 0;
 	position: relative;
@@ -60,8 +60,8 @@
 	position: relative;
 	z-index: 10;
 	border-top: 1px solid #6a6a6a;
-	background: #535353;
-	border-bottom: 2px solid #535353;
+	background: #494D4E;
+	border-bottom: 2px solid #494D4E;
 	height: 13px;
 }
 
@@ -121,4 +121,10 @@
 	border-bottom: 1px solid #282828;
 	background: #3a3a3a;
 	cursor: n-resize;
-}
+}   
+  
+/* trim down on needless resizing handles */
+.panel-separator:first-of-type,
+.panel-column-handle{
+    display: none;
+}                

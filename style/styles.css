@@ -168,8 +168,7 @@ h1#title {
 
 #filter-list li.current,
 #animations li.current {
-	background-color: #1f1f1f;
-	-webkit-box-shadow: inset 0 0 6px #070707, inset 0 0 3px #070707, 0 1px 0 #5B5B5B;
+	background-color: #3B3F41;
 	border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -240,17 +239,11 @@ h1#title {
 	font-weight: normal;
 }
 
-.filter-stock-list {
-	padding-bottom: 50px;
-	min-width: 350px;
-}
-
 .filter-stock .filter-item:first-child {
 	border-top: 1px solid #555;
 }
 
 .filter-stock .filter-item {
-	display: block;
 	border-bottom: 1px solid #555;
 }
 
@@ -261,7 +254,7 @@ h1#title {
 }
 
 .filter-stock .filter-item .filter-preview {
-	float: left;
+/*  float: left;*/
 	width: 75px;
 	height: 50px;
 	margin: 5px;
@@ -270,23 +263,36 @@ h1#title {
 }
 
 .filter-stock .filter-item .filter-label {
-	float: left;
+    display: -webkit-box;
+    display: box;
+    -webkit-box-flex: 1;
+    box-flex: 1;
+    -webkit-box-align: center;
+    box-align: center;
+
 	font-weight: bold;
 	margin-left: 10px;
-	line-height: 60px;
-	vertical-align: center;
-	text-align: center;
 	color: white;
 }
 
-.filter-stock .filter-item .add-link,
-.filter-stock .filter-item .customize-link {
-	float: right;
-	margin-top: 15px;
+.filter-stock .filter-item .button-box{
+    display: -webkit-box;
+    display: box;
+    -webkit-box-flex: 1;
+    box-flex: 1;             
+    -webkit-box-pack: end;
+    box-pack: end; 
+    -webkit-box-align: center;
+    box-align: center;
+    
+    padding: 0 15px 0 10px;
 }
+      
 
-.filter-stock .filter-item .add-link {
-	margin-right: 20px;
+.filter-stock .filter-item{
+    display: -webkit-box;
+    display: box;
+    -webkit-box-orientation: horizontal;
 }
 
 #animations-container {
@@ -483,9 +489,9 @@ h1#title {
 #buttons {
     margin-left: 20px;
     margin-top: 20px;
-}
+}    
 
-button {
+/*button {
     background: gray;
     color: rgba(255, 255, 255, 1); 
     border-radius: 0.6em;
@@ -495,13 +501,13 @@ button {
     font-weight: bold;
     font-size: 12px;
     box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.25), inset 1px 1px 0px rgba(255, 255, 255, 0.2);
-	cursor:pointer;
-	text-shadow: black 0px -1px 1px;
+    cursor:pointer;
+    text-shadow: black 0px -1px 1px;
 }
 
 button:hover {
     background: -webkit-linear-gradient(top, #474747, #373737);
-}   
+}   */
 
 ul.tabs,
 ul.tabs li{
