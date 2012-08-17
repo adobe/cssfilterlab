@@ -89,19 +89,12 @@
 	-webkit-flex-direction: column;
 }
 
-.panel-colum-handle {
+.panel-column-header {
 	-webkit-flex: none;
-}
-
-.panel-column.horizontal > .panel-column-handle {
-	width: 9px;
-	border-left: 1px solid #474747;
-	background: -webkit-linear-gradient(left, #393939 0%, #323232 100%);
-}
-
-.panel-column.vertical > .panel-column-handle {
-	height: 9px;
-	border-top: 1px solid #474747;
+	height: 1.4em;
+	font-weight: bold;
+	color: white;
+	padding: 3px;
 	background: -webkit-linear-gradient(top, #393939 0%, #323232 100%);
 }
 
