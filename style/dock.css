@@ -91,11 +91,14 @@
 
 .panel-column-header {
 	-webkit-flex: none;
-	height: 1.4em;
 	font-weight: bold;
 	color: white;
 	padding: 3px;
 	background: -webkit-linear-gradient(top, #393939 0%, #323232 100%);
+}
+
+.panel-column-close-button {
+	float: right;
 }
 
 .panel-column-items,
