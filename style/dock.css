@@ -4,6 +4,7 @@
 	left: 0px;
 	right: 0px;
 	bottom: 0px;
+	-webkit-user-select: none;
 }
 
 .panel-view {
@@ -117,6 +118,7 @@
 	border-left: 1px solid #282828;
 	border-right: 1px solid #282828;
 	background: #3a3a3a;
+	cursor: e-resize;
 }
 
 .panel-column.vertical > .panel-column-items > .panel-separator {
@@ -125,4 +127,5 @@
 	border-top: 1px solid #282828;
 	border-bottom: 1px solid #282828;
 	background: #3a3a3a;
+	cursor: n-resize;
 }
