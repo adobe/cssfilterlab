@@ -147,8 +147,8 @@ Permissions beyond the scope of this license, pertaining to the examples of code
 
     <div id="animations-container">
         <div id="animation-store-buttons">
-            <button id="save-animation">Save as</button>
-            <button id="delete-animation">Delete</button>
+            <a href="#" id="save-animation" class="button dark">Save as</a>
+            <a href='#' id="delete-animation" class="button dark">Delete</a>
         </div>
         <ul id="animations">
         </ul>
@@ -157,20 +157,22 @@ Permissions beyond the scope of this license, pertaining to the examples of code
     <div id="config-editor" class="code-panel">
         <div class="code-view"></div>
         <div class="code-bottom">
-            <button id="reload-button">Reload</button>
+            <a href="#" id="reload-button" class="button dark">Reload</a>
         </div>
     </div>
     <div id="vertex-shader" class="code-panel">
         <div class="code-view"></div>
-        <div class="code-bottom">
-        </div>
     </div>
     <div id="fragment-shader" class="code-panel">
         <div class="code-view"></div>
-        <div class="code-bottom">
-        </div>
     </div>
 
+    <div id="shader-errors">
+        <div>
+            <div class="vertex-shader inline-shader-errors"></div>
+            <div class="fragment-shader inline-shader-errors"></div>
+        </div>
+    </div>
 
     <div id="dock-view">
        
