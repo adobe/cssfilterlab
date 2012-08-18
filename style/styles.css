@@ -661,3 +661,19 @@ ul.tabs li.selected{
 	font-size: 0.9em;
 }
 
+.loader {
+}
+
+.loader .progress-bar {
+	border: 1px solid #333;
+	height: 30px;
+}
+
+.loader .progress-bar .progress-bar-interior {
+	background: #ccc;
+	width: 0%;
+	height: 30px;
+}
+
+.loader .label {
+}

@@ -54,6 +54,7 @@ Permissions beyond the scope of this license, pertaining to the examples of code
     <script type="text/javascript" src="lib/views/css_code_view.js"></script>
     <script type="text/javascript" src="lib/views/filter_item_view.js"></script>
     <script type="text/javascript" src="lib/views/preset_store_view.js"></script>
+    <script type="text/javascript" src="lib/views/loading_progress_view.js"></script>
     <script type="text/javascript" src="lib/views/shader_editor_view.js"></script>
     <script type="text/javascript" src="lib/views/shader_code_editor_view.js"></script>
     <script type="text/javascript" src="lib/views/timeline_view.js"></script>
@@ -169,6 +170,10 @@ Permissions beyond the scope of this license, pertaining to the examples of code
 
     <div id="shader-errors">
         <div>
+            <div class="loader">
+                <div class="progress-bar"></div>
+                <div class="label"></div>
+            </div>
             <div class="vertex-shader inline-shader-errors"></div>
             <div class="fragment-shader inline-shader-errors"></div>
         </div>
