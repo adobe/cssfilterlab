@@ -12,6 +12,7 @@
 }
 
 .panel-view.active {
+	-webkit-box-flex: 1;
 	-webkit-flex: 1;
 	display: block;
 	border-top: 1px solid #6a6a6a;
@@ -33,8 +34,11 @@
 }
 
 .panel-tab-list {
+	display: -webkit-box;
 	display: -webkit-flex;
+	-webkit-box-flex: 0;
 	-webkit-flex: none;
+	-webkit-box-orient: horizontal;
 	background: -webkit-linear-gradient(top, #3C3C3C 0%, #373737 100%);
 	height: 20px;
 	border-bottom: 1px solid #282828;
@@ -67,29 +71,36 @@
 
 .panel-container {
 	z-index: 0;
-	-webkit-flex: 1;
+	display: -webkit-box;
 	display: -webkit-flex;
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	-webkit-box-orient: vertical;
 	-webkit-flex-direction: column;
 }
 
 .panel-column {
+	display: -webkit-box;
 	display: -webkit-flex;
+	-webkit-box-flex: 1;
 	-webkit-flex: 1;
-	-webkit-align-items: stretch;
 }
 
 .panel-column.horizontal,
 .panel-column.horizontal > .panel-column-items,
 .dock-root {
+	-webkit-box-orient: horizontal;
 	-webkit-flex-direction: row;
 }
 
 .panel-column.vertical,
 .panel-column.vertical > .panel-column-items {
+	-webkit-box-orient: vertical;
 	-webkit-flex-direction: column;
 }
 
 .panel-column-header {
+	-webkit-box-flex: 0;
 	-webkit-flex: none;
 	font-weight: bold;
 	color: white;
@@ -103,13 +114,16 @@
 
 .panel-column-items,
 .dock-root {
+	display: -webkit-box;
 	display: -webkit-flex;
+	-webkit-box-flex: 1;
 	-webkit-flex: 1;
 }
 
 .panel-column.horizontal > .panel-column-items > .panel-separator,
 .dock-root > .panel-separator {
 	width: 5px;
+	-webkit-box-flex: 0;
 	-webkit-flex: none;
 	border-left: 1px solid #282828;
 	border-right: 1px solid #282828;
@@ -119,6 +133,7 @@
 
 .panel-column.vertical > .panel-column-items > .panel-separator {
 	height: 5px;
+	-webkit-box-flex: 0;
 	-webkit-flex: none;
 	border-top: 1px solid #282828;
 	border-bottom: 1px solid #282828;
