@@ -337,6 +337,7 @@ h1#title {
 
 #timeline {
 	padding: 10px;
+	overflow-x: hidden;
 } 
 
 	#timeline .controls{  
@@ -404,10 +405,10 @@ h1#title {
 
 #timeline .time {
 	height:16px;  
-	margin-top:-8px; 
+	margin-top:-22px; 
 	margin-bottom:2px; 
 	border-bottom:1px dashed #ccc;  
-	padding-bottom:3px;
+	padding-bottom: 15px;
 	position:relative;
 }   
 
