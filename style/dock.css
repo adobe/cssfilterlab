@@ -1,6 +1,6 @@
 #dock-view {
 	position: absolute;
-	top: 80px;
+    top: 70px;
 	left: 0px;
 	right: 0px;
 	bottom: 0px;
@@ -16,7 +16,7 @@
 	-webkit-flex: 1;
 	display: block;
 	border-top: 1px solid #6a6a6a;
-	background: #494D4E;
+	background: #3A3F42 url("northstar/img/x1/bg_dark.png") repeat-x;
 	color: white;
 	z-index: 0;
 	position: relative;
@@ -39,7 +39,7 @@
 	-webkit-box-flex: 0;
 	-webkit-flex: none;
 	-webkit-box-orient: horizontal;
-	background: -webkit-linear-gradient(top, #3C3C3C 0%, #373737 100%);
+	background: #3B3F41;
 	height: 20px;
 	border-bottom: 1px solid #282828;
 }
@@ -57,14 +57,14 @@
 }
 
 .panel-tab:hover {
-	background: #454545;
+	background: rgba(112, 112, 112, 0.24);
 }
 
 .panel-tab.active {
 	position: relative;
 	z-index: 10;
 	border-top: 1px solid #6a6a6a;
-	background: #494D4E;
+	background: #3A3F42 url("northstar/img/x1/bg_dark.png") repeat-x;
 	border-bottom: 2px solid #494D4E;
 	height: 13px;
 }

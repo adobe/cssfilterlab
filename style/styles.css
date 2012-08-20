@@ -18,30 +18,36 @@ body {
     overflow: hidden;
 }
 
-#logo {
+.logo {
+    display: block;
     position: absolute;
-    z-index: 200;
     top: 0px;
     right: 50px;
     width: 37px;
-    height: 63px;
+    height: 63px;  
+}     
+
+header{    
+    background: #494D4E;
+    height: 80px;
+    padding: 15px 25px 0;
+    overflow: hidden;
 }
 
-h1#title {
-    margin: 0px;
-    font-size: 40px;
-    background: -webkit-linear-gradient(top, #1f1f1f, #373737);
-    line-height: 2em;
-    padding-left: 25px;
-    width: 100%;
+header h1 {
+    font-size: 32px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    margin: 0;
+    
     color: #eee;
-    text-shadow: 2px 2px 2px black;
-    position: relative;
-    z-index: 100;
+    text-shadow: 0 -1px 0 black;
 }
 
 .filter-frame {
-	background: #333;
+	background: #F8F8F8;
 }
 
 #container {
