@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
 Syntax error: Undefined mixin 'user-select'.
         on line 7 of style/dock.scss, in `user-select'
@@ -81,3 +82,154 @@ body:before {
   white-space: pre;
   font-family: monospace;
   content: "Syntax error: Undefined mixin 'user-select'.\A         on line 7 of style/dock.scss, in `user-select'\A         from line 7 of style/dock.scss\A \A 2: 	position: absolute;\A 3:     top: 70px;\A 4: 	left: 0px;\A 5: 	right: 0px;\A 6: 	bottom: 0px;  \A 7: 	@include user-select(none);\A 8: }\A 9: \A 10: .panel-view {\A 11: 	display: none;\A 12: }"; }
+=======
+#dock-view {
+	position: absolute;
+	top: 80px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	-webkit-user-select: none;
+}
+
+.panel-view {
+	display: none;
+}
+
+.panel-view.active {
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	display: block;
+	border-top: 1px solid #6a6a6a;
+	background: #494D4E;
+	color: white;
+	z-index: 0;
+	position: relative;
+	overflow: hidden;
+}
+
+.panel-view.active > :first-child {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	top: 0px;
+	left: 0px;
+	margin: 0px;
+}
+
+.panel-tab-list {
+	display: -webkit-box;
+	display: -webkit-flex;
+	-webkit-box-flex: 0;
+	-webkit-flex: none;
+	-webkit-box-orient: horizontal;
+	background: -webkit-linear-gradient(top, #3C3C3C 0%, #373737 100%);
+	height: 20px;
+	border-bottom: 1px solid #282828;
+}
+
+.panel-tab {
+	padding: 3px;
+	padding-left: 8px;
+	padding-right: 8px;
+	border-top: 1px solid #4a4a4a;
+	border-right: 1px solid #282828;
+	color: white;
+	font-size: 11px;
+	font-weight: bold;
+	cursor: pointer;
+	overflow: hidden;
+}
+
+.panel-tab:hover {
+	background: #454545;
+}
+
+.panel-tab.active {
+	position: relative;
+	z-index: 10;
+	border-top: 1px solid #6a6a6a;
+	background: #494D4E;
+	border-bottom: 2px solid #494D4E;
+	height: 13px;
+}
+
+.panel-container {
+	z-index: 0;
+	display: -webkit-box;
+	display: -webkit-flex;
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	-webkit-box-orient: vertical;
+	-webkit-flex-direction: column;
+}
+
+.panel-column {
+	display: -webkit-box;
+	display: -webkit-flex;
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+}
+
+.panel-column.horizontal,
+.panel-column.horizontal > .panel-column-items,
+.dock-root {
+	-webkit-box-orient: horizontal;
+	-webkit-flex-direction: row;
+}
+
+.panel-column.vertical,
+.panel-column.vertical > .panel-column-items {
+	-webkit-box-orient: vertical;
+	-webkit-flex-direction: column;
+}
+
+.panel-column-header {
+	-webkit-box-flex: 0;
+	-webkit-flex: none;
+	font-weight: bold;
+	color: white;
+	padding: 8px;
+	background: -webkit-linear-gradient(top, #393939 0%, #323232 100%);
+}
+
+.panel-column-close-button {
+	float: right;
+}
+
+.panel-column-items,
+.dock-root {
+	display: -webkit-box;
+	display: -webkit-flex;
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+}
+
+.panel-column.horizontal > .panel-column-items > .panel-separator,
+.dock-root > .panel-separator {
+	width: 5px;
+	-webkit-box-flex: 0;
+	-webkit-flex: none;
+	border-left: 1px solid #282828;
+	border-right: 1px solid #282828;
+	background: #3a3a3a;
+	cursor: e-resize;
+}
+
+.panel-column.vertical > .panel-column-items > .panel-separator {
+	height: 5px;
+	-webkit-box-flex: 0;
+	-webkit-flex: none;
+	border-top: 1px solid #282828;
+	border-bottom: 1px solid #282828;
+	background: #3a3a3a;
+	cursor: n-resize;
+}   
+  
+/* trim down on needless resizing handles */
+.panel-separator:first-of-type,
+.panel-column-handle{
+    display: none;
+}                
+>>>>>>> fixed code editor panel resizing on Safari
