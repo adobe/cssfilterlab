@@ -1,0 +1,637 @@
+/*
+Copyright 2012 Adobe Systems, incorporated
+This work is licensed under a Creative Commons Attribution-Noncommercial-Share Alike 3.0 Unported License http://creativecommons.org/licenses/by-nc-sa/3.0/ . 
+Permissions beyond the scope of this license, pertaining to the examples of code included within this work are available at Adobe http://www.adobe.com/communities/guidelines/ccplus/commercialcode_plus_permission.html .
+*/ 
+
+/*
+Copyright 2012 Adobe Systems, incorporated
+This work is licensed under a Creative Commons Attribution-Noncommercial-Share Alike 3.0 Unported License http://creativecommons.org/licenses/by-nc-sa/3.0/ . 
+Permissions beyond the scope of this license, pertaining to the examples of code included within this work are available at Adobe http://www.adobe.com/communities/guidelines/ccplus/commercialcode_plus_permission.html .
+*/ 
+
+@mixin prefixProperty($property, $value){
+    -webkit-#{$property}: $value;
+    -moz-#{$property}: $value;    
+    -ms-#{$property}: $value;    
+    -o-#{$property}: $value;      
+    #{$property}: $value;           
+}
+
+@mixin prefixValue($property, $value){
+    #{$property}: -webkit-#{$value};
+    #{$property}: -moz-#{$value};
+    #{$property}: -ms-#{$value};
+    #{$property}: -o-#{$value};
+    #{$property}: #{$value};
+}
+
+@mixin flexbox{
+    @include prefixValue(display, flex);     
+    @include prefixValue(display, box);     
+} 
+
+@mixin flex($value: 1){
+    @include prefixProperty(flex, $value);
+    @include prefixProperty(box-flex, $value);
+}  
+
+@mixin noflex{
+    @include prefixProperty(box-flex, 0);
+	@include prefixProperty(flex, none);
+}   
+
+@mixin hbox{
+    @include flexbox;
+    @include prefixProperty(box-orient, horizontal);
+    @include prefixProperty(flex-direction, row);
+}          
+
+@mixin vbox{
+    @include flexbox;
+    @include prefixProperty(box-orient, vertical);
+    @include prefixProperty(flex-direction, column);
+} 
+
+@mixin user-select($value: auto){
+	-webkit-touch-callout: $value;
+	-webkit-user-select: $value;
+	-khtml-user-select: $value;
+	-moz-user-select: $value;
+	-ms-user-select: $value;
+	user-select: $value;
+}
+
+@mixin northstar-bg{
+    background: $baseColorLight url("northstar/img/x1/bg_dark.png") repeat-x;
+}
+
+$baseColorLight: #494D4E /* Slate Gray */; 
+$baseColorDark: #3B3F41 /* Slate Gray */; 
+
+@import "dock";      
+@import "params";
+
+html, 
+body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+header {    
+    background: $baseColorDark;
+    height: 80px;
+    padding: 15px 15px 0;
+    overflow: hidden; 
+    
+    h1 {
+        font-size: 32px;
+        margin: 0;
+        color: #eee;
+        text-shadow: 0 -1px 0 black;        
+    }
+    
+    .logo {
+        display: block;
+        position: absolute;
+        top: 0px;
+        right: 50px;
+        width: 37px;
+        height: 63px;  
+    }
+}
+
+#container { 
+    @include user-select(auto);
+	width: 600px;
+	color: black;
+	position: relative;
+	margin: 35px auto 5px;
+    font-size: 12px;
+    padding: 25px;
+    border: 6px solid #33ccff;
+    background: white;
+    border-radius: 10px;
+	text-align: justify;
+	
+	#multi-col{
+	    @include prefixProperty(column-count, 2);
+	    @include prefixProperty(column-gap, 3em);
+	    
+	    h2{
+	        color: #eb3d3c;
+            font-size: 36px;
+            margin: 0px;
+        	text-align: center;
+        }
+    }	
+    
+    #svg-img {
+        background: -webkit-linear-gradient(#20baff 0%, #b6eeff 100%);
+    	display: block;
+    	margin: auto;
+    	border-left: 8px solid #eb3d3c;
+    	box-shadow: 2px 2px 6px 3px rgba(0, 0, 0, 0.25);
+    	margin-bottom: 2em;
+    }
+
+    #png-img {
+    	display: block; 
+    	margin: auto;
+    	border-right: 8px solid #eb3d3c;
+    	box-shadow: 2px 2px 6px 3px rgba(0, 0, 0, 0.25);
+    	margin-bottom: 2em;
+    }
+
+    #css3-img {
+    	position: absolute;
+    	display: block;
+    	border: 6px solid #33ccff;
+    	background: white;
+    	border-radius: 45px;
+    	padding: 10px;
+    	width: 30px;
+    	height: 30px;
+    	bottom: -30px;
+    	right: 20px;
+    }
+}
+
+#filter-list,
+#animations {
+	padding: 0px;
+	margin: 0px;
+	padding-bottom: 100px;
+}
+
+#filter-list h2, 
+#filter-list label {
+	color: #777;         
+	margin: 10px 0 5px;
+	padding:0 0 0 10px;
+	text-shadow: black 0px 1px 0px;
+	font-size: 14px;
+	font-weight: normal;
+}
+
+#filter-list li,
+#animations li {
+    position: relative;
+	list-style: none;
+	color: white;
+	padding: 4px;
+	min-width: 20ex;
+	text-align: left;
+	font-size: 12px;
+	font-weight: bold;
+	margin: 0px;
+	padding-left: 15px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+    -webkit-transition-property: height, top, bottom, left, width;
+}
+
+#filter-list li:hover,
+#animations li:hover {
+	color: white;
+	font-weight: bold;
+}
+
+#filter-list li.current,
+#animations li.current {
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#filter-list li .filter-name {
+	font-size: 1.2em;
+}
+
+#filter-list li .delete-filter {
+    float: left;
+    padding: 3px;
+    position: relative;
+    left: -10px;
+    background: #333333;
+    width: 20px;
+    border-radius: 25px;
+    font-size: 10px;
+}
+
+#filter-list li .delete-filter:hover {
+	background: #cc0000;
+}
+
+#filter-list li .dragpoint {
+    float:right;
+    width: 20px;
+    height: 15px;
+    margin-right: 10px;
+    background: url(../images/dragger.svg);
+    cursor: -webkit-grab;
+}
+
+#filter-list li.dragging, #menu li.dragging .dragpoint {
+    cursor: -webkit-grabbing;
+}
+
+#filter-list li > .config {
+	display: none;
+}
+
+#filter-list li.current > .config {
+	display: block;
+}
+
+#animations li:hover,
+#filter-list li .filter-name:hover,
+.filter-stock li .customize-link:hover {
+	cursor:pointer;
+	text-decoration: underline;
+}
+
+#filter-list li.builtin-filter,
+.filter-stock .filter-item.builtin-filter {
+	border-left: rgba(255, 0, 0, 0.2) 5px solid;
+}
+
+#filter-list li.custom-filter,
+.filter-stock .filter-item.custom-filter {
+	border-left: rgba(0, 255, 0, 0.2) 5px solid;
+}
+
+#filter-list li.forked-filter,
+.filter-stock .filter-item.forked-filter {
+	border-left: rgba(0, 0, 255, 0.2) 5px solid;	
+}
+
+#filter-list #filter-list-empty {
+	color: #ccc;
+	font-weight: normal;
+}
+
+.filter-stock .filter-item {
+	border-bottom: 1px solid #555;
+}
+
+.filter-stock .filter-item:after {
+	display: block;
+	content: "";
+	clear: both;
+}
+
+.filter-stock .filter-item .filter-preview {
+	width: 75px;
+	height: 50px;
+	margin: 5px 15px 5px 5px;
+	background: url(../images/planes.jpg) center center no-repeat;
+    background-size: 75px 50px;
+}
+
+.filter-stock .filter-item .filter-label {
+    @include flexbox;
+    @include flex;
+    @include prefixProperty(box-align, center);
+}
+
+.filter-stock .filter-item .button-box{
+    @include flexbox;
+    @include flex;                         
+    @include prefixProperty(box-align, center);
+    @include prefixProperty(box-pack, end);
+    
+    padding: 0 15px 0 10px;
+}
+      
+
+.filter-stock .filter-item{
+    @include flexbox;
+    @include prefixProperty(box-orientation, horizontal);
+} 
+
+#animations-container {
+	/* JS will make this visible if File API is available. */
+	display: none;
+}
+
+#animation-store-buttons {
+	margin-top: 5px;
+	margin-left: 5px;
+	margin-bottom: 10px;
+}
+
+#timeline {
+	padding: 10px;
+	overflow-x: hidden;
+
+	.controls {  
+		top:14px;    
+		left:0;
+		position:relative; 
+		width:50px;
+	
+        & > div {
+		    float: left;
+		    width: 12px;  
+		    height: 14px; 
+		    cursor :pointer;
+		    text-indent: -9999em;
+	    }  
+	
+    	.play {
+    		float: none;
+    		clear: both;
+    		width: 42px;
+    		padding: 1px 0; 
+    		margin-top: -12px; 
+    		margin-bottom: 20px;
+    		background: url(../images/icons/P_Play_Lg_N_D.png) center center no-repeat; 
+    		border: 1px solid #1f1f1f;   
+    	}
+	
+    	.play.active {
+    		background: url(../images/icons/P_Stop_Lg_R_D.png) center center no-repeat;  
+    		background-color: #1f1f1f;   
+		
+    	}
+	
+    	.next, 
+    	.prev {
+    		background: url(../images/icons/P_KeynavNext_14x11_D_D.png) center center no-repeat;   
+    	}
+	
+    	.next.active,
+    	.prev.active {
+    		background: url(../images/icons/P_KeynavNext_14x11_N_D.png) center center no-repeat;   
+    	}
+	
+    	.prev {       
+    	    @include prefixProperty(transform, rotateY(180deg));
+    	} 
+	
+    	.toggle {
+    		margin: 0 4px;   
+    		background: url(../images/icons/P_KeynavKey_11x14_N_D.png) center center no-repeat;   
+    	}
+	
+    	.toggle.active { 
+    		background: url(../images/icons/P_KeynavKey_11x14_S_D.png) center center no-repeat;   
+    	}
+	} 
+
+    .time {
+    	height: 16px;
+    	margin: -22px 0 2px;  
+    	border-bottom: 1px dashed #ccc;  
+    	padding-bottom: 15px;
+    	position: relative;  
+    	
+    	$breakColor: #fc0;
+    	
+    	input[type="number"]{
+            position: absolute;   
+            width: 63px;    
+            height: 32px; 
+            text-align: right;
+            background: none;
+            margin: 0; 
+            padding: 0 3px 0 0;
+            right: 0;
+            top: -7px;
+            color: $breakColor;   
+            outline: none;
+            border: none;
+        }
+        
+        .start{
+            color: $breakColor;
+        	left: 0;
+        }
+    }   
+    
+    .keyframes {  
+        position: relative;
+        margin: -10px 20px 0 60px;
+    }
+    
+    .keyframe_wrapper{
+    	background: #656565;  
+    	padding: 0 6px 0 4px;
+    }
+
+    .keyframe_bar{
+        position: relative;
+    }
+
+    .keyframes_list{
+    	position:relative; 
+    	height: 18px;
+    }
+
+    .keyframe { 
+    	@include prefixValue(cursor, grab);
+    	top: 2px;
+    	margin-left: -5px;
+        position: absolute;
+        width: 11px;
+        height: 14px;
+        background-image: url(../images/icons/P_KeynavKey_11x14_N.png);
+        background-repeat: no-repeat;
+        
+        &.active { 
+            background-image: url(../images/icons/P_KeynavKey_11x14_S_D.png);  
+        }
+    }
+
+    .play_head{
+        position: absolute;
+    	cursor:hand;
+        margin-left: -5px;
+    	margin-top:-32px;   
+        width: 12px;
+        height: 16px;
+        background-image: url(../images/icons/P_TimelineCompMarker_Sm_N_D.png);
+        background-repeat: no-repeat;
+    	cursor:-webkit-grab;
+    	
+    	.laser{
+        	position: relative;
+        	display: block;
+        	height: 18px;
+        	width: 1px;   
+        	margin: 14px auto 0; 
+        	background: red;
+        	opacity: 0.75;
+	    }
+    }
+}
+  
+/* Syntax highligt ------------------------------------------------------------------------------- */
+.code {
+    color: #fff;
+    padding: 10px;
+    @include user-select(auto); 
+
+    a{
+    	color:white;
+    }
+
+    .function-name {
+        color: #7c91a9;
+    }
+
+    .function-name.custom {
+        color: #ff9130;
+    }
+
+    .parameter-name {
+        color: #7c91a9;
+    }
+
+    .keyword {
+        color: #7c91a9;
+    }
+
+    .parameter-value {
+        color: #fde15d;
+    }
+
+    .parameter-unit {
+        color: #ff9130;
+    }
+
+    .function-arguments.custom {
+    }
+
+    .keyframe-percent {
+        color: white;
+    }
+
+    .property-name {
+        color: #DB9E36;
+    }
+
+    .keyframe-content {
+        margin-left: 20px;
+    }
+} 
+
+
+.code-panel {
+	position: relative;
+	background: white;
+	color: black;
+	height: 100%;
+	
+	.code-view {
+    	position: absolute;
+    	left: 0px;
+    	right: 0px;
+    	top: 0px;
+    	bottom: 0px;
+    	
+    	.error-line {
+        	background: rgba(255, 0, 0, 0.7);
+        	color: white;
+        	border: 1px solid rgba(190, 0, 0, 1);
+        }
+        
+        .error-bookmark {
+        	font-weight: bold;
+        	background: rgba(255, 0, 0, 0.5);
+        }
+    }               
+    
+}
+
+#config-editor .code-view {
+	bottom: 35px;
+}
+
+#config-editor .code-bottom {
+	position: absolute;
+	left: 0px;
+	right: 0px;
+	
+	bottom: 0px;
+	border-top: 1px solid #ccc;
+	padding: 5px 15px 0 0;
+	color: #333;
+	overflow: auto;
+	height: 39px;
+	text-align: right;
+	background: #535353;
+}
+
+#shader-errors {
+	background: #d7d7d7;
+	color: black; 
+	
+	&>div {
+	    padding: 10px;	    
+	}          
+	
+	.header {
+    	font-weight: bold;
+    	margin-top: 5px;
+    }
+    
+    .inline-shader-errors {
+        @include user-select(auto);
+    }
+    
+    pre {
+    	margin: 0;
+    	font-size: 0.9em;
+    }
+}
+
+.loader{
+    .progress-bar {
+   	    border: 1px solid #333;
+   	    height: 30px;
+   	    
+   	    .progress-bar-interior {
+        	background: #ccc;
+        	width: 0%;
+        	height: 30px;
+        }
+   	}    
+}
+
+
+/* Selection ------------------------------------------------------------------------------- */
+
+::selection {
+    background: #e0f0fa;
+    color: #000;
+}
+
+/* Scrollbars ------------------------------------------------------------------------------- */
+
+::-webkit-scrollbar {
+	height: 8px;
+    width: 8px;
+}
+ 
+::-webkit-scrollbar-track {
+	background: rgba(0,0,0,0.1);
+	box-shadow: inset 0 0 6px rgba(0,0,0,0); 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0); 
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+}
+ 
+::-webkit-scrollbar-thumb {
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+    border: 1px solid rgba(255,255,255,0.15);
+    background: rgba(0,0,0,0.3);
+    box-shadow: inset 0 0 6px rgba(0,0,0,0); 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0); 
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+    background: rgba(0,0,0,0.1); 
+}
