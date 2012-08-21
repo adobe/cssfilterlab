@@ -50,14 +50,15 @@
 	padding-right: 8px;
 	border-top: 1px solid #4a4a4a;
 	border-right: 1px solid #282828;
-	color: white;
+	color: #899395;
 	font-size: 11px;
 	font-weight: bold;
-	cursor: pointer;
+	cursor: pointer;  
 }
 
 .panel-tab:hover {
-	background: rgba(112, 112, 112, 0.24);
+	background: rgba(112, 112, 112, 0.24);  
+	color: white;
 }
 
 .panel-tab.active {
@@ -66,7 +67,8 @@
 	border-top: 1px solid #6a6a6a;
 	background: #3A3F42 url("northstar/img/x1/bg_dark.png") repeat-x;
 	border-bottom: 2px solid #494D4E;
-	height: 13px;
+	height: 13px;  
+	color: white;
 }
 
 .panel-container {
