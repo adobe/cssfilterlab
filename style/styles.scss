@@ -200,7 +200,8 @@ header {
 }
 
 #filter-list li.current,
-#animations li.current {
+#animations li.current {   
+    @include northstar-bg;
 	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -208,23 +209,20 @@ header {
 	font-size: 1.2em;
 }
 
-#filter-list li .delete-filter {
-    float: left;
-    padding: 3px;
+#filter-list li .delete-filter{
+    border: none;
+    float: right;
     position: relative;
-    left: -10px;
-    background: #333333;
+    cursor: pointer;
     width: 20px;
-    border-radius: 25px;
-    font-size: 10px;
-}
-
-#filter-list li .delete-filter:hover {
-	background: #cc0000;
+    height: 20px;
+    text-indent: -999px;
+    background: transparent url('../images/third_party/noun_project_3875.svg') top left no-repeat; 
+    background-size: 18px; 
 }
 
 #filter-list li .dragpoint {
-    float:right;
+    float: left;
     width: 20px;
     height: 15px;
     margin-right: 10px;
@@ -234,6 +232,10 @@ header {
 
 #filter-list li.dragging, #menu li.dragging .dragpoint {
     cursor: -webkit-grabbing;
+}     
+
+#filter-list li.dragging.current{
+    background: $baseColorDark;
 }
 
 #filter-list li > .config {
