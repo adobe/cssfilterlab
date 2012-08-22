@@ -11,4 +11,24 @@ cd ./path/to/css/filter/studio/
 python -m SimpleHTTPServer
 </pre>
 
-Open [http://localhost:8000](http://localhost:8000) in your browser.
+Open [http://localhost:8000](http://localhost:8000) in your browser.  
+
+
+Contributing
+------------
+
+### CSS Styles
+The project uses [SASS](http://sass-lang.com/) to streamline working with CSS files. 
+
+You may edit the CSS files directly. However, if you want to contribute your changes back you'll need to make the edits in the corresponding SCSS files and use SASS to regenerate the CSS files.                                                                  
+
+Working with SASS:    
+
+- [Install SASS](http://sass-lang.com/download.html) (requires Ruby)
+
+- Tell SASS to watch the `style` folder and regenerate CSS files when you make changes to SCSS files  
+    - `$ sass --watch --style expanded style/:style/`
+
+See the [SASS tutorial](http://sass-lang.com/tutorial.html) for more details on generating CSS files with SASS. 
+
+
