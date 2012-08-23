@@ -57,16 +57,17 @@ Permissions beyond the scope of this license, pertaining to the examples of code
 }
 
 .panel-tab-list {
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
-  display: -o-flex;
-  display: flex;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-box;
   display: -o-box;
   display: box;
+  /* Flex needs to be last, so that we use the new flex-box when it's available */
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
   -webkit-box-orient: horizontal;
   -moz-box-orient: horizontal;
   -ms-box-orient: horizontal;
@@ -121,16 +122,17 @@ Permissions beyond the scope of this license, pertaining to the examples of code
 
 .panel-container {
   z-index: 0;
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
-  display: -o-flex;
-  display: flex;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-box;
   display: -o-box;
   display: box;
+  /* Flex needs to be last, so that we use the new flex-box when it's available */
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
   -webkit-box-orient: vertical;
   -moz-box-orient: vertical;
   -ms-box-orient: vertical;
@@ -154,16 +156,17 @@ Permissions beyond the scope of this license, pertaining to the examples of code
 }
 
 .panel-column {
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
-  display: -o-flex;
-  display: flex;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-box;
   display: -o-box;
   display: box;
+  /* Flex needs to be last, so that we use the new flex-box when it's available */
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
   -webkit-flex: 1;
   -moz-flex: 1;
   -ms-flex: 1;
@@ -179,16 +182,17 @@ Permissions beyond the scope of this license, pertaining to the examples of code
 .panel-column.horizontal,
 .panel-column.horizontal > .panel-column-items,
 .dock-root {
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
-  display: -o-flex;
-  display: flex;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-box;
   display: -o-box;
   display: box;
+  /* Flex needs to be last, so that we use the new flex-box when it's available */
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
   -webkit-box-orient: horizontal;
   -moz-box-orient: horizontal;
   -ms-box-orient: horizontal;
@@ -203,16 +207,17 @@ Permissions beyond the scope of this license, pertaining to the examples of code
 
 .panel-column.vertical,
 .panel-column.vertical > .panel-column-items {
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
-  display: -o-flex;
-  display: flex;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-box;
   display: -o-box;
   display: box;
+  /* Flex needs to be last, so that we use the new flex-box when it's available */
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
   -webkit-box-orient: vertical;
   -moz-box-orient: vertical;
   -ms-box-orient: vertical;
@@ -248,16 +253,17 @@ Permissions beyond the scope of this license, pertaining to the examples of code
 
 .panel-column-items,
 .dock-root {
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
-  display: -o-flex;
-  display: flex;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-box;
   display: -o-box;
   display: box;
+  /* Flex needs to be last, so that we use the new flex-box when it's available */
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
   -webkit-flex: 1;
   -moz-flex: 1;
   -ms-flex: 1;
@@ -611,12 +617,27 @@ header .logo {
 
 .filter-stock .filter-item {
   border-bottom: 1px solid #555;
-}
-
-.filter-stock .filter-item:after {
-  display: block;
-  content: "";
-  clear: both;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-box;
+  display: -o-box;
+  display: box;
+  /* Flex needs to be last, so that we use the new flex-box when it's available */
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  -webkit-box-orientation: horizontal;
+  -moz-box-orientation: horizontal;
+  -ms-box-orientation: horizontal;
+  -o-box-orientation: horizontal;
+  box-orientation: horizontal;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
+  align-items: center;
 }
 
 .filter-stock .filter-item .filter-preview {
@@ -628,16 +649,17 @@ header .logo {
 }
 
 .filter-stock .filter-item .filter-label {
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
-  display: -o-flex;
-  display: flex;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-box;
   display: -o-box;
   display: box;
+  /* Flex needs to be last, so that we use the new flex-box when it's available */
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
   -webkit-flex: 1;
   -moz-flex: 1;
   -ms-flex: 1;
@@ -656,16 +678,17 @@ header .logo {
 }
 
 .filter-stock .filter-item .button-box {
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
-  display: -o-flex;
-  display: flex;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-box;
   display: -o-box;
   display: box;
+  /* Flex needs to be last, so that we use the new flex-box when it's available */
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
   -webkit-flex: 1;
   -moz-flex: 1;
   -ms-flex: 1;
@@ -686,25 +709,16 @@ header .logo {
   -ms-box-pack: end;
   -o-box-pack: end;
   box-pack: end;
+  -webkit-flex: 0;
+  -moz-flex: 0;
+  -ms-flex: 0;
+  -o-flex: 0;
+  flex: 0;
   padding: 0 15px 0 10px;
 }
 
-.filter-stock .filter-item {
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
-  display: -o-flex;
-  display: flex;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-box;
-  display: -o-box;
-  display: box;
-  -webkit-box-orientation: horizontal;
-  -moz-box-orientation: horizontal;
-  -ms-box-orientation: horizontal;
-  -o-box-orientation: horizontal;
-  box-orientation: horizontal;
+.filter-stock .filter-item .button-box > a {
+  margin-left: 5px;
 }
 
 #animations-container {
