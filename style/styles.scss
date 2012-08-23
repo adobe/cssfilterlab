@@ -27,8 +27,9 @@ Permissions beyond the scope of this license, pertaining to the examples of code
 }
 
 @mixin flexbox{
-    @include prefixValue(display, flex);     
-    @include prefixValue(display, box);     
+    @include prefixValue(display, box);
+    /* Flex needs to be last, so that we use the new flex-box when it's available */
+    @include prefixValue(display, flex);
 } 
 
 @mixin flex($value: 1){
