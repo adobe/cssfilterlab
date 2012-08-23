@@ -1,5 +1,90 @@
 /* Nothstar CSS here pls ------------------------------------------------------------------------------- */
 
+/* Fonts
+100 = thin
+200 = extra-light
+300 = light
+400 = normal, book
+500 = medium
+600 = demi-bold
+700 = bold
+800 = heavy
+900 = black
+*/
+
+a {
+	color: #0083e8;
+	text-decoration: none;
+	text-shadow: 0 1px 0 #e7e7e7;
+}
+
+a:active {
+	text-decoration: underline;
+}
+
+.bg-white {
+	background: #fff;
+	color: #444;
+	font-size: 12px;
+	font-weight: 400;
+}
+
+.bg-lightgray {
+	background: #dfe2e2;
+	color: #444;
+	font-size: 12px;
+	font-weight: 400;
+}
+
+.bg-slategray {
+	background: #3a3f42 url("../img/x1/bg_dark.png") repeat-x;
+	color: #c7c7c7;
+	font-size: 12px;
+	font-weight: 400;
+}
+
+.large,
+.large li {
+	font-size: 14px !important;
+}
+
+.bg-lightgray a {
+	color: #0083e8;
+	text-shadow: 0 1px 0 #cfcfcf;
+}
+
+.bg-slategray a {
+	color: #6bc3fa;
+	text-shadow: 0 1px 0 #000;
+}
+
+.bg-white .title {
+	color: #000;
+	font-size: 18px;
+	font-weight: 300;
+}
+
+.bg-lightgray .title {
+	font-size: 18px;
+	font-weight: 300;
+	text-shadow: 0 1px 0 #fff;	
+}
+
+.bg-slategray .title {
+	color: #fff;
+	font-size: 18px;
+	text-shadow: 0 -1px 0 #000;	
+}
+
+.bg-slategray .group-label {
+	color: #899395;
+	font-size: 14px;
+	text-shadow: 0 -1px 0 #000;
+}
+
+
+
+
 /* Checkbox */
 
 input[type=checkbox] {
@@ -9,6 +94,7 @@ input[type=checkbox] {
 input[type=checkbox] + label {
 	background: url("../img/x1/checkbox_unchecked.png") no-repeat;
 	display: inline-block;
+	font-weight: 400;
 	padding: 0 0 0 20px;
 }
    
@@ -120,7 +206,7 @@ input.dark[type=checkbox]:checked + label {
     height: 19px;
     font-size: 12px;
     font-weight: 700;
-    line-height: 19px;
+    line-height: 20px;
     position: absolute;
     text-align: center;
     text-shadow: 0 1px 0 #fff;
@@ -256,6 +342,7 @@ input.dark[type=checkbox]:checked + label {
 	-webkit-border-radius: 4px;
     border-radius: 3px;
     font-size: 12px;
+    font-weight: 400;
     height: 21px;
     margin: 0 0 5px 0;
     padding: 1px 3px 0 3px;
@@ -315,7 +402,6 @@ input.dark[type=checkbox]:checked + label {
 /* Breadcrumbs */
 
 .breadcrumbs {
-	font-size: 16pxm;
 	list-style: none;
 	margin: 0;
 	padding: 0;
@@ -325,31 +411,38 @@ input.dark[type=checkbox]:checked + label {
 	background: url("../img/x1/breadcrumb.png") no-repeat right 3px;
 	color: #000;
 	display: inline-block;
-	margin: 0 6px 0 0;
-	padding: 0 14px 0 0;
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 18px;
+	margin: 0 3px 0 0;
+	padding: 0 11px 0 0;
 }
 
 .breadcrumbs li:last-child {
 	background: none;
 }
 
-.breadcrumbs.dark li {
+.bg-slategray .breadcrumbs li {
 	color: #fff;
-    text-shadow: 0px 1px 0px rgba(0,0,0,0.75);
 }
 
 .breadcrumbs a {
-	color: #666;
+	color: #888;
 	text-decoration: none;
 }
 
-.breadcrumbs.dark a {
+.bg-slategray .breadcrumbs a {
 	color: #bbb;
 }
 
 /* End Breadcrumbs */
 
 /* Button */
+
+a.button {
+	text-decoration: none !important;
+}
+
 .button, .button.disabled:hover, .button.disabled:active {
 	display: inline-block;
 	text-decoration: none;
@@ -360,6 +453,7 @@ input.dark[type=checkbox]:checked + label {
 	padding: 3px 7px;
 	height: 15px;
 	font-size: 12px;
+	font-weight: 400;
 	text-shadow: 0 1px 0 #FFF;
 	-webkit-background-clip: padding-box;
 	background-clip: padding-box;
@@ -408,7 +502,7 @@ input.dark[type=checkbox]:checked + label {
 
 /*Dark Button*/
 .button.dark, .button.dark.disabled:hover, .button.dark.disabled:active {
-	border: 1px solid rgba(0,0,0,0.84);
+	border: 1px solid rgba(0,0,0,0.48);
 	background-color: #6c6e6e;
 	color: #f0f1f1;
 	text-shadow: 0 -1px hsla(0, 0%, 0%, 0.7);
@@ -532,6 +626,7 @@ input.dark[type=checkbox]:checked + label {
 	-moz-border-radius: 3px;
 	border-radius: 3px;
 	display: inline-block;
+	font-weight: 400;
 	padding: 0;
 	-webkit-font-smoothing: subpixel-antialiased;
 }
