@@ -1,67 +1,63 @@
 /*
-Syntax error: Undefined mixin 'user-select'.
-        on line 7 of style/dock.scss, in `user-select'
-        from line 7 of style/dock.scss
+Syntax error: Undefined mixin 'flex'.
+        on line 6 of style/dock.scss, in `flex'
+        from line 6 of style/dock.scss
 
-2: 	position: absolute;
-3:     top: 70px;
-4: 	left: 0px;
-5: 	right: 0px;
-6: 	bottom: 0px;  
-7: 	@include user-select(none);
-8: }
-9: 
-10: .panel-view {
-11: 	display: none;
-12: }
+1: .panel-view {
+2: 	display: none;
+3: }
+4: 
+5: .panel-view.active {
+6:     @include flex;
+7:     @include northstar-bg;
+8:     
+9: 	display: block;
+10: 	border-top: 1px solid #6a6a6a;
+11: 	color: white;
 
 Backtrace:
-style/dock.scss:7:in `user-select'
-style/dock.scss:7
-/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.1.5/lib/sass/tree/visitors/perform.rb:169:in `visit_mixin'
-/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.1.5/lib/sass/tree/visitors/base.rb:37:in `visit'
-/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.1.5/lib/sass/tree/visitors/perform.rb:18:in `visit'
-/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.1.5/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
-/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.1.5/lib/sass/tree/visitors/base.rb:53:in `map'
-/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.1.5/lib/sass/tree/visitors/base.rb:53:in `visit_children'
-/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.1.5/lib/sass/tree/visitors/perform.rb:27:in `block in visit_children'
-/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.1.5/lib/sass/tree/visitors/perform.rb:39:in `with_environment'
-/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.1.5/lib/sass/tree/visitors/perform.rb:26:in `visit_children'
-/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.1.5/lib/sass/tree/visitors/base.rb:37:in `block in visit'
-/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.1.5/lib/sass/tree/visitors/perform.rb:230:in `visit_rule'
-/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.1.5/lib/sass/tree/visitors/base.rb:37:in `visit'
-/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.1.5/lib/sass/tree/visitors/perform.rb:18:in `visit'
-/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.1.5/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
-/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.1.5/lib/sass/tree/visitors/base.rb:53:in `map'
-/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.1.5/lib/sass/tree/visitors/base.rb:53:in `visit_children'
-/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.1.5/lib/sass/tree/visitors/perform.rb:27:in `block in visit_children'
-/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.1.5/lib/sass/tree/visitors/perform.rb:39:in `with_environment'
-/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.1.5/lib/sass/tree/visitors/perform.rb:26:in `visit_children'
-/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.1.5/lib/sass/tree/visitors/base.rb:37:in `block in visit'
-/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.1.5/lib/sass/tree/visitors/perform.rb:47:in `visit_root'
-/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.1.5/lib/sass/tree/visitors/base.rb:37:in `visit'
-/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.1.5/lib/sass/tree/visitors/perform.rb:18:in `visit'
-/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.1.5/lib/sass/tree/visitors/perform.rb:7:in `visit'
-/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.1.5/lib/sass/tree/root_node.rb:20:in `render'
-/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.1.5/lib/sass/engine.rb:291:in `_render'
-/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.1.5/lib/sass/engine.rb:238:in `render'
-/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.1.5/lib/sass/plugin/compiler.rb:319:in `update_stylesheet'
-/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.1.5/lib/sass/plugin/compiler.rb:181:in `block (2 levels) in update_stylesheets'
-/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.1.5/lib/sass/plugin/compiler.rb:175:in `each'
-/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.1.5/lib/sass/plugin/compiler.rb:175:in `block in update_stylesheets'
-/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.1.5/lib/sass/plugin/compiler.rb:173:in `each'
-/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.1.5/lib/sass/plugin/compiler.rb:173:in `update_stylesheets'
-/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.1.5/lib/sass/plugin/compiler.rb:214:in `watch'
-/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.1.5/lib/sass/plugin.rb:111:in `method_missing'
-/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.1.5/lib/sass/exec.rb:408:in `watch_or_update'
-/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.1.5/lib/sass/exec.rb:294:in `process_result'
-/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.1.5/lib/sass/exec.rb:41:in `parse'
-/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.1.5/lib/sass/exec.rb:21:in `parse!'
-/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.1.5/bin/sass:8:in `<top (required)>'
-/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/bin/sass:19:in `load'
-/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/bin/sass:19:in `<main>'
+style/dock.scss:6:in `flex'
+style/dock.scss:6
+/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.2.1/lib/sass/tree/visitors/perform.rb:249:in `visit_mixin'
+/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.2.1/lib/sass/tree/visitors/base.rb:37:in `visit'
+/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.2.1/lib/sass/tree/visitors/perform.rb:98:in `visit'
+/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.2.1/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
+/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.2.1/lib/sass/tree/visitors/base.rb:53:in `map'
+/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.2.1/lib/sass/tree/visitors/base.rb:53:in `visit_children'
+/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.2.1/lib/sass/tree/visitors/perform.rb:107:in `block in visit_children'
+/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.2.1/lib/sass/tree/visitors/perform.rb:119:in `with_environment'
+/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.2.1/lib/sass/tree/visitors/perform.rb:106:in `visit_children'
+/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.2.1/lib/sass/tree/visitors/base.rb:37:in `block in visit'
+/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.2.1/lib/sass/tree/visitors/perform.rb:316:in `visit_rule'
+/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.2.1/lib/sass/tree/visitors/base.rb:37:in `visit'
+/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.2.1/lib/sass/tree/visitors/perform.rb:98:in `visit'
+/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.2.1/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
+/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.2.1/lib/sass/tree/visitors/base.rb:53:in `map'
+/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.2.1/lib/sass/tree/visitors/base.rb:53:in `visit_children'
+/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.2.1/lib/sass/tree/visitors/perform.rb:107:in `block in visit_children'
+/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.2.1/lib/sass/tree/visitors/perform.rb:119:in `with_environment'
+/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.2.1/lib/sass/tree/visitors/perform.rb:106:in `visit_children'
+/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.2.1/lib/sass/tree/visitors/base.rb:37:in `block in visit'
+/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.2.1/lib/sass/tree/visitors/perform.rb:126:in `visit_root'
+/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.2.1/lib/sass/tree/visitors/base.rb:37:in `visit'
+/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.2.1/lib/sass/tree/visitors/perform.rb:98:in `visit'
+/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.2.1/lib/sass/tree/visitors/perform.rb:7:in `visit'
+/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.2.1/lib/sass/tree/root_node.rb:20:in `render'
+/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.2.1/lib/sass/engine.rb:315:in `_render'
+/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.2.1/lib/sass/engine.rb:262:in `render'
+/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.2.1/lib/sass/plugin/compiler.rb:340:in `update_stylesheet'
+/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.2.1/lib/sass/plugin/compiler.rb:202:in `block in update_stylesheets'
+/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.2.1/lib/sass/plugin/compiler.rb:200:in `each'
+/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.2.1/lib/sass/plugin/compiler.rb:200:in `update_stylesheets'
+/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.2.1/lib/sass/plugin/compiler.rb:298:in `block in watch'
+/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.2.1/vendor/listen/lib/listen/multi_listener.rb:86:in `call'
+/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.2.1/vendor/listen/lib/listen/multi_listener.rb:86:in `on_change'
+/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.2.1/vendor/listen/lib/listen/multi_listener.rb:95:in `block in initialize_adapter'
+/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.2.1/vendor/listen/lib/listen/adapter.rb:162:in `call'
+/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.2.1/vendor/listen/lib/listen/adapter.rb:162:in `poll_changed_dirs'
+/Users/rcaliman/.rvm/gems/ruby-1.9.3-p0/gems/sass-3.2.1/vendor/listen/lib/listen/adapters/darwin.rb:28:in `block in start'
 */
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Syntax error: Undefined mixin 'user-select'.\A         on line 7 of style/dock.scss, in `user-select'\A         from line 7 of style/dock.scss\A \A 2: 	position: absolute;\A 3:     top: 70px;\A 4: 	left: 0px;\A 5: 	right: 0px;\A 6: 	bottom: 0px;  \A 7: 	@include user-select(none);\A 8: }\A 9: \A 10: .panel-view {\A 11: 	display: none;\A 12: }"; }
+  content: "Syntax error: Undefined mixin 'flex'.\A         on line 6 of style/dock.scss, in `flex'\A         from line 6 of style/dock.scss\A \A 1: .panel-view {\A 2: 	display: none;\A 3: }\A 4: \A 5: .panel-view.active {\A 6:     @include flex;\A 7:     @include northstar-bg;\A 8:     \A 9: 	display: block;\A 10: 	border-top: 1px solid #6a6a6a;\A 11: 	color: white;"; }

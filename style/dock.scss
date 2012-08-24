@@ -1,12 +1,3 @@
-#dock-view {
-	position: absolute;
-    top: 70px;
-	left: 0px;
-	right: 0px;
-	bottom: 0px;  
-	@include user-select(none);
-}
-
 .panel-view {
 	display: none;
 }
