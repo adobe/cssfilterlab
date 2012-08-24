@@ -7,7 +7,7 @@ Permissions beyond the scope of this license, pertaining to the examples of code
 @import "utils";
 @import "northstar/css/type.css";
 
-@mixin proportions-header{
+@mixin proportions{
     height: 15px;
     padding: 15px;
 }
@@ -28,7 +28,7 @@ body {
     header {
         @include flexbox;
         @include valign;
-        @include proportions-header;
+        @include proportions;
 
         & > *{
             /* vertical centering with new flexbox */
@@ -40,12 +40,13 @@ body {
         @include flex;
     }
 
-    footer{
-        @include align-end;
-
+    footer{       
+        @include flexbox;
+        @include proportions;  
+        height: auto;
+        
         margin: auto auto 0 auto;
-        background: lime;
-        height: 100px;
+        border-top: 1px solid #ebebeb;
     }
 
 
@@ -56,6 +57,12 @@ body {
 
         header{
             border-bottom: 1px solid #2e3131;
+            
+            h1, h2, h3{
+                color: white;
+                font-size: 18px;
+                text-shadow: 0 -1px 0 black;
+            }
         }
     }
 
@@ -63,10 +70,13 @@ body {
         @include vbox;
         @include flex;
 
-        -webkit-justify-content: space-between;
-
         header{
-            border-bottom: 1px solid #ccc;
+            border-bottom: 1px solid #ebebeb;
+            -webkit-justify-content: space-between;
+            
+            h1, h2, h3{
+                margin: 0 auto;
+            }
         }
     }
 }
@@ -77,12 +87,26 @@ body {
     margin: auto 0;
 }
 
-
-#editor{
+.modal {
     width: 50%;
-    height: 50%;
+    height: 50%; 
+    min-width: 600px;
     position: absolute;
     top: 25%;
     left: 25%;
-    box-shadow: 0 0 20px 0px rgba(0,0,0,0.35);
-}
+    box-shadow: 0 0 1px 0 #ccc, 0 0 20px 0px rgba(0,0,0,0.15);
+    
+    footer{
+        padding: 10px 15px;
+        -webkit-box-pack: end;
+        -webkit-justify-content: flex-end;
+    }
+} 
+
+
+#app > aside{
+    min-width: 250px;
+    header{
+        -webkit-justify-content: space-between;
+    }
+} 
