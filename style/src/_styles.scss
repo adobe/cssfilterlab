@@ -46,7 +46,6 @@ Permissions beyond the scope of this license, pertaining to the examples of code
 
 #filter-list li.current,
 #animations li.current {
-    @include northstar-bg;
 	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -165,7 +164,8 @@ Permissions beyond the scope of this license, pertaining to the examples of code
 
 #timeline {
 	padding: 10px;
-	overflow-x: hidden;
+	overflow-x: hidden; 
+	@include user-select(none);
 
 	.controls {
 		top:14px;
@@ -229,7 +229,7 @@ Permissions beyond the scope of this license, pertaining to the examples of code
     	padding-bottom: 15px;
     	position: relative;
 
-    	$breakColor: #fc0;
+    	$breakColor: black;
 
     	input[type="number"]{
             position: absolute;
@@ -310,8 +310,12 @@ Permissions beyond the scope of this license, pertaining to the examples of code
 }
 
 /* Syntax highligt ------------------------------------------------------------------------------- */
+.light .code{
+    color: #3B3F41;
+    font-size: 12px;
+}
 .code {
-    color: #fff;
+    color: #fff; 
     padding: 10px;
     @include user-select(auto);
 

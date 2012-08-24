@@ -796,7 +796,6 @@ Permissions beyond the scope of this license, pertaining to the examples of code
 
 #filter-list li.current,
 #animations li.current {
-  background: #494d4e url("northstar/img/x1/bg_dark.png") repeat-x;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -988,6 +987,12 @@ Permissions beyond the scope of this license, pertaining to the examples of code
 #timeline {
   padding: 10px;
   overflow-x: hidden;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 #timeline .controls {
   top: 14px;
@@ -1055,12 +1060,12 @@ Permissions beyond the scope of this license, pertaining to the examples of code
   padding: 0 3px 0 0;
   right: 0;
   top: -7px;
-  color: #ffcc00;
+  color: black;
   outline: none;
   border: none;
 }
 #timeline .time .start {
-  color: #ffcc00;
+  color: black;
   left: 0;
 }
 #timeline .keyframes {
@@ -1117,6 +1122,11 @@ Permissions beyond the scope of this license, pertaining to the examples of code
 }
 
 /* Syntax highligt ------------------------------------------------------------------------------- */
+.light .code {
+  color: #3B3F41;
+  font-size: 12px;
+}
+
 .code {
   color: #fff;
   padding: 10px;
@@ -1281,7 +1291,7 @@ Permissions beyond the scope of this license, pertaining to the examples of code
   -ms-box-flex: 1;
   -o-box-flex: 1;
   box-flex: 1;
-  background: #494d4e url("northstar/img/x1/bg_dark.png") repeat-x;
+  background: #494d4e url("northstar/img/x1/bg_dark.png");
   display: block;
   border-top: 1px solid #6a6a6a;
   color: white;
@@ -1333,35 +1343,30 @@ Permissions beyond the scope of this license, pertaining to the examples of code
   -o-flex: none;
   flex: none;
   background: #3b3f41;
-  height: 20px;
   border-bottom: 1px solid #282828;
 }
 
 .panel-tab {
-  padding: 3px;
-  padding-left: 8px;
-  padding-right: 8px;
+  padding: 5px 10px;
   border-top: 1px solid #4a4a4a;
   border-right: 1px solid #282828;
   color: #899395;
-  font-size: 11px;
-  font-weight: bold;
+  font-size: 12px;
   cursor: pointer;
 }
-
 .panel-tab:hover {
   background: rgba(112, 112, 112, 0.24);
   color: white;
 }
-
 .panel-tab.active {
-  background: #494d4e url("northstar/img/x1/bg_dark.png") repeat-x;
+  background: #494d4e url("northstar/img/x1/bg_dark.png");
   position: relative;
   z-index: 10;
   border-top: 1px solid #6a6a6a;
   border-bottom: 2px solid #494D4E;
-  height: 13px;
   color: white;
+  top: 1px;
+  padding-top: 4px;
 }
 
 .panel-container {
@@ -1522,7 +1527,7 @@ Permissions beyond the scope of this license, pertaining to the examples of code
 
 .panel-column.horizontal > .panel-column-items > .panel-separator,
 .dock-root > .panel-separator {
-  width: 5px;
+  width: 1px;
   -webkit-box-flex: 0;
   -moz-box-flex: 0;
   -ms-box-flex: 0;
@@ -1536,11 +1541,11 @@ Permissions beyond the scope of this license, pertaining to the examples of code
   border-left: 1px solid #282828;
   border-right: 1px solid #282828;
   background: #3a3a3a;
-  cursor: e-resize;
+  cursor: col-resize;
 }
 
 .panel-column.vertical > .panel-column-items > .panel-separator {
-  height: 5px;
+  height: 1px;
   -webkit-box-flex: 0;
   -moz-box-flex: 0;
   -ms-box-flex: 0;
@@ -1554,13 +1559,55 @@ Permissions beyond the scope of this license, pertaining to the examples of code
   border-top: 1px solid #282828;
   border-bottom: 1px solid #282828;
   background: #3a3a3a;
-  cursor: n-resize;
+  cursor: row-resize;
 }
 
 /* trim down on needless resizing handles */
 .panel-separator:first-of-type,
 .panel-column-handle {
   display: none;
+}
+
+.panel-column.vertical.light > .panel-column-items > .panel-separator {
+  border: none;
+  background: white;
+  height: 3px;
+  border-bottom: 1px solid #c4c6c6;
+}
+
+.light .panel-column.horizontal > .panel-column-items > .panel-separator,
+.light .dock-root > .panel-separator {
+  border: none;
+  background: #bdbdbd;
+  border-right: 1px solid white;
+}
+.light section {
+  background: white;
+}
+.light .panel-tab-list {
+  background: #D4D7D7;
+  border-bottom: 1px solid #c4c6c6;
+}
+.light .panel-tab,
+.light .panel-view.active {
+  background: #DFE2E2;
+  border-top: 1px solid #DFE2E2;
+  /*        box-shadow: 0px -1px 0px rgba(255, 255, 255, 1);*/
+}
+.light .panel-tab {
+  border: none;
+  color: #3B3F41;
+  text-shadow: 0 1px 0 white;
+  background: none;
+  border-right: none;
+}
+.light .panel-tab.active {
+  background: #DFE2E2;
+  border-right: 1px solid #c4c6c6;
+  border-left: 1px solid #c4c6c6;
+}
+.light .panel-tab.active:first-child {
+  border-left: none;
 }
 
 /*

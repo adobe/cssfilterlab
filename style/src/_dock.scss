@@ -3,9 +3,8 @@
 }
 
 .panel-view.active {
-    @include flex;
+    @include flex; 
     @include northstar-bg;
-
 	display: block;
 	border-top: 1px solid #6a6a6a;
 	color: white;
@@ -28,35 +27,32 @@
 	@include hbox;
     @include noflex;
 	background: $baseColorDark;
-	height: 20px;
 	border-bottom: 1px solid #282828;
 }
 
 .panel-tab {
-	padding: 3px;
-	padding-left: 8px;
-	padding-right: 8px;
+	padding: 5px 10px;
 	border-top: 1px solid #4a4a4a;
 	border-right: 1px solid #282828;
 	color: #899395;
-	font-size: 11px;
-	font-weight: bold;
+	font-size: 12px;
 	cursor: pointer;
-}
-
-.panel-tab:hover {
-	background: rgba(112, 112, 112, 0.24);
-	color: white;
-}
-
-.panel-tab.active {
-    @include northstar-bg;
-	position: relative;
-	z-index: 10;
-	border-top: 1px solid #6a6a6a;
-	border-bottom: 2px solid #494D4E;
-	height: 13px;
-	color: white;
+	
+	&:hover{
+	    background: rgba(112, 112, 112, 0.24);
+	    color: white;
+	};
+	
+	&.active{
+        @include northstar-bg;
+    	position: relative;
+    	z-index: 10;
+    	border-top: 1px solid #6a6a6a;
+    	border-bottom: 2px solid #494D4E;
+    	color: white; 
+    	top: 1px;
+    	padding-top:4px; 
+	}
 }
 
 .panel-container {
@@ -101,25 +97,76 @@
 
 .panel-column.horizontal > .panel-column-items > .panel-separator,
 .dock-root > .panel-separator {
-	width: 5px;
+	width: 1px;
 	@include noflex;
 	border-left: 1px solid #282828;
 	border-right: 1px solid #282828;
 	background: #3a3a3a;
-	cursor: e-resize;
+	cursor: col-resize;
 }
 
 .panel-column.vertical > .panel-column-items > .panel-separator {
-	height: 5px;
+	height: 1px;
 	@include noflex;
 	border-top: 1px solid #282828;
 	border-bottom: 1px solid #282828;
 	background: #3a3a3a;
-	cursor: n-resize;
+	cursor: row-resize;
 }
 
 /* trim down on needless resizing handles */
 .panel-separator:first-of-type,
-.panel-column-handle{
+.panel-column-handle {
     display: none;
+}
+
+.panel-column.vertical.light > .panel-column-items > .panel-separator{
+    border: none;
+    background: white;
+    height: 3px;
+    border-bottom:1px solid #c4c6c6;
+}
+
+.light {
+    
+    .panel-column.horizontal > .panel-column-items > .panel-separator,
+    .dock-root > .panel-separator{   
+        border: none;
+        background: #bdbdbd;
+        border-right: 1px solid white;
+    }
+    
+    section{
+        background: white;
+    }    
+    
+    .panel-tab-list{
+        background: #D4D7D7;
+        border-bottom: 1px solid #c4c6c6;
+    }  
+    
+    .panel-tab,
+    .panel-view.active{
+        background: #DFE2E2;
+        border-top: 1px solid #DFE2E2;   
+/*        box-shadow: 0px -1px 0px rgba(255, 255, 255, 1);*/
+    }
+    
+    .panel-tab{    
+        border: none;
+        color: #3B3F41;
+        text-shadow: 0 1px 0 white;
+        background: none;
+        border-right: none;
+        
+        &.active{
+            background: #DFE2E2;
+            border-right: 1px solid #c4c6c6;
+            border-left: 1px solid #c4c6c6;
+                        
+            &:first-child{
+                border-left: none;
+            };
+        }
+    }
 }
