@@ -1,3 +1,88 @@
-body{
-    background: whitesmoke;
+/*
+Copyright 2012 Adobe Systems, incorporated
+This work is licensed under a Creative Commons Attribution-Noncommercial-Share Alike 3.0 Unported License http://creativecommons.org/licenses/by-nc-sa/3.0/ .
+Permissions beyond the scope of this license, pertaining to the examples of code included within this work are available at Adobe http://www.adobe.com/communities/guidelines/ccplus/commercialcode_plus_permission.html .
+*/
+
+@import "utils";
+@import "northstar/css/type.css";
+
+@mixin proportions-header{
+    height: 15px;
+    padding: 15px;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    @include hbox;
+    height: 100%;
+
+    header {
+        @include flexbox;
+        @include valign;
+        @include proportions-header;
+
+        & > *{
+            /* vertical centering with new flexbox */
+            margin: auto 0;
+        }
+    }
+
+    .content {
+        @include flex;
+    }
+
+    footer{
+        @include align-end;
+
+        margin: auto auto 0 auto;
+        background: lime;
+        height: 100px;
+    }
+
+
+    aside {
+        width: 20%;
+        min-width: 200px;
+        background: $baseColorLight;
+
+        header{
+            border-bottom: 1px solid #2e3131;
+        }
+    }
+
+    section {
+        @include vbox;
+        @include flex;
+
+        -webkit-justify-content: space-between;
+
+        header{
+            border-bottom: 1px solid #ccc;
+        }
+    }
+}
+
+.nav{
+    @include list-reset;
+    @include hbox;
+    margin: auto 0;
+}
+
+
+#editor{
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    box-shadow: 0 0 20px 0px rgba(0,0,0,0.35);
 }

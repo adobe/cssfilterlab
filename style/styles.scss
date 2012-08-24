@@ -4,72 +4,7 @@ This work is licensed under a Creative Commons Attribution-Noncommercial-Share A
 Permissions beyond the scope of this license, pertaining to the examples of code included within this work are available at Adobe http://www.adobe.com/communities/guidelines/ccplus/commercialcode_plus_permission.html .
 */ 
 
-/*
-Copyright 2012 Adobe Systems, incorporated
-This work is licensed under a Creative Commons Attribution-Noncommercial-Share Alike 3.0 Unported License http://creativecommons.org/licenses/by-nc-sa/3.0/ . 
-Permissions beyond the scope of this license, pertaining to the examples of code included within this work are available at Adobe http://www.adobe.com/communities/guidelines/ccplus/commercialcode_plus_permission.html .
-*/ 
-
-@mixin prefixProperty($property, $value){
-    -webkit-#{$property}: $value;
-    -moz-#{$property}: $value;    
-    -ms-#{$property}: $value;    
-    -o-#{$property}: $value;      
-    #{$property}: $value;           
-}
-
-@mixin prefixValue($property, $value){
-    #{$property}: -webkit-#{$value};
-    #{$property}: -moz-#{$value};
-    #{$property}: -ms-#{$value};
-    #{$property}: -o-#{$value};
-    #{$property}: #{$value};
-}
-
-@mixin flexbox{
-    @include prefixValue(display, box);
-    /* Flex needs to be last, so that we use the new flex-box when it's available */
-    @include prefixValue(display, flex);
-} 
-
-@mixin flex($value: 1){
-    @include prefixProperty(flex, $value);
-    @include prefixProperty(box-flex, $value);
-}  
-
-@mixin noflex{
-    @include prefixProperty(box-flex, 0);
-	@include prefixProperty(flex, none);
-}   
-
-@mixin hbox{
-    @include flexbox;
-    @include prefixProperty(box-orient, horizontal);
-    @include prefixProperty(flex-direction, row);
-}          
-
-@mixin vbox{
-    @include flexbox;
-    @include prefixProperty(box-orient, vertical);
-    @include prefixProperty(flex-direction, column);
-} 
-
-@mixin user-select($value: auto){
-	-webkit-touch-callout: $value;
-	-webkit-user-select: $value;
-	-khtml-user-select: $value;
-	-moz-user-select: $value;
-	-ms-user-select: $value;
-	user-select: $value;
-}
-
-@mixin northstar-bg{
-    background: $baseColorLight url("northstar/img/x1/bg_dark.png") repeat-x;
-}
-
-$baseColorLight: #494D4E /* Slate Gray */; 
-$baseColorDark: #3B3F41 /* Slate Gray */; 
-
+@import "utils";      
 @import "dock";      
 @import "params";
 
