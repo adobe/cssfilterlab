@@ -11,9 +11,9 @@ Permissions beyond the scope of this license, pertaining to the examples of code
 <head>
     <title>CSS Filter Studio</title>
     <link rel="stylesheet" type="text/css" href="style/styles.css">
+    <link rel="stylesheet" type="text/css" href="style/app.css">
+    
     <link rel="stylesheet" href="lib/third_party/CodeMirror/lib/codemirror.css">
-    <link rel="stylesheet" href="style/northstar/css/northstar.css">
-    <link rel="stylesheet" href="style/northstar/css/type.css">
 
     <script src="lib/third_party/jquery/jquery-1.8.0.min.js" type="text/javascript"></script>
     <script src="lib/third_party/jquery/jquery-ui-1.8.23.custom.min.js" type="text/javascript"></script>
@@ -63,45 +63,6 @@ Permissions beyond the scope of this license, pertaining to the examples of code
 </head>
 
 <body>     
-    <header>
-        <h1>CSS Filter Studio</h1>
-        <a href="http://html.adobe.com" class="logo">
-            <img src="images/logo.svg" />
-        </a>
-    </header>
-
-   
-    <div id="container">
-        <div id="multi-col">
-            <h2 id="dialog-title" style=
-            "-webkit-column-break-before: always">The Creative Web</h2>
-
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Aliquam dapibus volutpat mi id condimentum. Duis vel massa quis
-            arcu eleifend condimentum a nec libero. Vestibulum
-            consequat.</p><img id="png-img" src="images/planes.jpg" width="200"
-            name="png-img" alt="planes">
-
-            <p>Mauris at mauris urna. Donec a risus quis metus rhoncus
-            aliquet quis non urna. Curabitur sed pharetra dui. Donec varius
-            est euismod nisl faucibus elementum. Suspendisse in diam id
-            nibh elementum ornare. Aliquam sit amet tempor lectus. Nunc
-            ornare ornare tellus, vitae gravida metus dignissim lobortis.
-            Integer consequat elit eu augue consectetur
-            sodales.</p><embed id="svg-img" src="images/picture.svg" width="200"
-            height="130" alt="hello guy">
-
-            <p>Morbi congue ultricies risus, quis laoreet dolor placerat
-            vel. Mauris dignissim, diam sit amet dapibus fringilla, sem
-            massa rhoncus mauris, non viverra nisl ipsum eu neque. Cras
-            sollicitudin, leo et dapibus mattis, erat quam aliquam nisi, at
-            dictum sapien sapien in libero. Pellentesque euismod pulvinar
-            sem, sed condimentum purus consectetur.</p><img id="css3-img"
-            src="images/html5_css3_styling.svg" width="45" height="45" name=
-            "css3-img" alt="css-logo">
-        </div>
-    </div>
-    
     <div id="output">
         <div id="filter-code" class="code"></div>
     </div>
@@ -136,17 +97,22 @@ Permissions beyond the scope of this license, pertaining to the examples of code
         <a href="#" id="resetTimelineButton" class="button dark">Reset animation</a>
     </div>  
       
-    <div id="active-filters">
+    <aside id="active-filters">  
+        <header>
+            <h1 class="title">CSS Filter Studio</h1>
+            <a href="#" class="button dark">Add Filters</a>
+        </header>
+
         <ul id="filter-list">
-            <li id="filter-list-empty">No filter activated. Add a filter from the list below.</li>
+            <li id="filter-list-empty">No filter activated. Add a filter to style the content.</li>
         </ul>
-    </div>
+    </aside>
 
     <div id="filter-stock">
         <div id="filter-stock-list">
         </div>
-    </div>
-
+    </div> 
+    
     <div id="animations-container">
         <div id="animation-store-buttons">
             <a href="#" id="save-animation" class="button dark">Save as</a>
@@ -179,9 +145,9 @@ Permissions beyond the scope of this license, pertaining to the examples of code
             <div class="fragment-shader inline-shader-errors"></div>
         </div>
     </div>
+    
+    <div id="app" class="container">
 
-    <div id="dock-view">
-       
     </div>
     
 </body>
