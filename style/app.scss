@@ -106,13 +106,13 @@ body {
 }
 
 .modal {
+    @include box-shadow;
     width: 50%;
     height: 50%;
     min-width: 600px;
     position: absolute;
     top: 25%;
     left: 25%;
-    box-shadow: 0 0 1px 0 #ccc, 0 0 20px 0px rgba(0,0,0,0.15);
 
     footer{
         padding: 10px 15px;
@@ -126,4 +126,17 @@ aside{
     header{
         -webkit-justify-content: space-between;
     }
+}
+
+#app{
+    @include user-select(none);
+}
+
+#filter-dock{
+    @include box-shadow;
+    left: 350px;
+    width: 350px;
+    height: 70%;
+    position: absolute;
+    z-index: 15;
 }

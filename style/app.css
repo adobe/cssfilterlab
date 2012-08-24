@@ -773,19 +773,25 @@ Permissions beyond the scope of this license, pertaining to the examples of code
 
 #filter-list li,
 #animations li {
-  position: relative;
+  margin: 0;
+  padding: 0;
   list-style: none;
+  position: relative;
   color: white;
   padding: 4px;
   min-width: 20ex;
   text-align: left;
   font-size: 12px;
   font-weight: bold;
-  margin: 0px;
   padding-left: 15px;
   padding-top: 5px;
   padding-bottom: 5px;
   -webkit-transition-property: height, top, bottom, left, width;
+}
+#filter-list li > li,
+#animations li > li {
+  margin: 0;
+  padding: 0;
 }
 
 #filter-list li:hover,
@@ -796,7 +802,9 @@ Permissions beyond the scope of this license, pertaining to the examples of code
 
 #filter-list li.current,
 #animations li.current {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid #4F5354;
+  border-top: 1px solid #292B2C;
+  background: #3b3f41;
 }
 
 #filter-list li .filter-name {
@@ -1343,7 +1351,6 @@ Permissions beyond the scope of this license, pertaining to the examples of code
   -o-flex: none;
   flex: none;
   background: #3b3f41;
-  border-bottom: 1px solid #282828;
 }
 
 .panel-tab {
@@ -1911,13 +1918,13 @@ body {
 }
 
 .modal {
+  box-shadow: 0 0 1px 0 #cccccc, 0 0 20px 0px rgba(0, 0, 0, 0.15);
   width: 50%;
   height: 50%;
   min-width: 600px;
   position: absolute;
   top: 25%;
   left: 25%;
-  box-shadow: 0 0 1px 0 #cccccc, 0 0 20px 0px rgba(0, 0, 0, 0.15);
 }
 .modal footer {
   padding: 10px 15px;
@@ -1930,4 +1937,22 @@ aside {
 }
 aside header {
   -webkit-justify-content: space-between;
+}
+
+#app {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#filter-dock {
+  box-shadow: 0 0 1px 0 #cccccc, 0 0 20px 0px rgba(0, 0, 0, 0.15);
+  left: 350px;
+  width: 350px;
+  height: 70%;
+  position: absolute;
+  z-index: 15;
 }

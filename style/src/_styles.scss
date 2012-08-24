@@ -22,16 +22,15 @@ Permissions beyond the scope of this license, pertaining to the examples of code
 }
 
 #filter-list li,
-#animations li {
+#animations li { 
+    @include list-reset;
     position: relative;
-	list-style: none;
 	color: white;
 	padding: 4px;
 	min-width: 20ex;
 	text-align: left;
 	font-size: 12px;
 	font-weight: bold;
-	margin: 0px;
 	padding-left: 15px;
 	padding-top: 5px;
 	padding-bottom: 5px;
@@ -46,7 +45,9 @@ Permissions beyond the scope of this license, pertaining to the examples of code
 
 #filter-list li.current,
 #animations li.current {
-	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid #4F5354;
+    border-top: 1px solid #292B2C;
+	background: $baseColorDark;
 }
 
 #filter-list li .filter-name {
