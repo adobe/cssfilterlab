@@ -1,0 +1,113 @@
+/*
+Copyright 2012 Adobe Systems, incorporated
+This work is licensed under a Creative Commons Attribution-Noncommercial-Share Alike 3.0 Unported License http://creativecommons.org/licenses/by-nc-sa/3.0/ .
+Permissions beyond the scope of this license, pertaining to the examples of code included within this work are available at Adobe http://www.adobe.com/communities/guidelines/ccplus/commercialcode_plus_permission.html .
+*/
+
+@import "utils";
+@import "northstar/css/northstar.css";
+@import "northstar/css/type.css";
+
+@mixin proportions{
+    height: 15px;
+    padding: 15px;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}  
+
+.container {
+    @include hbox;
+    height: 100%;
+
+    header {
+        @include flexbox;
+        @include valign;
+        @include proportions;
+
+        & > *{
+            /* vertical centering with new flexbox */
+            margin: auto 0;
+        }
+    }
+
+    .content {
+        @include flex;
+    }
+
+    footer{       
+        @include flexbox;
+        @include proportions;  
+        height: auto;
+        
+        margin: auto auto 0 auto;
+        border-top: 1px solid #d7d7d7;
+    }
+
+    aside {
+        width: 20%;
+        min-width: 200px; 
+        background: $baseColorLight;
+
+        header{
+            border-bottom: 1px solid rgba(0, 0, 0, 0.36);
+            box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.11);
+            
+            h1, h2, h3{
+                color: white;
+                font-size: 18px;
+                text-shadow: 0 -1px 0 black;
+            }
+        }
+    }
+
+    section {
+        @include vbox;
+        @include flex;
+
+        header{
+            border-bottom: 1px solid #d7d7d7;
+            -webkit-justify-content: space-between;
+            
+            h1, h2, h3{
+                margin: 0 auto;
+            }
+        }
+    }
+}
+
+.nav{
+    @include list-reset;
+    @include hbox;
+    margin: auto 0;
+}
+
+.modal {
+    width: 50%;
+    height: 50%; 
+    min-width: 600px;
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    box-shadow: 0 0 1px 0 #ccc, 0 0 20px 0px rgba(0,0,0,0.15);
+    
+    footer{
+        padding: 10px 15px;
+        -webkit-box-pack: end;
+        -webkit-justify-content: flex-end;
+    }
+} 
+
+
+#app > aside{
+    min-width: 250px;
+    header{
+        -webkit-justify-content: space-between;
+    }
+} 

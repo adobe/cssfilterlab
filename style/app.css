@@ -1,0 +1,207 @@
+@import url(northstar/css/northstar.css);
+@import url(northstar/css/type.css);
+/*
+Copyright 2012 Adobe Systems, incorporated
+This work is licensed under a Creative Commons Attribution-Noncommercial-Share Alike 3.0 Unported License http://creativecommons.org/licenses/by-nc-sa/3.0/ .
+Permissions beyond the scope of this license, pertaining to the examples of code included within this work are available at Adobe http://www.adobe.com/communities/guidelines/ccplus/commercialcode_plus_permission.html .
+*/
+/*
+Copyright 2012 Adobe Systems, incorporated
+This work is licensed under a Creative Commons Attribution-Noncommercial-Share Alike 3.0 Unported License http://creativecommons.org/licenses/by-nc-sa/3.0/ . 
+Permissions beyond the scope of this license, pertaining to the examples of code included within this work are available at Adobe http://www.adobe.com/communities/guidelines/ccplus/commercialcode_plus_permission.html .
+*/
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-box;
+  display: -o-box;
+  display: box;
+  /* Flex needs to be last, so that we use the new flex-box when it's available */
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  -ms-box-orient: horizontal;
+  -o-box-orient: horizontal;
+  box-orient: horizontal;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  -ms-flex-direction: row;
+  -o-flex-direction: row;
+  flex-direction: row;
+  height: 100%;
+}
+.container header {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-box;
+  display: -o-box;
+  display: box;
+  /* Flex needs to be last, so that we use the new flex-box when it's available */
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-box-align: center;
+  -o-box-align: center;
+  box-align: center;
+  height: 15px;
+  padding: 15px;
+}
+.container header > * {
+  /* vertical centering with new flexbox */
+  margin: auto 0;
+}
+.container .content {
+  -webkit-flex: 1;
+  -moz-flex: 1;
+  -ms-flex: 1;
+  -o-flex: 1;
+  flex: 1;
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -ms-box-flex: 1;
+  -o-box-flex: 1;
+  box-flex: 1;
+}
+.container footer {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-box;
+  display: -o-box;
+  display: box;
+  /* Flex needs to be last, so that we use the new flex-box when it's available */
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  height: 15px;
+  padding: 15px;
+  height: auto;
+  margin: auto auto 0 auto;
+  border-top: 1px solid #d7d7d7;
+}
+.container aside {
+  width: 20%;
+  min-width: 200px;
+  background: #494d4e;
+}
+.container aside header {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.36);
+  box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.11);
+}
+.container aside header h1, .container aside header h2, .container aside header h3 {
+  color: white;
+  font-size: 18px;
+  text-shadow: 0 -1px 0 black;
+}
+.container section {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-box;
+  display: -o-box;
+  display: box;
+  /* Flex needs to be last, so that we use the new flex-box when it's available */
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -ms-box-orient: vertical;
+  -o-box-orient: vertical;
+  box-orient: vertical;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  -o-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1;
+  -moz-flex: 1;
+  -ms-flex: 1;
+  -o-flex: 1;
+  flex: 1;
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -ms-box-flex: 1;
+  -o-box-flex: 1;
+  box-flex: 1;
+}
+.container section header {
+  border-bottom: 1px solid #d7d7d7;
+  -webkit-justify-content: space-between;
+}
+.container section header h1, .container section header h2, .container section header h3 {
+  margin: 0 auto;
+}
+
+.nav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-box;
+  display: -o-box;
+  display: box;
+  /* Flex needs to be last, so that we use the new flex-box when it's available */
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  -ms-box-orient: horizontal;
+  -o-box-orient: horizontal;
+  box-orient: horizontal;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  -ms-flex-direction: row;
+  -o-flex-direction: row;
+  flex-direction: row;
+  margin: auto 0;
+}
+.nav > li {
+  margin: 0;
+  padding: 0;
+}
+
+.modal {
+  width: 50%;
+  height: 50%;
+  min-width: 600px;
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  box-shadow: 0 0 1px 0 #cccccc, 0 0 20px 0px rgba(0, 0, 0, 0.15);
+}
+.modal footer {
+  padding: 10px 15px;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+}
+
+#app > aside {
+  min-width: 250px;
+}
+#app > aside header {
+  -webkit-justify-content: space-between;
+}
