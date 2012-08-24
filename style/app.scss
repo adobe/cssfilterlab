@@ -4,9 +4,26 @@ This work is licensed under a Creative Commons Attribution-Noncommercial-Share A
 Permissions beyond the scope of this license, pertaining to the examples of code included within this work are available at Adobe http://www.adobe.com/communities/guidelines/ccplus/commercialcode_plus_permission.html .
 */
 
-@import "utils";
-@import "northstar/css/northstar.css";
-@import "northstar/css/type.css";
+@import "src/_utils";
+@import "src/_northstar";
+@import "src/_styles";
+@import "src/_dock";
+@import "src/_params";
+
+@font-face { font-family: "source"; src: url('font/SourceSansPro-Regular.otf'); }
+@font-face { font-family: "source-l"; src: url('font/SourceSansPro-Light.otf'); }
+@font-face { font-family: "source-sb"; src: url('font/SourceSansPro-Semibold.otf'); }
+
+body{
+    font: 14px "Source Sans Pro", "source", helvetica, arial, sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	color: #000;
+	font-family: "Source Sans Pro", "source-l", helvetica, arial, sans-serif;
+	margin: 0;
+	font-weight: 400;
+}
 
 @mixin proportions{
     height: 15px;
@@ -20,7 +37,7 @@ body {
     overflow: hidden;
     margin: 0;
     padding: 0;
-}  
+}
 
 .container {
     @include hbox;
@@ -41,24 +58,24 @@ body {
         @include flex;
     }
 
-    footer{       
+    footer{
         @include flexbox;
-        @include proportions;  
+        @include proportions;
         height: auto;
-        
+
         margin: auto auto 0 auto;
         border-top: 1px solid #d7d7d7;
     }
 
     aside {
         width: 20%;
-        min-width: 200px; 
+        min-width: 200px;
         background: $baseColorLight;
 
         header{
             border-bottom: 1px solid rgba(0, 0, 0, 0.36);
             box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.11);
-            
+
             h1, h2, h3{
                 color: white;
                 font-size: 18px;
@@ -74,7 +91,7 @@ body {
         header{
             border-bottom: 1px solid #d7d7d7;
             -webkit-justify-content: space-between;
-            
+
             h1, h2, h3{
                 margin: 0 auto;
             }
@@ -90,23 +107,23 @@ body {
 
 .modal {
     width: 50%;
-    height: 50%; 
+    height: 50%;
     min-width: 600px;
     position: absolute;
     top: 25%;
     left: 25%;
     box-shadow: 0 0 1px 0 #ccc, 0 0 20px 0px rgba(0,0,0,0.15);
-    
+
     footer{
         padding: 10px 15px;
         -webkit-box-pack: end;
         -webkit-justify-content: flex-end;
     }
-} 
+}
 
 aside{
     min-width: 250px;
     header{
         -webkit-justify-content: space-between;
     }
-} 
+}

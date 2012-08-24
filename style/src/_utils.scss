@@ -1,19 +1,19 @@
 /*
 Copyright 2012 Adobe Systems, incorporated
-This work is licensed under a Creative Commons Attribution-Noncommercial-Share Alike 3.0 Unported License http://creativecommons.org/licenses/by-nc-sa/3.0/ . 
+This work is licensed under a Creative Commons Attribution-Noncommercial-Share Alike 3.0 Unported License http://creativecommons.org/licenses/by-nc-sa/3.0/ .
 Permissions beyond the scope of this license, pertaining to the examples of code included within this work are available at Adobe http://www.adobe.com/communities/guidelines/ccplus/commercialcode_plus_permission.html .
-*/   
+*/
 
 
-$baseColorLight: #494D4E /* Slate Gray */; 
+$baseColorLight: #494D4E /* Slate Gray */;
 $baseColorDark: #3B3F41 /* Slate Gray */;
 
 @mixin prefixProperty($property, $value){
     -webkit-#{$property}: $value;
-    -moz-#{$property}: $value;    
-    -ms-#{$property}: $value;    
-    -o-#{$property}: $value;      
-    #{$property}: $value;           
+    -moz-#{$property}: $value;
+    -ms-#{$property}: $value;
+    -o-#{$property}: $value;
+    #{$property}: $value;
 }
 
 @mixin prefixValue($property, $value){
@@ -28,23 +28,23 @@ $baseColorDark: #3B3F41 /* Slate Gray */;
     @include prefixValue(display, box);
     /* Flex needs to be last, so that we use the new flex-box when it's available */
     @include prefixValue(display, flex);
-} 
+}
 
 @mixin flex($value: 1){
     @include prefixProperty(flex, $value);
     @include prefixProperty(box-flex, $value);
-}  
+}
 
 @mixin noflex{
     @include prefixProperty(box-flex, 0);
 	@include prefixProperty(flex, none);
-}   
+}
 
 @mixin hbox{
     @include flexbox;
     @include prefixProperty(box-orient, horizontal);
     @include prefixProperty(flex-direction, row);
-}          
+}
 
 @mixin vbox{
     @include flexbox;
@@ -59,7 +59,7 @@ $baseColorDark: #3B3F41 /* Slate Gray */;
 @mixin align-end{
     @include prefixProperty(box-align, end);
     margin-bottom: 0;
-} 
+}
 
 @mixin user-select($value: auto){
 	-webkit-touch-callout: $value;
@@ -72,19 +72,15 @@ $baseColorDark: #3B3F41 /* Slate Gray */;
 
 @mixin northstar-bg{
     background: $baseColorLight url("northstar/img/x1/bg_dark.png") repeat-x;
-} 
+}
 
 @mixin list-reset{
     margin: 0;
     padding: 0;
     list-style: none;
-    
+
     & > li{
         margin: 0;
-        padding: 0; 
+        padding: 0;
     }
-}    
-
-.hide{
-    display:none;
 }

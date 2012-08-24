@@ -5,7 +5,7 @@
 .panel-view.active {
     @include flex;
     @include northstar-bg;
-    
+
 	display: block;
 	border-top: 1px solid #6a6a6a;
 	color: white;
@@ -24,8 +24,8 @@
 	margin: 0px;
 }
 
-.panel-tab-list { 
-	@include hbox;             
+.panel-tab-list {
+	@include hbox;
     @include noflex;
 	background: $baseColorDark;
 	height: 20px;
@@ -41,11 +41,11 @@
 	color: #899395;
 	font-size: 11px;
 	font-weight: bold;
-	cursor: pointer;  
+	cursor: pointer;
 }
 
 .panel-tab:hover {
-	background: rgba(112, 112, 112, 0.24);  
+	background: rgba(112, 112, 112, 0.24);
 	color: white;
 }
 
@@ -55,7 +55,7 @@
 	z-index: 10;
 	border-top: 1px solid #6a6a6a;
 	border-bottom: 2px solid #494D4E;
-	height: 13px;  
+	height: 13px;
 	color: white;
 }
 
@@ -65,14 +65,14 @@
     @include flex;
 }
 
-.panel-column { 
+.panel-column {
     @include flexbox;
     @include flex;
 }
 
 .panel-column.horizontal,
 .panel-column.horizontal > .panel-column-items,
-.dock-root {          
+.dock-root {
     @include hbox;
 }
 
@@ -116,10 +116,10 @@
 	border-bottom: 1px solid #282828;
 	background: #3a3a3a;
 	cursor: n-resize;
-}   
-  
+}
+
 /* trim down on needless resizing handles */
 .panel-separator:first-of-type,
 .panel-column-handle{
     display: none;
-}                
+}

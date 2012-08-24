@@ -1,13 +1,8 @@
 /*
 Copyright 2012 Adobe Systems, incorporated
-This work is licensed under a Creative Commons Attribution-Noncommercial-Share Alike 3.0 Unported License http://creativecommons.org/licenses/by-nc-sa/3.0/ . 
+This work is licensed under a Creative Commons Attribution-Noncommercial-Share Alike 3.0 Unported License http://creativecommons.org/licenses/by-nc-sa/3.0/ .
 Permissions beyond the scope of this license, pertaining to the examples of code included within this work are available at Adobe http://www.adobe.com/communities/guidelines/ccplus/commercialcode_plus_permission.html .
-*/ 
-
-@import "utils";      
-@import "dock";      
-@import "params";
-
+*/
 
 #filter-list,
 #animations {
@@ -16,9 +11,9 @@ Permissions beyond the scope of this license, pertaining to the examples of code
 	padding-bottom: 100px;
 }
 
-#filter-list h2, 
+#filter-list h2,
 #filter-list label {
-	color: #777;         
+	color: #777;
 	margin: 10px 0 5px;
 	padding:0 0 0 10px;
 	text-shadow: black 0px 1px 0px;
@@ -50,7 +45,7 @@ Permissions beyond the scope of this license, pertaining to the examples of code
 }
 
 #filter-list li.current,
-#animations li.current {   
+#animations li.current {
     @include northstar-bg;
 	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -67,8 +62,8 @@ Permissions beyond the scope of this license, pertaining to the examples of code
     width: 20px;
     height: 20px;
     text-indent: -999px;
-    background: transparent url('../images/third_party/noun_project_3875.svg') top left no-repeat; 
-    background-size: 18px; 
+    background: transparent url('../images/third_party/noun_project_3875.svg') top left no-repeat;
+    background-size: 18px;
 }
 
 #filter-list li .dragpoint {
@@ -82,7 +77,7 @@ Permissions beyond the scope of this license, pertaining to the examples of code
 
 #filter-list li.dragging, #menu li.dragging .dragpoint {
     cursor: -webkit-grabbing;
-}     
+}
 
 #filter-list li.dragging.current{
     background: $baseColorDark;
@@ -115,7 +110,7 @@ Permissions beyond the scope of this license, pertaining to the examples of code
 
 #filter-list li.forked-filter,
 .filter-stock .filter-item.forked-filter {
-	border-left: rgba(0, 0, 255, 0.2) 5px solid;	
+	border-left: rgba(0, 0, 255, 0.2) 5px solid;
 }
 
 #filter-list #filter-list-empty {
@@ -146,7 +141,7 @@ Permissions beyond the scope of this license, pertaining to the examples of code
 
 .filter-stock .filter-item .button-box {
     @include flexbox;
-    @include flex;                         
+    @include flex;
     @include prefixProperty(box-align, center);
     @include prefixProperty(box-pack, end);
     @include prefixProperty(flex, 0);
@@ -172,98 +167,98 @@ Permissions beyond the scope of this license, pertaining to the examples of code
 	padding: 10px;
 	overflow-x: hidden;
 
-	.controls {  
-		top:14px;    
+	.controls {
+		top:14px;
 		left:0;
-		position:relative; 
+		position:relative;
 		width:50px;
-	
+
         & > div {
 		    float: left;
-		    width: 12px;  
-		    height: 14px; 
+		    width: 12px;
+		    height: 14px;
 		    cursor :pointer;
 		    text-indent: -9999em;
-	    }  
-	
+	    }
+
     	.play {
     		float: none;
     		clear: both;
     		width: 42px;
-    		padding: 1px 0; 
-    		margin-top: -12px; 
+    		padding: 1px 0;
+    		margin-top: -12px;
     		margin-bottom: 20px;
-    		background: url(../images/icons/P_Play_Lg_N_D.png) center center no-repeat; 
-    		border: 1px solid #1f1f1f;   
+    		background: url(../images/icons/P_Play_Lg_N_D.png) center center no-repeat;
+    		border: 1px solid #1f1f1f;
     	}
-	
+
     	.play.active {
-    		background: url(../images/icons/P_Stop_Lg_R_D.png) center center no-repeat;  
-    		background-color: #1f1f1f;   
-		
+    		background: url(../images/icons/P_Stop_Lg_R_D.png) center center no-repeat;
+    		background-color: #1f1f1f;
+
     	}
-	
-    	.next, 
+
+    	.next,
     	.prev {
-    		background: url(../images/icons/P_KeynavNext_14x11_D_D.png) center center no-repeat;   
+    		background: url(../images/icons/P_KeynavNext_14x11_D_D.png) center center no-repeat;
     	}
-	
+
     	.next.active,
     	.prev.active {
-    		background: url(../images/icons/P_KeynavNext_14x11_N_D.png) center center no-repeat;   
+    		background: url(../images/icons/P_KeynavNext_14x11_N_D.png) center center no-repeat;
     	}
-	
-    	.prev {       
+
+    	.prev {
     	    @include prefixProperty(transform, rotateY(180deg));
-    	} 
-	
+    	}
+
     	.toggle {
-    		margin: 0 4px;   
-    		background: url(../images/icons/P_KeynavKey_11x14_N_D.png) center center no-repeat;   
+    		margin: 0 4px;
+    		background: url(../images/icons/P_KeynavKey_11x14_N_D.png) center center no-repeat;
     	}
-	
-    	.toggle.active { 
-    		background: url(../images/icons/P_KeynavKey_11x14_S_D.png) center center no-repeat;   
+
+    	.toggle.active {
+    		background: url(../images/icons/P_KeynavKey_11x14_S_D.png) center center no-repeat;
     	}
-	} 
+	}
 
     .time {
     	height: 16px;
-    	margin: -22px 0 2px;  
-    	border-bottom: 1px dashed #ccc;  
+    	margin: -22px 0 2px;
+    	border-bottom: 1px dashed #ccc;
     	padding-bottom: 15px;
-    	position: relative;  
-    	
+    	position: relative;
+
     	$breakColor: #fc0;
-    	
+
     	input[type="number"]{
-            position: absolute;   
-            width: 63px;    
-            height: 32px; 
+            position: absolute;
+            width: 63px;
+            height: 32px;
             text-align: right;
             background: none;
-            margin: 0; 
+            margin: 0;
             padding: 0 3px 0 0;
             right: 0;
             top: -7px;
-            color: $breakColor;   
+            color: $breakColor;
             outline: none;
             border: none;
         }
-        
+
         .start{
             color: $breakColor;
         	left: 0;
         }
-    }   
-    
-    .keyframes {  
+    }
+
+    .keyframes {
         position: relative;
         margin: -10px 20px 0 60px;
     }
-    
+
     .keyframe_wrapper{
-    	background: #656565;  
+    	background: #656565;
     	padding: 0 6px 0 4px;
     }
 
@@ -272,11 +267,11 @@ Permissions beyond the scope of this license, pertaining to the examples of code
     }
 
     .keyframes_list{
-    	position:relative; 
+    	position:relative;
     	height: 18px;
     }
 
-    .keyframe { 
+    .keyframe {
     	@include prefixValue(cursor, grab);
     	top: 2px;
     	margin-left: -5px;
@@ -285,9 +280,9 @@ Permissions beyond the scope of this license, pertaining to the examples of code
         height: 14px;
         background-image: url(../images/icons/P_KeynavKey_11x14_N.png);
         background-repeat: no-repeat;
-        
-        &.active { 
-            background-image: url(../images/icons/P_KeynavKey_11x14_S_D.png);  
+
+        &.active {
+            background-image: url(../images/icons/P_KeynavKey_11x14_S_D.png);
         }
     }
 
@@ -295,30 +290,30 @@ Permissions beyond the scope of this license, pertaining to the examples of code
         position: absolute;
     	cursor:hand;
         margin-left: -5px;
-    	margin-top:-32px;   
+    	margin-top:-32px;
         width: 12px;
         height: 16px;
         background-image: url(../images/icons/P_TimelineCompMarker_Sm_N_D.png);
         background-repeat: no-repeat;
     	cursor:-webkit-grab;
-    	
+
     	.laser{
         	position: relative;
         	display: block;
         	height: 18px;
-        	width: 1px;   
-        	margin: 14px auto 0; 
+        	width: 1px;
+        	margin: 14px auto 0;
         	background: red;
         	opacity: 0.75;
 	    }
     }
 }
-  
+
 /* Syntax highligt ------------------------------------------------------------------------------- */
 .code {
     color: #fff;
     padding: 10px;
-    @include user-select(auto); 
+    @include user-select(auto);
 
     a{
     	color:white;
@@ -362,7 +357,7 @@ Permissions beyond the scope of this license, pertaining to the examples of code
     .keyframe-content {
         margin-left: 20px;
     }
-} 
+}
 
 
 .code-panel {
@@ -370,26 +365,26 @@ Permissions beyond the scope of this license, pertaining to the examples of code
 	background: white;
 	color: black;
 	height: 100%;
-	
+
 	.code-view {
     	position: absolute;
     	left: 0px;
     	right: 0px;
     	top: 0px;
     	bottom: 0px;
-    	
+
     	.error-line {
         	background: rgba(255, 0, 0, 0.7);
         	color: white;
         	border: 1px solid rgba(190, 0, 0, 1);
         }
-        
+
         .error-bookmark {
         	font-weight: bold;
         	background: rgba(255, 0, 0, 0.5);
         }
-    }               
-    
+    }
+
 }
 
 #config-editor .code-view {
@@ -400,7 +395,7 @@ Permissions beyond the scope of this license, pertaining to the examples of code
 	position: absolute;
 	left: 0px;
 	right: 0px;
-	
+
 	bottom: 0px;
 	border-top: 1px solid #ccc;
 	padding: 5px 15px 0 0;
@@ -413,21 +408,21 @@ Permissions beyond the scope of this license, pertaining to the examples of code
 
 #shader-errors {
 	background: #d7d7d7;
-	color: black; 
-	
+	color: black;
+
 	&>div {
-	    padding: 10px;	    
-	}          
-	
+	    padding: 10px;
+	}
+
 	.header {
     	font-weight: bold;
     	margin-top: 5px;
     }
-    
+
     .inline-shader-errors {
         @include user-select(auto);
     }
-    
+
     pre {
     	margin: 0;
     	font-size: 0.9em;
@@ -438,13 +433,13 @@ Permissions beyond the scope of this license, pertaining to the examples of code
     .progress-bar {
    	    border: 1px solid #333;
    	    height: 30px;
-   	    
+
    	    .progress-bar-interior {
         	background: #ccc;
         	width: 0%;
         	height: 30px;
         }
-   	}    
+   	}
 }
 
 
@@ -461,24 +456,24 @@ Permissions beyond the scope of this license, pertaining to the examples of code
 	height: 8px;
     width: 8px;
 }
- 
+
 ::-webkit-scrollbar-track {
 	background: rgba(0,0,0,0.1);
-	box-shadow: inset 0 0 6px rgba(0,0,0,0); 
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0); 
+	box-shadow: inset 0 0 6px rgba(0,0,0,0);
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0);
     border-radius: 4px;
     -webkit-border-radius: 4px;
 }
- 
+
 ::-webkit-scrollbar-thumb {
 	border-radius: 4px;
 	-webkit-border-radius: 4px;
     border: 1px solid rgba(255,255,255,0.15);
     background: rgba(0,0,0,0.3);
-    box-shadow: inset 0 0 6px rgba(0,0,0,0); 
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0); 
+    box-shadow: inset 0 0 6px rgba(0,0,0,0);
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0);
 }
 
 ::-webkit-scrollbar-thumb:window-inactive {
-    background: rgba(0,0,0,0.1); 
+    background: rgba(0,0,0,0.1);
 }
