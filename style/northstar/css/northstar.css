@@ -1,5 +1,28 @@
 /* Nothstar CSS here pls ------------------------------------------------------------------------------- */
 
+
+/* Global */
+
+a {
+	color: #0083e8;
+	text-decoration: none;
+	text-shadow: 0 1px 0 #e7e7e7;
+}
+
+a:active {
+	text-decoration: underline;
+}
+
+.large, .large li {
+	font-size: 14px !important;
+}
+
+.disabled {
+	cursor: default;
+	opacity: 0.6;
+	pointer-events: none;
+}
+
 /* Fonts
 100 = thin
 200 = extra-light
@@ -11,16 +34,6 @@
 800 = heavy
 900 = black
 */
-
-a {
-	color: #0083e8;
-	text-decoration: none;
-	text-shadow: 0 1px 0 #e7e7e7;
-}
-
-a:active {
-	text-decoration: underline;
-}
 
 .bg-white {
 	background: #fff;
@@ -41,11 +54,6 @@ a:active {
 	color: #c7c7c7;
 	font-size: 12px;
 	font-weight: 400;
-}
-
-.large,
-.large li {
-	font-size: 14px !important;
 }
 
 .bg-lightgray a {
@@ -81,8 +89,6 @@ a:active {
 	font-size: 14px;
 	text-shadow: 0 -1px 0 #000;
 }
-
-
 
 
 /* Checkbox */
@@ -123,7 +129,7 @@ input.dark[type=checkbox]:checked + label {
 	border: 1px solid #babdbd;
 	border-radius: 3px;
 	height: 3px;
-	width: 80px;
+	width: 100px;
    -webkit-appearance: none !important;
  }
 
@@ -205,7 +211,7 @@ input.dark[type=checkbox]:checked + label {
     display: block;
     height: 19px;
     font-size: 12px;
-    font-weight: 700;
+    font-weight: 600;
     line-height: 20px;
     position: absolute;
     text-align: center;
@@ -344,7 +350,7 @@ input.dark[type=checkbox]:checked + label {
     font-size: 12px;
     font-weight: 400;
     height: 21px;
-    margin: 0 0 5px 0;
+    margin: 0 3px 3px 0;
     padding: 1px 3px 0 3px;
     min-width: 150px;
 }
@@ -391,10 +397,6 @@ input.dark[type=checkbox]:checked + label {
 
 .text-field[disabled=disabled] {
 	opacity: 0.6;
-}
-
-.text-field.dark[disabled=disabled] {
-	opacity: 0.4;
 }
 
 /* End Text Field */
@@ -446,10 +448,12 @@ a.button {
 .button, .button.disabled:hover, .button.disabled:active {
 	display: inline-block;
 	text-decoration: none;
+	white-space: nowrap;
 	color: #454545;
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	border-radius: 3px;
+	margin: 0 3px 3px 0;
 	padding: 3px 7px;
 	height: 15px;
 	font-size: 12px;
@@ -494,11 +498,6 @@ a.button {
     outline: none;   
 }
 
-/*Disabled Button*/
-.button.disabled {
-	opacity: 0.4;
-	cursor: default;
-}
 
 /*Dark Button*/
 .button.dark, .button.dark.disabled:hover, .button.dark.disabled:active {
@@ -570,9 +569,10 @@ a.button {
 /*Large Button*/
 .button.large, .button.large.disabled:hover, .button.large.disabled:active {
 	font-size: 14px;
-	font-weight: 600;
+	font-weight: 500;
 	height: 27px;
 	line-height: 27px;
+	margin: 0 8px 8px 0;
 	padding: 0 15px;
 }
 /* End Button */
@@ -617,6 +617,44 @@ a.button {
 }
 
 /* End Call-to-Action Button*/
+
+/* Icon Button */
+
+.icon, .icon.disabled:hover, .icon.disabled:active {
+	height: 21px;
+	padding: 0;
+	width: 21px;
+}
+
+.icon:before {
+	background: #ccc;
+	content: "";
+	display: block;
+	height: 15px;
+	margin: 3px 0 0 3px;
+	width: 15px;
+}
+
+.icon.dark:before, .icon.dark.large:before {
+	background: #aaa;
+}
+
+.icon.large:before {
+	background: #ccc;
+	content: "";
+	display: block;
+	height: 19px;
+	margin: 4px 0 0 4px;
+	width: 19px;
+}
+
+.icon.large, .icon.large.disabled:hover, .icon.disabled:active {
+	height: 27px;
+	padding: 0;
+	width: 27px;
+
+}
+
 
 /* Button Bar */
 .button-bar {
