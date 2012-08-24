@@ -1,3 +1,5 @@
+@import url(northstar/css/northstar.css);
+@import url(northstar/css/type.css);
 /*
 Copyright 2012 Adobe Systems, incorporated
 This work is licensed under a Creative Commons Attribution-Noncommercial-Share Alike 3.0 Unported License http://creativecommons.org/licenses/by-nc-sa/3.0/ .
@@ -8,7 +10,6 @@ Copyright 2012 Adobe Systems, incorporated
 This work is licensed under a Creative Commons Attribution-Noncommercial-Share Alike 3.0 Unported License http://creativecommons.org/licenses/by-nc-sa/3.0/ . 
 Permissions beyond the scope of this license, pertaining to the examples of code included within this work are available at Adobe http://www.adobe.com/communities/guidelines/ccplus/commercialcode_plus_permission.html .
 */
-@import url(northstar/css/type.css);
 html,
 body {
   width: 100%;
@@ -94,7 +95,7 @@ body {
   padding: 15px;
   height: auto;
   margin: auto auto 0 auto;
-  border-top: 1px solid #ebebeb;
+  border-top: 1px solid #d7d7d7;
 }
 .container aside {
   width: 20%;
@@ -102,7 +103,8 @@ body {
   background: #494d4e;
 }
 .container aside header {
-  border-bottom: 1px solid #2e3131;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.36);
+  box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.11);
 }
 .container aside header h1, .container aside header h2, .container aside header h3 {
   color: white;
@@ -143,7 +145,7 @@ body {
   box-flex: 1;
 }
 .container section header {
-  border-bottom: 1px solid #ebebeb;
+  border-bottom: 1px solid #d7d7d7;
   -webkit-justify-content: space-between;
 }
 .container section header h1, .container section header h2, .container section header h3 {
