@@ -1950,7 +1950,6 @@ aside header {
 
 #filter-dock {
   box-shadow: 0 0 1px 0 #cccccc, 0 0 20px 0px rgba(0, 0, 0, 0.15);
-  left: 350px;
   width: 350px;
   height: 70%;
   position: absolute;

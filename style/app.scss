@@ -132,9 +132,8 @@ aside{
     @include user-select(none);
 }
 
-#filter-dock{
+#filter-dock{   
     @include box-shadow;
-    left: 350px;
     width: 350px;
     height: 70%;
     position: absolute;
