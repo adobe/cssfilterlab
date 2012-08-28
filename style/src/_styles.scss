@@ -44,7 +44,8 @@ Permissions beyond the scope of this license, pertaining to the examples of code
 }
 
 #filter-list li.current,
-#animations li.current {
+#animations li.current,
+.filter-stock .filter-item.current {
     border-bottom: 1px solid #4F5354;
     border-top: 1px solid #292B2C;
 	background: $baseColorDark;
