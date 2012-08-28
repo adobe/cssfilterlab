@@ -496,7 +496,7 @@ a.button {
   background-image: linear-gradient(top, white, #f4f6f7);
 }
 
-.button:active {
+.button:active, .button.selected {
   background: #E5E7E8;
   -moz-box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.06);
   -webkit-box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.06);
@@ -537,7 +537,7 @@ a.button {
   background-image: linear-gradient(top, #818383, #6c6e6e);
 }
 
-.button.dark:active {
+.button.dark:active, .button.dark.selected {
   background: #4E4F4F;
   -moz-box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.06);
   -webkit-box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.06);
@@ -754,8 +754,7 @@ Copyright 2012 Adobe Systems, incorporated
 This work is licensed under a Creative Commons Attribution-Noncommercial-Share Alike 3.0 Unported License http://creativecommons.org/licenses/by-nc-sa/3.0/ .
 Permissions beyond the scope of this license, pertaining to the examples of code included within this work are available at Adobe http://www.adobe.com/communities/guidelines/ccplus/commercialcode_plus_permission.html .
 */
-#filter-list,
-#animations {
+#filter-list {
   padding: 0px;
   margin: 0px;
   padding-bottom: 100px;
@@ -801,8 +800,7 @@ Permissions beyond the scope of this license, pertaining to the examples of code
 }
 
 #filter-list li.current,
-#animations li.current,
-.filter-stock .filter-item.current {
+#animations li.current {
   border-bottom: 1px solid #4F5354;
   border-top: 1px solid #292B2C;
   background: #3b3f41;
@@ -851,9 +849,13 @@ Permissions beyond the scope of this license, pertaining to the examples of code
 
 #animations li:hover,
 #filter-list li .filter-name:hover,
-.filter-stock li .customize-link:hover {
+.filter-stock .filter-item .customize-link:hover {
   cursor: pointer;
   text-decoration: underline;
+}
+
+.filter-stock .filter-item.current {
+  background: rgba(0, 0, 0, 0.25);
 }
 
 #filter-list li.builtin-filter,
@@ -1602,6 +1604,9 @@ Permissions beyond the scope of this license, pertaining to the examples of code
   border-top: 1px solid #DFE2E2;
   /*        box-shadow: 0px -1px 0px rgba(255, 255, 255, 1);*/
 }
+.light .panel-view.active {
+  color: black;
+}
 .light .panel-tab {
   border: none;
   color: #3B3F41;
@@ -1753,6 +1758,48 @@ body {
   padding: 0;
 }
 
+#logo, #animations-container {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-box;
+  display: -o-box;
+  display: box;
+  /* Flex needs to be last, so that we use the new flex-box when it's available */
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-box-align: center;
+  -o-box-align: center;
+  box-align: center;
+  -webkit-justify-content: space-between;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.36);
+  box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.11);
+}
+#logo > *, #animations-container > * {
+  margin: 10px 15px 10px 15px;
+}
+#logo h1, #logo h2, #logo h3, #animations-container h1, #animations-container h2, #animations-container h3 {
+  color: white;
+  font-size: 18px;
+  text-shadow: 0 -1px 0 black;
+}
+
+#animations-container {
+  border-bottom: 1px solid #d7d7d7;
+}
+
+#animations-container {
+  border-bottom: 1px solid #d7d7d7;
+  -webkit-justify-content: space-between;
+}
+#animations-container h1, #animations-container h2, #animations-container h3 {
+  margin: 0 auto;
+}
+
 .container {
   display: -webkit-box;
   display: -moz-box;
@@ -1776,30 +1823,6 @@ body {
   -o-flex-direction: row;
   flex-direction: row;
   height: 100%;
-}
-.container header {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-box;
-  display: -o-box;
-  display: box;
-  /* Flex needs to be last, so that we use the new flex-box when it's available */
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
-  display: -o-flex;
-  display: flex;
-  -webkit-box-align: center;
-  -moz-box-align: center;
-  -ms-box-align: center;
-  -o-box-align: center;
-  box-align: center;
-  height: 15px;
-  padding: 15px;
-}
-.container header > * {
-  /* vertical centering with new flexbox */
-  margin: auto 0;
 }
 .container .content {
   -webkit-flex: 1;
@@ -1836,15 +1859,6 @@ body {
   min-width: 200px;
   background: #494d4e;
 }
-.container aside header {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.36);
-  box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.11);
-}
-.container aside header h1, .container aside header h2, .container aside header h3 {
-  color: white;
-  font-size: 18px;
-  text-shadow: 0 -1px 0 black;
-}
 .container section {
   display: -webkit-box;
   display: -moz-box;
@@ -1877,13 +1891,6 @@ body {
   -ms-box-flex: 1;
   -o-box-flex: 1;
   box-flex: 1;
-}
-.container section header {
-  border-bottom: 1px solid #d7d7d7;
-  -webkit-justify-content: space-between;
-}
-.container section header h1, .container section header h2, .container section header h3 {
-  margin: 0 auto;
 }
 
 .nav {
@@ -1919,7 +1926,7 @@ body {
 }
 
 .modal {
-  box-shadow: 0 0 1px 0 #cccccc, 0 0 20px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 10px 15px 0 #333;
   width: 50%;
   height: 50%;
   min-width: 600px;
@@ -1936,9 +1943,6 @@ body {
 aside {
   min-width: 250px;
 }
-aside header {
-  -webkit-justify-content: space-between;
-}
 
 #app {
   -webkit-touch-callout: none;
@@ -1950,9 +1954,39 @@ aside header {
 }
 
 #filter-dock {
-  box-shadow: 0 0 1px 0 #cccccc, 0 0 20px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 10px 15px 0 #333;
   width: 350px;
   height: 70%;
+  top: 0px;
   position: absolute;
-  z-index: 15;
+  margin-left: 5px;
+  margin-top: 5px;
+}
+
+#filter-dock:before {
+  background: #D4D7D7;
+  content: "";
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: -10px;
+  top: 10px;
+  -webkit-transform: rotate(45deg);
+}
+
+.clicks-catcher {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#animations {
+  box-shadow: 0 10px 15px 0 #333;
+  background: #494d4e url("northstar/img/x1/bg_dark.png");
+  display: none;
+  position: absolute;
+  padding: 0px;
+  margin: 0px;
 }

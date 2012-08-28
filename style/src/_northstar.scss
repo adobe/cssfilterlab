@@ -484,7 +484,7 @@ a.button {
 	background-image: linear-gradient(top, rgb(255, 255, 255), rgb(244, 246, 247));
 }
 
-.button:active {
+.button:active, .button.selected {
 	background: #E5E7E8;
 	-moz-box-shadow: inset 0 1px 0 rgba(0,0,0,0.06);
 	-webkit-box-shadow: inset 0 1px 0 rgba(0,0,0,0.06);
@@ -526,7 +526,7 @@ a.button {
 	background-image: linear-gradient(top, rgb(129, 131, 131), rgb(108, 110, 110));
 }
 
-.button.dark:active {
+.button.dark:active, .button.dark.selected {
 	background: #4E4F4F;
 	-moz-box-shadow: inset 0 1px 0 rgba(0,0,0,0.06);
 	-webkit-box-shadow: inset 0 1px 0 rgba(0,0,0,0.06);

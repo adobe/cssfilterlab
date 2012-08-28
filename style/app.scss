@@ -14,7 +14,7 @@ Permissions beyond the scope of this license, pertaining to the examples of code
 @font-face { font-family: "source-l"; src: url('font/SourceSansPro-Light.otf'); }
 @font-face { font-family: "source-sb"; src: url('font/SourceSansPro-Semibold.otf'); }
 
-body{
+body {
     font: 14px "Source Sans Pro", "source", helvetica, arial, sans-serif;
 }
 
@@ -39,20 +39,41 @@ body {
     padding: 0;
 }
 
+#logo, #animations-container {
+    @include flexbox;
+    @include valign;
+
+    & > *{
+        margin: 10px 15px 10px 15px;
+    }
+
+    -webkit-justify-content: space-between;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.36);
+    box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.11);
+
+    h1, h2, h3 {
+        color: white;
+        font-size: 18px;
+        text-shadow: 0 -1px 0 black;
+    }
+}
+
+#animations-container {
+    border-bottom: 1px solid #d7d7d7;
+}
+
+#animations-container {
+    border-bottom: 1px solid #d7d7d7;
+    -webkit-justify-content: space-between;
+
+    h1, h2, h3 {
+        margin: 0 auto;
+    }
+}
+
 .container {
     @include hbox;
     height: 100%;
-
-    header {
-        @include flexbox;
-        @include valign;
-        @include proportions;
-
-        & > *{
-            /* vertical centering with new flexbox */
-            margin: auto 0;
-        }
-    }
 
     .content {
         @include flex;
@@ -71,35 +92,15 @@ body {
         width: 20%;
         min-width: 200px;
         background: $baseColorLight;
-
-        header{
-            border-bottom: 1px solid rgba(0, 0, 0, 0.36);
-            box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.11);
-
-            h1, h2, h3{
-                color: white;
-                font-size: 18px;
-                text-shadow: 0 -1px 0 black;
-            }
-        }
     }
 
     section {
         @include vbox;
         @include flex;
-
-        header{
-            border-bottom: 1px solid #d7d7d7;
-            -webkit-justify-content: space-between;
-
-            h1, h2, h3{
-                margin: 0 auto;
-            }
-        }
     }
 }
 
-.nav{
+.nav {
     @include list-reset;
     @include hbox;
     margin: auto 0;
@@ -121,21 +122,48 @@ body {
     }
 }
 
-aside{
+aside {
     min-width: 250px;
-    header{
-        -webkit-justify-content: space-between;
-    }
 }
 
-#app{
+#app {
     @include user-select(none);
 }
 
-#filter-dock{   
+#filter-dock {
     @include box-shadow;
     width: 350px;
     height: 70%;
+    top: 0px;
     position: absolute;
-    z-index: 15;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
+#filter-dock:before {
+    background: #D4D7D7;
+    content: "";
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: -10px;
+    top: 10px;
+    -webkit-transform: rotate(45deg);
+}
+
+.clicks-catcher {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#animations {
+    @include box-shadow;
+    @include northstar-bg;
+    display: none;
+    position: absolute;
+    padding: 0px;
+    margin: 0px;
 }

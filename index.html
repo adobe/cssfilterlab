@@ -50,6 +50,7 @@ Permissions beyond the scope of this license, pertaining to the examples of code
     <script type="text/javascript" src="lib/views/filter_item_view.js"></script>
     <script type="text/javascript" src="lib/views/preset_store_view.js"></script>
     <script type="text/javascript" src="lib/views/loading_progress_view.js"></script>
+    <script type="text/javascript" src="lib/views/logo_view.js"></script>
     <script type="text/javascript" src="lib/views/shader_editor_view.js"></script>
     <script type="text/javascript" src="lib/views/shader_code_editor_view.js"></script>
     <script type="text/javascript" src="lib/views/timeline_view.js"></script>
@@ -62,6 +63,11 @@ Permissions beyond the scope of this license, pertaining to the examples of code
 
 <body>     
     
+    <div id="logo">
+        <h1 class="title">CSS Filter Studio</h1>
+        <a href="#" id="filter-store-toggle" class="button dark">Add Filters</a>
+    </div>
+
     <div id="filter-code" class="code"></div>
     <div id="animation-code" class="code"></div>
 
@@ -92,21 +98,24 @@ Permissions beyond the scope of this license, pertaining to the examples of code
     </div>  
       
     <aside id="active-filters">  
-        <header>
-            <h1 class="title">CSS Filter Studio</h1>
-            <a href="#" id="filter-store-toggle" class="button dark">Add Filters</a>
-        </header>
-
         <ul id="filter-list">
             <li id="filter-list-empty">No filter activated. Add a filter to style the content.</li>
         </ul>
     </aside>
    
     <div id="animations-container">
-        <div id="animation-store-buttons">
-            <a href="#" id="save-animation" class="button dark">Save as</a>
-            <a href='#' id="delete-animation" class="button dark">Delete</a>
-        </div>
+        
+            <ul class="nav">
+                <li class="preset">
+                    <input id="active-animation" class="text-field" type="text" name="text_field" placeholder="Preset" readonly>
+                    <a href="#" id="save-animation" class="button">Save as preset</a>
+                    <a href="#" id="delete-animation" class="button">Delete preset</a>
+                </li>
+                <li>
+                    <a href="#">Help</a>
+                </li>
+            </ul>
+        
         <ul id="animations">
         </ul>
     </div>
@@ -135,23 +144,7 @@ Permissions beyond the scope of this license, pertaining to the examples of code
         </div>
     </div>
     
-    <div id="filter-dock">
-        
-    </div>             
-    
     <section id="main" class="container">
-        <header>
-            <ul class="nav">
-                <li class="preset">
-                    <input class="text-field" type="text" name="text_field" placeholder="Preset">
-                    <a href="#" class="button" >Save as Preset</a>
-                </li>
-                <li>
-                    <a href="#">Help</a>
-                </li>
-            </ul>
-        </header>                        
-        
         <div id="scene">
             <!-- shaded conent goes here -->
             <img src="images/tmp.png" alt="" />
@@ -161,6 +154,10 @@ Permissions beyond the scope of this license, pertaining to the examples of code
     
     <div id="app" class="container">
 
+    </div>
+
+    <div id="filter-dock" class="light">
+        
     </div>
     
 </body>

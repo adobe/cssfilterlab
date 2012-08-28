@@ -4,10 +4,9 @@ This work is licensed under a Creative Commons Attribution-Noncommercial-Share A
 Permissions beyond the scope of this license, pertaining to the examples of code included within this work are available at Adobe http://www.adobe.com/communities/guidelines/ccplus/commercialcode_plus_permission.html .
 */
 
-#filter-list,
-#animations {
-	padding: 0px;
-	margin: 0px;
+#filter-list {
+    padding: 0px;
+    margin: 0px;
 	padding-bottom: 100px;
 }
 
@@ -44,8 +43,7 @@ Permissions beyond the scope of this license, pertaining to the examples of code
 }
 
 #filter-list li.current,
-#animations li.current,
-.filter-stock .filter-item.current {
+#animations li.current {
     border-bottom: 1px solid #4F5354;
     border-top: 1px solid #292B2C;
 	background: $baseColorDark;
@@ -94,9 +92,13 @@ Permissions beyond the scope of this license, pertaining to the examples of code
 
 #animations li:hover,
 #filter-list li .filter-name:hover,
-.filter-stock li .customize-link:hover {
+.filter-stock .filter-item .customize-link:hover {
 	cursor:pointer;
 	text-decoration: underline;
+}
+
+.filter-stock .filter-item.current {
+    background: rgba(0, 0, 0, 0.25);
 }
 
 #filter-list li.builtin-filter,
