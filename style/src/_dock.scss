@@ -66,8 +66,7 @@
 }
 
 .panel-column.horizontal,
-.panel-column.horizontal > .panel-column-items,
-.dock-root {
+.panel-column.horizontal > .panel-column-items {
     @include hbox;
 }
 
@@ -88,14 +87,12 @@
 	float: right;
 }
 
-.panel-column-items,
-.dock-root {
+.panel-column-items {
 	@include flexbox;
 	@include flex;
 }
 
-.panel-column.horizontal > .panel-column-items > .panel-separator,
-.dock-root > .panel-separator {
+.panel-column.horizontal > .panel-column-items > .panel-separator {
 	width: 1px;
 	@include noflex;
 	border-left: 1px solid #282828;
@@ -128,8 +125,7 @@
 
 .light {
     
-    .panel-column.horizontal > .panel-column-items > .panel-separator,
-    .dock-root > .panel-separator{   
+    .panel-column.horizontal > .panel-column-items > .panel-separator {   
         border: none;
         background: #bdbdbd;
         border-right: 1px solid white;

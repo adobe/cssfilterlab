@@ -1439,8 +1439,7 @@ Permissions beyond the scope of this license, pertaining to the examples of code
 }
 
 .panel-column.horizontal,
-.panel-column.horizontal > .panel-column-items,
-.dock-root {
+.panel-column.horizontal > .panel-column-items {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-box;
@@ -1510,8 +1509,7 @@ Permissions beyond the scope of this license, pertaining to the examples of code
   float: right;
 }
 
-.panel-column-items,
-.dock-root {
+.panel-column-items {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-box;
@@ -1535,8 +1533,7 @@ Permissions beyond the scope of this license, pertaining to the examples of code
   box-flex: 1;
 }
 
-.panel-column.horizontal > .panel-column-items > .panel-separator,
-.dock-root > .panel-separator {
+.panel-column.horizontal > .panel-column-items > .panel-separator {
   width: 1px;
   -webkit-box-flex: 0;
   -moz-box-flex: 0;
@@ -1585,8 +1582,7 @@ Permissions beyond the scope of this license, pertaining to the examples of code
   border-bottom: 1px solid #c4c6c6;
 }
 
-.light .panel-column.horizontal > .panel-column-items > .panel-separator,
-.light .dock-root > .panel-separator {
+.light .panel-column.horizontal > .panel-column-items > .panel-separator {
   border: none;
   background: #bdbdbd;
   border-right: 1px solid white;
