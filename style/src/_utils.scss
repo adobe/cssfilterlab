@@ -86,5 +86,5 @@ $baseColorDark: #3B3F41 /* Slate Gray */;
 }
 
 @mixin box-shadow{
-    box-shadow: 0 0 1px 0 #ccc, 0 0 20px 0px rgba(0,0,0,0.15);
+    box-shadow: 0 10px 15px 0 #333;
 }
