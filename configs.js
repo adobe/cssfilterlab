@@ -268,7 +268,6 @@ window.filterConfigs = {
 	    hasFragment: true,
 	    mesh: "100 100",
 	    meshBox: "border-box detached",
-        useColoredBack: 0,
 	    params: {
 	        matrix: {
 	            rotationX: 20,
