@@ -1640,10 +1640,11 @@ table.paramsTable {
 table.paramsTable td {
   border: none;
   padding: 0.5em;
-  color: #777;
+  color: #bfbfbf;
   font-family: Tahoma, sans-serif;
   font-weight: normal;
   font-size: 12px;
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.8);
 }
 table.paramsTable th > td {
   font-weight: bold;
@@ -1709,6 +1710,10 @@ table.paramsTable .warp-control {
 }
 table.paramsTable input[type=range] {
   -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
   background: #202020;
   width: 100%;
   height: 4px;
@@ -1718,6 +1723,10 @@ table.paramsTable input[type=range] {
 }
 table.paramsTable input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
   width: 10px;
   height: 12px;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #b2b2b2), color-stop(1, #8d8d8d));
@@ -1731,7 +1740,15 @@ table.paramsTable input[type=range]::-webkit-slider-thumb {
 }
 table.paramsTable input[type=range].vertical {
   -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
   -webkit-transform-origin: 0 50%;
+  -moz-transform-origin: 0 50%;
+  -ms-transform-origin: 0 50%;
+  -o-transform-origin: 0 50%;
+  transform-origin: 0 50%;
 }
 table.paramsTable input[type=range].vertical::-webkit-slider-thumb {
   background: -webkit-gradient(linear, left top, right top, color-stop(0, #b2b2b2), color-stop(1, #8d8d8d));
@@ -1739,6 +1756,19 @@ table.paramsTable input[type=range].vertical::-webkit-slider-thumb {
   background: -ms-gradient(linear, left top, right top, color-stop(0, #b2b2b2), color-stop(1, #8d8d8d));
   background: -o-gradient(linear, left top, right top, color-stop(0, #b2b2b2), color-stop(1, #8d8d8d));
   background: gradient(linear, left top, right top, color-stop(0, #b2b2b2), color-stop(1, #8d8d8d));
+}
+table.paramsTable .value-label {
+  display: block;
+  padding: 3px;
+}
+table.paramsTable .value-editor {
+  margin: 0px;
+  box-shadow: 0px 0px 10px black;
+  outline: none;
+  border: none;
+  width: 100%;
+  padding: 3px 3px 4px 3px;
+  border-radius: 5px;
 }
 
 @font-face {

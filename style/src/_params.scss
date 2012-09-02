@@ -12,10 +12,11 @@ table.paramsTable {
     td {
         border: none;
         padding: 0.5em;
-    	color: #777;
+    	color: #bfbfbf;
     	font-family: Tahoma, sans-serif;
     	font-weight: normal;
     	font-size: 12px;
+        text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.8);
     }
 
     th > td {
@@ -90,7 +91,7 @@ table.paramsTable {
     }
 
     input[type=range] {
-        -webkit-appearance: none;
+        @include prefixProperty(appearance, none);
         background: #202020;
         width: 100%;
         height: 4px;
@@ -100,7 +101,7 @@ table.paramsTable {
     }
 
     input[type=range]::-webkit-slider-thumb {
-        -webkit-appearance: none;
+        @include prefixProperty(appearance, none);
         width: 10px;
         height: 12px;
         @include prefixValue(background, 
@@ -116,8 +117,8 @@ table.paramsTable {
     }
 
     input[type=range].vertical {
-        -webkit-transform: rotate(90deg);
-        -webkit-transform-origin: 0 50%;   
+        @include prefixProperty(transform, rotate(90deg));
+        @include prefixProperty(transform-origin, 0 50%);
     }
 
     input[type=range].vertical::-webkit-slider-thumb {
@@ -128,5 +129,20 @@ table.paramsTable {
                      color-stop(0, #b2b2b2),
                      color-stop(1, #8d8d8d))
         );
+    }
+
+    .value-label {
+        display: block;
+        padding: 3px;
+    }
+
+    .value-editor {
+        margin: 0px;
+        box-shadow: 0px 0px 10px black;
+        outline: none;
+        border: none;
+        width: 100%;
+        padding: 3px 3px 4px 3px;
+        border-radius: 5px;
     }
 }
