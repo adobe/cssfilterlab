@@ -178,18 +178,18 @@ aside {
     height: 70%;
     top: 0px;
     position: absolute;
-    margin-left: 5px;
-    margin-top: 5px;
+    margin-top: 15px;
+    margin-left: -15px;
 }
 
 #filter-dock:before {
-    background: #D4D7D7;
+    background: #202020;
     content: "";
     width: 20px;
     height: 20px;
     position: absolute;
-    left: -10px;
-    top: 10px;
+    left: 5px;
+    top: -10px;
     -webkit-transform: rotate(45deg);
 }
 

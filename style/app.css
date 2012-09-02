@@ -880,7 +880,7 @@ Permissions beyond the scope of this license, pertaining to the examples of code
 }
 
 .filter-stock .filter-item {
-  border-bottom: 1px solid #555;
+  border-bottom: 1px solid #585c5d;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-box;
@@ -939,6 +939,8 @@ Permissions beyond the scope of this license, pertaining to the examples of code
   -ms-box-align: center;
   -o-box-align: center;
   box-align: center;
+  color: #bfbfbf;
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.8);
 }
 
 .filter-stock .filter-item .button-box {
@@ -2085,18 +2087,18 @@ aside {
   height: 70%;
   top: 0px;
   position: absolute;
-  margin-left: 5px;
-  margin-top: 5px;
+  margin-top: 15px;
+  margin-left: -15px;
 }
 
 #filter-dock:before {
-  background: #D4D7D7;
+  background: #202020;
   content: "";
   width: 20px;
   height: 20px;
   position: absolute;
-  left: -10px;
-  top: 10px;
+  left: 5px;
+  top: -10px;
   -webkit-transform: rotate(45deg);
 }
 
