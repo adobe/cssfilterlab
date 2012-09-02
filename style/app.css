@@ -1588,10 +1588,9 @@ Permissions beyond the scope of this license, pertaining to the examples of code
 }
 
 .panel-column.vertical.light > .panel-column-items > .panel-separator {
+  background: #c4c6c6;
+  height: 2px;
   border: none;
-  background: white;
-  height: 3px;
-  border-bottom: 1px solid #c4c6c6;
 }
 
 .light .panel-column.horizontal > .panel-column-items > .panel-separator {
@@ -1610,7 +1609,6 @@ Permissions beyond the scope of this license, pertaining to the examples of code
 .light .panel-view.active {
   background: #DFE2E2;
   border-top: 1px solid #DFE2E2;
-  /*        box-shadow: 0px -1px 0px rgba(255, 255, 255, 1);*/
 }
 .light .panel-view.active {
   color: black;
@@ -2117,4 +2115,74 @@ aside {
   position: absolute;
   padding: 0px;
   margin: 0px;
+}
+
+#main {
+  box-sizing: border-box;
+  padding-top: 30px;
+  background: #f8f8f8;
+}
+
+#container {
+  -webkit-touch-callout: auto;
+  -webkit-user-select: auto;
+  -khtml-user-select: auto;
+  -moz-user-select: auto;
+  -ms-user-select: auto;
+  user-select: auto;
+  width: 600px;
+  color: black;
+  position: relative;
+  margin: 35px auto 5px;
+  font-size: 12px;
+  padding: 25px;
+  border: 6px solid #33ccff;
+  background: white;
+  border-radius: 10px;
+  text-align: justify;
+}
+#container #multi-col {
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  -ms-column-count: 2;
+  -o-column-count: 2;
+  column-count: 2;
+  -webkit-column-gap: 3em;
+  -moz-column-gap: 3em;
+  -ms-column-gap: 3em;
+  -o-column-gap: 3em;
+  column-gap: 3em;
+}
+#container #multi-col h2 {
+  color: #eb3d3c;
+  font-size: 36px;
+  margin: 0px;
+  text-align: center;
+}
+#container #svg-img {
+  background: -webkit-linear-gradient(#20baff 0%, #b6eeff 100%);
+  display: block;
+  margin: auto;
+  border-left: 8px solid #eb3d3c;
+  box-shadow: 2px 2px 6px 3px rgba(0, 0, 0, 0.25);
+  margin-bottom: 2em;
+}
+#container #png-img {
+  display: block;
+  margin: auto;
+  border-right: 8px solid #eb3d3c;
+  box-shadow: 2px 2px 6px 3px rgba(0, 0, 0, 0.25);
+  margin-bottom: 2em;
+}
+#container #css3-img {
+  position: absolute;
+  display: block;
+  border: 6px solid #33ccff;
+  background: white;
+  border-radius: 45px;
+  padding: 10px;
+  width: 30px;
+  height: 30px;
+  bottom: -30px;
+  right: 20px;
 }

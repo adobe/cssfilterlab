@@ -209,3 +209,65 @@ aside {
     padding: 0px;
     margin: 0px;
 }
+
+#main {
+    box-sizing: border-box;
+    padding-top: 30px;
+    background: #f8f8f8;
+}
+
+#container { 
+    @include user-select(auto);
+    width: 600px;
+    color: black;
+    position: relative;
+    margin: 35px auto 5px;
+    font-size: 12px;
+    padding: 25px;
+    border: 6px solid #33ccff;
+    background: white;
+    border-radius: 10px;
+    text-align: justify;
+
+    #multi-col {
+        @include prefixProperty(column-count, 2);
+        @include prefixProperty(column-gap, 3em);
+
+        h2{
+            color: #eb3d3c;
+            font-size: 36px;
+            margin: 0px;
+            text-align: center;
+        }
+    }   
+
+    #svg-img {
+        background: -webkit-linear-gradient(#20baff 0%, #b6eeff 100%);
+        display: block;
+        margin: auto;
+        border-left: 8px solid #eb3d3c;
+        box-shadow: 2px 2px 6px 3px rgba(0, 0, 0, 0.25);
+        margin-bottom: 2em;
+    }
+
+    #png-img {
+        display: block; 
+        margin: auto;
+        border-right: 8px solid #eb3d3c;
+        box-shadow: 2px 2px 6px 3px rgba(0, 0, 0, 0.25);
+        margin-bottom: 2em;
+    }
+
+    #css3-img {
+        position: absolute;
+        display: block;
+        border: 6px solid #33ccff;
+        background: white;
+        border-radius: 45px;
+        padding: 10px;
+        width: 30px;
+        height: 30px;
+        bottom: -30px;
+        right: 20px;
+    }
+}
