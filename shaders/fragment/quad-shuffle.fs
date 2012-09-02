@@ -6,6 +6,4 @@ Permissions beyond the scope of this license, pertaining to the examples of code
 
 void main()
 {
-    // By default, css_BlendColor is (1.0, 1.0, 1.0, 1.0),
-    // which will display the original texture as is.
 }

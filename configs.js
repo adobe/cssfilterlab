@@ -124,18 +124,7 @@ window.filterConfigs = {
             flood_color: color(true)
         }
     },
-    gamma: {
-        params: {
-            amplitude: 1.0,
-            exponent: 1.0,
-            offset: 0.0
-        },
-        config: {
-            amplitude: range(0, 10, 0.01),
-            exponent: range(0.0, 5.0, 0.01),
-            offset: range(0, 1.0, 0.01)
-        }
-    },
+    
     "blur": {
     	type: builtin("blur", ["deviation"]),
         params: {
@@ -147,7 +136,6 @@ window.filterConfigs = {
     },
     
     grayscale: builtinPercent("grayscale", 100),
-    dissolve: normalAmountConfig(0.25, 0, 1, 0.001),
     'hue-rotate': builtinDeg("hue-rotate", 180),
     invert: builtinPercent("invert", 100),
     opacity: builtinPercent("opacity", 50),
@@ -155,29 +143,7 @@ window.filterConfigs = {
 	sepia: builtinPercent("sepia", 100),
 	brightness: builtinPercent("brightness", 25),
 	contrast:  builtinPercent("contrast", 50),
-	sharpen: {
-		params: {
-			radius: 5.0,
-			amount: 0.5
-		},
-		config: {
-			radius: range(0.0, 10.0, 0.01),
-			amount: range(0.0, 1.0, 0.01)
-		}
-	},
-	burn: {
-	    params: {
-	        t: 0.5,
-	        sampler3: "texture(url(images/burn-texture.png))"
-	    },
-	    config: {
-	        t: range(0.0, 1.5, 0.01),
-	        sampler3: {
-	            type: 'unknown',
-	            value: "texture(url(images/burn-texture.png))"
-	        }
-	    }
-	},
+	
 	warp: {
 	    hasVertex: true,
 	    hasFragment: true,

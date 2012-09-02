@@ -15,5 +15,5 @@ const float PI = 3.1415;
 
 void main()
 {
-    css_BlendColor = vec4(vec3(v_lighting), 1.0);
+    // css_MixColor = vec4(vec3(v_lighting), 1.0);
 }

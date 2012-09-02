@@ -16,8 +16,10 @@ const float PI = 3.1415;
 
 void main()
 {
+	/*
 	if (!gl_FrontFacing && useColoredBack >= 0.5)
-        css_BlendColor = vec4(vec3(v_lighting), 1.0) * backColor;
+        css_MixColor = vec4(vec3(v_lighting), 1.0) * backColor;
     else
-	    css_BlendColor = vec4(vec3(v_lighting), 1.0);
+	    css_MixColor = vec4(vec3(v_lighting), 1.0);
+	   */
 }
