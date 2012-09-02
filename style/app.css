@@ -1084,7 +1084,7 @@ Permissions beyond the scope of this license, pertaining to the examples of code
   margin: -10px 20px 0 60px;
 }
 #timeline .keyframe_wrapper {
-  background: #656565;
+  background: #9E9E9E;
   padding: 0 6px 0 4px;
 }
 #timeline .keyframe_bar {
@@ -1139,7 +1139,7 @@ Permissions beyond the scope of this license, pertaining to the examples of code
 }
 
 .code {
-  color: #fff;
+  color: #000;
   padding: 10px;
   -webkit-touch-callout: auto;
   -webkit-user-select: auto;
@@ -1147,33 +1147,42 @@ Permissions beyond the scope of this license, pertaining to the examples of code
   -moz-user-select: auto;
   -ms-user-select: auto;
   user-select: auto;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.code > * {
+  font-size: 1.2em;
 }
 .code a {
-  color: white;
+  color: #8757ad;
+  text-decoration: underline;
 }
 .code .function-name {
-  color: #7c91a9;
+  color: #446fbd;
 }
 .code .function-name.custom {
-  color: #ff9130;
+  color: #446fbd;
 }
 .code .parameter-name {
-  color: #7c91a9;
+  color: #535353;
 }
 .code .keyword {
-  color: #7c91a9;
+  color: #446fbd;
 }
 .code .parameter-value {
-  color: #fde15d;
+  color: #738d00;
 }
 .code .parameter-unit {
-  color: #ff9130;
+  color: #000;
 }
 .code .keyframe-percent {
-  color: white;
+  color: #000;
 }
 .code .property-name {
-  color: #DB9E36;
+  color: #000;
 }
 .code .keyframe-content {
   margin-left: 20px;

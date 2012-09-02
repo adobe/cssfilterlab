@@ -262,7 +262,7 @@ Permissions beyond the scope of this license, pertaining to the examples of code
     }
 
     .keyframe_wrapper{
-    	background: #656565;
+    	background: #9E9E9E;
     	padding: 0 6px 0 4px;
     }
 
@@ -319,47 +319,53 @@ Permissions beyond the scope of this license, pertaining to the examples of code
     font-size: 12px;
 }
 .code {
-    color: #fff; 
+    color: #000; 
     padding: 10px;
     @include user-select(auto);
+    @include prefixProperty(box-sizing, border-box);
 
-    a{
-    	color:white;
+    > * {
+        font-size: 1.2em;
+    }
+
+    a {
+    	color: #8757ad;
+        text-decoration: underline;
     }
 
     .function-name {
-        color: #7c91a9;
+        color: #446fbd;
     }
 
     .function-name.custom {
-        color: #ff9130;
+        color: #446fbd;
     }
 
     .parameter-name {
-        color: #7c91a9;
+        color: #535353;
     }
 
     .keyword {
-        color: #7c91a9;
+        color: #446fbd;
     }
 
     .parameter-value {
-        color: #fde15d;
+        color: #738d00;
     }
 
     .parameter-unit {
-        color: #ff9130;
+        color: #000;
     }
 
     .function-arguments.custom {
     }
 
     .keyframe-percent {
-        color: white;
+        color: #000;
     }
 
     .property-name {
-        color: #DB9E36;
+        color: #000;
     }
 
     .keyframe-content {
