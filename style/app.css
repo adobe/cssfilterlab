@@ -808,6 +808,7 @@ Permissions beyond the scope of this license, pertaining to the examples of code
 
 #filter-list li .filter-name {
   font-size: 1.2em;
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.8);
 }
 
 #filter-list li .delete-filter {
@@ -1646,19 +1647,24 @@ table.paramsTable td {
   font-size: 12px;
   text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.8);
 }
-table.paramsTable th > td {
-  font-weight: bold;
-  padding: 5px;
+table.paramsTable tr.field > td.field-label {
+  text-align: right;
+  width: 75px;
+  max-width: 75px;
+  -webkit-text-overflow: ellipsis;
+  -moz-text-overflow: ellipsis;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
-table.paramsTable td:first-child {
-  min-width: 70px;
-}
-table.paramsTable tr > td:nth-child(2) {
+table.paramsTable tr.field > td:nth-child(2) {
   min-width: 100px;
   max-width: 140px;
 }
-table.paramsTable td:last-child {
+table.paramsTable tr.field > td:last-child {
   min-width: 50px;
+  max-width: 50px;
 }
 table.paramsTable tr.header {
   font-weight: bold;
@@ -1668,10 +1674,6 @@ table.paramsTable tr.header {
 }
 table.paramsTable tr > td:nth-child(3) {
   width: 20px;
-}
-table.paramsTable .param-color td.color-preview {
-  min-width: 20px;
-  text-align: left;
 }
 table.paramsTable .param-color td:nth-child(1) {
   min-width: 14px;
@@ -1685,9 +1687,31 @@ table.paramsTable .param-color td:nth-child(3) {
   min-width: 25px;
 }
 table.paramsTable .param-color-preview {
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
   width: 20px;
-  height: 40px;
-  border: 1px solid black;
+  height: 20px;
+  border: none;
+  border-radius: 4px;
+  -webkit-box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.5);
+  -ms-box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.5);
+  -o-box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.5);
+}
+table.paramsTable .param-color-preview:hover {
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+  -ms-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+  -o-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+}
+table.paramsTable .param-color-preview::-webkit-color-swatch-wrapper {
+  display: none;
 }
 table.paramsTable .param-transform td:first-child {
   min-width: 40px;
@@ -1719,6 +1743,10 @@ table.paramsTable input[type=range] {
   height: 4px;
   border: 1px solid black;
   border-radius: 5px;
+  -webkit-box-shadow: inset 0px -1px 1px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: inset 0px -1px 1px 0px rgba(0, 0, 0, 0.5);
+  -ms-box-shadow: inset 0px -1px 1px 0px rgba(0, 0, 0, 0.5);
+  -o-box-shadow: inset 0px -1px 1px 0px rgba(0, 0, 0, 0.5);
   box-shadow: inset 0px -1px 1px 0px rgba(0, 0, 0, 0.5);
 }
 table.paramsTable input[type=range]::-webkit-slider-thumb {
@@ -1736,6 +1764,10 @@ table.paramsTable input[type=range]::-webkit-slider-thumb {
   background: gradient(linear, left top, left bottom, color-stop(0, #b2b2b2), color-stop(1, #8d8d8d));
   border-radius: 4px;
   border: 1px solid rgba(255, 255, 255, 0.2);
+  -webkit-box-shadow: 0px 0px 1px 1px black;
+  -moz-box-shadow: 0px 0px 1px 1px black;
+  -ms-box-shadow: 0px 0px 1px 1px black;
+  -o-box-shadow: 0px 0px 1px 1px black;
   box-shadow: 0px 0px 1px 1px black;
 }
 table.paramsTable input[type=range].vertical {
@@ -1763,6 +1795,10 @@ table.paramsTable .value-label {
 }
 table.paramsTable .value-editor {
   margin: 0px;
+  -webkit-box-shadow: 0px 0px 10px black;
+  -moz-box-shadow: 0px 0px 10px black;
+  -ms-box-shadow: 0px 0px 10px black;
+  -o-box-shadow: 0px 0px 10px black;
   box-shadow: 0px 0px 10px black;
   outline: none;
   border: none;
