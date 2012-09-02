@@ -50,6 +50,13 @@ function checkbox() {
     return range(0, 1, 1);
 }
 
+function mix(blendMode, compositeOperator) {
+	return {
+		blendMode: blendMode || "normal",
+		compositeOperator: compositeOperator || "source-atop"
+	};
+}
+
 function builtinPercent(fn, defaultValue, maxValue) {
 	return {
 		type: builtin(fn, ["amount"]),
@@ -174,6 +181,7 @@ window.filterConfigs = {
 	warp: {
 	    hasVertex: true,
 	    hasFragment: true,
+	    mix: mix("multiply"),
 	    mesh: "20 20",
 	    meshBox: "border-box",
 	    params: {
@@ -206,6 +214,7 @@ window.filterConfigs = {
 	"rolling-scroll": {
 	    hasVertex: true,
 	    hasFragment: true,
+	    mix: mix(),
 	    mesh: "500 1",
 	    meshBox: "border-box",
 	    params: {
@@ -234,6 +243,7 @@ window.filterConfigs = {
 	"fold": {
 	    hasVertex: true,
 	    hasFragment: true,
+	    mix: mix(),
 	    mesh: "40 8",
 	    meshBox: "border-box",
 	    params: {
@@ -266,6 +276,7 @@ window.filterConfigs = {
 	"quad-shuffle": {
 	    hasVertex: true,
 	    hasFragment: true,
+	    mix: mix(),
 	    mesh: "100 100",
 	    meshBox: "border-box detached",
 	    params: {
@@ -288,6 +299,7 @@ window.filterConfigs = {
 	"quad-explosion": {
 	    hasVertex: true,
 	    hasFragment: true,
+	    mix: mix(),
 	    mesh: "76 100",
 	    meshBox: "border-box detached",
 	    params: {
