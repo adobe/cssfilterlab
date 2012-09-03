@@ -36,6 +36,7 @@ Permissions beyond the scope of this license, pertaining to the examples of code
     <script type="text/javascript" src="lib/models/filter.js"></script>
     <script type="text/javascript" src="lib/models/filter_store.js"></script>
     <script type="text/javascript" src="lib/models/filter_list.js"></script>
+    <script type="text/javascript" src="lib/models/github.js"></script>
     <script type="text/javascript" src="lib/models/keyframe.js"></script>
     <script type="text/javascript" src="lib/utils/angle_lib.js"></script>
     <script type="text/javascript" src="lib/utils/color_scheme.js"></script>
@@ -125,6 +126,7 @@ Permissions beyond the scope of this license, pertaining to the examples of code
             <div class="code-view"></div>
             <div class="code-bottom">
                 <a href="#" id="reload-button" class="button dark">Reload</a>
+                <a href="#" id="post-gist-button" class="button dark">Save as anonymous gist</a>
             </div>
         </div>
         <div id="vertex-shader" class="code-panel">
@@ -198,7 +200,15 @@ Permissions beyond the scope of this license, pertaining to the examples of code
         </div>
     </div>
 
-    <div id="browser-popup">
+    <div id="github-popup" class="popup">
+        <div class="popup-inner">
+            <h2>GitHub gist created!</h2>
+            <p><a href="" target="_blank" id="gist-link">Clickhere to view your new gist.</a></p>
+            <p><a href='#' id="gist-popup-close">Close</a></p>
+        </div>
+    </div>
+
+    <div id="browser-popup" class="popup">
         <div class="popup-inner">
             <h2>This application requires cutting edge CSS features!</h2>
             <p>To correctly view this application you need to download a nightly build of Safari for Mac or Google Chromium Canary.</p>

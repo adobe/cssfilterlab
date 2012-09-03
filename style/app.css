@@ -1842,7 +1842,7 @@ body {
   padding: 0;
 }
 
-#components, #main-view, #browser-popup {
+#components, #main-view, .popup {
   display: none;
 }
 
@@ -1864,7 +1864,7 @@ body {
   border-radius: 20px;
 }
 
-#browser-popup {
+.popup {
   position: absolute;
   top: 0px;
   left: 0px;
@@ -1873,7 +1873,7 @@ body {
   background: rgba(0, 0, 0, 0.3);
 }
 
-#browser-popup .popup-inner {
+.popup .popup-inner {
   margin-left: auto;
   margin-right: auto;
   width: 500px;
