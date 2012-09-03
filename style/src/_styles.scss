@@ -510,4 +510,12 @@
 
 ::-webkit-scrollbar-thumb:window-inactive {
     background: rgba(0,0,0,0.1);
+} 
+
+.button.selected {
+    @extend .button:active;
 }
+
+.button.dark.selected {
+    @extend .button.dark:active;
+}    

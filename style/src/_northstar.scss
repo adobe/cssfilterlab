@@ -21,7 +21,26 @@
  * 
  */
 
-/* Nothstar CSS */
+/* Fonts
+	100 = thin
+	200 = extra-light
+	300 = light
+	400 = normal, book
+	500 = medium
+	600 = demi-bold
+	700 = bold
+	800 = heavy
+	900 = black
+*/
+
+/* Icons
+	pl = 23x23
+	lg = 22x18
+	wi = 20x13
+	md = 18x18
+	sm = 16x16
+	xs = 13x13
+*/
 
 /* Global */
 
@@ -45,17 +64,6 @@ a:active {
 	pointer-events: none;
 }
 
-/* Fonts
-100 = thin
-200 = extra-light
-300 = light
-400 = normal, book
-500 = medium
-600 = demi-bold
-700 = bold
-800 = heavy
-900 = black
-*/
 
 .bg-white {
 	background: #fff;
@@ -194,10 +202,10 @@ input.dark[type=checkbox]:checked + label {
 /* Slide Switch */
 
 .slide-switch {
-	background: #e5e7e8;
+    background: #ddd;
 	box-sizing: border-box;
-    border: 1px solid rgba(0,0,0,0.3);
-    border-radius: 3px;
+	border: 1px solid rgba(0,0,0,0.3);
+	border-radius: 3px;
     cursor: pointer;
     display: block;
     height: 21px;
@@ -215,8 +223,7 @@ input.dark[type=checkbox]:checked + label {
 }
 
 .wrapper {
-    background: #e5e7e8;
-    display: block;
+	display: block;
     height: 21px;
     position: relative;
     top: 0px;
@@ -238,7 +245,7 @@ input.dark[type=checkbox]:checked + label {
     position: absolute;
     text-align: center;
     text-shadow: 0 1px 0 #fff;
-    top: 0px;
+    top: 0;
  }
 
 .slider {
@@ -259,6 +266,8 @@ input.dark[type=checkbox]:checked + label {
 
 .on {
 	background: #e0f0fa;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;	
 	box-shadow: inset 0 1px 0 rgba(0,0,0,0.06);
 	color: #0083e8;
     width: 37px;
@@ -266,6 +275,8 @@ input.dark[type=checkbox]:checked + label {
 
 .off {
     background: #e5e7e8;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;    
 	box-shadow: inset 0 1px 0 rgba(0,0,0,0.06);
     color: #909090;
     left: 55px;
@@ -273,6 +284,7 @@ input.dark[type=checkbox]:checked + label {
 }
 
 .slide-switch.dark {
+	background: #333;
 	border: 1px solid rgba(0,0,0,1);
 }
 
@@ -326,15 +338,17 @@ input.dark[type=checkbox]:checked + label {
 }
 
 .spinner.large {
-	width:42px;
-	height:42px;
-	background:url(../img/x1/spinner-lrg.png) 0 0;
+	width:36px;
+	height:36px;
+	background:url(../img/x1/spinner-lrg.png) 50% no-repeat;
+	background-size: 100%;
 }
 
 .spinner.small {
-	width:20px;
-	height:20px;
-	background:url(../img/x1/spinner-sml.png) 0 0;
+	width:16px;
+	height:16px;
+	background:url(../img/x1/spinner-sml.png) 50% no-repeat;
+	background-size: 100%;
 }
 
 @-webkit-keyframes rotate {
@@ -506,7 +520,7 @@ a.button {
 	background-image: linear-gradient(top, rgb(255, 255, 255), rgb(244, 246, 247));
 }
 
-.button:active, .button.selected {
+.button:active {
 	background: #E5E7E8;
 	-moz-box-shadow: inset 0 1px 0 rgba(0,0,0,0.06);
 	-webkit-box-shadow: inset 0 1px 0 rgba(0,0,0,0.06);
@@ -522,7 +536,9 @@ a.button {
 
 
 /*Dark Button*/
-.button.dark, .button.dark.disabled:hover, .button.dark.disabled:active {
+.button.dark,
+.button.dark.disabled:hover,
+.button.dark.disabled:active {
 	border: 1px solid rgba(0,0,0,0.48);
 	background-color: #6c6e6e;
 	color: #f0f1f1;
@@ -548,7 +564,7 @@ a.button {
 	background-image: linear-gradient(top, rgb(129, 131, 131), rgb(108, 110, 110));
 }
 
-.button.dark:active, .button.dark.selected {
+.button.dark:active {
 	background: #4E4F4F;
 	-moz-box-shadow: inset 0 1px 0 rgba(0,0,0,0.06);
 	-webkit-box-shadow: inset 0 1px 0 rgba(0,0,0,0.06);
