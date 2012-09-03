@@ -190,7 +190,7 @@ input.dark[type=checkbox]:checked + label {
 }
 
 /* Approx. Slider */
-.approx-slider {
+.approx-slider, table.paramsTable input[type=range] {
   background: #d4d7d7;
   border: 1px solid #babdbd;
   border-radius: 3px;
@@ -199,7 +199,7 @@ input.dark[type=checkbox]:checked + label {
   -webkit-appearance: none !important;
 }
 
-.approx-slider::-webkit-slider-thumb {
+.approx-slider::-webkit-slider-thumb, table.paramsTable input[type=range]::-webkit-slider-thumb {
   background-color: #f5f9fa;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#f5f9fa), to(#e3e5e6));
   background-image: -webkit-linear-gradient(top, #f5f9fa, #e3e5e6);
@@ -216,12 +216,12 @@ input.dark[type=checkbox]:checked + label {
   -webkit-appearance: none !important;
 }
 
-.approx-slider.dark {
+.approx-slider.dark, table.paramsTable input[type=range] {
   background: #202020;
   border: 1px solid #000;
 }
 
-.approx-slider.dark::-webkit-slider-thumb {
+.approx-slider.dark::-webkit-slider-thumb, table.paramsTable input[type=range]::-webkit-slider-thumb {
   background: #b2b2b2;
   /* Old browsers */
   background: -moz-linear-gradient(top, #b2b2b2 0%, #8d8d8d 100%);
@@ -1860,44 +1860,6 @@ table.paramsTable .warp-control {
   -o-box-shadow: inset 0 0 5px black;
   box-shadow: inset 0 0 5px black;
 }
-table.paramsTable input[type=range] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -ms-appearance: none;
-  -o-appearance: none;
-  appearance: none;
-  background: #202020;
-  width: 100%;
-  height: 4px;
-  border: 1px solid black;
-  border-radius: 5px;
-  -webkit-box-shadow: inset 0px -1px 1px 0px rgba(0, 0, 0, 0.5);
-  -moz-box-shadow: inset 0px -1px 1px 0px rgba(0, 0, 0, 0.5);
-  -ms-box-shadow: inset 0px -1px 1px 0px rgba(0, 0, 0, 0.5);
-  -o-box-shadow: inset 0px -1px 1px 0px rgba(0, 0, 0, 0.5);
-  box-shadow: inset 0px -1px 1px 0px rgba(0, 0, 0, 0.5);
-}
-table.paramsTable input[type=range]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -ms-appearance: none;
-  -o-appearance: none;
-  appearance: none;
-  width: 10px;
-  height: 12px;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #b2b2b2), color-stop(1, #8d8d8d));
-  background: -moz-gradient(linear, left top, left bottom, color-stop(0, #b2b2b2), color-stop(1, #8d8d8d));
-  background: -ms-gradient(linear, left top, left bottom, color-stop(0, #b2b2b2), color-stop(1, #8d8d8d));
-  background: -o-gradient(linear, left top, left bottom, color-stop(0, #b2b2b2), color-stop(1, #8d8d8d));
-  background: gradient(linear, left top, left bottom, color-stop(0, #b2b2b2), color-stop(1, #8d8d8d));
-  border-radius: 4px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  -webkit-box-shadow: 0px 0px 1px 1px black;
-  -moz-box-shadow: 0px 0px 1px 1px black;
-  -ms-box-shadow: 0px 0px 1px 1px black;
-  -o-box-shadow: 0px 0px 1px 1px black;
-  box-shadow: 0px 0px 1px 1px black;
-}
 table.paramsTable input[type=range].vertical {
   -webkit-transform: rotate(90deg);
   -moz-transform: rotate(90deg);
@@ -1910,29 +1872,23 @@ table.paramsTable input[type=range].vertical {
   -o-transform-origin: 0 50%;
   transform-origin: 0 50%;
 }
-table.paramsTable input[type=range].vertical::-webkit-slider-thumb {
-  background: -webkit-gradient(linear, left top, right top, color-stop(0, #b2b2b2), color-stop(1, #8d8d8d));
-  background: -moz-gradient(linear, left top, right top, color-stop(0, #b2b2b2), color-stop(1, #8d8d8d));
-  background: -ms-gradient(linear, left top, right top, color-stop(0, #b2b2b2), color-stop(1, #8d8d8d));
-  background: -o-gradient(linear, left top, right top, color-stop(0, #b2b2b2), color-stop(1, #8d8d8d));
-  background: gradient(linear, left top, right top, color-stop(0, #b2b2b2), color-stop(1, #8d8d8d));
-}
 table.paramsTable .value-label {
   display: block;
   padding: 3px;
 }
 table.paramsTable .value-editor {
   margin: 0px;
-  -webkit-box-shadow: 0px 0px 10px black;
-  -moz-box-shadow: 0px 0px 10px black;
-  -ms-box-shadow: 0px 0px 10px black;
-  -o-box-shadow: 0px 0px 10px black;
-  box-shadow: 0px 0px 10px black;
+  -webkit-box-shadow: 0px 0px 5px 2px black;
+  -moz-box-shadow: 0px 0px 5px 2px black;
+  -ms-box-shadow: 0px 0px 5px 2px black;
+  -o-box-shadow: 0px 0px 5px 2px black;
+  box-shadow: 0px 0px 5px 2px black;
   outline: none;
   border: none;
   width: 100%;
   padding: 3px 3px 4px 3px;
-  border-radius: 5px;
+  border-radius: 3px;
+  background: #ebebeb;
 }
 
 @font-face {
