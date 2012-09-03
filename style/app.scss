@@ -84,11 +84,9 @@ body {
 #logo, #animations-container {
     @include flexbox;
     @include valign;
-
-    & > *{
-        margin: 10px 15px 10px 15px;
-    }
-
+    padding: 10px 15px 10px 15px;
+    box-sizing: border-box;
+    
     -webkit-justify-content: space-between;
     border-bottom: 1px solid rgba(0, 0, 0, 0.36);
     box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.11);
@@ -97,6 +95,7 @@ body {
         color: white;
         font-size: 18px;
         text-shadow: 0 -1px 0 black;
+        @include flex(1);
     }
 }
 

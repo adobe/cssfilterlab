@@ -1901,17 +1901,26 @@ body {
   -ms-box-align: center;
   -o-box-align: center;
   box-align: center;
+  padding: 10px 15px 10px 15px;
+  box-sizing: border-box;
   -webkit-justify-content: space-between;
   border-bottom: 1px solid rgba(0, 0, 0, 0.36);
   box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.11);
-}
-#logo > *, #animations-container > * {
-  margin: 10px 15px 10px 15px;
 }
 #logo h1, #logo h2, #logo h3, #animations-container h1, #animations-container h2, #animations-container h3 {
   color: white;
   font-size: 18px;
   text-shadow: 0 -1px 0 black;
+  -webkit-flex: 1;
+  -moz-flex: 1;
+  -ms-flex: 1;
+  -o-flex: 1;
+  flex: 1;
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -ms-box-flex: 1;
+  -o-box-flex: 1;
+  box-flex: 1;
 }
 
 #animations-container {
