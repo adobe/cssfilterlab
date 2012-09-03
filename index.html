@@ -123,17 +123,20 @@
        
         <div id="animations-container">
             
-                <ul class="nav">
-                    <li class="preset">
-                        <input id="active-animation" class="text-field" type="text" name="text_field" placeholder="Preset" readonly>
-                        <a href="#" id="save-animation" class="button">Save as preset</a>
-                        <a href="#" id="delete-animation" class="button">Delete preset</a>
-                    </li>
-                    <li>
-                        <a href="#">Help</a>
-                    </li>
-                </ul>
-            
+            <ul class="nav">
+                <li class="preset">
+                    <input id="active-animation" class="text-field" type="text" name="text_field" placeholder="Preset" readonly>
+                    <a href="#" id="save-animation" class="button">Save as preset</a>
+                    <a href="#" id="delete-animation" class="button">Delete preset</a>
+                </li>
+            </ul>
+
+            <ul class="nav">
+                <li>
+                    <a id="help-link" href="#">Help</a>
+                </li>
+            </ul>
+        
             <ul id="animations">
             </ul>
         </div>
@@ -220,7 +223,7 @@
         <div class="popup-inner">
             <h2>GitHub gist created!</h2>
             <p><a href="" target="_blank" id="gist-link">Click here to view your new gist.</a></p>
-            <p><a href='#' id="gist-popup-close">Close</a></p>
+            <p><a href='#' id="gist-popup-close" class="button">Close</a></p>
         </div>
     </div>
 
@@ -228,6 +231,14 @@
         <div class="popup-inner">
             <h2>This application requires cutting edge CSS features!</h2>
             <p>To correctly view this application you need to download a nightly build of Safari for Mac or Google Chromium Canary.</p>
+        </div>
+    </div>
+
+    <div id="help-popup" class="popup">
+        <div class="popup-inner">
+            <h2>Help</h2>
+            <p>Help to be written here.</p>
+            <a href="#" id="help-popup-close" class="button">Close</a>
         </div>
     </div>
     
