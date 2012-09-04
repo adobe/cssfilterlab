@@ -81,7 +81,6 @@
     height: 16px;
     text-indent: -999px;
     background: transparent url(img/remove.png) center center no-repeat;
-    background-size: 18px;
 }
 
 #filter-list li .dragpoint {
@@ -110,10 +109,8 @@
 }
 
 #animations li:hover,
-#filter-list li .filter-name:hover,
 .filter-stock .filter-item .customize-link:hover {
 	cursor:pointer;
-	text-decoration: underline;
 }
               
 .filter-stock{
