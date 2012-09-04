@@ -1120,16 +1120,17 @@ a.button {
 #timeline .controls .play {
   float: none;
   clear: both;
-  width: 42px;
-  padding: 1px 0;
+  width: 38px;
+  height: 28px;
   margin-top: -12px;
   margin-bottom: 20px;
-  background: url(../images/icons/P_Play_Lg_N_D.png) center center no-repeat;
-  border: 1px solid #1f1f1f;
+  background: url(img/play.png) center center no-repeat, -webkit-linear-gradient(bottom, rgba(255, 255, 255, 0), white);
+  border: 1px solid rgba(0, 0, 0, 0.24);
+  border-radius: 2px;
+  box-shadow: inset 0 1px 0 1px white;
 }
 #timeline .controls .play.active {
-  background: url(../images/icons/P_Stop_Lg_R_D.png) center center no-repeat;
-  background-color: #1f1f1f;
+  background: url(img/pause.png) center center no-repeat, -webkit-linear-gradient(bottom, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.1));
 }
 #timeline .controls .next,
 #timeline .controls .prev {
@@ -1147,16 +1148,39 @@ a.button {
   transform: rotateY(180deg);
 }
 #timeline .controls .toggle {
+  width: 17px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50px;
+  border: 1px solid rgba(0, 0, 0, 0.24);
+  box-shadow: inset 0 1px 0 1px white;
+  background: -webkit-linear-gradient(bottom, rgba(255, 255, 255, 0), white);
+  position: relative;
   margin: 0 4px;
-  background: url(../images/icons/P_KeynavKey_11x14_N_D.png) center center no-repeat;
 }
-#timeline .controls .toggle.active {
-  background: url(../images/icons/P_KeynavKey_11x14_S_D.png) center center no-repeat;
+#timeline .controls .toggle:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  margin: 0 auto;
+  text-indent: 0;
+  content: "+";
+  text-align: center;
+  color: #777;
+  font-size: 14px;
+  line-height: 13px;
+  text-shadow: 0px 1px 0 0 rgba(0, 0, 0, 0.3);
+}
+#timeline .controls .toggle.active:after {
+  content: "-";
+  font-size: 22px;
+  line-height: 10px;
 }
 #timeline .time {
   height: 16px;
   margin: -22px 0 2px;
-  border-bottom: 1px dashed #ccc;
   padding-bottom: 15px;
   position: relative;
 }
@@ -1183,15 +1207,17 @@ a.button {
   margin: -10px 20px 0 60px;
 }
 #timeline .keyframe_wrapper {
-  background: #9E9E9E;
+  background: #D3D7D7;
   padding: 0 6px 0 4px;
+  box-shadow: inset 0 -1px 0 0 rgba(255, 255, 255, 0.7), 0 -1px 0 0 rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
 }
 #timeline .keyframe_bar {
   position: relative;
 }
 #timeline .keyframes_list {
   position: relative;
-  height: 18px;
+  height: 16px;
 }
 #timeline .keyframe {
   cursor: -webkit-grab;
@@ -1199,36 +1225,38 @@ a.button {
   cursor: -ms-grab;
   cursor: -o-grab;
   cursor: grab;
-  top: 2px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50px;
+  border: 1px solid rgba(0, 0, 0, 0.24);
   margin-left: -5px;
   position: absolute;
-  width: 11px;
-  height: 14px;
-  background-image: url(../images/icons/P_KeynavKey_11x14_N.png);
-  background-repeat: no-repeat;
 }
 #timeline .keyframe.active {
-  background-image: url(../images/icons/P_KeynavKey_11x14_S_D.png);
+  width: 12px;
+  height: 12px;
+  border-radius: 50px;
+  border: 1px solid rgba(0, 0, 0, 0.24);
+  box-shadow: inset 0 1px 0 1px white;
+  background: -webkit-linear-gradient(bottom, rgba(255, 255, 255, 0), white);
 }
 #timeline .play_head {
   position: absolute;
   cursor: hand;
   margin-left: -5px;
   margin-top: -32px;
-  width: 12px;
+  width: 15px;
   height: 16px;
-  background-image: url(../images/icons/P_TimelineCompMarker_Sm_N_D.png);
-  background-repeat: no-repeat;
+  background: url(img/thumb.png) bottom center no-repeat;
   cursor: -webkit-grab;
 }
 #timeline .play_head .laser {
   position: relative;
   display: block;
-  height: 18px;
+  height: 17px;
   width: 1px;
   margin: 14px auto 0;
-  background: red;
-  opacity: 0.75;
+  background: black;
 }
 
 /* Syntax highligt ------------------------------------------------------------------------------- */
