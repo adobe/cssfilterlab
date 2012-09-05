@@ -983,11 +983,8 @@ a.button {
   display: -o-box;
   display: box;
   /* Flex needs to be last, so that we use the new flex-box when it's available */
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
-  display: -o-flex;
-  display: flex;
+  /* FIXME: Disable the new flex box for now. It seems like stable versions of Chromium don't have the whole implementation yet. */
+  /* @include prefixValue(display, flex); */
   -webkit-box-orientation: horizontal;
   -moz-box-orientation: horizontal;
   -ms-box-orientation: horizontal;
@@ -1015,11 +1012,8 @@ a.button {
   display: -o-box;
   display: box;
   /* Flex needs to be last, so that we use the new flex-box when it's available */
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
-  display: -o-flex;
-  display: flex;
+  /* FIXME: Disable the new flex box for now. It seems like stable versions of Chromium don't have the whole implementation yet. */
+  /* @include prefixValue(display, flex); */
   -webkit-flex: 1;
   -moz-flex: 1;
   -ms-flex: 1;
@@ -1046,11 +1040,8 @@ a.button {
   display: -o-box;
   display: box;
   /* Flex needs to be last, so that we use the new flex-box when it's available */
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
-  display: -o-flex;
-  display: flex;
+  /* FIXME: Disable the new flex box for now. It seems like stable versions of Chromium don't have the whole implementation yet. */
+  /* @include prefixValue(display, flex); */
   -webkit-flex: 1;
   -moz-flex: 1;
   -ms-flex: 1;
@@ -1486,11 +1477,8 @@ a.button {
   display: -o-box;
   display: box;
   /* Flex needs to be last, so that we use the new flex-box when it's available */
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
-  display: -o-flex;
-  display: flex;
+  /* FIXME: Disable the new flex box for now. It seems like stable versions of Chromium don't have the whole implementation yet. */
+  /* @include prefixValue(display, flex); */
   -webkit-box-orient: horizontal;
   -moz-box-orient: horizontal;
   -ms-box-orient: horizontal;
@@ -1545,11 +1533,8 @@ a.button {
   display: -o-box;
   display: box;
   /* Flex needs to be last, so that we use the new flex-box when it's available */
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
-  display: -o-flex;
-  display: flex;
+  /* FIXME: Disable the new flex box for now. It seems like stable versions of Chromium don't have the whole implementation yet. */
+  /* @include prefixValue(display, flex); */
   -webkit-box-orient: vertical;
   -moz-box-orient: vertical;
   -ms-box-orient: vertical;
@@ -1579,11 +1564,8 @@ a.button {
   display: -o-box;
   display: box;
   /* Flex needs to be last, so that we use the new flex-box when it's available */
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
-  display: -o-flex;
-  display: flex;
+  /* FIXME: Disable the new flex box for now. It seems like stable versions of Chromium don't have the whole implementation yet. */
+  /* @include prefixValue(display, flex); */
   -webkit-flex: 1;
   -moz-flex: 1;
   -ms-flex: 1;
@@ -1604,11 +1586,8 @@ a.button {
   display: -o-box;
   display: box;
   /* Flex needs to be last, so that we use the new flex-box when it's available */
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
-  display: -o-flex;
-  display: flex;
+  /* FIXME: Disable the new flex box for now. It seems like stable versions of Chromium don't have the whole implementation yet. */
+  /* @include prefixValue(display, flex); */
   -webkit-box-orient: horizontal;
   -moz-box-orient: horizontal;
   -ms-box-orient: horizontal;
@@ -1629,11 +1608,8 @@ a.button {
   display: -o-box;
   display: box;
   /* Flex needs to be last, so that we use the new flex-box when it's available */
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
-  display: -o-flex;
-  display: flex;
+  /* FIXME: Disable the new flex box for now. It seems like stable versions of Chromium don't have the whole implementation yet. */
+  /* @include prefixValue(display, flex); */
   -webkit-box-orient: vertical;
   -moz-box-orient: vertical;
   -ms-box-orient: vertical;
@@ -1674,11 +1650,8 @@ a.button {
   display: -o-box;
   display: box;
   /* Flex needs to be last, so that we use the new flex-box when it's available */
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
-  display: -o-flex;
-  display: flex;
+  /* FIXME: Disable the new flex box for now. It seems like stable versions of Chromium don't have the whole implementation yet. */
+  /* @include prefixValue(display, flex); */
   -webkit-flex: 1;
   -moz-flex: 1;
   -ms-flex: 1;
@@ -2010,11 +1983,8 @@ body {
   display: -o-box;
   display: box;
   /* Flex needs to be last, so that we use the new flex-box when it's available */
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
-  display: -o-flex;
-  display: flex;
+  /* FIXME: Disable the new flex box for now. It seems like stable versions of Chromium don't have the whole implementation yet. */
+  /* @include prefixValue(display, flex); */
   -webkit-box-align: center;
   -moz-box-align: center;
   -ms-box-align: center;
@@ -2061,11 +2031,8 @@ body {
   display: -o-box;
   display: box;
   /* Flex needs to be last, so that we use the new flex-box when it's available */
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
-  display: -o-flex;
-  display: flex;
+  /* FIXME: Disable the new flex box for now. It seems like stable versions of Chromium don't have the whole implementation yet. */
+  /* @include prefixValue(display, flex); */
   -webkit-box-orient: horizontal;
   -moz-box-orient: horizontal;
   -ms-box-orient: horizontal;
@@ -2097,11 +2064,8 @@ body {
   display: -o-box;
   display: box;
   /* Flex needs to be last, so that we use the new flex-box when it's available */
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
-  display: -o-flex;
-  display: flex;
+  /* FIXME: Disable the new flex box for now. It seems like stable versions of Chromium don't have the whole implementation yet. */
+  /* @include prefixValue(display, flex); */
   height: 15px;
   padding: 15px;
   height: auto;
@@ -2120,11 +2084,8 @@ body {
   display: -o-box;
   display: box;
   /* Flex needs to be last, so that we use the new flex-box when it's available */
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
-  display: -o-flex;
-  display: flex;
+  /* FIXME: Disable the new flex box for now. It seems like stable versions of Chromium don't have the whole implementation yet. */
+  /* @include prefixValue(display, flex); */
   -webkit-box-orient: vertical;
   -moz-box-orient: vertical;
   -ms-box-orient: vertical;
@@ -2157,11 +2118,8 @@ body {
   display: -o-box;
   display: box;
   /* Flex needs to be last, so that we use the new flex-box when it's available */
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
-  display: -o-flex;
-  display: flex;
+  /* FIXME: Disable the new flex box for now. It seems like stable versions of Chromium don't have the whole implementation yet. */
+  /* @include prefixValue(display, flex); */
   -webkit-box-orient: horizontal;
   -moz-box-orient: horizontal;
   -ms-box-orient: horizontal;
@@ -2313,4 +2271,14 @@ aside {
   height: 30px;
   bottom: -30px;
   right: 20px;
+}
+
+.filters-not-supported {
+  padding: 10px;
+  background: #333;
+  color: white;
+  border-bottom: 1px solid #444;
+}
+.filters-not-supported .filters-not-supported-help {
+  float: right;
 }

@@ -43,7 +43,8 @@ $baseColorDark: #3B3F41 /* Slate Gray */;
 @mixin flexbox{
     @include prefixValue(display, box);
     /* Flex needs to be last, so that we use the new flex-box when it's available */
-    @include prefixValue(display, flex);
+    /* FIXME: Disable the new flex box for now. It seems like stable versions of Chromium don't have the whole implementation yet. */
+    /* @include prefixValue(display, flex); */
 }
 
 @mixin flex($value: 1){

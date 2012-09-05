@@ -287,3 +287,14 @@ aside {
         right: 20px;
     }
 }
+
+.filters-not-supported {
+    padding: 10px;
+    background: #333;
+    color: white;
+    border-bottom: 1px solid #444;
+
+    .filters-not-supported-help {
+        float: right;
+    }
+}
