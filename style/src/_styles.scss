@@ -140,6 +140,10 @@
 	border-left: rgba(0, 0, 255, 0.2) 5px solid;
 }
 
+.filter-stock .filter-item.forked-filter.current{
+    background: rgba(0, 184, 255, 0.29);
+}
+
 #filter-list #filter-list-empty {
 	color: #ccc;
 	font-weight: normal;
