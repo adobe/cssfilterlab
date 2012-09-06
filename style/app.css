@@ -1329,24 +1329,6 @@ a.button {
   background: rgba(255, 0, 0, 0.5);
 }
 
-#config-editor .code-view {
-  bottom: 35px;
-}
-
-#config-editor .code-bottom {
-  position: absolute;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-  border-top: 1px solid #ccc;
-  padding: 5px 15px 0 0;
-  color: #333;
-  overflow: auto;
-  height: 39px;
-  text-align: right;
-  background: #535353;
-}
-
 #shader-errors {
   background: #d7d7d7;
   color: black;

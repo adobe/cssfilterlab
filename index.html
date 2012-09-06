@@ -45,6 +45,7 @@
     <script type="text/javascript" src="lib/controls/range_control.js"></script>
     <script type="text/javascript" src="lib/controls/transform_control.js"></script>
     <script type="text/javascript" src="lib/controls/warp_control.js"></script>
+    <script type="text/javascript" src="lib/models/active_object.js"></script>
     <script type="text/javascript" src="lib/models/animation.js"></script>
     <script type="text/javascript" src="lib/models/preset_store.js"></script>
     <script type="text/javascript" src="lib/models/filter_config.js"></script>
@@ -146,10 +147,50 @@
             </ul>
         </div>
 
-        <div id="config-editor" class="code-panel">
-            <div class="code-view"></div>
-            <div class="code-bottom">
-                <a href="#" id="reload-button" class="button dark">Reload</a>
+        <div id="config-editor">
+            <div class="config-panel">
+
+                <div class="config-row">
+                    <label for="config-shader-name">Custom filter name</label>
+                    <input type="text" class="config-shader-name" name="config-shader-name" />
+                </div>
+
+                <h4>Parameters</h4>
+                <ul class="config-parameters">
+                    <li>
+                        Parameter 1
+                    </li>
+                    <li>
+                        Parameter 2
+                    </li>
+                </ul>
+
+                <div class="config-parameter">
+                    <h4>Parameter ""</h4>
+
+                    <div class="config-row">
+                        <label for="config-parameter-name">Parameter name</label>
+                        <input type="text" class="config-parameter-name" name="config-parameter-name" />
+                    </div>
+
+                    <div class="config-row">
+                        <label for="config-parameter-type">Parameter name</label>
+                        <select type="text" class="config-parameter-type" name="config-parameter-type">
+                            <option value="range">Range</option>
+                            <option value="array">Array</option>
+                            <option value="transform">Transform</option>
+                            <option value="warp">Warp</option>
+                        </select>
+                    </div>
+
+                    <div class="config-row">
+                        <label for="config-default-value">Parameter default value</label>
+                        <div class="value">
+
+                        </div>
+                    </div>
+                </div>
+
                 <a href="#" id="post-gist-button" class="button dark">Save as anonymous gist</a>
             </div>
         </div>
