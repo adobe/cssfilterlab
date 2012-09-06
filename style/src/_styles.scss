@@ -166,8 +166,8 @@
 
 .filter-stock .filter-item .filter-label {
     @include flexbox;
-/*    @include flex;*/
     @include prefixProperty(box-align, center);
+    max-width: 100px;
     color: #bfbfbf;
     text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.8);
     cursor: pointer;
@@ -557,3 +557,7 @@
 .icon-fork{
     background: transparent url(img/fork.png) center center no-repeat;
 }   
+
+.icon-close{
+    background: transparent url(img/close.png) center center no-repeat;
+}
