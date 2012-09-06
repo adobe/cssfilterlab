@@ -74,6 +74,13 @@ function mix(blendMode, compositeOperator) {
 	};
 }
 
+function mesh(columns, rows) {
+	return {
+		columns: columns,
+		rows: rows
+	};
+}
+
 function builtinPercent(fn, defaultValue, maxValue) {
 	return {
 		type: builtin(fn, ["amount"]),
@@ -165,7 +172,7 @@ window.filterConfigs = {
 	    hasVertex: true,
 	    hasFragment: true,
 	    mix: mix("multiply"),
-	    mesh: "20 20",
+	    mesh: mesh(20, 20),
 	    meshBox: "border-box",
 	    params: {
 	        k: null,
@@ -198,7 +205,7 @@ window.filterConfigs = {
 	    hasVertex: true,
 	    hasFragment: true,
 	    mix: mix(),
-	    mesh: "500 1",
+	    mesh: mesh(500, 1),
 	    meshBox: "border-box",
 	    params: {
 	        matrix: {
@@ -227,7 +234,7 @@ window.filterConfigs = {
 	    hasVertex: true,
 	    hasFragment: true,
 	    mix: mix(),
-	    mesh: "40 8",
+	    mesh: mesh(40, 8),
 	    meshBox: "border-box",
 	    params: {
 	        matrix: {
@@ -260,7 +267,7 @@ window.filterConfigs = {
 	    hasVertex: true,
 	    hasFragment: true,
 	    mix: mix(),
-	    mesh: "100 100",
+	    mesh: mesh(100, 100),
 	    meshBox: "border-box detached",
 	    params: {
 	        matrix: {
@@ -283,7 +290,7 @@ window.filterConfigs = {
 	    hasVertex: true,
 	    hasFragment: true,
 	    mix: mix(),
-	    mesh: "76 100",
+	    mesh: mesh(76, 100),
 	    meshBox: "border-box detached",
 	    params: {
 	        matrix: {
