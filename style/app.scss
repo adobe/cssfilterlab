@@ -193,22 +193,24 @@ aside {
 
 #filter-dock {
     @include box-shadow;
-    width: 350px;
+    width: 400px;
     height: 70%;
     top: 0px;
     position: absolute;
-    margin-top: 15px;
-    margin-left: -15px;
+    margin-top: 10px;
+    margin-left: -25px;
+    z-index: 1000;
 }
 
 #filter-dock:before {
-    background: #202020;
+    background: #404040;
     content: "";
     width: 20px;
     height: 20px;
     position: absolute;
-    left: 5px;
-    top: -10px;
+    left: 15px;
+    top: -5px;
+    z-index: -100;
     -webkit-transform: rotate(45deg);
 }
 
