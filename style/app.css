@@ -1982,6 +1982,8 @@ body {
   color: white;
   font-size: 18px;
   text-shadow: 0 -1px 0 black;
+}
+#logo > .left, #animations-container > .left {
   -webkit-flex: 1;
   -moz-flex: 1;
   -ms-flex: 1;

@@ -112,6 +112,9 @@ body {
         color: white;
         font-size: 18px;
         text-shadow: 0 -1px 0 black;
+    }
+
+    > .left { 
         @include flex(1);
     }
 }
