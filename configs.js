@@ -132,7 +132,7 @@ window.filterConfigs = {
             offset_x: 5.0,
             offset_y: 5.0,
             radius: 5.0,
-            flood_color: [1.0, 1.0, 1.0, 0.5]
+            flood_color: [0.0, 0.0, 0.0, 0.5]
         },
         config: {
             offset_x: units("px", range(-100, 100, 0.01)),
