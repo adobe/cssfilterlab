@@ -221,14 +221,14 @@
         margin-right: 10px;
     }
 	
-    .play, .next, .prev, .toggle {
-        width: 12px;
-        height: 14px;
+    .next, .prev, .toggle {
+        width: 18px;
+        height: 18px;
         cursor: pointer;
         text-indent: -9999em;
         margin-right: 8px;
-    }
-
+    }      
+    
 	.play {
 		width: 38px;
 		height: 20px;
@@ -237,7 +237,13 @@
 		border-radius: 2px;
 		box-shadow: inset 0 1px 0 1px white;
         margin-right: 0px;
-        margin-left: 8px;
+        margin-right: 8px; 
+        text-indent: -9999em;
+	}         
+	
+	.play:hover{
+	    border-color: #777;
+	    box-shadow: none;
 	}
 	
 	.play.active {
@@ -247,16 +253,18 @@
 
 	.next,
 	.prev {
-		background: url(../images/icons/P_KeynavNext_14x11_D_D.png) center center no-repeat;
+		background: url(img/arrow.png) center center no-repeat;
+		opacity: 0.5;
 	}
 
 	.next.active,
 	.prev.active {
-		background: url(../images/icons/P_KeynavNext_14x11_N_D.png) center center no-repeat;
+		background: url(img/arrow.png) center center no-repeat;
+		opacity: 1;
 	}
 
 	.prev {
-	    @include prefixProperty(transform, rotateY(180deg));
+      @include prefixProperty(transform, rotateY(180deg));
 	}
 
 	.toggle {

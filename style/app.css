@@ -1126,9 +1126,9 @@ a.button {
   font-size: 12px;
   margin-right: 10px;
 }
-#timeline .play, #timeline .next, #timeline .prev, #timeline .toggle {
-  width: 12px;
-  height: 14px;
+#timeline .next, #timeline .prev, #timeline .toggle {
+  width: 18px;
+  height: 18px;
   cursor: pointer;
   text-indent: -9999em;
   margin-right: 8px;
@@ -1141,7 +1141,12 @@ a.button {
   border-radius: 2px;
   box-shadow: inset 0 1px 0 1px white;
   margin-right: 0px;
-  margin-left: 8px;
+  margin-right: 8px;
+  text-indent: -9999em;
+}
+#timeline .play:hover {
+  border-color: #777;
+  box-shadow: none;
 }
 #timeline .play.active {
   background: url(img/pause.png) center center no-repeat, -webkit-linear-gradient(bottom, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.1));
@@ -1149,11 +1154,13 @@ a.button {
 }
 #timeline .next,
 #timeline .prev {
-  background: url(../images/icons/P_KeynavNext_14x11_D_D.png) center center no-repeat;
+  background: url(img/arrow.png) center center no-repeat;
+  opacity: 0.5;
 }
 #timeline .next.active,
 #timeline .prev.active {
-  background: url(../images/icons/P_KeynavNext_14x11_N_D.png) center center no-repeat;
+  background: url(img/arrow.png) center center no-repeat;
+  opacity: 1;
 }
 #timeline .prev {
   -webkit-transform: rotateY(180deg);
