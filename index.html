@@ -96,26 +96,24 @@
         <div id="animation-code" class="code"></div>
 
         <div id="timeline">
-            <div class="controls">
-                <div id="playPauseButton" class="play">Play</div>    
-                <div id="gotoPrevKeyframeButton" class="prev">Previous keyframe</div>
-                <div id="toggleActiveKeyframeButton" class="toggle">Toggle keyframe</div>
-                <div id="gotoNextKeyframeButton" class="next">Next keyframe</div>
-            </div>     
+            <h4 class="title">Timeline</h4>
+            <div id="gotoPrevKeyframeButton" class="prev">Previous keyframe</div>
+            <div id="toggleActiveKeyframeButton" class="toggle">Toggle keyframe</div>
+            <div id="gotoNextKeyframeButton" class="next">Next keyframe</div>
             
-            <div class="keyframes">
-                <div class="time">
-                    <span class="start">0s</span>
-                    <input type="number" id="timelineDuration" min="0" value="0.5" step="0.1"  />
-                </div>
-                
-                <div class="keyframe_wrapper">
-                    <div class="keyframe_bar">
-                        <div class="keyframes_list"></div>
-                        <div class="play_head"><span class="laser"></span></div>
-                    </div>
+            <span class="start">0s</span>
+
+            <div class="keyframe_wrapper">
+                <div class="keyframe_bar">
+                    <div class="keyframes_list"></div>
+                    <div class="play_head"><span class="laser"></span></div>
                 </div>
             </div>
+
+            <input type="number" id="timelineDuration" min="0" value="0.5" step="0.1"  />
+
+            <div id="playPauseButton" class="play">Play</div>    
+        
         </div>  
           
         <aside id="active-filters">  

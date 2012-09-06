@@ -193,8 +193,12 @@
 }
 
 #timeline {
-	padding: 10px;
-	overflow-x: hidden; 
+    padding: 10px;
+	@include hbox;
+    @include valign;
+    overflow: hidden;
+    box-sizing: border-box;
+    border-top: 1px solid #ccc;
 	@include user-select(none);
 	
     @mixin disc {
@@ -209,165 +213,143 @@
         box-shadow: inset 0 1px 0 1px white;                                                  
         background: -webkit-linear-gradient(bottom, rgba(255,255,255,0), rgba(255,255,255,1));        
     }
+
+    .title {
+        color: #3B3F41;
+        text-shadow: 0 1px 0 white;
+        font-size: 12px;
+        margin-right: 10px;
+    }
 	
-	.controls {
-		top: 14px;
-		left: 0;
-		position: relative;
-		width: 50px;
+    .play, .next, .prev, .toggle {
+        width: 12px;
+        height: 14px;
+        cursor: pointer;
+        text-indent: -9999em;
+        margin-right: 8px;
+    }
 
-        & > div {
-		    float: left;
-		    width: 12px;
-		    height: 14px;
-		    cursor :pointer;
-		    text-indent: -9999em;
-	    }
-
-    	.play {
-    		float: none;
-    		clear: both;
-    		width: 38px;
-    		height: 28px;
-    		margin-top: -12px;
-    		margin-bottom: 20px;
-    		background: url(img/play.png) center center no-repeat, -webkit-linear-gradient(bottom, rgba(255,255,255,0), rgba(255,255,255,1));
-    		border: 1px solid rgba(0,0,0,0.24);
-    		border-radius: 2px;
-    		box-shadow: inset 0 1px 0 1px white;
-    	}
-    	
-    	.play:active{
-    	    
-    	}
-
-    	.play.active {
-    		background: url(img/pause.png) center center no-repeat, -webkit-linear-gradient(bottom, rgba(255,255,255,0), rgba(0,0,0,0.1));
-    	}
-
-    	.next,
-    	.prev {
-    		background: url(../images/icons/P_KeynavNext_14x11_D_D.png) center center no-repeat;
-    	}
-
-    	.next.active,
-    	.prev.active {
-    		background: url(../images/icons/P_KeynavNext_14x11_N_D.png) center center no-repeat;
-    	}
-
-    	.prev {
-    	    @include prefixProperty(transform, rotateY(180deg));
-    	}
-
-    	.toggle {   
-    	    width: 17px;
-    	    @include disc-active;  
-    	    position: relative;
-    		margin: 0 4px;
-    	}
-    	
-    	.toggle:after{
-    	    position: absolute;
-    	    top: 0;
-    	    left: 0;       
-    	    width: 12px;
-    	    height: 12px;
-    	    margin: 0 auto;
-    	    text-indent: 0;
-    	    content: "+";
-    	    text-align: center; 
-    	    color: #777;
-    	    font-size: 14px;
-    	    line-height: 13px;
-    	    text-shadow: 0px 1px 0 0 rgba(0,0,0,0.3);
-    	}
-
-    	.toggle.active:after{
-    	    content: "-"; 
-    	    font-size: 22px; 
-    	    line-height: 10px;
-    	}
+	.play {
+		width: 38px;
+		height: 20px;
+		background: url(img/play.png) center center no-repeat, -webkit-linear-gradient(bottom, rgba(255,255,255,0), rgba(255,255,255,1));
+		border: 1px solid rgba(0,0,0,0.24);
+		border-radius: 2px;
+		box-shadow: inset 0 1px 0 1px white;
+        margin-right: 0px;
+        margin-left: 8px;
+	}
+	
+	.play.active {
+		background: url(img/pause.png) center center no-repeat, -webkit-linear-gradient(bottom, rgba(255,255,255,0), rgba(0,0,0,0.1));
+        box-shadow: none;
 	}
 
-    .time {
-    	height: 16px;
-    	margin: -22px 0 2px;
-    	padding-bottom: 15px;
-    	position: relative;
+	.next,
+	.prev {
+		background: url(../images/icons/P_KeynavNext_14x11_D_D.png) center center no-repeat;
+	}
 
-    	$breakColor: black;
+	.next.active,
+	.prev.active {
+		background: url(../images/icons/P_KeynavNext_14x11_N_D.png) center center no-repeat;
+	}
 
-    	input[type="number"]{
-            position: absolute;
-            width: 63px;
-            height: 32px;
-            text-align: right;
-            background: none;
-            margin: 0;
-            padding: 0 3px 0 0;
-            right: 0;
-            top: -7px;
-            color: $breakColor;
-            outline: none;
-            border: none;
-        }
+	.prev {
+	    @include prefixProperty(transform, rotateY(180deg));
+	}
 
-        .start{
-            color: $breakColor;
-        	left: 0;
-        }
-    }
-
-    .keyframes {
+	.toggle {
         position: relative;
-        margin: -10px 20px 0 60px;
+	    width: 17px;
+	    @include disc-active;
+	}
+	
+	.toggle:after {
+	    position: absolute;
+	    top: 0;
+	    left: 0;       
+	    width: 12px;
+	    height: 12px;
+	    margin: 0 auto;
+	    text-indent: 0;
+	    content: "+";
+	    text-align: center; 
+	    color: #777;
+	    font-size: 14px;
+	    line-height: 13px;
+	    text-shadow: 0px 1px 0 0 rgba(0,0,0,0.3);
+	}
+
+	.toggle.active:after {
+	    content: "-"; 
+	    font-size: 22px; 
+	    line-height: 10px;
+	}
+
+	input[type="number"] {
+        width: 63px;
+        height: 32px;
+        text-align: right;
+        margin-top: -4px;
+        background: none;
+        color: black;
+        outline: none;
+        border: none;
     }
 
-    .keyframe_wrapper{
+    .start {
+        color: black;
+        margin-right: 8px;
+    }
+
+    .keyframe_wrapper {
     	background: #D3D7D7;
     	padding: 0 6px 0 4px;
     	box-shadow: inset 0 -1px 0 0 rgba(255, 255, 255, 0.7), 0 -1px 0 0 rgba(0,0,0,0.15);
     	border-radius: 5px;
-    }
-
-    .keyframe_bar{
-        position: relative;
-    }
-
-    .keyframes_list{
-    	position: relative;
-    	height: 16px;
-    }
-
-    .keyframe {
-    	@include prefixValue(cursor, grab);
-    	@include disc;
-    	margin-left: -5px;
-        position: absolute;
-        
-        &.active {
-            @include disc-active;
+        @include flex(1);
+    
+        .keyframe_bar {
+            box-sizing: border-box;
+            position: relative;
         }
-    }
 
-    .play_head{
-        position: absolute;
-    	cursor:hand;
-        margin-left: -5px;
-    	margin-top:-32px;
-        width: 15px;
-        height: 16px;
-        background: url(img/thumb.png) bottom center no-repeat;
-    	cursor:-webkit-grab;
-
-    	.laser{
+        .keyframes_list {
         	position: relative;
-        	display: block;
-        	height: 17px;
-        	width: 1px;
-        	margin: 14px auto 0;
-        	background: black;
-	    }
+        	height: 16px;
+        }
+
+        .keyframe {
+        	@include prefixValue(cursor, grab);
+        	@include disc;
+        	margin-left: -5px;
+            position: absolute;
+            
+            &.active {
+                @include disc-active;
+            }
+        }
+
+        .play_head{
+            position: absolute;
+        	cursor:hand;
+            margin-left: -5px;
+        	margin-top: -32px;
+            width: 15px;
+            height: 16px;
+            background: url(img/thumb.png) bottom center no-repeat;
+        	cursor: -webkit-grab;
+
+        	.laser {
+            	position: relative;
+            	display: block;
+            	height: 17px;
+            	width: 1px;
+            	margin: 14px auto 0;
+            	background: black;
+    	    }
+        }
     }
 }
 
