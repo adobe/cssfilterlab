@@ -304,7 +304,7 @@ window.filterConfigs = {
 	    config: {
 	        matrix: transform(),
 	        perspective: range(200, 2000, 100),
-	        amount: range(1, 5, 0.1),
+	        amount: range(0, 5, 0.1),
 	        rotateAngleX: range(-180, 180, 0.001),
 	        rotateAngleY: range(-180, 180, 0.001),
 	        rotateAngleZ: range(-180, 180, 0.001),
