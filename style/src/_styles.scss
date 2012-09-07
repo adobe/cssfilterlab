@@ -55,6 +55,10 @@
     border-bottom: 1px solid transparent;
 }
 
+#filter-list .loading {
+    display: none;
+}
+
 #filter-list li:hover,
 #animations li:hover {
 	color: white;   
@@ -119,6 +123,10 @@
 .filter-stock .filter-item{
     background: #3B3F41;
     padding: 5px 10px;
+}
+
+.filter-stock .filter-item.loading {
+    display: none;
 }
 
 .filter-stock .filter-item:hover{

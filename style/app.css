@@ -1237,6 +1237,10 @@ input.dark[type=checkbox]:checked + label {
   padding: 0;
 }
 
+#filter-list .loading {
+  display: none;
+}
+
 #filter-list li:hover,
 #animations li:hover {
   color: white;
@@ -1302,6 +1306,10 @@ input.dark[type=checkbox]:checked + label {
 .filter-stock .filter-item {
   background: #3B3F41;
   padding: 5px 10px;
+}
+
+.filter-stock .filter-item.loading {
+  display: none;
 }
 
 .filter-stock .filter-item:hover {
