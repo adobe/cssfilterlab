@@ -322,6 +322,30 @@ window.filterConfigs = {
 	        t: range(0, 1, 0.01),
 	        fade: range(0, 1, 0.01)
 	    }
-	}
+	},
+
+	"crumple": {
+	    hasVertex: true,
+	    hasFragment: true,
+	    mix: mix("multiply"),
+	    mesh: mesh(50, 50),
+	    meshBox: "border-box",
+	    params: {
+	        transform: {
+	        	rotationX: 0,
+	            rotationY: 0,
+	            rotationZ: 0
+	        },
+	        amount: 1, 
+	        strength: 0.2, 
+	        lightIntensity: 1.05
+	    },
+	    config: {
+	        transform: transform(),
+	        amount: range(0, 1, 0.01),
+	        strength: range(0.0, 10, 0.01),
+	        lightIntensity: range(0, 10, 0.01)
+	    }
+	},
 };
 })()
