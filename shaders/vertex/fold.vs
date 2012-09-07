@@ -43,9 +43,9 @@ uniform float minSpacing;
 uniform float t;
 uniform float spins;
 uniform float phase;
+uniform float shadow;
 
 const float PI = 3.1415629;
-const vec4 lightSource = vec4(-0.5, -0.5, 3000.0, 1.0);
 
 mat4 perspective(float p)
 {
@@ -67,10 +67,7 @@ void main()
 
     pos.x = pos.x * scaleX;
 
-    vec4 vertex = matrix * pos;
-    vec4 normal = normalize(matrix * vec4(0.0, 0.0, sign(pos.z), 1.0));
-    vec4 ray = normalize(lightSource - vertex);
-    v_lighting = max(dot(ray, normal), mix(1.0, 0.2, sqrt(t)));
+    v_lighting = min(1.0, cos(a_meshCoord.x * PI * 8.0 + PI) + shadow);
 
-    gl_Position = u_projectionMatrix * perspective(1000.0) * vertex;
+    gl_Position = u_projectionMatrix * perspective(1000.0) * matrix * pos;
 }

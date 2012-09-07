@@ -123,7 +123,6 @@
 
 .filter-stock .filter-item:hover{
     background: #484B4C;
-    cursor: pointer;
 }
 
 #filter-list li.builtin-filter,
@@ -139,6 +138,10 @@
 #filter-list li.forked-filter,
 .filter-stock .filter-item.forked-filter {
 	border-left: rgba(0, 0, 255, 0.2) 5px solid;
+}
+
+.filter-stock .filter-item.forked-filter.current{
+    background: rgba(0, 184, 255, 0.29);
 }
 
 #filter-list #filter-list-empty {
@@ -158,14 +161,20 @@
 	margin: 5px 15px 5px 5px;
 	background: url(../images/planes.jpg) center center no-repeat;
     background-size: 75px 50px;
+    cursor: pointer;
 }
 
 .filter-stock .filter-item .filter-label {
     @include flexbox;
-    @include flex;
     @include prefixProperty(box-align, center);
+    max-width: 100px;
     color: #bfbfbf;
     text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.8);
+    cursor: pointer;
+    
+    &:hover{
+        text-decoration: underline;
+    }
 }
 
 .filter-stock .filter-item .button-box {
@@ -178,7 +187,7 @@
 }
 
 .filter-stock .filter-item .button-box > a {
-    margin-left: 5px;
+    margin-left: 5px; 
 }
 
 #animations-container {
@@ -221,14 +230,14 @@
         margin-right: 10px;
     }
 	
-    .play, .next, .prev, .toggle {
-        width: 12px;
-        height: 14px;
+    .next, .prev, .toggle {
+        width: 18px;
+        height: 18px;
         cursor: pointer;
         text-indent: -9999em;
         margin-right: 8px;
-    }
-
+    }      
+    
 	.play {
 		width: 38px;
 		height: 20px;
@@ -237,7 +246,13 @@
 		border-radius: 2px;
 		box-shadow: inset 0 1px 0 1px white;
         margin-right: 0px;
-        margin-left: 8px;
+        margin-right: 8px; 
+        text-indent: -9999em;
+	}         
+	
+	.play:hover{
+	    border-color: #777;
+	    box-shadow: none;
 	}
 	
 	.play.active {
@@ -247,16 +262,18 @@
 
 	.next,
 	.prev {
-		background: url(../images/icons/P_KeynavNext_14x11_D_D.png) center center no-repeat;
+		background: url(img/arrow.png) center center no-repeat;
+		opacity: 0.5;
 	}
 
 	.next.active,
 	.prev.active {
-		background: url(../images/icons/P_KeynavNext_14x11_N_D.png) center center no-repeat;
+		background: url(img/arrow.png) center center no-repeat;
+		opacity: 1;
 	}
 
 	.prev {
-	    @include prefixProperty(transform, rotateY(180deg));
+      @include prefixProperty(transform, rotateY(180deg));
 	}
 
 	.toggle {
@@ -518,4 +535,29 @@
 
 .button.dark.selected {
     @extend .button.dark:active;
-}    
+}
+
+.icon{
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    vertical-align: middle;
+    text-indent: -9999px;
+    opacity: 0.5;
+    
+    &:hover{
+        opacity: 1;
+    }
+} 
+
+.icon-remove{
+    background: transparent url(img/remove.png) center center no-repeat;
+}
+
+.icon-fork{
+    background: transparent url(img/fork.png) center center no-repeat;
+}   
+
+.icon-close{
+    background: transparent url(img/close.png) center center no-repeat;
+}
