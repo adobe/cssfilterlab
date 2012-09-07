@@ -27,10 +27,6 @@
 @import "src/_dock";
 @import "src/_params";
 
-@font-face { font-family: "source"; src: url('font/SourceSansPro-Regular.otf'); }
-@font-face { font-family: "source-l"; src: url('font/SourceSansPro-Light.otf'); }
-@font-face { font-family: "source-sb"; src: url('font/SourceSansPro-Semibold.otf'); }
-
 body {
     font: 14px "Source Sans Pro", "source", helvetica, arial, sans-serif;
 }
@@ -305,3 +301,15 @@ aside {
         float: right;
     }
 }
+
+#github-popup {
+    .state {
+        display: none;
+    }
+    &.info .state.gist-info,
+    &.saving .state.gist-saving, 
+    &.saved .state.gist-result {
+        display: block;
+    }
+}
+

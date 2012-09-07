@@ -84,7 +84,7 @@
     width: 16px;
     height: 16px;
     text-indent: -999px;
-    background: transparent url(img/remove.png) center center no-repeat;
+    background: transparent url(../img/remove.png) center center no-repeat;
 }
 
 #filter-list li .dragpoint {
@@ -92,7 +92,7 @@
     width: 10px;
     height: 16px;
     margin-right: 10px;
-    background: url(img/grabber.png) center top no-repeat;
+    background: url(../img/grabber.png) center top no-repeat;
     cursor: -webkit-grab;
 }
 
@@ -167,7 +167,7 @@
 	width: 75px;
 	height: 50px;
 	margin: 5px 15px 5px 5px;
-	background: url(../images/planes.jpg) center center no-repeat;
+	background: url(../../images/planes.jpg) center center no-repeat;
     background-size: 75px 50px;
     cursor: pointer;
 }
@@ -249,7 +249,7 @@
 	.play {
 		width: 38px;
 		height: 20px;
-		background: url(img/play.png) center center no-repeat, -webkit-linear-gradient(bottom, rgba(255,255,255,0), rgba(255,255,255,1));
+		background: url(../img/play.png) center center no-repeat, -webkit-linear-gradient(bottom, rgba(255,255,255,0), rgba(255,255,255,1));
 		border: 1px solid rgba(0,0,0,0.24);
 		border-radius: 2px;
 		box-shadow: inset 0 1px 0 1px white;
@@ -264,19 +264,19 @@
 	}
 	
 	.play.active {
-		background: url(img/pause.png) center center no-repeat, -webkit-linear-gradient(bottom, rgba(255,255,255,0), rgba(0,0,0,0.1));
+		background: url(../img/pause.png) center center no-repeat, -webkit-linear-gradient(bottom, rgba(255,255,255,0), rgba(0,0,0,0.1));
         box-shadow: none;
 	}
 
 	.next,
 	.prev {
-		background: url(img/arrow.png) center center no-repeat;
+		background: url(../img/arrow.png) center center no-repeat;
 		opacity: 0.5;
 	}
 
 	.next.active,
 	.prev.active {
-		background: url(img/arrow.png) center center no-repeat;
+		background: url(../img/arrow.png) center center no-repeat;
 		opacity: 1;
 	}
 
@@ -363,7 +363,7 @@
         	margin-top: -32px;
             width: 15px;
             height: 16px;
-            background: url(img/thumb.png) bottom center no-repeat;
+            background: url(../img/thumb.png) bottom center no-repeat;
         	cursor: -webkit-grab;
 
         	.laser {
@@ -641,13 +641,13 @@
 } 
 
 .icon-remove{
-    background: transparent url(img/remove.png) center center no-repeat;
+    background: transparent url(../img/remove.png) center center no-repeat;
 }
 
 .icon-fork{
-    background: transparent url(img/fork.png) center center no-repeat;
+    background: transparent url(../img/fork.png) center center no-repeat;
 }   
 
 .icon-close{
-    background: transparent url(img/close.png) center center no-repeat;
+    background: transparent url(../img/close.png) center center no-repeat;
 }

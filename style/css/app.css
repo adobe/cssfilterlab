@@ -66,26 +66,26 @@
  */
 @font-face {
   font-family: "Source Sans Pro";
-  src: url("font/SourceSansPro-Regular.otf");
+  src: url("../font/SourceSansPro-Regular.otf");
 }
 
 @font-face {
   font-family: "source";
-  src: url("font/SourceSansPro-Regular.otf");
+  src: url("../font/SourceSansPro-Regular.otf");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "source-l";
-  src: url("font/SourceSansPro-Light.otf");
+  src: url("../font/SourceSansPro-Light.otf");
   font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
   font-family: "source-sb";
-  src: url("font/SourceSansPro-Semibold.otf");
+  src: url("../font/SourceSansPro-Semibold.otf");
   font-weight: 600;
   font-style: normal;
 }
@@ -1266,7 +1266,7 @@ input.dark[type=checkbox]:checked + label {
   width: 16px;
   height: 16px;
   text-indent: -999px;
-  background: transparent url(img/remove.png) center center no-repeat;
+  background: transparent url(../img/remove.png) center center no-repeat;
 }
 
 #filter-list li .dragpoint {
@@ -1274,7 +1274,7 @@ input.dark[type=checkbox]:checked + label {
   width: 10px;
   height: 16px;
   margin-right: 10px;
-  background: url(img/grabber.png) center top no-repeat;
+  background: url(../img/grabber.png) center top no-repeat;
   cursor: -webkit-grab;
 }
 
@@ -1365,7 +1365,7 @@ input.dark[type=checkbox]:checked + label {
   width: 75px;
   height: 50px;
   margin: 5px 15px 5px 5px;
-  background: url(../images/planes.jpg) center center no-repeat;
+  background: url(../../images/planes.jpg) center center no-repeat;
   background-size: 75px 50px;
   cursor: pointer;
 }
@@ -1496,7 +1496,7 @@ input.dark[type=checkbox]:checked + label {
 #timeline .play {
   width: 38px;
   height: 20px;
-  background: url(img/play.png) center center no-repeat, -webkit-linear-gradient(bottom, rgba(255, 255, 255, 0), white);
+  background: url(../img/play.png) center center no-repeat, -webkit-linear-gradient(bottom, rgba(255, 255, 255, 0), white);
   border: 1px solid rgba(0, 0, 0, 0.24);
   border-radius: 2px;
   box-shadow: inset 0 1px 0 1px white;
@@ -1509,17 +1509,17 @@ input.dark[type=checkbox]:checked + label {
   box-shadow: none;
 }
 #timeline .play.active {
-  background: url(img/pause.png) center center no-repeat, -webkit-linear-gradient(bottom, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.1));
+  background: url(../img/pause.png) center center no-repeat, -webkit-linear-gradient(bottom, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.1));
   box-shadow: none;
 }
 #timeline .next,
 #timeline .prev {
-  background: url(img/arrow.png) center center no-repeat;
+  background: url(../img/arrow.png) center center no-repeat;
   opacity: 0.5;
 }
 #timeline .next.active,
 #timeline .prev.active {
-  background: url(img/arrow.png) center center no-repeat;
+  background: url(../img/arrow.png) center center no-repeat;
   opacity: 1;
 }
 #timeline .prev {
@@ -1625,7 +1625,7 @@ input.dark[type=checkbox]:checked + label {
   margin-top: -32px;
   width: 15px;
   height: 16px;
-  background: url(img/thumb.png) bottom center no-repeat;
+  background: url(../img/thumb.png) bottom center no-repeat;
   cursor: -webkit-grab;
 }
 #timeline .keyframe_wrapper .play_head .laser {
@@ -1990,15 +1990,15 @@ input.dark[type=checkbox]:checked + label {
 }
 
 .icon-remove {
-  background: transparent url(img/remove.png) center center no-repeat;
+  background: transparent url(../img/remove.png) center center no-repeat;
 }
 
 .icon-fork {
-  background: transparent url(img/fork.png) center center no-repeat;
+  background: transparent url(../img/fork.png) center center no-repeat;
 }
 
 .icon-close {
-  background: transparent url(img/close.png) center center no-repeat;
+  background: transparent url(../img/close.png) center center no-repeat;
 }
 
 /*
@@ -2038,7 +2038,7 @@ input.dark[type=checkbox]:checked + label {
   -ms-box-flex: 1;
   -o-box-flex: 1;
   box-flex: 1;
-  background: #494d4e url("northstar/img/x1/bg_dark.png");
+  background: #494d4e url("../img/bg_dark.png");
   display: block;
   border-top: 1px solid #6a6a6a;
   color: white;
@@ -2102,7 +2102,7 @@ input.dark[type=checkbox]:checked + label {
   color: white;
 }
 .panel-tab.active {
-  background: #494d4e url("northstar/img/x1/bg_dark.png");
+  background: #494d4e url("../img/bg_dark.png");
   position: relative;
   z-index: 10;
   border-top: 1px solid #6a6a6a;
@@ -2486,21 +2486,6 @@ table.paramsTable .value-editor {
   background: #ebebeb;
 }
 
-@font-face {
-  font-family: "source";
-  src: url("font/SourceSansPro-Regular.otf");
-}
-
-@font-face {
-  font-family: "source-l";
-  src: url("font/SourceSansPro-Light.otf");
-}
-
-@font-face {
-  font-family: "source-sb";
-  src: url("font/SourceSansPro-Semibold.otf");
-}
-
 body {
   font: 14px "Source Sans Pro", "source", helvetica, arial, sans-serif;
 }
@@ -2789,7 +2774,7 @@ aside {
 
 #animations {
   box-shadow: 0 10px 15px 0 #333;
-  background: #494d4e url("northstar/img/x1/bg_dark.png");
+  background: #494d4e url("../img/bg_dark.png");
   display: none;
   position: absolute;
   padding: 0px;
@@ -2874,4 +2859,11 @@ aside {
 }
 .filters-not-supported .filters-not-supported-help {
   float: right;
+}
+
+#github-popup .state {
+  display: none;
+}
+#github-popup.info .state.gist-info, #github-popup.saving .state.gist-saving, #github-popup.saved .state.gist-result {
+  display: block;
 }
