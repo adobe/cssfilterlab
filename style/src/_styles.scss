@@ -451,6 +451,68 @@
 }
 
 
+.config-panel {
+    @include vbox;
+    box-sizing: border-box;
+    height: 100%;
+
+    .config-row {
+        @include hbox;
+        margin: 10px;
+
+        label {
+            display: block;
+            width: 200px;
+            @include flex(0);
+        }
+
+        input, .value, select {
+            display: block;
+            @include flex(0);
+        }
+    }
+
+    h4 {
+        padding: 5px 10px 5px 10px;
+        color: white;
+        font-weight: bold;
+        background: #282828;
+    }
+    
+    .config-parameters-row {
+        @include flex(1);
+        margin: 0px;
+    }
+
+    .config-parameter {
+        @include flex(1);
+    }
+
+    .config-parameters-wrapper {
+        @include vbox;
+    }
+
+    .config-parameters {
+        @include flex(1);
+        margin: 0px;
+        padding: 0px;
+        overflow: auto;
+        
+        li {
+            @include list-reset;
+            margin: 0px;
+            padding: 5px 10px 5px 10px;
+            cursor: pointer;
+            &:hover {
+                text-decoration: underline;
+            }
+            &.active {
+                background: #383838;
+            }
+        }
+    }
+}
+
 .code-panel {
 	position: relative;
 	background: white;

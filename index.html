@@ -171,43 +171,43 @@
                     </select>
                 </div>
 
-                <h4>Parameters</h4>
-                <ul class="config-parameters">
-                    <li>
-                        Parameter 1
-                    </li>
-                    <li>
-                        Parameter 2
-                    </li>
-                </ul>
-
-                <div class="config-parameter">
-                    <h4>Parameter ""</h4>
-
-                    <div class="config-row">
-                        <label for="config-parameter-name">Parameter name</label>
-                        <input type="text" class="config-parameter-name" name="config-parameter-name" />
+                <div class="config-row config-parameters-row">
+                    <div class="config-parameters-wrapper">
+                        <h4>Parameters</h4>
+                        <ul class="config-parameters">
+                            
+                        </ul>
                     </div>
 
-                    <div class="config-row">
-                        <label for="config-parameter-type">Parameter name</label>
-                        <select type="text" class="config-parameter-type" name="config-parameter-type">
-                            <option value="range">Range</option>
-                            <option value="array">Array</option>
-                            <option value="transform">Transform</option>
-                            <option value="warp">Warp</option>
-                        </select>
-                    </div>
+                    <div class="config-parameter">
+                        <h4>Parameter "<span class="config-parameter-label"></span>"</h4>
 
-                    <div class="config-row">
-                        <label for="config-default-value">Parameter default value</label>
-                        <div class="value">
+                        <div class="config-row">
+                            <label for="config-parameter-name">Parameter name</label>
+                            <input type="text" class="config-parameter-name" name="config-parameter-name" />
+                        </div>
 
+                        <div class="config-row">
+                            <label for="config-parameter-type">Parameter name</label>
+                            <select type="text" class="config-parameter-type" name="config-parameter-type">
+                                <option value="range">Range</option>
+                                <option value="array">Array</option>
+                                <option value="transform">Transform</option>
+                                <option value="warp">Warp</option>
+                            </select>
+                        </div>
+
+                        <div class="config-row">
+                            <label for="config-default-value">Parameter default value</label>
+                            <div class="value">
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <a href="#" id="post-gist-button" class="button dark">Save as anonymous gist</a>
+                <div class="config-row">
+                    <a href="#" id="post-gist-button" class="button dark">Save as anonymous gist</a>
+                </div>
             </div>
         </div>
         <div id="vertex-shader" class="code-panel">
