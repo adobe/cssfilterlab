@@ -381,8 +381,28 @@
     @include user-select(auto);
     @include prefixProperty(box-sizing, border-box);
 
+    &#filter-code {
+        @include hbox;
+    }
+
     > * {
         font-size: 1.2em;
+    }
+
+    .css-property-name {
+        
+    }
+
+    .css-property-value {
+        padding-left: 10px;
+        @include flex(1);
+    }
+
+    .data-uri {
+        display: inline-block;
+        width: 200px;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     a {
