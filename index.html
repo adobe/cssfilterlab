@@ -1,31 +1,25 @@
 <!doctype html>
 
 <!-- 
-  Copyright (c) 2012 Adobe Systems Incorporated. All rights reserved.
-   
-  Permission is hereby granted, free of charge, to any person obtaining a
-  copy of this software and associated documentation files (the "Software"), 
-  to deal in the Software without restriction, including without limitation 
-  the rights to use, copy, modify, merge, publish, distribute, sublicense, 
-  and/or sell copies of the Software, and to permit persons to whom the 
-  Software is furnished to do so, subject to the following conditions:
-   
-  The above copyright notice and this permission notice shall be included in
-  all copies or substantial portions of the Software.
-   
-  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
-  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER 
-  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING 
-  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER 
-  DEALINGS IN THE SOFTWARE.
+Copyright (c) 2012 Adobe Systems Incorporated. All rights reserved.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
 -->
 
 <html dir="ltr" lang="en">
 <head>
     <title>CSS FilterLab</title>
-    <link rel="stylesheet" type="text/css" href="style/app.css">
+    <link rel="stylesheet" type="text/css" href="style/css/app.css">
     <link rel="stylesheet" href="lib/third_party/CodeMirror/lib/codemirror.css">
 
     <script src="lib/third_party/jquery/jquery-1.8.0.min.js" type="text/javascript"></script>
@@ -183,15 +177,10 @@
                         <h4>Parameter "<span class="config-parameter-label"></span>"</h4>
 
                         <div class="config-row">
-                            <label for="config-parameter-name">Parameter name</label>
-                            <input type="text" class="config-parameter-name" name="config-parameter-name" />
-                        </div>
-
-                        <div class="config-row">
                             <label for="config-parameter-type">Parameter name</label>
                             <select type="text" class="config-parameter-type" name="config-parameter-type">
                                 <option value="range">Range</option>
-                                <option value="array">Array</option>
+                                <option value="color">Color</option>
                                 <option value="transform">Transform</option>
                                 <option value="warp">Warp</option>
                             </select>
@@ -199,14 +188,29 @@
 
                         <div class="config-row">
                             <label for="config-default-value">Parameter default value</label>
-                            <div class="value">
+                            <div class="value config-default-value">
+                            </div>
+                        </div>
+
+                        <div class="config-parameter-range">
+                            <div class="config-row">
+                                <label for="config-parameter-range-min">Parameter range minimum:</label>
+                                <input type="number" class="config-parameter-range-min" name="config-parameter-range-min" />
+                            </div>
+                            <div class="config-row">
+                                <label for="config-parameter-range-max">Parameter range maximum:</label>
+                                <input type="number" class="config-parameter-range-max" name="config-parameter-range-max" />
+                            </div>
+                            <div class="config-row">
+                                <label for="config-parameter-range-step">Parameter range step:</label>
+                                <input type="number" class="config-parameter-range-step" name="config-parameter-range-step" />
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="config-row">
-                    <a href="#" id="post-gist-button" class="button dark">Save as anonymous gist</a>
+                    <a href="#" id="post-gist-button" class="button dark">Save to GitHub ...</a>
                 </div>
             </div>
         </div>
@@ -281,9 +285,21 @@
 
     <div id="github-popup" class="popup">
         <div class="popup-inner">
-            <h2>GitHub gist created!</h2>
-            <p><a href="" target="_blank" id="gist-link">Click here to view your new gist.</a></p>
-            <p><a href='#' id="gist-popup-close" class="button">Close</a></p>
+            <div class="state gist-info">
+                <h2 class="title">Saving to GitHub</h2>
+                <p>Saving to github... </p>
+                <p><a href='#' id="gist-popup-continue" class="button">Save anonymously</a>
+                   <a href='#' class="button gist-popup-close">Close</a></p>
+            </div>
+            <div class="state gist-saving">
+                <h2 class="title">Creating GitHub gist...</h2>
+                <p><center><span class="spinner large"></span></center></p>
+            </div>
+            <div class="state gist-result">
+                <h2 class="title">GitHub gist created!</h2>
+                <p><a href="" target="_blank" id="gist-link">Click here to view your new gist.</a></p>
+                <p><a href='#' class="button gist-popup-close">Close</a></p>
+            </div>
         </div>
     </div>
 
@@ -291,13 +307,13 @@
         <div class="popup-inner">
             <h2>This application requires cutting edge CSS features!</h2>
             <p>To correctly view this application you need to download a nightly build of Safari for Mac or Google Chromium Canary.</p>
-            <a href="#" id="browser-popup-close" class="button">Close</a>
+            <a href="#" class="button gist-popup-close">Close</a>
         </div>
     </div>
 
     <div id="help-popup" class="popup">
         <div class="popup-inner">
-            <h2>Help</h2>
+            <h2>Welcome to CSS FilterLab!</h2>
             <p>Help to be written here.</p>
             <a href="#" id="help-popup-close" class="button">Close</a>
         </div>
