@@ -296,10 +296,12 @@ aside {
 }
 
 #github-popup {
-    .state {
+    .state, .gist-login-failed {
         display: none;
     }
     &.info .state.gist-info,
+    &.login .state.gist-login, 
+    &.login-failed .gist-login-failed,
     &.saving .state.gist-saving, 
     &.saved .state.gist-result {
         display: block;

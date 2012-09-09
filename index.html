@@ -288,8 +288,16 @@ limitations under the License.
             <div class="state gist-info">
                 <h2 class="title">Saving to GitHub</h2>
                 <p>Saving to github... </p>
-                <p><a href='#' id="gist-popup-continue" class="button">Save anonymously</a>
+                <p><a href='#' id="save-anonymous-gist" class="button">Save anonymously</a>
+                   <a href='#' id="save-gist-with-login" class="button">Save with your GitHub username</a>
                    <a href='#' class="button gist-popup-close">Close</a></p>
+            </div>
+            <div class="state gist-login">
+                <h2 class="title">GitHub Login</h2>
+                <p>GitHub login window has been opened. If you cannot see the window please 
+                    <a id="github-login-link" href="#">click here</a> to open it again.
+                <p class="gist-login-failed">Login failed.</p>
+                <p><a href='#' class="button gist-popup-close">Close</a></p>
             </div>
             <div class="state gist-saving">
                 <h2 class="title">Creating GitHub gist...</h2>

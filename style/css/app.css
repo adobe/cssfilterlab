@@ -2819,9 +2819,9 @@ aside {
   float: right;
 }
 
-#github-popup .state {
+#github-popup .state, #github-popup .gist-login-failed {
   display: none;
 }
-#github-popup.info .state.gist-info, #github-popup.saving .state.gist-saving, #github-popup.saved .state.gist-result {
+#github-popup.info .state.gist-info, #github-popup.login .state.gist-login, #github-popup.login-failed .gist-login-failed, #github-popup.saving .state.gist-saving, #github-popup.saved .state.gist-result {
   display: block;
 }
