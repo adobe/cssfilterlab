@@ -29,7 +29,7 @@ Working with SASS:
 - [Install SASS](http://sass-lang.com/download.html) (requires Ruby)
 
 - Tell SASS to watch the `style` folder and regenerate CSS files when you make changes to SCSS files  
-    - `$ sass --watch --style expanded style/app.scss:style/app.css`
+    - `$ sass --watch --style expanded style/app.scss:style/css/app.css`
 
 See the [SASS tutorial](http://sass-lang.com/tutorial.html) for more details on generating CSS files with SASS. 
 
