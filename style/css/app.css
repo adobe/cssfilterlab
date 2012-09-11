@@ -2674,6 +2674,11 @@ body {
   padding: 0;
 }
 
+/* let link be links */
+a:not([class~="button"]):hover {
+  text-decoration: underline;
+}
+
 #components, #main-view, .popup {
   display: none;
 }
@@ -2879,6 +2884,9 @@ body {
 .nav > li {
   margin: 0;
   padding: 0;
+}
+.nav li + li {
+  margin-left: 15px;
 }
 
 .modal {
