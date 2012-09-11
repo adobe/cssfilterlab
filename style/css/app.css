@@ -1904,7 +1904,8 @@ input.dark[type=checkbox]:checked + label {
     width: 100%;
     height: 50%;
     display: block;
-    background: rgba(255, 255, 255, 0.4);
+    background-image: none, linear-gradient(top, #7a7c7c, #5f6060);
+    background-image: none, -webkit-gradient(linear, left top, left bottom, from(#7a7c7c), to(#5f6060));
     border-radius: 2px; }
 
 .slide-switch input:checked + .wrapper {
@@ -2361,7 +2362,7 @@ body {
 
 /* let link be links */
 a:not([class~="button"]):hover {
-  text-decoration: underline; }
+  text-decoration: none; }
 
 #components, #main-view, .popup {
   display: none; }

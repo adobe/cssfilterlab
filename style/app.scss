@@ -47,7 +47,7 @@ body {
   
 /* let link be links */
 a:not([class~="button"]):hover {
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 #components, #main-view, .popup {
