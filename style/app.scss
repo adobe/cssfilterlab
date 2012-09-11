@@ -44,6 +44,11 @@ body {
     margin: 0;
     padding: 0;
 }
+  
+/* let link be links */
+a:not([class~="button"]):hover {
+    text-decoration: underline;
+}
 
 #components, #main-view, .popup {
     display: none;
@@ -157,7 +162,13 @@ body {
     @include list-reset;
     @include hbox;
     margin: auto 0;
+    
+    li + li{
+        margin-left: 15px;
+    }
 }
+
+
 
 .modal {
     @include box-shadow;

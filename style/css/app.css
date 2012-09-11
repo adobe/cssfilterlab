@@ -2357,6 +2357,11 @@ body {
   margin: 0;
   padding: 0; }
 
+/* let link be links */
+a:not([class~="button"]):hover {
+  text-decoration: underline;
+}
+
 #components, #main-view, .popup {
   display: none; }
 
@@ -2541,10 +2546,22 @@ body {
   -ms-flex-direction: row;
   -o-flex-direction: row;
   flex-direction: row;
+<<<<<<< HEAD
   margin: auto 0; }
   .nav > li {
     margin: 0;
     padding: 0; }
+=======
+  margin: auto 0;
+}
+.nav > li {
+  margin: 0;
+  padding: 0;
+}
+.nav li + li {
+  margin-left: 15px;
+}
+>>>>>>> 7b5af553728e1f01dafe5de9e462eae0adace427
 
 .modal {
   box-shadow: 0 5px 20px 5px #333;
