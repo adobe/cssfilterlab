@@ -2825,3 +2825,16 @@ aside {
 #github-popup.info .state.gist-info, #github-popup.login .state.gist-login, #github-popup.login-failed .gist-login-failed, #github-popup.saving .state.gist-saving, #github-popup.saved .state.gist-result {
   display: block;
 }
+
+.logo {
+  display: block;
+  width: 40px;
+  height: 64px;
+  background: url(../../images/logo.svg) center center no-repeat;
+  text-indent: -9999px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-right: 16px;
+  z-index: 1000;
+}
