@@ -116,11 +116,13 @@ body {
 
 #animations-container {
     border-bottom: 1px solid #d7d7d7;
-    -webkit-justify-content: space-between;
+    -webkit-justify-content: space-between; 
+    padding-right: 74px;
 
     h1, h2, h3 {
         margin: 0 auto;
-    }
+    }  
+    
 }
 
 .container {
@@ -308,3 +310,15 @@ aside {
     }
 }
 
+.logo{
+    display: block;
+    width: 40px;
+    height: 64px;
+    background: url(../../images/logo.svg) center center no-repeat;
+    text-indent: -9999px;
+    position: absolute;
+    top: 0;     
+    right: 0;
+    margin-right: 16px;
+    z-index: 1000;
+}
