@@ -232,42 +232,45 @@ aside {
 #container { 
     @include user-select(auto);
     width: 600px;
-    color: black;
+    color: white;
     position: relative;
     margin: 35px auto 5px;
-    font-size: 12px;
-    padding: 25px;
-    border: 6px solid #33ccff;
-    background: white;
-    border-radius: 10px;
+    font-size: 16px;
+    padding: 40px;
+    border:none;
+    outline:3px dashed #49799B;
+    outline-offset:-15px;
     text-align: justify;
+    background: #263F51;
+    background-image:url(../../images/bottomscene.png);
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    padding-bottom: 200px;
+
+    p{
+        line-height: 22px;
+    }
 
     #multi-col {
         @include prefixProperty(column-count, 2);
         @include prefixProperty(column-gap, 3em);
 
         h2{
-            color: #eb3d3c;
-            font-size: 36px;
+            color: #49799B;
+            font-size: 32px;
             margin: 0px;
-            text-align: center;
+            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
         }
     }   
 
     #svg-img {
-        background: -webkit-linear-gradient(#20baff 0%, #b6eeff 100%);
         display: block;
         margin: auto;
-        border-left: 8px solid #eb3d3c;
-        box-shadow: 2px 2px 6px 3px rgba(0, 0, 0, 0.25);
-        margin-bottom: 2em;
     }
 
     #png-img {
         display: block; 
         margin: auto;
-        border-right: 8px solid #eb3d3c;
-        box-shadow: 2px 2px 6px 3px rgba(0, 0, 0, 0.25);
         margin-bottom: 2em;
     }
 

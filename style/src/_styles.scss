@@ -14,6 +14,19 @@
  * limitations under the License.
  */
 
+    @mixin disc {
+        width: 12px;
+        height: 12px;
+        border-radius: 50px;
+        border: 1px solid rgba(0,0,0,0.24);
+    }
+    
+    @mixin disc-active {
+        @include disc;
+        box-shadow: inset 0 1px 0 1px white;                                                  
+        background: -webkit-linear-gradient(bottom, rgba(255,255,255,0), rgba(255,255,255,1));        
+    }
+
 #filter-list {
     padding: 0px;
     margin: 0px;
@@ -218,19 +231,6 @@
     box-sizing: border-box;
     border-top: 1px solid #ccc;
 	@include user-select(none);
-	
-    @mixin disc {
-        width: 12px;
-        height: 12px;
-    	border-radius: 50px;
-        border: 1px solid rgba(0,0,0,0.24);
-    }
-    
-    @mixin disc-active {
-        @include disc;
-        box-shadow: inset 0 1px 0 1px white;                                                  
-        background: -webkit-linear-gradient(bottom, rgba(255,255,255,0), rgba(255,255,255,1));        
-    }
 
     .title {
         color: #3B3F41;
