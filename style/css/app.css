@@ -2318,6 +2318,7 @@ input.dark[type=checkbox]:checked + label {
 table.paramsTable {
   border-collapse: collapse;
   border: none;
+  width: 100%;
 }
 table.paramsTable td {
   border: none;
@@ -2341,7 +2342,7 @@ table.paramsTable tr.field > td.field-label {
 }
 table.paramsTable tr.field > td:nth-child(2) {
   min-width: 100px;
-  max-width: 140px;
+  width: 100%;
 }
 table.paramsTable tr.field > td:last-child {
   min-width: 50px;
@@ -2356,13 +2357,15 @@ table.paramsTable tr.header {
 table.paramsTable tr > td:nth-child(3) {
   width: 20px;
 }
+table.paramsTable .param-color {
+  width: 100%;
+}
 table.paramsTable .param-color td:nth-child(1) {
   min-width: 14px;
   max-width: 14px;
 }
 table.paramsTable .param-color td:nth-child(2) {
   min-width: 100px;
-  max-width: 100px;
 }
 table.paramsTable .param-color td:nth-child(3) {
   min-width: 25px;
@@ -2399,6 +2402,7 @@ table.paramsTable .param-transform td:first-child {
 }
 table.paramsTable .param-transform td:nth-child(2) {
   min-width: 80px;
+  width: 100%;
 }
 table.paramsTable .param-transform td:nth-child(3) {
   min-width: 20px;
@@ -2412,6 +2416,9 @@ table.paramsTable .warp-control {
   -ms-box-shadow: inset 0 0 5px black;
   -o-box-shadow: inset 0 0 5px black;
   box-shadow: inset 0 0 5px black;
+}
+table.paramsTable input[type=range] {
+  width: 100%;
 }
 table.paramsTable input[type=range].vertical {
   -webkit-transform: rotate(90deg);

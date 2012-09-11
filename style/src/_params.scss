@@ -17,6 +17,7 @@
 table.paramsTable {
     border-collapse: collapse;
     border: none;
+    width: 100%;
 
     td {
         border: none;
@@ -39,7 +40,7 @@ table.paramsTable {
 
         & > td:nth-child(2) {
             min-width: 100px;
-            max-width: 140px;
+            width: 100%;
         }
 
         & > td:last-child {
@@ -59,7 +60,8 @@ table.paramsTable {
     	width: 20px;
     }
 
-    .param-color {
+    .param-color {   
+        width: 100%;
         td:nth-child(1) {
             min-width: 14px;
             max-width: 14px;
@@ -67,7 +69,6 @@ table.paramsTable {
 
         td:nth-child(2) {
             min-width: 100px;
-            max-width: 100px;
         }
 
         td:nth-child(3) {
@@ -97,7 +98,8 @@ table.paramsTable {
         min-width: 40px;
     }
     .param-transform td:nth-child(2) {
-        min-width: 80px;
+        min-width: 80px;  
+        width: 100%;
     }
     .param-transform td:nth-child(3) {
         min-width: 20px;
@@ -112,6 +114,7 @@ table.paramsTable {
 
     input[type=range] {
         @extend .approx-slider, .approx-slider.dark;
+        width: 100%;
     }
 
     input[type=range].vertical {
