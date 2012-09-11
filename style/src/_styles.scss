@@ -374,20 +374,21 @@
 /* Syntax highligt ------------------------------------------------------------------------------- */
 .light .code{
     color: #3B3F41;
-    font-size: 12px;
+    font-size: 12px;  
 }
 .code {
     color: #000; 
     padding: 10px;
     @include user-select(auto);
     @include prefixProperty(box-sizing, border-box);
+    font-family: monospace;
 
     &#filter-code {
         @include hbox;
     }
 
     > * {
-        font-size: 1.2em;
+        font-size: 1.05em;
     }
 
     .css-property-name {
