@@ -2882,7 +2882,7 @@ body {
 }
 
 .modal {
-  box-shadow: 0 10px 15px 0 #333;
+  box-shadow: 0 5px 20px 5px #333;
   width: 50%;
   height: 50%;
   min-width: 600px;
@@ -2910,7 +2910,7 @@ aside {
 }
 
 #filter-dock {
-  box-shadow: 0 10px 15px 0 #333;
+  box-shadow: 0 5px 20px 5px #333;
   width: 400px;
   height: 70%;
   top: 0px;
@@ -2941,7 +2941,7 @@ aside {
 }
 
 #animations {
-  box-shadow: 0 10px 15px 0 #333;
+  box-shadow: 0 5px 20px 5px #333;
   background: #494d4e url("../img/bg_dark.png");
   display: none;
   position: absolute;
