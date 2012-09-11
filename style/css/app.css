@@ -1452,21 +1452,21 @@ input.dark[type=checkbox]:checked + label {
   background: #484B4C;
 }
 
-#filter-list li.builtin-filter,
+/*#filter-list li.builtin-filter,
 .filter-stock .filter-item.builtin-filter {
-  border-left: rgba(255, 0, 0, 0.2) 5px solid;
+    border-left: rgba(255, 0, 0, 0.2) 5px solid;
 }
 
 #filter-list li.custom-filter,
 .filter-stock .filter-item.custom-filter {
-  border-left: rgba(0, 255, 0, 0.2) 5px solid;
+    border-left: rgba(0, 255, 0, 0.2) 5px solid;
 }
 
 #filter-list li.forked-filter,
 .filter-stock .filter-item.forked-filter {
-  border-left: rgba(0, 0, 255, 0.2) 5px solid;
+    border-left: rgba(0, 0, 255, 0.2) 5px solid;
 }
-
+*/
 .filter-stock .filter-item.forked-filter.current {
   background: rgba(0, 184, 255, 0.29);
 }
