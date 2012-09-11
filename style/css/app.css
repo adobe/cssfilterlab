@@ -1211,9 +1211,9 @@ input.dark[type=checkbox]:checked + label {
 
 #filter-list li.current,
 #animations li.current {
-  border-top: 1px solid #4F5354;
-  border-bottom: 1px solid #292B2C;
-  background: #3b3f41; }
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+  background: rgba(0, 0, 0, 0.24); }
 
 #filter-list li .filter-name {
   font-size: 1.2em;
@@ -1944,7 +1944,7 @@ input.dark[type=checkbox]:checked + label {
   background: #3b3f41 url("../img/bg_dark.png");
   background-repeat: repeat-x;
   display: block;
-  border-top: 1px solid #6a6a6a;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
   color: white;
   z-index: 0;
   position: relative;

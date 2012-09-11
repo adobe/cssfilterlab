@@ -22,7 +22,7 @@
     @include flex; 
     @include northstar-bg;
 	display: block;
-	border-top: 1px solid #6a6a6a;
+	border-top: 1px solid rgba(255,255,255,.15);
 	color: white;
 	z-index: 0;
 	position: relative;
