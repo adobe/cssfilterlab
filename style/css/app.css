@@ -1234,7 +1234,7 @@ input.dark[type=checkbox]:checked + label {
   width: 10px;
   height: 16px;
   margin-right: 5px;
-  background: url(../img/grabber.png) center top no-repeat;
+  background: url(../img/grabber.png) center 1px no-repeat;
   cursor: -webkit-grab; }
 
 #filter-list .slide-toggle {
