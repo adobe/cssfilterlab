@@ -149,8 +149,8 @@ a:not([class~="button"]):hover {
     aside {
         width: 20%;
         min-width: 200px;
-        background: $baseColorLight;
-    }
+/*        background: $baseColorLight;
+*/    }
 
     section {
         @include vbox;

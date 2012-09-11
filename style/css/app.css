@@ -821,11 +821,11 @@ select.button.large {
   height: 15px;
   width: 13px; }
 
-.approx-slider.dark, table.paramsTable input.dark[type=range], table.paramsTable input[type=range] {
+.approx-slider.dark, table.paramsTable input[type=range] {
   background: #1f1f1f;
   border: 1px solid #000000; }
 
-.approx-slider.dark::-webkit-slider-thumb, table.paramsTable input.dark[type=range]::-webkit-slider-thumb, table.paramsTable input[type=range]::-webkit-slider-thumb {
+.approx-slider.dark::-webkit-slider-thumb, table.paramsTable input[type=range]::-webkit-slider-thumb {
   background-image: none, linear-gradient(top, #7a7c7c, #5f6060);
   background-image: none, -webkit-gradient(linear, left top, left bottom, from(#7a7c7c), to(#5f6060));
   background-position: center;
@@ -835,7 +835,7 @@ select.button.large {
   color: #eff1f1;
   text-shadow: 0 -1px 0 black; }
 
-.approx-slider.dark:focus::-webkit-slider-thumb, table.paramsTable input.dark[type=range]:focus::-webkit-slider-thumb, table.paramsTable input[type=range]:focus::-webkit-slider-thumb {
+.approx-slider.dark:focus::-webkit-slider-thumb, table.paramsTable input[type=range]:focus::-webkit-slider-thumb {
   border: 1px solid #000000;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.69);
   outline: none; }
@@ -2359,8 +2359,7 @@ body {
 
 /* let link be links */
 a:not([class~="button"]):hover {
-  text-decoration: underline;
-}
+  text-decoration: underline; }
 
 #components, #main-view, .popup {
   display: none; }
@@ -2493,7 +2492,8 @@ a:not([class~="button"]):hover {
   .container aside {
     width: 20%;
     min-width: 200px;
-    background: #494d4e; }
+    /*        background: $baseColorLight;
+    */ }
   .container section {
     display: -webkit-box;
     display: -moz-box;
@@ -2546,22 +2546,12 @@ a:not([class~="button"]):hover {
   -ms-flex-direction: row;
   -o-flex-direction: row;
   flex-direction: row;
-<<<<<<< HEAD
   margin: auto 0; }
   .nav > li {
     margin: 0;
     padding: 0; }
-=======
-  margin: auto 0;
-}
-.nav > li {
-  margin: 0;
-  padding: 0;
-}
-.nav li + li {
-  margin-left: 15px;
-}
->>>>>>> 7b5af553728e1f01dafe5de9e462eae0adace427
+  .nav li + li {
+    margin-left: 15px; }
 
 .modal {
   box-shadow: 0 5px 20px 5px #333;
