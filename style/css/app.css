@@ -1939,7 +1939,8 @@ input.dark[type=checkbox]:checked + label {
   -ms-box-flex: 1;
   -o-box-flex: 1;
   box-flex: 1;
-  background: #494d4e url("../img/bg_dark.png");
+  background: #3b3f41 url("../img/bg_dark.png");
+  background-repeat: repeat-x;
   display: block;
   border-top: 1px solid #6a6a6a;
   color: white;
@@ -1998,7 +1999,8 @@ input.dark[type=checkbox]:checked + label {
     background: rgba(112, 112, 112, 0.24);
     color: white; }
   .panel-tab.active {
-    background: #494d4e url("../img/bg_dark.png");
+    background: #3b3f41 url("../img/bg_dark.png");
+    background-repeat: repeat-x;
     position: relative;
     z-index: 10;
     border-top: 1px solid #6a6a6a;
@@ -2607,7 +2609,8 @@ aside {
 
 #animations {
   box-shadow: 0 5px 20px 5px #333;
-  background: #494d4e url("../img/bg_dark.png");
+  background: #3b3f41 url("../img/bg_dark.png");
+  background-repeat: repeat-x;
   display: none;
   position: absolute;
   padding: 0px;
