@@ -78,7 +78,8 @@
 }
 
 #filter-list li .filter-name {
-	font-size: 1.2em;
+    color: #bbb;
+    font-size: 1.2em;
     font-weight: normal;
     text-shadow: 0px 1px 1px #000;
 }
@@ -90,7 +91,8 @@
     cursor: pointer;
     width: 16px;
     height: 16px;
-    text-indent: -999px;
+    text-indent: -9999px;
+    margin: 0 5px 0 0;
     background: transparent url(../img/remove.png) center center no-repeat;
 }
 
@@ -122,6 +124,11 @@
 #filter-list li > .config {
 	display: none;
 }
+
+#filter-list li.current > .filter-name {
+    color: #fff;
+/*    opacity: 1;
+*/}
 
 #filter-list li.current > .config {
 	display: block;
