@@ -425,7 +425,7 @@ a:active {
   background-repeat: none; }
 
 .button:active, .button.selected {
-  background-color: #e5e7e7;
+  background-color: #D3D7D7;
   background-image: none;
   background-position: center;
   background-repeat: none;
