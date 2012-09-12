@@ -2704,7 +2704,7 @@ body {
 
 /* let link be links */
 a:not([class~="button"]):hover {
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 #components, #main-view, .popup {
