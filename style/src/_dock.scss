@@ -22,7 +22,7 @@
     @include flex; 
     @include northstar-bg;
 	display: block;
-	border-top: 1px solid #6a6a6a;
+	border-top: 1px solid rgba(255,255,255,.15);
 	color: white;
 	z-index: 0;
 	position: relative;
@@ -66,7 +66,8 @@
     	border-bottom: 2px solid #494D4E;
     	color: white; 
     	top: 1px;
-    	padding-top:4px; 
+    	padding-top:4px;
+        box-shadow: inset 0 1px 0 #FFF; 
 	}
 }
 
@@ -111,18 +112,16 @@
 .panel-column.horizontal > .panel-column-items > .panel-separator {
 	width: 1px;
 	@include noflex;
-	border-left: 1px solid #282828;
-	border-right: 1px solid #282828;
-	background: #3a3a3a;
+	background: #000;
+    border-right: 1px solid rgba(0,0,0,0);
+    border-left: 1px solid rgba(0,0,0,0);
 	cursor: col-resize;
 }
 
 .panel-column.vertical > .panel-column-items > .panel-separator {
-	height: 1px;
+	height: 3px;
 	@include noflex;
-	border-top: 1px solid #282828;
-	border-bottom: 1px solid #282828;
-	background: #3a3a3a;
+	background: #ced1d1;
 	cursor: row-resize;
 }
 
@@ -130,12 +129,6 @@
 .panel-separator:first-of-type,
 .panel-column-handle {
     display: none;
-}
-
-.panel-column.vertical.light > .panel-column-items > .panel-separator{
-    background: #c4c6c6;
-    height: 2px;
-    border: none;
 }
 
 .light {
@@ -168,15 +161,17 @@
     .panel-tab{    
         border: none;
         color: #3B3F41;
+        margin: -1px 0 0;
         text-shadow: 0 1px 0 white;
         background: none;
         border-right: none;
         
         &.active{
             background: #DFE2E2;
+            border-top: 1px solid #c4c6c6;            
             border-right: 1px solid #c4c6c6;
             border-left: 1px solid #c4c6c6;
-                        
+            border-radius: 4px 4px 0 0;
             &:first-child{
                 border-left: none;
             };

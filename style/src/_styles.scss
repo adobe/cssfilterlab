@@ -15,8 +15,8 @@
  */
 
     @mixin disc {
-        width: 12px;
-        height: 12px;
+        width: 13px;
+        height: 13px;
         border-radius: 50px;
         border: 1px solid rgba(0,0,0,0.24);
     }
@@ -72,14 +72,16 @@
 
 #filter-list li.current,
 #animations li.current {
-    border-top: 1px solid #4F5354;
-    border-bottom: 1px solid #292B2C;
-	background: $baseColorDark;
+    border-top: 1px solid rgba(0,0,0,.2);
+    border-bottom: 1px solid rgba(255,255,255,.13);    
+	background: $selectedBg;
 }
 
 #filter-list li .filter-name {
-	font-size: 1.2em;
-    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.8);
+    color: #bbb;
+    font-size: 1.2em;
+    font-weight: normal;
+    text-shadow: 0px 1px 1px #000;
 }
 
 #filter-list li .delete-filter{
@@ -89,7 +91,8 @@
     cursor: pointer;
     width: 16px;
     height: 16px;
-    text-indent: -999px;
+    text-indent: -9999px;
+    margin: 0 5px 0 0;
     background: transparent url(../img/remove.png) center center no-repeat;
 }
 
@@ -98,7 +101,7 @@
     width: 10px;
     height: 16px;
     margin-right: 5px;
-    background: url(../img/grabber.png) center top no-repeat;
+    background: url(../img/grabber.png) center 1px no-repeat;
     cursor: -webkit-grab;
 } 
 
@@ -121,6 +124,11 @@
 #filter-list li > .config {
 	display: none;
 }
+
+#filter-list li.current > .filter-name {
+    color: #fff;
+/*    opacity: 1;
+*/}
 
 #filter-list li.current > .config {
 	display: block;
@@ -167,8 +175,9 @@
 }
 
 #filter-list #filter-list-empty {
-	color: #ccc;
+	color: #aaa;
 	font-weight: normal;
+    padding: 15px;
 }
 
 .filter-stock .filter-item {
@@ -224,12 +233,13 @@
 }
 
 #timeline {
-    padding: 10px;
+    padding: 10px 15px 10px 15px;
 	@include hbox;
     @include valign;
     overflow: hidden;
     box-sizing: border-box;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid rgba(0,0,0,.13);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.8);
 	@include user-select(none);
 
     .title {
@@ -244,46 +254,56 @@
         height: 18px;
         cursor: pointer;
         text-indent: -9999em;
-        margin-right: 8px;
+        margin-right: 0;
     }      
     
 	.play {
 		width: 38px;
-		height: 20px;
-		background: url(../img/play.png) center center no-repeat, -webkit-linear-gradient(bottom, rgba(255,255,255,0), rgba(255,255,255,1));
-		border: 1px solid rgba(0,0,0,0.24);
-		border-radius: 2px;
-		box-shadow: inset 0 1px 0 1px white;
-        margin-right: 0px;
+		height: 27px;
+		background: url(../img/play.png) center 5px no-repeat, -webkit-linear-gradient(bottom, rgba(255,255,255,0), rgba(255,255,255,1));
+        border: 1px solid rgba(0, 0, 0, 0.3);
+		border-radius: 3px;
+        margin-top: -1px;
         margin-right: 8px; 
         text-indent: -9999em;
-	}         
+        box-shadow: inset 0 1px 0 #ffffff;
+    }         
 	
 	.play:hover{
-	    border-color: #777;
-	    box-shadow: none;
-	}
+        background-image: url(../img/play.png) center 5px no-repeat, linear-gradient(top, #f8fafb, #edefef);
+        background-image: url(../img/play.png) center 5px no-repeat, -webkit-gradient(linear, left top, left bottom, from(#f8fafb), to(#edefef));
+	    cursor: pointer;
+    }
 	
 	.play.active {
-		background: url(../img/pause.png) center center no-repeat, -webkit-linear-gradient(bottom, rgba(255,255,255,0), rgba(0,0,0,0.1));
-        box-shadow: none;
+		background: #e5e7e7 url(../img/pause.png) center 6px no-repeat;
+        box-shadow: inset 0 1px 0px rgba(0, 0, 0, 0.06);        
 	}
 
 	.next,
 	.prev {
-		background: url(../img/arrow.png) center center no-repeat;
-		opacity: 0.5;
+        background: url(../img/arrow.png) center center no-repeat;
+        cursor: default;
+        opacity: 0.6;
+        pointer-events: none;
+        margin-top: -2px;
 	}
 
 	.next.active,
 	.prev.active {
 		background: url(../img/arrow.png) center center no-repeat;
 		opacity: 1;
+        pointer-events: auto;
+        cursor: pointer !important;
 	}
 
 	.prev {
       @include prefixProperty(transform, rotateY(180deg));
 	}
+
+    .next {
+        margin-right: 10px !important;
+    }
 
 	.toggle {
         position: relative;
@@ -293,36 +313,44 @@
 	
 	.toggle:after {
 	    position: absolute;
-	    top: 0;
-	    left: 0;       
-	    width: 12px;
-	    height: 12px;
-	    margin: 0 auto;
+	    top: -2px;
+	    left: 3px;       
+	    width: 13px;
+	    height: 13px;
 	    text-indent: 0;
 	    content: "+";
-	    text-align: center; 
-	    color: #777;
+	    color: #666;
 	    font-size: 14px;
-	    line-height: 13px;
-	    text-shadow: 0px 1px 0 0 rgba(0,0,0,0.3);
+	    text-shadow: 0 1px 0 #fff;
+        -webkit-font-smoothing: antialiased;
 	}
 
 	.toggle.active:after {
 	    content: "-"; 
 	    font-size: 22px; 
-	    line-height: 10px;
+	    line-height: 14px;
 	}
 
 	input[type="number"] {
+        background: #fff;
+        border-radius: 3px;
         width: 63px;
-        height: 32px;
+        height: 16px;
+        padding: 2px;
         text-align: right;
+        margin-left: 10px;
         margin-top: -4px;
-        background: none;
         color: black;
         outline: none;
-        border: none;
+        border: 1px solid #a5a8a8;
+        box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.1);
     }
+    input[type="number"]:focus {
+        border: 1px solid #0940fd;
+        -webkit-box-shadow: 0 0 4px #0088ff;
+        box-shadow: 0 0 4px #0088ff;
+        outline: none;
+    }    
 
     .start {
         color: black;
@@ -333,7 +361,7 @@
     	background: #D3D7D7;
     	padding: 0 6px 0 4px;
     	box-shadow: inset 0 -1px 0 0 rgba(255, 255, 255, 0.7), 0 -1px 0 0 rgba(0,0,0,0.15);
-    	border-radius: 5px;
+    	border-radius: 3px;
         @include flex(1);
     
         .keyframe_bar {
@@ -347,13 +375,14 @@
         }
 
         .keyframe {
-        	@include prefixValue(cursor, grab);
+        	@include prefixValue(cursor, pointer);
         	@include disc;
         	margin-left: -5px;
             position: absolute;
             
             &.active {
                 @include disc-active;
+                @include prefixValue(cursor, grab);
             }
         }
 
@@ -671,7 +700,7 @@
     } 
     
     div{   
-        top: 50%;
+        top: 8px;
         width: 100%;
         height: 100%; 
         position: relative; 
@@ -683,7 +712,8 @@
         width: 100%;
         height: 50%;
         display: block;
-        background: rgba(255, 255, 255, 0.4);
+        background-image: none, linear-gradient(top, #7a7c7c, #5f6060);
+        background-image: none, -webkit-gradient(linear, left top, left bottom, from(#7a7c7c), to(#5f6060));
         border-radius: 2px;
     }
 }
