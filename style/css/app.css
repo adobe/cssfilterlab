@@ -1396,7 +1396,7 @@ input.dark[type=checkbox]:checked + label {
   margin-bottom: 10px; }
 
 #timeline {
-  padding: 10px;
+  padding: 10px 15px 10px 15px;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-box;
@@ -1498,14 +1498,22 @@ input.dark[type=checkbox]:checked + label {
     font-size: 22px;
     line-height: 10px; }
   #timeline input[type="number"] {
+    background: #fff;
+    border-radius: 3px;
     width: 63px;
-    height: 32px;
+    height: 21px;
     text-align: right;
-    margin-top: -4px;
-    background: none;
+    margin-left: 10px;
+    margin-top: -2px;
     color: black;
     outline: none;
-    border: none; }
+    border: 1px solid #a5a8a8;
+    box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.1); }
+  #timeline input[type="number"]:focus {
+    border: 1px solid #0940fd;
+    -webkit-box-shadow: 0 0 4px #0088ff;
+    box-shadow: 0 0 4px #0088ff;
+    outline: none; }
   #timeline .start {
     color: black;
     margin-right: 8px; }
