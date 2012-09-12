@@ -1295,7 +1295,8 @@ input.dark[type=checkbox]:checked + label {
 
 #filter-list #filter-list-empty {
   color: #ccc;
-  font-weight: normal; }
+  font-weight: normal;
+  padding: 15px; }
 
 .filter-stock .filter-item {
   display: -webkit-box;
@@ -2242,10 +2243,10 @@ table.paramsTable {
     border: none;
     padding: 0.5em;
     color: #bfbfbf;
-    font-family: Tahoma, sans-serif;
     font-weight: normal;
     font-size: 12px;
-    text-shadow: 0px -1px 0 rgba(0, 0, 0, 0.8); }
+    text-shadow: 0px -1px 0 rgba(0, 0, 0, 0.8);
+    -webkit-font-smoothing: antialiased; }
   table.paramsTable tr.field > td.field-label {
     text-align: right;
     width: 75px;
