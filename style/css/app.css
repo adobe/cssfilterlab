@@ -2178,13 +2178,13 @@ input.dark[type=checkbox]:checked + label {
   -ms-flex: none;
   -o-flex: none;
   flex: none;
-  border-left: 1px solid #282828;
-  border-right: 1px solid #282828;
-  background: #3a3a3a;
+  background: #000;
+  border-right: 1px solid rgba(0, 0, 0, 0);
+  border-left: 1px solid rgba(0, 0, 0, 0);
   cursor: col-resize; }
 
 .panel-column.vertical > .panel-column-items > .panel-separator {
-  height: 1px;
+  height: 3px;
   -webkit-box-flex: 0;
   -moz-box-flex: 0;
   -ms-box-flex: 0;
@@ -2195,20 +2195,13 @@ input.dark[type=checkbox]:checked + label {
   -ms-flex: none;
   -o-flex: none;
   flex: none;
-  border-top: 1px solid #282828;
-  border-bottom: 1px solid #282828;
-  background: #3a3a3a;
+  background: #ced1d1;
   cursor: row-resize; }
 
 /* trim down on needless resizing handles */
 .panel-separator:first-of-type,
 .panel-column-handle {
   display: none; }
-
-.panel-column.vertical.light > .panel-column-items > .panel-separator {
-  background: #aaa;
-  height: 1px;
-  border: none; }
 
 .light .panel-column.horizontal > .panel-column-items > .panel-separator {
   border: none;
