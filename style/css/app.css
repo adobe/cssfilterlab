@@ -391,7 +391,6 @@ a:active {
 .button.disabled:active,
 .disabled.button.selected {
   background-clip: padding-box;
-  border: 1px solid rgba(0, 0, 0, 0);
   border-radius: 3px;
   display: inline-block;
   font-size: 12px;
@@ -1440,37 +1439,45 @@ input.dark[type=checkbox]:checked + label {
     height: 18px;
     cursor: pointer;
     text-indent: -9999em;
-    margin-right: 8px; }
+    margin-right: 0; }
   #timeline .play {
     width: 38px;
-    height: 20px;
-    background: url(../img/play.png) center center no-repeat, -webkit-linear-gradient(bottom, rgba(255, 255, 255, 0), white);
-    border: 1px solid rgba(0, 0, 0, 0.24);
-    border-radius: 2px;
-    box-shadow: inset 0 1px 0 1px white;
-    margin-right: 0px;
+    height: 27px;
+    background: url(../img/play.png) center 5px no-repeat, -webkit-linear-gradient(bottom, rgba(255, 255, 255, 0), white);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 3px;
+    margin-top: -1px;
     margin-right: 8px;
-    text-indent: -9999em; }
+    text-indent: -9999em;
+    box-shadow: inset 0 1px 0 #ffffff; }
   #timeline .play:hover {
-    border-color: #777;
-    box-shadow: none; }
+    background-image: url(../img/play.png) center 5px no-repeat, linear-gradient(top, #f8fafb, #edefef);
+    background-image: url(../img/play.png) center 5px no-repeat, -webkit-gradient(linear, left top, left bottom, from(#f8fafb), to(#edefef));
+    cursor: pointer; }
   #timeline .play.active {
-    background: url(../img/pause.png) center center no-repeat, -webkit-linear-gradient(bottom, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.1));
-    box-shadow: none; }
+    background: #e5e7e7 url(../img/pause.png) center 6px no-repeat;
+    box-shadow: inset 0 1px 0px rgba(0, 0, 0, 0.06); }
   #timeline .next,
   #timeline .prev {
     background: url(../img/arrow.png) center center no-repeat;
-    opacity: 0.5; }
+    cursor: default;
+    opacity: 0.6;
+    pointer-events: none;
+    margin-top: -2px; }
   #timeline .next.active,
   #timeline .prev.active {
     background: url(../img/arrow.png) center center no-repeat;
-    opacity: 1; }
+    opacity: 1;
+    pointer-events: auto;
+    cursor: pointer !important; }
   #timeline .prev {
     -webkit-transform: rotateY(180deg);
     -moz-transform: rotateY(180deg);
     -ms-transform: rotateY(180deg);
     -o-transform: rotateY(180deg);
     transform: rotateY(180deg); }
+  #timeline .next {
+    margin-right: 10px !important; }
   #timeline .toggle {
     position: relative;
     width: 17px;
@@ -1482,22 +1489,20 @@ input.dark[type=checkbox]:checked + label {
     background: -webkit-linear-gradient(bottom, rgba(255, 255, 255, 0), white); }
   #timeline .toggle:after {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 12px;
-    height: 12px;
-    margin: 0 auto;
+    top: -2px;
+    left: 3px;
+    width: 13px;
+    height: 13px;
     text-indent: 0;
     content: "+";
-    text-align: center;
-    color: #777;
+    color: #666;
     font-size: 14px;
-    line-height: 13px;
-    text-shadow: 0px 1px 0 0 rgba(0, 0, 0, 0.3); }
+    text-shadow: 0 1px 0 #fff;
+    -webkit-font-smoothing: antialiased; }
   #timeline .toggle.active:after {
     content: "-";
     font-size: 22px;
-    line-height: 10px; }
+    line-height: 14px; }
   #timeline input[type="number"] {
     background: #fff;
     border-radius: 3px;
