@@ -2339,17 +2339,18 @@ table.paramsTable {
     text-shadow: 0 1px 0 #000; }
   table.paramsTable .value-editor {
     margin: 0px;
-    -webkit-box-shadow: 0px 0px 5px 2px black;
-    -moz-box-shadow: 0px 0px 5px 2px black;
-    -ms-box-shadow: 0px 0px 5px 2px black;
-    -o-box-shadow: 0px 0px 5px 2px black;
-    box-shadow: 0px 0px 5px 2px black;
+    -webkit-box-shadow: 0px 0px 3px 1px black;
+    -moz-box-shadow: 0px 0px 3px 1px black;
+    -ms-box-shadow: 0px 0px 3px 1px black;
+    -o-box-shadow: 0px 0px 3px 1px black;
+    box-shadow: 0px 0px 3px 1px black;
     outline: none;
     border: none;
     width: 100%;
     padding: 3px 3px 4px 3px;
     border-radius: 3px;
-    background: #ebebeb; }
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff; }
 
 body {
   font: 14px "Source Sans Pro", "source", helvetica, arial, sans-serif; }

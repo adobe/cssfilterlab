@@ -131,12 +131,13 @@ table.paramsTable {
 
     .value-editor {
         margin: 0px;  
-        @include prefixProperty(box-shadow, 0px 0px 5px 2px black);
+        @include prefixProperty(box-shadow, 0px 0px 3px 1px black);
         outline: none;
         border: none;
         width: 100%;
         padding: 3px 3px 4px 3px;
         border-radius: 3px;
-        background: #ebebeb;
+        background: rgba(255,255,255,.15);
+        color: #fff;
     }
 }
