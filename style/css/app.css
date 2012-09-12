@@ -1444,12 +1444,7 @@ input.dark[type=checkbox]:checked + label {
   cursor: pointer;
 }
 
-.filter-stock {
-  background: #3B3F41;
-}
-
 .filter-stock .filter-item {
-  background: #3B3F41;
   padding: 5px 10px;
 }
 
@@ -1458,24 +1453,12 @@ input.dark[type=checkbox]:checked + label {
 }
 
 .filter-stock .filter-item:hover {
-  background: #484B4C;
+  background: #3B3F41;
+}
+.filter-stock .filter-item:hover .filter-label {
+  color: white;
 }
 
-/*#filter-list li.builtin-filter,
-.filter-stock .filter-item.builtin-filter {
-    border-left: rgba(255, 0, 0, 0.2) 5px solid;
-}
-
-#filter-list li.custom-filter,
-.filter-stock .filter-item.custom-filter {
-    border-left: rgba(0, 255, 0, 0.2) 5px solid;
-}
-
-#filter-list li.forked-filter,
-.filter-stock .filter-item.forked-filter {
-    border-left: rgba(0, 0, 255, 0.2) 5px solid;
-}
-*/
 .filter-stock .filter-item.forked-filter.current {
   background: rgba(0, 184, 255, 0.29);
 }
@@ -1534,9 +1517,6 @@ input.dark[type=checkbox]:checked + label {
   color: #bfbfbf;
   text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.8);
   cursor: pointer;
-}
-.filter-stock .filter-item .filter-label:hover {
-  text-decoration: underline;
 }
 
 .filter-stock .filter-item .button-box {
