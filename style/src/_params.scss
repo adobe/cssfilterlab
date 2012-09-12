@@ -84,6 +84,7 @@ table.paramsTable {
         border: none;
         border-radius: 4px;
         @include prefixProperty(box-shadow, 0px 0px 4px 0px rgba(0, 0, 0, 0.5));
+        @include prefixProperty(transition, all 0.2s ease-out);
     }
 
     .param-color-preview:hover {
@@ -93,7 +94,7 @@ table.paramsTable {
     .param-color-preview::-webkit-color-swatch-wrapper {
         display: none;
     }
-
+    
     .param-transform td:first-child {
         min-width: 40px;
     }
@@ -139,5 +140,10 @@ table.paramsTable {
         border-radius: 3px;
         background: rgba(255,255,255,.15);
         color: #fff;
+    }
+    .param-color-editor{
+        @extend .value-editor;
+        @include prefixProperty(transition, all 0.2s ease-out);
+        width: 45px;
     }
 }
