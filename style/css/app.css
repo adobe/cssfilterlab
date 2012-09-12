@@ -1422,7 +1422,8 @@ input.dark[type=checkbox]:checked + label {
   box-align: center;
   overflow: hidden;
   box-sizing: border-box;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid rgba(0, 0, 0, 0.13);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -1473,8 +1474,8 @@ input.dark[type=checkbox]:checked + label {
   #timeline .toggle {
     position: relative;
     width: 17px;
-    width: 12px;
-    height: 12px;
+    width: 13px;
+    height: 13px;
     border-radius: 50px;
     border: 1px solid rgba(0, 0, 0, 0.24);
     box-shadow: inset 0 1px 0 1px white;
@@ -1501,10 +1502,11 @@ input.dark[type=checkbox]:checked + label {
     background: #fff;
     border-radius: 3px;
     width: 63px;
-    height: 21px;
+    height: 16px;
+    padding: 2px;
     text-align: right;
     margin-left: 10px;
-    margin-top: -2px;
+    margin-top: -4px;
     color: black;
     outline: none;
     border: 1px solid #a5a8a8;
@@ -1521,7 +1523,7 @@ input.dark[type=checkbox]:checked + label {
     background: #D3D7D7;
     padding: 0 6px 0 4px;
     box-shadow: inset 0 -1px 0 0 rgba(255, 255, 255, 0.7), 0 -1px 0 0 rgba(0, 0, 0, 0.15);
-    border-radius: 5px;
+    border-radius: 3px;
     -webkit-flex: 1;
     -moz-flex: 1;
     -ms-flex: 1;
@@ -1539,24 +1541,29 @@ input.dark[type=checkbox]:checked + label {
       position: relative;
       height: 16px; }
     #timeline .keyframe_wrapper .keyframe {
-      cursor: -webkit-grab;
-      cursor: -moz-grab;
-      cursor: -ms-grab;
-      cursor: -o-grab;
-      cursor: grab;
-      width: 12px;
-      height: 12px;
+      cursor: -webkit-pointer;
+      cursor: -moz-pointer;
+      cursor: -ms-pointer;
+      cursor: -o-pointer;
+      cursor: pointer;
+      width: 13px;
+      height: 13px;
       border-radius: 50px;
       border: 1px solid rgba(0, 0, 0, 0.24);
       margin-left: -5px;
       position: absolute; }
       #timeline .keyframe_wrapper .keyframe.active {
-        width: 12px;
-        height: 12px;
+        width: 13px;
+        height: 13px;
         border-radius: 50px;
         border: 1px solid rgba(0, 0, 0, 0.24);
         box-shadow: inset 0 1px 0 1px white;
-        background: -webkit-linear-gradient(bottom, rgba(255, 255, 255, 0), white); }
+        background: -webkit-linear-gradient(bottom, rgba(255, 255, 255, 0), white);
+        cursor: -webkit-grab;
+        cursor: -moz-grab;
+        cursor: -ms-grab;
+        cursor: -o-grab;
+        cursor: grab; }
     #timeline .keyframe_wrapper .play_head {
       position: absolute;
       cursor: hand;
@@ -2019,7 +2026,8 @@ input.dark[type=checkbox]:checked + label {
     border-bottom: 2px solid #494D4E;
     color: white;
     top: 1px;
-    padding-top: 4px; }
+    padding-top: 4px;
+    box-shadow: inset 0 1px 0 #FFF; }
 
 .panel-container {
   z-index: 0;

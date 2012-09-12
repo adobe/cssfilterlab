@@ -15,8 +15,8 @@
  */
 
     @mixin disc {
-        width: 12px;
-        height: 12px;
+        width: 13px;
+        height: 13px;
         border-radius: 50px;
         border: 1px solid rgba(0,0,0,0.24);
     }
@@ -231,7 +231,8 @@
     @include valign;
     overflow: hidden;
     box-sizing: border-box;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid rgba(0,0,0,.13);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.8);
 	@include user-select(none);
 
     .title {
@@ -319,10 +320,11 @@
         background: #fff;
         border-radius: 3px;
         width: 63px;
-        height: 21px;
+        height: 16px;
+        padding: 2px;
         text-align: right;
         margin-left: 10px;
-        margin-top: -2px;
+        margin-top: -4px;
         color: black;
         outline: none;
         border: 1px solid #a5a8a8;
@@ -344,7 +346,7 @@
     	background: #D3D7D7;
     	padding: 0 6px 0 4px;
     	box-shadow: inset 0 -1px 0 0 rgba(255, 255, 255, 0.7), 0 -1px 0 0 rgba(0,0,0,0.15);
-    	border-radius: 5px;
+    	border-radius: 3px;
         @include flex(1);
     
         .keyframe_bar {
@@ -358,13 +360,14 @@
         }
 
         .keyframe {
-        	@include prefixValue(cursor, grab);
+        	@include prefixValue(cursor, pointer);
         	@include disc;
         	margin-left: -5px;
             position: absolute;
             
             &.active {
                 @include disc-active;
+                @include prefixValue(cursor, grab);
             }
         }
 
