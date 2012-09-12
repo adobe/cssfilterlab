@@ -1469,6 +1469,7 @@ input.dark[type=checkbox]:checked + label {
   #timeline .toggle {
     position: relative;
     width: 17px;
+    border: 1px solid rgba(0, 0, 0, 0.3) !important;
     width: 13px;
     height: 13px;
     border-radius: 50px;

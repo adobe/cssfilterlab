@@ -289,6 +289,7 @@
 	.toggle {
         position: relative;
 	    width: 17px;
+        border: 1px solid rgba(0,0,0,.3) !important;
 	    @include disc-active;
 	}
 	
