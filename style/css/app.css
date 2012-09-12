@@ -805,8 +805,8 @@ select.button.large {
   text-shadow: 0 1px 0 #ffffff;
   border-radius: 3px;
   cursor: pointer;
-  height: 11px;
-  width: 9px;
+  height: 17px;
+  width: 11px;
   -webkit-appearance: none !important; }
 
 .approx-slider:focus::-webkit-slider-thumb, table.paramsTable input[type=range]:focus::-webkit-slider-thumb {
