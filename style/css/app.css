@@ -2333,7 +2333,8 @@ table.paramsTable {
     transform-origin: 0 50%; }
   table.paramsTable .value-label {
     display: block;
-    padding: 3px; }
+    padding: 3px;
+    text-shadow: 0 1px 0 #000; }
   table.paramsTable .value-editor {
     margin: 0px;
     -webkit-box-shadow: 0px 0px 5px 2px black;
