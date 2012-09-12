@@ -272,6 +272,7 @@
  a {
    color: #0083e8;
    text-decoration: none;
+   margin: 0 5px 0 0;
  }
  a:active {
    text-decoration: underline;
@@ -360,7 +361,6 @@
  .button.disabled:hover,
  .button.disabled:active {
    background-clip: padding-box;
-   border: 1px solid rgba(0, 0, 0, 0);
    border-radius: 3px;
    display: inline-block;
    font-size: 12px;
@@ -770,8 +770,8 @@
    text-shadow: 0 1px 0 #ffffff;
    border-radius: 3px;
    cursor: pointer;
-   height: 11px;
-   width: 9px;
+   height: 17px;
+   width: 11px;
    -webkit-appearance: none !important;
  }
  .approx-slider:focus::-webkit-slider-thumb {
