@@ -2758,6 +2758,15 @@ a:not([class~="button"]):hover {
   background: rgba(0, 0, 0, 0.3);
   z-index: 2000;
 }
+.popup p {
+  line-height: 1.3em;
+}
+.popup p a {
+  margin: 0;
+}
+.popup .icon-close {
+  float: right;
+}
 
 .popup .popup-inner {
   margin-left: auto;
@@ -3093,6 +3102,10 @@ aside {
 }
 #github-popup.info .state.gist-info, #github-popup.login .state.gist-login, #github-popup.login-failed .gist-login-failed, #github-popup.saving .state.gist-saving, #github-popup.saved .state.gist-result {
   display: block;
+}
+#github-popup #gist-link {
+  display: block;
+  padding-top: 5px;
 }
 
 .logo {

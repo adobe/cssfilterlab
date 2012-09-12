@@ -80,6 +80,18 @@ a:not([class~="button"]):hover {
     height: 100%;
     background: rgba(0, 0, 0, 0.3);
     z-index: 2000;
+    
+    p {
+        line-height: 1.3em;
+        
+        a{
+            margin: 0;
+        }
+    }
+    
+    .icon-close{
+        float: right;
+    }
 }
 
 .popup .popup-inner {
@@ -321,6 +333,11 @@ aside {
     &.saved .state.gist-result {
         display: block;
     }
+    
+    #gist-link{
+        display: block;
+        padding-top: 5px;
+    }
 }
 
 .logo{
@@ -334,4 +351,4 @@ aside {
     right: 0;
     margin-right: 16px;
     z-index: 1000;
-}
+} 

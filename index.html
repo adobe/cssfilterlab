@@ -78,7 +78,7 @@ limitations under the License.
         <div id="logo">
             <h1 class="title left">CSS FilterLab</h1>
             <a href="#" id="import-filter" class="button dark">Import filter</a>
-            <a href="#" id="filter-store-toggle" class="button dark">Add Filters</a>
+            <a href="#" id="filter-store-toggle" class="button dark">Add Filter</a>
         </div>
 
         <div id="filters-not-supported-popup" class="filters-not-supported">
@@ -213,7 +213,7 @@ limitations under the License.
                 </div>
 
                 <div class="config-row">
-                    <a href="#" id="post-gist-button" class="button dark">Save to GitHub ...</a>
+                    <a href="#" id="post-gist-button" class="button dark">Publish to GitHub</a>
                 </div>
             </div>
         </div>
@@ -278,26 +278,39 @@ limitations under the License.
     <div id="github-popup" class="popup">
         <div class="popup-inner">
             <div class="state gist-info">
-                <h2 class="title">Saving to GitHub</h2>
-                <p>Saving to github... </p>
-                <p><a href='#' id="save-anonymous-gist" class="button">Save anonymously</a>
-                   <a href='#' class="button gist-popup-close">Close</a></p>
+                <h2 class="title">
+                    <a href="#" class="gist-popup-close icon icon-close">Close</a>
+                    Publish to GitHub
+                </h2>
+                <p>This will publish your shader configuration as a <a href="https://gist.github.com/" target="_blank">gist on GitHub</a>. <br />Gists are used to share snippets of code with others.</p>
+                <a href='#' id="save-anonymous-gist" class="button">Publish anonymously</a>
             </div>
             <div class="state gist-login">
-                <h2 class="title">GitHub Login</h2>
-                <p>GitHub login window has been opened. If you cannot see the window please 
+                <h2 class="title">
+                    <a href="#" class="gist-popup-close icon icon-close">Close</a>
+                    GitHub Login
+                </h2>
+                <p>
+                    GitHub login window has been opened. If you cannot see the window please 
                     <a id="github-login-link" href="#">click here</a> to open it again.
+                </p>
                 <p class="gist-login-failed">Login failed.</p>
-                <p><a href='#' class="button gist-popup-close">Close</a></p>
             </div>
             <div class="state gist-saving">
                 <h2 class="title">Creating GitHub gist...</h2>
                 <p><center><span class="spinner large"></span></center></p>
             </div>
             <div class="state gist-result">
-                <h2 class="title">GitHub gist created!</h2>
-                <p><a href="" target="_blank" id="gist-link">Click here to view your new gist.</a></p>
-                <p><a href='#' class="button gist-popup-close">Close</a></p>
+                <h2 class="title">
+                    <a href="#" class="gist-popup-close icon icon-close">Close</a>
+                    GitHub gist created!
+                </h2>
+                <p>
+                    Your new gist was created at: <a href="" target="_blank" id="gist-link"></a>
+                </p>
+                <p>
+                    Other people on CSS FilterLab can use this link to import your shader configuration. <br />Gists can be imported using the "Add Filter" > "Import Filter" menu.
+                </p>
             </div>
         </div>
     </div>
