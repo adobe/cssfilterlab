@@ -97,7 +97,7 @@ a:not([class~="button"]):hover {
 #logo, #animations-container {
     @include flexbox;
     @include valign;
-    padding: 10px 15px 10px 15px;
+    padding: 5px 10px 0 15px;
     box-sizing: border-box;
     
     -webkit-justify-content: space-between;
@@ -110,8 +110,9 @@ a:not([class~="button"]):hover {
         text-shadow: 0 -1px 0 black;
     }
 
-    > .left { 
+    > .title.left { 
         @include flex(1);
+        margin: -6px 0 0;
     }
 }
 
