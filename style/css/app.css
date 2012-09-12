@@ -1294,7 +1294,7 @@ input.dark[type=checkbox]:checked + label {
   background: rgba(0, 184, 255, 0.29); }
 
 #filter-list #filter-list-empty {
-  color: #ccc;
+  color: #aaa;
   font-weight: normal;
   padding: 15px; }
 
