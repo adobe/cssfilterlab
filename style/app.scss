@@ -132,10 +132,11 @@ a:not([class~="button"]):hover {
         @include flex(1);
         margin: -6px 0 0;
     }
-}
-
-#animations-container {
-    border-bottom: 1px solid #d7d7d7;
+    
+    .button.drop-down{
+        min-width: 100px;
+        overflow: ellipsis;
+    }
 }
 
 #animations-container {
@@ -144,8 +145,7 @@ a:not([class~="button"]):hover {
 
     h1, h2, h3 {
         margin: 0 auto;
-    }  
-    
+    }
 }
 
 .container {
@@ -243,15 +243,6 @@ aside {
     height: 100%;
 }
 
-#animations {
-    @include box-shadow;
-    @include northstar-bg;
-    display: none;
-    position: absolute;
-    padding: 0px;
-    margin: 0px;
-}
-
 #main {
     box-sizing: border-box;
     padding-top: 30px;
@@ -274,7 +265,7 @@ aside {
     background-image:url(../../images/bottomscene.png);
     background-position: center bottom;
     background-repeat: no-repeat;
-    padding-bottom: 200px;
+    padding-bottom: 200px; 
 
     p{
         line-height: 22px;
@@ -358,4 +349,10 @@ aside {
     right: 0;
     margin-right: 16px;
     z-index: 1000;
-} 
+}
+ 
+.drop-down, .drop-down:hover{
+    background-image: url(../img/drop-down-triangle.png);
+    background-position: 92% center;
+    background-repeat: no-repeat;
+}

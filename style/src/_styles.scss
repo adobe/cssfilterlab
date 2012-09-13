@@ -43,8 +43,7 @@
 	font-weight: normal;
 }
 
-#filter-list li,
-#animations li { 
+#filter-list li{
     @include list-reset;
     position: relative;
 	color: white;
@@ -65,13 +64,11 @@
     display: none;
 }
 
-#filter-list li:hover,
-#animations li:hover {
+#filter-list li:hover{
 	color: white;   
 }
 
-#filter-list li.current,
-#animations li.current {
+#filter-list li.current{
     border-top: 1px solid rgba(0,0,0,.2);
     border-bottom: 1px solid rgba(255,255,255,.13);    
 	background: $selectedBg;
@@ -207,10 +204,29 @@
 	display: none;
 }
 
-#animation-store-buttons {
-	margin-top: 5px;
-	margin-left: 5px;
-	margin-bottom: 10px;
+#animations {
+    display: none;
+    position: absolute;
+    padding: 0px;
+    margin: 0px;       
+    
+    &.menu {
+        min-width: auto;
+    }
+    
+    a {
+        margin: 0;
+        padding: 3px 5px 3px 10px;
+        
+        &:hover {
+            text-decoration: none;
+        }
+    }
+    
+    .icon-remove {
+        float: right;
+        margin-left: 5px;
+    }  
 }
 
 #timeline {
