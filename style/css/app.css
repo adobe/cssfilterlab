@@ -1310,7 +1310,7 @@ input.dark[type=checkbox]:checked + label {
 .filter-stock .filter-item .filter-preview {
   width: 75px;
   height: 50px;
-  margin: 5px 15px 5px 5px;
+  margin: 5px 11px 5px 5px;
   background: url(../../images/planes.jpg) center center no-repeat;
   background-size: 75px 50px;
   cursor: pointer; }
