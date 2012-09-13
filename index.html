@@ -212,10 +212,7 @@ limitations under the License.
                         </div>
                     </div>
                 </div>
-
-                <div class="config-row">
-                    <a href="#" id="post-gist-button" class="button dark">Publish to GitHub</a>
-                </div>
+                <a href="#" id="post-gist-button" class="button dark">Publish to GitHub</a>
             </div>
         </div>
         <div id="vertex-shader" class="code-panel">
@@ -318,17 +315,21 @@ limitations under the License.
 
     <div id="browser-popup" class="popup">
         <div class="popup-inner">
-            <h2>This application requires cutting edge CSS features!</h2>
-            <p>To correctly view this application you need to download a nightly build of Safari for Mac or Google Chromium Canary.</p>
-            <a id="browser-popup-close" href="#" class="button">Close</a>
+            <h2>
+                <a href="#" id="browser-popup-close" class="icon icon-close">Close</a>
+                CSS FilterLab requires cutting edge CSS features!
+             </h2>
+            <p>To get the best out of it you need to download a nightly build of Safari for Mac or Google Chromium Canary.</p>
         </div>
     </div>
 
     <div id="help-popup" class="popup">
         <div class="popup-inner">
-            <h2>Welcome to CSS FilterLab!</h2>
+            <h2>
+                <a href="#" id="help-popup-close" class="icon icon-close">Close</a>
+                Welcome to CSS FilterLab!
+            </h2>
             <p>Help to be written here.</p>
-            <a href="#" id="help-popup-close" class="button">Close</a>
         </div>
     </div>
     
