@@ -29,6 +29,7 @@ h1,h2,h3,h4,h5,h6 {
 	font-family: "Source Sans Pro", "source-l", helvetica, arial, sans-serif;
 	margin: 0;
 	font-weight: 400;
+    -webkit-font-smoothing: antialiased;
 }
 
 @mixin proportions{
@@ -98,11 +99,16 @@ a:not([class~="button"]):hover {
     margin-left: auto;
     margin-right: auto;
     width: 500px;
-    margin-top: 100px;
-    border: 1px solid #ccc;
+    margin-top: -100px;
+    margin-left: -250px;
     background: white;
-    padding: 15px;
-    box-shadow: 0px 0px 20px #333;
+    border-radius: 4px;
+    border: none;
+    padding: 12px 15px;
+    box-shadow: 0 15px 36px rgba(0,0,0,0.6);
+    position: absolute;
+    top: 50%;
+    left: 50%;
     z-index: 1999;
 }
 
@@ -118,7 +124,7 @@ a:not([class~="button"]):hover {
 
     h1, h2, h3 {
         color: white;
-        font-size: 18px;
+        font-size: 24px;
         text-shadow: 0 -1px 0 black;
     }
 
