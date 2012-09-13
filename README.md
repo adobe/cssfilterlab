@@ -17,7 +17,7 @@ Open [http://localhost:8000](http://localhost:8000) in your browser.
 Contributing
 ------------
 
-To contribute pull requests back to Adobe, please fill out and submit the Contributor License Agreement at http://html.adobe.com/webstandards/css-filters/cssfilterlab/dev/css-filterlab-cla.html
+To contribute pull requests back to Adobe, please fill out and submit the Contributor License Agreement at http://html.adobe.com/webstandards/csscustomfilters/cssfilterlab/dev/cssfilterlab-cla.html
 
 ### CSS Styles
 The project uses [SASS](http://sass-lang.com/) to streamline working with CSS files. 
