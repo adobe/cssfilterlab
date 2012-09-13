@@ -46,17 +46,13 @@
 }
 
 .panel-tab {
+    border-radius: 4px 4px 0 0;
 	padding: 5px 10px;
 	border-top: 1px solid #4a4a4a;
-	border-right: 1px solid #282828;
+    border-right: transparent;
 	color: #899395;
 	font-size: 12px;
 	cursor: pointer;
-	
-	&:hover{
-	    background: rgba(112, 112, 112, 0.24);
-	    color: white;
-	};
 	
 	&.active{
         @include northstar-bg;
@@ -64,6 +60,7 @@
     	z-index: 10;
     	border-top: 1px solid #6a6a6a;
     	border-bottom: 2px solid #494D4E;
+        border-right: 1px solid #555;
     	color: white; 
     	top: 1px;
     	padding-top:4px;
