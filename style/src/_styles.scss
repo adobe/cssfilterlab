@@ -208,8 +208,7 @@
     display: none;
     position: absolute;
     padding: 0px;
-    margin: 0px;       
-    
+    margin: 0px;
     &.menu {
         min-width: auto;
     }
@@ -303,6 +302,7 @@
     }
 
 	.toggle {
+        margin: -1px 0 0;
         position: relative;
 	    width: 17px;
         border: 1px solid rgba(0,0,0,.3) !important;
