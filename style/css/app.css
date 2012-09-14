@@ -1835,6 +1835,7 @@ input.dark[type=checkbox]:checked + label {
   -o-box-sizing: border-box;
   box-sizing: border-box;
   font-family: "sourcecode", monospace;
+  -webkit-font-smoothing: antialiased;
 }
 .code#filter-code {
   display: -webkit-box;
