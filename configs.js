@@ -357,6 +357,17 @@ window.filterConfigs = {
 	    	ambientLight: range(0, 1, 0.01),
 	    	lightColor: color()
 	    }
+	},
+	"tile-flip": {
+	    hasVertex: true,
+	    hasFragment: true,
+	    mix: mix("multiply"),
+	    mesh: mesh(50, 50),
+	    meshBox: "border-box detached",
+	    params: {
+	    },
+	    config: {
+	    }
 	}
 };
 })()
