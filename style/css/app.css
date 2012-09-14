@@ -2743,12 +2743,15 @@ aside {
     right: 20px; }
 
 .filters-not-supported {
+  margin: -1px 0 0;
   padding: 10px;
-  background: #333;
+  background: #5b5e5f;
   color: white;
+  font-size: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
   border-bottom: 1px solid #444; }
   .filters-not-supported .filters-not-supported-help {
-    float: right; }
+    color: #4acdfd; }
 
 #github-popup .state, #github-popup .gist-login-failed {
   display: none; }
