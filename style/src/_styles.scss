@@ -579,17 +579,21 @@
     	right: 0px;
     	top: 0px;
     	bottom: 0px;
+    }
+}
 
-    	.error-line {
-        	background: rgba(255, 0, 0, 0.7);
-        	color: white;
-        	border: 1px solid rgba(190, 0, 0, 1);
-        }
+.code-editor {
+    background: white;
+    .error-line {
+        background: rgba(255, 0, 0, 0.7);
+        color: white;
+        /* Avoid borders because that will make the gutter jump. */
+        outline: 1px solid rgba(190, 0, 0, 1);
+    }
 
-        .error-bookmark {
-        	font-weight: bold;
-        	background: rgba(255, 0, 0, 0.5);
-        }
+    .error-bookmark {
+        font-weight: bold;
+        background: rgba(255, 0, 0, 0.5);
     }
 }
 
