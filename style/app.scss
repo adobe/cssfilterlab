@@ -264,12 +264,13 @@ aside {
 
 #container { 
     @include user-select(auto);
+    height: 290px;
     width: 600px;
     color: white;
     position: absolute;
     left: 50%;
     top: 50%;
-    margin: -237px 0 0 -340px;
+    margin: -260px 0 0 -340px;
     font-size: 16px;
     padding: 40px;
     border:none;
@@ -285,9 +286,14 @@ aside {
         line-height: 22px;
     }
 
+    .content-link {
+        color: yellow;
+    }
+
     #multi-col {
         @include prefixProperty(column-count, 2);
-        @include prefixProperty(column-gap, 3em);
+        @include prefixProperty(column-gap, 2em);
+        height: 500px;
 
         h2{
             color: #60C5DF;
@@ -299,7 +305,9 @@ aside {
 
     #svg-img {
         display: block;
-        margin: auto;
+        position: absolute;
+        right: -40px;
+        top: 70px;
     }
 
     #png-img {

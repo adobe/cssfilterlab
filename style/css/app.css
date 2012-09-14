@@ -2691,12 +2691,13 @@ aside {
   -moz-user-select: auto;
   -ms-user-select: auto;
   user-select: auto;
+  height: 290px;
   width: 600px;
   color: white;
   position: absolute;
   left: 50%;
   top: 50%;
-  margin: -237px 0 0 -340px;
+  margin: -260px 0 0 -340px;
   font-size: 16px;
   padding: 40px;
   border: none;
@@ -2709,17 +2710,20 @@ aside {
   padding-bottom: 200px; }
   #container p {
     line-height: 22px; }
+  #container .content-link {
+    color: yellow; }
   #container #multi-col {
     -webkit-column-count: 2;
     -moz-column-count: 2;
     -ms-column-count: 2;
     -o-column-count: 2;
     column-count: 2;
-    -webkit-column-gap: 3em;
-    -moz-column-gap: 3em;
-    -ms-column-gap: 3em;
-    -o-column-gap: 3em;
-    column-gap: 3em; }
+    -webkit-column-gap: 2em;
+    -moz-column-gap: 2em;
+    -ms-column-gap: 2em;
+    -o-column-gap: 2em;
+    column-gap: 2em;
+    height: 500px; }
     #container #multi-col h2 {
       color: #60C5DF;
       font-size: 32px;
@@ -2727,7 +2731,9 @@ aside {
       text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2); }
   #container #svg-img {
     display: block;
-    margin: auto; }
+    position: absolute;
+    right: -40px;
+    top: 70px; }
   #container #png-img {
     display: block;
     margin: auto;
