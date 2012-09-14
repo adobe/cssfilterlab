@@ -316,7 +316,6 @@ window.filterConfigs = {
 	        fade: range(0, 1, 0.01)
 	    }
 	},
-
 	"crumple": {
 	    hasVertex: true,
 	    hasFragment: true,
@@ -340,5 +339,24 @@ window.filterConfigs = {
 	        lightIntensity: range(0, 10, 0.01)
 	    }
 	},
+	"spherify": {
+	    hasVertex: true,
+	    hasFragment: true,
+	    mix: mix("multiply"),
+	    mesh: mesh(50, 50),
+	    meshBox: "border-box",
+	    params: {
+	    	amount: 1,
+	    	sphereRadius: 0.35,
+	    	ambientLight: 0.0,
+	    	lightColor: [1.0, 1.0, 1.0, 1.0]
+	    },
+	    config: {
+	    	amount: range(0, 1, 0.01),
+	    	sphereRadius: range(0, 0.5, 0.01),
+	    	ambientLight: range(0, 1, 0.01),
+	    	lightColor: color()
+	    }
+	}
 };
 })()
