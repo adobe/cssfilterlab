@@ -2090,12 +2090,17 @@ input.dark[type=checkbox]:checked + label {
   top: 0px;
   bottom: 0px;
 }
-.code-panel .code-view .error-line {
+
+.code-editor {
+  background: white;
+}
+.code-editor .error-line {
   background: rgba(255, 0, 0, 0.7);
   color: white;
-  border: 1px solid #be0000;
+  /* Avoid borders because that will make the gutter jump. */
+  outline: 1px solid #be0000;
 }
-.code-panel .code-view .error-bookmark {
+.code-editor .error-bookmark {
   font-weight: bold;
   background: rgba(255, 0, 0, 0.5);
 }
