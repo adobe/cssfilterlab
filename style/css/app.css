@@ -2691,6 +2691,7 @@ aside {
   -moz-user-select: auto;
   -ms-user-select: auto;
   user-select: auto;
+  border-radius: 3px;
   height: 290px;
   width: 600px;
   color: white;
