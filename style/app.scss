@@ -140,7 +140,9 @@ a:not([class~="button"]):hover {
 }
 
 #animations-container {
-    border-bottom: 1px solid #d7d7d7;
+    background: #fff;
+    border-bottom: 1px solid #fff;
+    box-shadow: none;
     -webkit-justify-content: space-between; 
 
     h1, h2, h3 {
@@ -186,6 +188,11 @@ a:not([class~="button"]):hover {
     }
 }
 
+.nav.right {
+    position: absolute;
+    right: 15px;
+    top: 13px;
+}
 
 
 .modal {
@@ -221,6 +228,12 @@ aside {
     margin-top: 10px;
     margin-left: -25px;
     z-index: 1000;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;    
 }
 
 #filter-dock:before {
@@ -251,14 +264,17 @@ aside {
 
 #container { 
     @include user-select(auto);
+    border-radius: 3px;
+    height: 290px;
     width: 600px;
     color: white;
-    position: relative;
-    margin: 35px auto 5px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -280px 0 0 -340px;
     font-size: 16px;
     padding: 40px;
     border:none;
-    outline:3px dashed #49799B;
     outline-offset:-15px;
     text-align: justify;
     background: #263F51;
@@ -271,12 +287,17 @@ aside {
         line-height: 22px;
     }
 
+    .content-link {
+        color: yellow;
+    }
+
     #multi-col {
         @include prefixProperty(column-count, 2);
-        @include prefixProperty(column-gap, 3em);
+        @include prefixProperty(column-gap, 2em);
+        height: 500px;
 
         h2{
-            color: #49799B;
+            color: #60C5DF;
             font-size: 32px;
             margin: 0px;
             text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
@@ -285,7 +306,9 @@ aside {
 
     #svg-img {
         display: block;
-        margin: auto;
+        position: absolute;
+        right: -40px;
+        top: 70px;
     }
 
     #png-img {
@@ -309,13 +332,16 @@ aside {
 }
 
 .filters-not-supported {
+    margin: -1px 0 0;
     padding: 10px;
-    background: #333;
+    background: #5b5e5f;
     color: white;
+    font-size: 12px;
+    border-top: 1px solid rgba(255,255,255,.05);
     border-bottom: 1px solid #444;
 
     .filters-not-supported-help {
-        float: right;
+        color: #4acdfd;
     }
 }
 
@@ -352,8 +378,9 @@ aside {
 }
  
 .drop-down, .drop-down:hover{
-    background-image: url(../img/drop-down-triangle.png);
-    background-position: 92% center;
+    background-image: url(../img/drop-down-triangle.png), linear-gradient(top, #f5f8fa, #e3e5e5);
+    background-image: url(../img/drop-down-triangle.png), -webkit-gradient(linear, left top, left bottom, from(#f5f8fa), to(#e3e5e5));    
+    background-position: 96% 57%;
     background-repeat: no-repeat;
 }
        
