@@ -186,6 +186,11 @@ a:not([class~="button"]):hover {
     }
 }
 
+.nav.right {
+    position: absolute;
+    right: 15px;
+    top: 13px;
+}
 
 
 .modal {
