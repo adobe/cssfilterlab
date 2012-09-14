@@ -2230,6 +2230,70 @@ input.dark[type=checkbox]:checked + label {
   left: -38px;
 }
 
+#import-filter section {
+  padding: 10px 20px;
+}
+#import-filter p {
+  color: #aaa;
+  font-size: 12px;
+  line-height: 1.3em;
+}
+#import-filter label {
+  display: block;
+  margin: 0 0 5px 0;
+  color: #a4b4b7;
+  font-size: 14px;
+  text-shadow: 0 -1px 0 black;
+}
+#import-filter form {
+  width: 100%;
+}
+#import-filter form input[type='url'] {
+  width: 290px;
+}
+#import-filter form fieldset {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-box;
+  display: -o-box;
+  display: box;
+  /* Flex needs to be last, so that we use the new flex-box when it's available */
+  /* FIXME: Disable the new flex box for now. It seems like stable versions of Chromium don't have the whole implementation yet. */
+  /* @include prefixValue(display, flex); */
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  -ms-box-orient: horizontal;
+  -o-box-orient: horizontal;
+  box-orient: horizontal;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  -ms-flex-direction: row;
+  -o-flex-direction: row;
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+#import-filter form a {
+  width: 40px;
+}
+#import-filter .notice {
+  display: none;
+}
+
+.notice {
+  padding: 10px 15px;
+  margin: 10px 0;
+  font-size: 14px;
+  line-height: 1.4em;
+  border-radius: 3px;
+  box-shadow: 0 -1px 0 0 rgba(0, 0, 0, 0.5);
+}
+.notice.error {
+  background: #d6bec2;
+  color: #a01919;
+}
+
 /*
  * Copyright (c) 2012 Adobe Systems Incorporated. All rights reserved.
  * 
