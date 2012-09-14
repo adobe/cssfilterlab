@@ -2653,7 +2653,13 @@ aside {
   position: absolute;
   margin-top: 10px;
   margin-left: -25px;
-  z-index: 1000; }
+  z-index: 1000;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
 
 #filter-dock:before {
   background: #404040;
