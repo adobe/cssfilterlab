@@ -1808,6 +1808,13 @@ input.dark[type=checkbox]:checked + label {
 }
 
 /* Syntax highligt ------------------------------------------------------------------------------- */
+@font-face {
+  font-family: "sourcecode";
+  src: url("../font/SourceCodePro-Regular.otf");
+  font-weight: normal;
+  font-style: normal;
+}
+
 .light .code {
   color: #3B3F41;
   font-size: 12px;
@@ -1827,7 +1834,7 @@ input.dark[type=checkbox]:checked + label {
   -ms-box-sizing: border-box;
   -o-box-sizing: border-box;
   box-sizing: border-box;
-  font-family: monospace;
+  font-family: "sourcecode", monospace;
 }
 .code#filter-code {
   display: -webkit-box;

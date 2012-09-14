@@ -407,6 +407,14 @@
 }
 
 /* Syntax highligt ------------------------------------------------------------------------------- */
+
+@font-face {
+  font-family: "sourcecode";
+  src: url("../font/SourceCodePro-Regular.otf");
+  font-weight: normal;
+  font-style: normal;
+}
+  
 .light .code{
     color: #3B3F41;
     font-size: 12px;  
@@ -416,7 +424,7 @@
     padding: 10px;
     @include user-select(auto);
     @include prefixProperty(box-sizing, border-box);
-    font-family: monospace;
+    font-family: "sourcecode", monospace;
 
     &#filter-code {
         @include hbox;
