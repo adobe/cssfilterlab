@@ -2763,8 +2763,9 @@ aside {
   z-index: 1000; }
 
 .drop-down, .drop-down:hover {
-  background-image: url(../img/drop-down-triangle.png);
-  background-position: 92% center;
+  background-image: url(../img/drop-down-triangle.png), linear-gradient(top, #f5f8fa, #e3e5e5);
+  background-image: url(../img/drop-down-triangle.png), -webkit-gradient(linear, left top, left bottom, from(#f5f8fa), to(#e3e5e5));
+  background-position: 96% 57%;
   background-repeat: no-repeat; }
 
 #post-gist-button {
