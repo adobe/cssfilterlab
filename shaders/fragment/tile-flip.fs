@@ -19,13 +19,12 @@ precision mediump float;
 
 // Uniform values from CSS
 
-//uniform float amount;
-float amount = 0.1;
+uniform float amount;
 //uniform float outline;
 float outline = 1.0;
 
 //uniform vec2 meshSize;
-vec2 meshSize = vec2(50.0, 50.0);
+vec2 meshSize = vec2(25.0, 32.0);
 //uniform vec2 textureSize;
 vec2 textureSize = vec2(680.0, 530.0);
 
@@ -41,45 +40,30 @@ varying vec2 v_uv;
 
 // Main
 
-void main() {
+void main()
+{
+	vec4 c = vec4(1.0);
 
-	float r = 1.0;
-	float g = 1.0;
-	float b = 1.0;
-	float a = 1.0;
+	// Fade out.
+	c.a = 1.0 - v_depth;
 
-	// fade out
-
-	//a = 1.0 - amount;
-	//a = 1.0 - v_depth * v_depth;
-	a = 1.0 - v_depth;
-
-	// show grid outline
-
-	if ( outline > 0.0 ) {
+	// Show grid outline
+	if (outline > 0.0) {
 
 		float cell_width = textureSize.x / meshSize.y;
 		float cell_height = textureSize.y / meshSize.x;
 		float dd = 1.0;
 
-		if ( mod( v_uv.x * textureSize.x + dd, cell_width ) < 2.0 || mod( v_uv.y * textureSize.y + dd, cell_height ) < 2.0 ) {
-
-			if ( amount > 0.0 ) r = g = b = 1.0 - sqrt(amount);
-			//a = 1.0 - amount;
-
-			//if ( amount > 0.0 ) r = g = b = 1.0 - amount;
-			//a = 1.0 - v_depth;
-
-			//r = g = b = 0.0;
-			//a = 1.0;
-
+		if (mod(v_uv.x * textureSize.x + dd, cell_width) < 2.0
+			|| mod(v_uv.y * textureSize.y + dd, cell_height) < 2.0) {
+			if (amount > 0.0)
+				c.rgb = vec3(1.0 - sqrt(amount));
 		}
 
 	}
 
-	css_ColorMatrix = mat4( r, 0.0, 0.0, 0.0,
-							0.0, g, 0.0, 0.0,
-							0.0, 0.0, b, 0.0,
-							0.0, 0.0, 0.0, a );
-
+	css_ColorMatrix = mat4(c.r, 0.0, 0.0, 0.0,
+							0.0, c.g, 0.0, 0.0,
+							0.0, 0.0, c.b, 0.0,
+							0.0, 0.0, 0.0, c.a);
 }

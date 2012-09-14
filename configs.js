@@ -362,11 +362,19 @@ window.filterConfigs = {
 	    hasVertex: true,
 	    hasFragment: true,
 	    mix: mix("multiply"),
-	    mesh: mesh(50, 50),
+	    mesh: mesh(25, 32),
 	    meshBox: "border-box detached",
 	    params: {
+	    	amount: 0.2,
+	    	randomness: 2.0,
+	    	usePerspective: 0,
+	        perspective: 1.0
 	    },
 	    config: {
+	    	amount: range(0, 1, 0.01),
+	    	randomness: range(0, 3, 0.01),
+	    	usePerspective: range(0, 1, 1),
+	    	perspective: range(0, 10, 0.01)
 	    }
 	}
 };
