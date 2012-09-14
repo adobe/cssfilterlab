@@ -266,8 +266,10 @@ aside {
     @include user-select(auto);
     width: 600px;
     color: white;
-    position: relative;
-    margin: 35px auto 5px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -237px 0 0 -340px;
     font-size: 16px;
     padding: 40px;
     border:none;
