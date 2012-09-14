@@ -140,7 +140,9 @@ a:not([class~="button"]):hover {
 }
 
 #animations-container {
-    border-bottom: 1px solid #d7d7d7;
+    background: #fff;
+    border-bottom: 1px solid #fff;
+    box-shadow: none;
     -webkit-justify-content: space-between; 
 
     h1, h2, h3 {
@@ -263,7 +265,6 @@ aside {
     font-size: 16px;
     padding: 40px;
     border:none;
-    outline:3px dashed #49799B;
     outline-offset:-15px;
     text-align: justify;
     background: #263F51;
