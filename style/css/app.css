@@ -1250,7 +1250,7 @@ input.dark[type=checkbox]:checked + label {
   padding: 0;
   margin: 0 10px 0 0;
   float: left;
-  height: 15px;
+  height: 16px;
   width: 8px; }
 
 #filter-list li.dragging, #menu li.dragging .dragpoint {
