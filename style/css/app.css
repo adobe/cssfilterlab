@@ -356,7 +356,8 @@ a:active {
 
 .drop-down-triangle.dark {
   background-image: url(../img/drop-down-triangle-dark.png) !important;
-  top: 8px; }
+  top: 8px;
+  right: 0; }
 
 .large .drop-down-triangle {
   background-image: url(../img/drop-down-triangle.png);
@@ -1922,10 +1923,7 @@ input.dark[type=checkbox]:checked + label {
   height: 16px;
   display: inline-block;
   vertical-align: middle;
-  text-indent: -9999px;
-  opacity: 0.5; }
-  .icon:hover {
-    opacity: 1; }
+  text-indent: -9999px; }
 
 .icon-remove {
   background: transparent url(../img/remove.png) center center no-repeat; }
@@ -2583,7 +2581,8 @@ a:not([class~="button"]):hover {
     box-flex: 1;
     margin: -6px 0 0; }
   #logo .button.drop-down, #animations-container .button.drop-down {
-    min-width: 100px;
+    min-width: 50px;
+    text-indent: 2px;
     overflow: ellipsis; }
 
 #logo {
@@ -2740,7 +2739,7 @@ aside {
   height: 70%;
   top: 0;
   position: absolute;
-  margin: 0 0 0 -32px;
+  margin: 0 0 0 -43px;
   z-index: 1000;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
