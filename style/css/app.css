@@ -2727,8 +2727,13 @@ aside {
   user-select: none; }
 
 #filter-dock {
+<<<<<<< HEAD
   box-shadow: 0 3px 15px 3px rgba(0, 0, 0, 0.4);
   width: 400px;
+=======
+  box-shadow: 0 5px 20px 5px #333;
+  width: 450px;
+>>>>>>> master
   height: 70%;
   top: 0px;
   position: absolute;
