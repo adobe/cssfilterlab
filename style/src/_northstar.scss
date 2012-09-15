@@ -328,6 +328,7 @@
  .drop-down-triangle.dark {
    background-image: url(../img/drop-down-triangle-dark.png) !important;
    top: 8px;
+   right: 0;
  }
  .large .drop-down-triangle {
    background-image: url(../img/drop-down-triangle.png);
@@ -519,11 +520,12 @@
    background: #ffffff;
    border-top: none !important;
    border-radius: 3px;
-   box-shadow: 0 3px 9px rgba(0, 0, 0, 0.3);
+   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+   font-size: 12px;
    left: 0px;
    margin: 0;
    overflow: hidden;
-   padding: 3px 0;
+   padding: 3px 0 !important;
    position: absolute;
    top: 22px;
    min-width: 100%;
@@ -722,6 +724,7 @@
    position: relative;
    text-decoration: none;
    text-overflow: ellipsis;
+   text-align: center;  
    vertical-align: top;
    white-space: nowrap;
    user-select: none;
@@ -757,6 +760,7 @@
    height: 3px;
    outline: none;
    width: 100px;
+   cursor: pointer;
    -webkit-appearance: none !important;
  }
  .approx-slider::-webkit-slider-thumb {
@@ -769,7 +773,6 @@
    color: #454545;
    text-shadow: 0 1px 0 #ffffff;
    border-radius: 3px;
-   cursor: pointer;
    height: 17px;
    width: 11px;
    -webkit-appearance: none !important;
@@ -1039,7 +1042,6 @@
  .text-field {
    border: 1px solid #a5a8a8;
    box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.1);
-   box-sizing: border-box;
    color: #000;
    font-family: "Source Sans Pro", "source", helvetica, arial, sans-serif;
    -webkit-border-radius: 4px;
@@ -1047,8 +1049,9 @@
    font-size: 12px;
    font-weight: 400;
    height: 21px;
+   line-height: 21px;
    margin: 0 3px 3px 0;
-   padding: 1px 3px 0 3px;
+   padding: 0 4px;
    min-width: 150px;
  }
  .text-field.large {

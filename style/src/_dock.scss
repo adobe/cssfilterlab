@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
- .panel-view {
+.panel-view {
 	display: none;
 }
 
@@ -42,15 +42,16 @@
 .panel-tab-list {
 	@include hbox;
     @include noflex;
-	background: $baseColorDark;
+	background: #2b2d2d;
 }
 
 .panel-tab {
     border-radius: 4px 4px 0 0;
 	padding: 5px 10px;
-	border-top: 1px solid #4a4a4a;
+    border-top: 1px solid rgba(0,0,0,0);
     border-right: transparent;
-	color: #899395;
+	color: #aaa;
+    text-shadow: 0 1px 0 #000;
 	font-size: 12px;
 	cursor: pointer;
 	
@@ -62,6 +63,7 @@
     	border-bottom: 2px solid #494D4E;
         border-right: 1px solid #555;
     	color: white; 
+        text-shadow: 0 -1px 0 #000;
     	top: 1px;
     	padding-top:4px;
 	}
@@ -175,4 +177,8 @@
             };
         }
     }
+}
+
+#active-filters {
+    overflow-x: hidden;
 }
