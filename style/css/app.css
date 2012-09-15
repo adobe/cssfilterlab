@@ -756,6 +756,7 @@ select.button.large {
   position: relative;
   text-decoration: none;
   text-overflow: ellipsis;
+  text-align: center;
   vertical-align: top;
   white-space: nowrap;
   user-select: none;
@@ -1072,7 +1073,6 @@ input.dark[type=checkbox]:checked + label {
 .config-panel .config-row input[type='number'] {
   border: 1px solid #a5a8a8;
   box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.1);
-  box-sizing: border-box;
   color: #000;
   font-family: "Source Sans Pro", "source", helvetica, arial, sans-serif;
   -webkit-border-radius: 4px;
@@ -1080,8 +1080,9 @@ input.dark[type=checkbox]:checked + label {
   font-size: 12px;
   font-weight: 400;
   height: 21px;
+  line-height: 21px;
   margin: 0 3px 3px 0;
-  padding: 1px 3px 0 3px;
+  padding: 0 4px;
   min-width: 150px; }
 
 .text-field.large, .config-panel .config-row input.large[type='text'],
@@ -1980,7 +1981,7 @@ input.dark[type=checkbox]:checked + label {
 #import-filter form {
   width: 100%; }
   #import-filter form input[type='url'] {
-    width: 290px; }
+    width: 270px; }
   #import-filter form fieldset {
     display: -webkit-box;
     display: -moz-box;
