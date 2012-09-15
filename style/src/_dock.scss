@@ -42,7 +42,7 @@
 .panel-tab-list {
 	@include hbox;
     @include noflex;
-	background: rgba(0,0,0,.8);
+	background: #2b2d2d;
 }
 
 .panel-tab {
