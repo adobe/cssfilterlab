@@ -1984,7 +1984,7 @@ input.dark[type=checkbox]:checked + label {
 #import-filter form {
   width: 100%; }
   #import-filter form input[type='url'] {
-    width: 270px; }
+    width: 320px; }
   #import-filter form fieldset {
     display: -webkit-box;
     display: -moz-box;
