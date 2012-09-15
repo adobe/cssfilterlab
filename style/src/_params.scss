@@ -90,9 +90,9 @@ table.paramsTable {
         width: 21px;
         height: 21px;
         margin: 10px 0 0 -20px;
-        border: 1px solid rgba(0,0,0,.3);
+        border: 1px solid rgba(0,0,0,.8);
         border-radius: 3px;
-        @include prefixProperty(box-shadow, inset 0 0 3px rgba(0, 0, 0, 0.5));
+        @include prefixProperty(box-shadow, inset 0 1px 2px rgba(0, 0, 0, 0.4));
         @include prefixProperty(transition, all 0.2s ease-out);
     }
 
