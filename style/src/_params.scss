@@ -17,15 +17,17 @@
 table.paramsTable {
     border-collapse: collapse;
     border: none;
+    margin: 6px 0 0;
     width: 100%;
 
     td {
         border: none;
-        padding: 0.5em 0 0.5em 0.5em;
+        height: 27px;
     	color: #bfbfbf;
         font-weight: normal;
     	font-size: 12px;
         text-shadow: 0px -1px 0 rgba(0, 0, 0, 0.8);
+        vertical-align: middle;
         -webkit-font-smoothing: antialiased;
     }
 
@@ -116,7 +118,7 @@ table.paramsTable {
 
     input[type=range] {
         @extend .approx-slider, .approx-slider.dark;
-        width: 100%;
+        width: 98%;
     }
 
     input[type=range].vertical {
@@ -127,18 +129,19 @@ table.paramsTable {
 
     .value-label {
         display: block;
-        padding: 3px;
+        padding: 0 3px;
         text-shadow: 0 1px 0 #000;
-        width: 60px;
+        width: 50px;
     }
 
     .value-editor {
-        margin: 0px;  
+        margin: 0px; 
+        height: 21px; 
         @include prefixProperty(box-shadow, 0px 0px 3px 1px black);
         outline: none;
         border: none;
-        width: 100%;
-        padding: 3px 3px 4px 3px;
+        width: 99%;
+        padding: 0 3px;
         border-radius: 3px;
         background: rgba(255,255,255,.15);
         color: #fff;
