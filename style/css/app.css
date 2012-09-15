@@ -2727,13 +2727,8 @@ aside {
   user-select: none; }
 
 #filter-dock {
-<<<<<<< HEAD
   box-shadow: 0 3px 15px 3px rgba(0, 0, 0, 0.4);
-  width: 400px;
-=======
-  box-shadow: 0 5px 20px 5px #333;
   width: 450px;
->>>>>>> master
   height: 70%;
   top: 0px;
   position: absolute;
@@ -2871,7 +2866,13 @@ aside {
   background-image: url(../img/drop-down-triangle.png), linear-gradient(top, #f5f8fa, #e3e5e5);
   background-image: url(../img/drop-down-triangle.png), -webkit-gradient(linear, left top, left bottom, from(#f5f8fa), to(#e3e5e5));
   background-position: 96% 57%;
-  background-repeat: no-repeat; }
+  background-repeat: no-repeat;
+  cursor: pointer; }
+
+.drop-down:active {
+  background-image: url(../img/drop-down-triangle.png);
+  background-color: #D3D7D7;
+  box-shadow: inset 0 1px 0px rgba(0, 0, 0, 0.06); }
 
 #post-gist-button {
   position: absolute;
