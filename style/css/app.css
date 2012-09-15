@@ -1402,6 +1402,8 @@ input.dark[type=checkbox]:checked + label {
   #animations .icon-remove {
     float: right;
     margin: -1px 0 0 5px; }
+  #animations li:first-child .icon-remove {
+    display: none; }
 
 #timeline {
   padding: 10px 15px 10px 15px;

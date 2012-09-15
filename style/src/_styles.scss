@@ -230,6 +230,9 @@
     .icon-remove {
         float: right;
         margin: -1px 0 0 5px;
+    }
+    li:first-child .icon-remove {
+        display: none;
     }  
 }
 
