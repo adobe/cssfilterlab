@@ -1284,7 +1284,11 @@ input.dark[type=checkbox]:checked + label {
     color: white; }
 
 .filter-stock .filter-item.forked-filter.current {
-  background: rgba(0, 184, 255, 0.29); }
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+  background: rgba(0, 0, 0, 0.24); }
+  .filter-stock .filter-item.forked-filter.current .filter-label {
+    color: #fff; }
 
 #filter-list #filter-list-empty {
   color: #aaa;
@@ -2543,9 +2547,7 @@ a:not([class~="button"]):hover {
   box-align: center;
   padding: 5px 10px 0 15px;
   box-sizing: border-box;
-  -webkit-justify-content: space-between;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.36);
-  box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.11); }
+  -webkit-justify-content: space-between; }
   #logo h1, #logo h2, #logo h3, #animations-container h1, #animations-container h2, #animations-container h3 {
     color: white;
     font-size: 24px;
@@ -2565,6 +2567,10 @@ a:not([class~="button"]):hover {
   #logo .button.drop-down, #animations-container .button.drop-down {
     min-width: 100px;
     overflow: ellipsis; }
+
+#logo {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.36);
+  box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.11); }
 
 #animations-container {
   background: #fff;

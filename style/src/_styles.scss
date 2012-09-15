@@ -153,7 +153,12 @@
 }
 
 .filter-stock .filter-item.forked-filter.current{
-    background: rgba(0, 184, 255, 0.29);
+    border-top: 1px solid rgba(0,0,0,.2);
+    border-bottom: 1px solid rgba(255,255,255,.13);    
+    background: $selectedBg;
+    .filter-label {
+        color: #fff;
+    }
 }
 
 #filter-list #filter-list-empty {

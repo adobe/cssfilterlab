@@ -119,8 +119,6 @@ a:not([class~="button"]):hover {
     box-sizing: border-box;
     
     -webkit-justify-content: space-between;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.36);
-    box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.11);
 
     h1, h2, h3 {
         color: white;
@@ -137,6 +135,11 @@ a:not([class~="button"]):hover {
         min-width: 100px;
         overflow: ellipsis;
     }
+}
+
+#logo {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.36);
+    box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.11);
 }
 
 #animations-container {
