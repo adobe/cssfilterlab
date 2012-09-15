@@ -64,6 +64,7 @@ limitations under the License.
     <script type="text/javascript" src="lib/views/preset_store_view.js"></script>
     <script type="text/javascript" src="lib/views/loading_progress_view.js"></script>
     <script type="text/javascript" src="lib/views/logo_view.js"></script>
+    <script type="text/javascript" src="lib/views/import_filter_view.js"></script>
     <script type="text/javascript" src="lib/views/shader_editor_view.js"></script>
     <script type="text/javascript" src="lib/views/shader_code_editor_view.js"></script>
     <script type="text/javascript" src="lib/views/timeline_view.js"></script>
@@ -79,7 +80,6 @@ limitations under the License.
     <div id="components">
         <div id="logo">
             <h1 class="title left">CSS FilterLab</h1>
-            <a href="#" id="import-filter" class="button dark">Import filter</a>
             <a href="#" id="filter-store-toggle" class="button dark">Add Filter</a>
         </div>
 
@@ -343,5 +343,23 @@ limitations under the License.
         </div>
     </div>
     
+    <div id="import-filter">
+        <section>
+            
+            <p>You can import a filter from a GitHub gist url. <br />Once imported your filter will appear under the 'Forked custom filters' tab.</p>
+
+            <div class="notice error">
+                <strong>Oops!</strong>
+                There was an error importing from that URL. Please check that it points to a filter gist and try again.
+            </div>        
+
+            <form action="#">
+                <label for="gist-url">Filter gist URL</label>
+                <input type="url" class="text-field" name="gist-url" placeholder="gist URL" required/>
+                <a href="#" class="button dark disabled cta">Import</a>
+            </form>
+             
+        </section>
+    </div>
 </body>
 </html>

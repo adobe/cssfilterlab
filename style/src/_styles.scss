@@ -425,6 +425,7 @@
     @include user-select(auto);
     @include prefixProperty(box-sizing, border-box);
     font-family: "sourcecode", monospace;
+    -webkit-font-smoothing: antialiased;
 
     &#filter-code {
         @include hbox;
@@ -747,4 +748,62 @@
 
 .slide-switch input:checked + .wrapper {
   left: -38px;
+}
+
+#import-filter{ 
+    
+    section {
+        padding: 10px 20px;
+    }
+
+    p {
+        color: #aaa;
+        font-size: 12px;
+        line-height: 1.3em;
+    }
+    
+    label{   
+        display: block;
+        margin: 0 0 5px 0 ;
+        color: #a4b4b7;
+        font-size: 14px;
+        text-shadow: 0 -1px 0 #000000;
+    }
+    
+    form {     
+        width: 100%;
+        
+        input[type='url']{ 
+            width: 290px;
+        }
+        
+        fieldset{
+            @include hbox; 
+            margin: 0;
+            padding: 0;
+            border: none;
+        }                 
+        
+        a{
+            width: 40px;
+        }
+    }
+    
+    .notice{
+        display: none;
+    }
+}
+
+.notice {
+    padding: 10px 15px;
+    margin: 10px 0;
+    font-size: 14px;
+    line-height: 1.4em;
+    border-radius: 3px;
+    box-shadow: 0 -1px 0 0 rgba(0, 0, 0, 0.5);
+    
+    &.error{
+        background: rgb(214, 190, 194);
+        color: rgb(160, 25, 25);
+    }
 }
