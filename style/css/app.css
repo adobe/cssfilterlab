@@ -2687,7 +2687,7 @@ a:not([class~="button"]):hover {
   top: 13px; }
 
 .modal {
-  box-shadow: 0 5px 20px 5px #333;
+  box-shadow: 0 3px 15px 3px rgba(0, 0, 0, 0.4);
   width: 50%;
   height: 50%;
   min-width: 600px;
@@ -2711,7 +2711,7 @@ aside {
   user-select: none; }
 
 #filter-dock {
-  box-shadow: 0 5px 20px 5px #333;
+  box-shadow: 0 3px 15px 3px rgba(0, 0, 0, 0.4);
   width: 400px;
   height: 70%;
   top: 0px;
