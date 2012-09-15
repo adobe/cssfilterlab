@@ -2519,7 +2519,8 @@ a:not([class~="button"]):hover {
     .popup p a {
       margin: 0; }
   .popup .icon-close {
-    float: right; }
+    float: right;
+    margin: 0 -3px 0 0; }
 
 .popup .popup-inner {
   margin-left: auto;
