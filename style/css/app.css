@@ -2099,11 +2099,12 @@ input.dark[type=checkbox]:checked + label {
   -ms-flex: none;
   -o-flex: none;
   flex: none;
-  background: #3b3f41; }
+  background: rgba(0, 0, 0, 0.8); }
 
 .panel-tab {
   border-radius: 4px 4px 0 0;
   padding: 5px 10px;
+  border-top: 1px solid rgba(0, 0, 0, 0);
   border-right: transparent;
   color: #aaa;
   text-shadow: 0 1px 0 #000;
@@ -2737,10 +2738,9 @@ aside {
   box-shadow: 0 3px 15px 3px rgba(0, 0, 0, 0.4);
   width: 450px;
   height: 70%;
-  top: 0px;
+  top: 0;
   position: absolute;
-  margin-top: 10px;
-  margin-left: -25px;
+  margin: 1px 0 0 -32px;
   z-index: 1000;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -2748,17 +2748,6 @@ aside {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none; }
-
-#filter-dock:before {
-  background: #404040;
-  content: "";
-  width: 20px;
-  height: 20px;
-  position: absolute;
-  left: 15px;
-  top: -5px;
-  z-index: -100;
-  -webkit-transform: rotate(45deg); }
 
 .clicks-catcher {
   position: absolute;

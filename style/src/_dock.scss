@@ -42,12 +42,13 @@
 .panel-tab-list {
 	@include hbox;
     @include noflex;
-	background: $baseColorDark;
+	background: rgba(0,0,0,.8);
 }
 
 .panel-tab {
     border-radius: 4px 4px 0 0;
 	padding: 5px 10px;
+    border-top: 1px solid rgba(0,0,0,0);
     border-right: transparent;
 	color: #aaa;
     text-shadow: 0 1px 0 #000;

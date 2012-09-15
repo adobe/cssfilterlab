@@ -227,10 +227,9 @@ aside {
     @include box-shadow;
     width: 450px;
     height: 70%;
-    top: 0px;
+    top: 0;
     position: absolute;
-    margin-top: 10px;
-    margin-left: -25px;
+    margin: 1px 0 0 -32px;
     z-index: 1000;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -238,18 +237,6 @@ aside {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;    
-}
-
-#filter-dock:before {
-    background: #404040;
-    content: "";
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    left: 15px;
-    top: -5px;
-    z-index: -100;
-    -webkit-transform: rotate(45deg);
 }
 
 .clicks-catcher {
