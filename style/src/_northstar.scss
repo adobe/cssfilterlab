@@ -519,11 +519,12 @@
    background: #ffffff;
    border-top: none !important;
    border-radius: 3px;
-   box-shadow: 0 3px 9px rgba(0, 0, 0, 0.3);
+   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+   font-size: 12px;
    left: 0px;
    margin: 0;
    overflow: hidden;
-   padding: 3px 0;
+   padding: 3px 0 !important;
    position: absolute;
    top: 22px;
    min-width: 100%;
@@ -722,7 +723,7 @@
    position: relative;
    text-decoration: none;
    text-overflow: ellipsis;
-   text-align: center;
+   text-align: center;  
    vertical-align: top;
    white-space: nowrap;
    user-select: none;

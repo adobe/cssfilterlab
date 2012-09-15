@@ -552,11 +552,12 @@ a:active {
   background: #ffffff;
   border-top: none !important;
   border-radius: 3px;
-  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+  font-size: 12px;
   left: 0px;
   margin: 0;
   overflow: hidden;
-  padding: 3px 0;
+  padding: 3px 0 !important;
   position: absolute;
   top: 22px;
   min-width: 100%;
@@ -1400,7 +1401,7 @@ input.dark[type=checkbox]:checked + label {
       text-decoration: none; }
   #animations .icon-remove {
     float: right;
-    margin-left: 5px; }
+    margin: -1px 0 0 5px; }
 
 #timeline {
   padding: 10px 15px 10px 15px;
