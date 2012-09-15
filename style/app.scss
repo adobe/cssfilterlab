@@ -137,6 +137,9 @@ a:not([class~="button"]):hover {
         text-indent: 2px;
         overflow: ellipsis;
     }
+    #active-animation {
+        min-width: 140px;
+    }
 }
 
 #logo {
@@ -187,7 +190,7 @@ a:not([class~="button"]):hover {
     @include list-reset;
     @include hbox;
     margin: auto 0;
-    
+
     li + li{
         margin-left: 15px;
     }

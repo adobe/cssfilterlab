@@ -2585,6 +2585,8 @@ a:not([class~="button"]):hover {
     min-width: 50px;
     text-indent: 2px;
     overflow: ellipsis; }
+  #logo #active-animation, #animations-container #active-animation {
+    min-width: 140px; }
 
 #logo {
   border-bottom: 1px solid rgba(0, 0, 0, 0.36);
