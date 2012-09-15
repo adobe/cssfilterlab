@@ -2322,6 +2322,9 @@ input.dark[type=checkbox]:checked + label {
     .light .panel-tab.active:first-child {
       border-left: none; }
 
+#active-filters {
+  overflow: hidden; }
+
 /*
  * Copyright (c) 2012 Adobe Systems Incorporated. All rights reserved.
  * 

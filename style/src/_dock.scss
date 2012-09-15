@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
- .panel-view {
+.panel-view {
 	display: none;
 }
 
@@ -175,4 +175,8 @@
             };
         }
     }
+}
+
+#active-filters {
+    overflow: hidden;
 }
