@@ -759,6 +759,7 @@
    height: 3px;
    outline: none;
    width: 100px;
+   cursor: pointer;
    -webkit-appearance: none !important;
  }
  .approx-slider::-webkit-slider-thumb {
@@ -771,7 +772,6 @@
    color: #454545;
    text-shadow: 0 1px 0 #ffffff;
    border-radius: 3px;
-   cursor: pointer;
    height: 17px;
    width: 11px;
    -webkit-appearance: none !important;
