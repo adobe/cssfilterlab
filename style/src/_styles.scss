@@ -423,6 +423,12 @@
   font-weight: normal;
   font-style: normal;
 }
+
+.code,
+.CodeMirror-lines *{
+    font-family: "sourcecode", monospace;
+    -webkit-font-smoothing: antialiased;
+}
   
 .light .code{
     color: #3B3F41;
@@ -433,8 +439,6 @@
     padding: 10px;
     @include user-select(auto);
     @include prefixProperty(box-sizing, border-box);
-    font-family: "sourcecode", monospace;
-    -webkit-font-smoothing: antialiased;
 
     &#filter-code {
         @include hbox;
