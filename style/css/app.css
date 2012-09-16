@@ -2311,6 +2311,12 @@ input.dark[type=checkbox]:checked + label {
   color: #a01919;
 }
 
+#code-view-error {
+  display: none;
+  margin: 20px 20px;
+  box-shadow: none;
+}
+
 /*
  * Copyright (c) 2012 Adobe Systems Incorporated. All rights reserved.
  * 
