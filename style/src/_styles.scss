@@ -106,7 +106,7 @@
     padding:0;
     margin: 0 10px 0 0; 
     float: left; 
-    height: 15px;
+    height: 16px;
     width: 8px;
 }
 
@@ -153,7 +153,12 @@
 }
 
 .filter-stock .filter-item.forked-filter.current{
-    background: rgba(0, 184, 255, 0.29);
+    border-top: 1px solid rgba(0,0,0,.2);
+    border-bottom: 1px solid rgba(255,255,255,.13);    
+    background: $selectedBg;
+    .filter-label {
+        color: #fff;
+    }
 }
 
 #filter-list #filter-list-empty {
@@ -171,7 +176,7 @@
 .filter-stock .filter-item .filter-preview {
 	width: 75px;
 	height: 50px;
-	margin: 5px 11px 5px 5px;
+	margin: 0 10px 0 0;
 	background: url(../../images/shaderprincess.svg) center center no-repeat;
     background-size: 115%;
     cursor: pointer;
@@ -223,8 +228,12 @@
     }
     
     .icon-remove {
+        background-size: 70%;
         float: right;
-        margin-left: 5px;
+        margin: -1px 0 0 5px;
+    }
+    li:first-child .icon-remove {
+        display: none;
     }  
 }
 
@@ -692,11 +701,6 @@
     display: inline-block;
     vertical-align: middle;
     text-indent: -9999px;
-    opacity: 0.5;
-    
-    &:hover{
-        opacity: 1;
-    }
 } 
 
 .icon-remove{
@@ -766,7 +770,7 @@
         display: block;
         margin: 0 0 5px 0 ;
         color: #a4b4b7;
-        font-size: 14px;
+        font-size: 12px;
         text-shadow: 0 -1px 0 #000000;
     }
     
@@ -774,7 +778,7 @@
         width: 100%;
         
         input[type='url']{ 
-            width: 290px;
+            width: 320px;
         }
         
         fieldset{

@@ -92,6 +92,7 @@ a:not([class~="button"]):hover {
     
     .icon-close{
         float: right;
+        margin: 0 -3px 0 0;
     }
 }
 
@@ -119,8 +120,6 @@ a:not([class~="button"]):hover {
     box-sizing: border-box;
     
     -webkit-justify-content: space-between;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.36);
-    box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.11);
 
     h1, h2, h3 {
         color: white;
@@ -134,9 +133,18 @@ a:not([class~="button"]):hover {
     }
     
     .button.drop-down{
-        min-width: 100px;
+        min-width: 50px;
+        text-indent: 2px;
         overflow: ellipsis;
     }
+    #active-animation {
+        min-width: 140px;
+    }
+}
+
+#logo {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.36);
+    box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.11);
 }
 
 #animations-container {
@@ -182,7 +190,7 @@ a:not([class~="button"]):hover {
     @include list-reset;
     @include hbox;
     margin: auto 0;
-    
+
     li + li{
         margin-left: 15px;
     }
@@ -221,12 +229,11 @@ aside {
 
 #filter-dock {
     @include box-shadow;
-    width: 400px;
+    width: 450px;
     height: 70%;
-    top: 0px;
+    top: 0;
     position: absolute;
-    margin-top: 10px;
-    margin-left: -25px;
+    margin: 0 0 0 -43px;
     z-index: 1000;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -234,18 +241,6 @@ aside {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;    
-}
-
-#filter-dock:before {
-    background: #404040;
-    content: "";
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    left: 15px;
-    top: -5px;
-    z-index: -100;
-    -webkit-transform: rotate(45deg);
 }
 
 .clicks-catcher {
@@ -276,7 +271,6 @@ aside {
     padding: 40px;
     border:none;
     outline-offset:-15px;
-    text-align: justify;
     background: #263F51;
     background-image:url(../../images/bottomscene.png);
     background-position: center bottom;
@@ -382,6 +376,13 @@ aside {
     background-image: url(../img/drop-down-triangle.png), -webkit-gradient(linear, left top, left bottom, from(#f5f8fa), to(#e3e5e5));    
     background-position: 96% 57%;
     background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.drop-down:active {
+    background-image: url(../img/drop-down-triangle.png);
+    background-color: #D3D7D7;
+    box-shadow: inset 0 1px 0px rgba(0, 0, 0, 0.06);
 }
        
 #post-gist-button{
