@@ -80,7 +80,7 @@ limitations under the License.
     <div id="components">
         <div id="logo">
             <h1 class="title left">CSS FilterLab</h1>
-            <a href="#" id="filter-store-toggle" class="button dark">Add Filter</a>
+            <a href="#" id="filter-store-toggle" class="button drop-down dark">Add Filter<i class="icon drop-down-triangle dark"></i></a>
         </div>
 
         <div id="filters-not-supported-popup" class="filters-not-supported">
@@ -119,10 +119,10 @@ limitations under the License.
         <div id="animations-container">
             <ul class="nav left">
                 <li class="preset"> 
-                    <span id="active-animation" class="button drop-down">
+                    <a id="active-animation" class="button drop-down">
                         Presets
-                    </span>
-                    <a href="#" id="save-animation" class="button disabled" >Save as preset</a>
+                    </a>
+                    <a href="#" id="save-animation" class="button disabled" >Save as Preset</a>
                 </li>
             </ul>
 
@@ -248,13 +248,9 @@ limitations under the License.
             <div id="scene">
                 <div id="container">
                     <div id="multi-col">
-                        <h2 id="dialog-title" style=
-                        "-webkit-column-break-before: always">The Creative Web</h2>
+                        <h2 id="dialog-title">The Creative Web</h2>
 
-                        <p>
-                            The Creative Web is not a mythical place. <br />
-                            It's a place where HTML, CSS &amp; JS are supercharged with powers that extend their abilities to amaze.
-                          </p>
+                        <p>The Creative Web is not a mythical place. It's a place where HTML, CSS &amp; JS are supercharged with powers that extend their abilities to amaze.</p>
 
                         <p>CSS Filters is a small step for web design, a giant leap for the web. <a class="content-link" href="http://html.adobe.com/webstandards/csscustomfilters/" target="_blank">Learn more!</a></p>
                         
@@ -346,7 +342,7 @@ limitations under the License.
     <div id="import-filter">
         <section>
             
-            <p>You can import a filter from a GitHub gist url. <br />Once imported your filter will appear under the 'Forked custom filters' tab.</p>
+            <p>You can import a filter from a GitHub gist url. Once imported your filter will appear under the 'Forked custom filters' tab.</p>
 
             <div class="notice error">
                 <strong>Oops!</strong>
@@ -355,7 +351,7 @@ limitations under the License.
 
             <form action="#">
                 <label for="gist-url">Filter gist URL</label>
-                <input type="url" class="text-field" name="gist-url" placeholder="gist URL" required/>
+                <input type="url" class="text-field dark" name="gist-url" placeholder="gist URL" required/>
                 <a href="#" class="button dark disabled cta">Import</a>
             </form>
              

@@ -98,5 +98,5 @@ $selectedBg: rgba(0,0,0,.24) /* Slate Gray */;
 }
 
 @mixin box-shadow{
-    box-shadow: 0 5px 20px 5px #333;
+    box-shadow: 0 3px 15px 3px rgba(0,0,0,.4);
 }
