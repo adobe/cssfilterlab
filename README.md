@@ -1,6 +1,23 @@
 CSS FilterLab
 =================
 
+Supported Browsers
+-------
+CSS FilterLab is using some cutting-edge technology that is available in the latest Google Chrome Canary and Webkit nightly builds. To enjoy the full experience you'll need to turn a few knobs:
+
+### Google Chrome Canary
+- Download and install [Google Chrome Canary](https://tools.google.com/dlpage/chromesxs)
+- Type `about://flags` in the browser's address bar
+- Find the **Enable CSS Shaders** flag and turn it on
+- Find the **GPU Accelerated SVG Filters** flag and turn it on
+- Relaunch the browser
+
+### WebKit
+- Download and install [Webkkit nightly](http://nightly.webkit.org/)
+- In the browser's menu click **Develop** > **Enable WebGL**
+
+Enjoy CSS FilterLab!
+
 Running
 -------
 
