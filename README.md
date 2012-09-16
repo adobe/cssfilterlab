@@ -7,7 +7,7 @@ CSS FilterLab is using some cutting-edge technology that is available in the lat
 
 ### Google Chrome Canary
 - Download and install [Google Chrome Canary](https://tools.google.com/dlpage/chromesxs)
-- Type `about://flags` in the browser's address bar
+- Type `chrome://flags/` in the browser's address bar
 - Find the **Enable CSS Shaders** flag and turn it on
 - Find the **GPU Accelerated SVG Filters** flag and turn it on
 - Relaunch the browser
