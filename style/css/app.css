@@ -3271,3 +3271,28 @@ aside {
   position: absolute;
   right: 8px;
 }
+
+.popup section {
+  float: left;
+  width: 44%;
+  border-right: 1px solid #ddd;
+  padding-right: 4%;
+  margin-right: 4%;
+}
+.popup section + section {
+  margin-right: 0;
+  padding-right: 0;
+  border: none;
+}
+.popup section ol {
+  padding-left: 30px;
+}
+.popup section h3 {
+  font-size: 20px;
+  padding-left: 30px;
+}
+
+#browser-popup .popup-inner {
+  width: 700px;
+  margin-left: -350px;
+}
