@@ -203,15 +203,15 @@ window.filterConfigs = {
 	    params: {
 	        matrix: {
 	            rotationX: 0,
-	            rotationY: 0,
+	            rotationY: 60,
 	            rotationZ: 0
 	        },
-	        rollRatio: 0,
-	        initialRollSize: 0.01,
+	        rollRatio: 0.5,
+	        initialRollSize: 0.02,
 	        rollSeparation: 0.005,
 	        depth: 500,
 	        useColoredBack: 1,
-	        backColor: [1.0, 1.0, 1.0, 1.0],
+	        backColor: [1.0, 1.0, 1.0, 0.9],
 	    },
 	    config: {
 	        matrix: transform(),

@@ -22,7 +22,6 @@ attribute vec2 a_meshCoord;
 
 uniform mat4 u_projectionMatrix;
 uniform vec4 u_meshBox;
-uniform vec2 u_textureSize;
 
 uniform float rollRatio;
 uniform float initialRollSize;

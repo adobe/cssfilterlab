@@ -24,12 +24,8 @@ uniform float useColoredBack;
 
 void main()
 {
-    /*
-    // TODO: When we have more blend modes, we can have the backColor replace the texture color.
-    // Or, we can enable gl_FragColor and define its interaction with css_MixColor.
     if (!gl_FrontFacing && useColoredBack >= 0.5)
         css_MixColor = backColor;
 
-    css_MixColor *= vec4(v_lighting, v_lighting, v_lighting, 1.0);
-    */
+    css_MixColor *= vec4(vec3(v_lighting), 1.0);
 }
