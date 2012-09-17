@@ -16,11 +16,14 @@
 
 precision mediump float;
 
-varying float v_lighting;
+// Uniforms passed in from CSS
 
-uniform float t;
 uniform vec4 backColor;
 uniform float useColoredBack;
+
+// Varyings
+
+varying float v_lighting;
 
 void main()
 {

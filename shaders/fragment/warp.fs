@@ -16,14 +16,17 @@
 
 precision mediump float;
 
+// Uniforms passed in from CSS
+
+uniform vec4 backColor;
+uniform float useColoredBack;
+
+// Varyings
+
 varying float v_lighting;
-
-// This uniform value is passed in using CSS.
-uniform float t;
-
-const float PI = 3.1415;
 
 void main()
 {
-    // css_MixColor = vec4(vec3(v_lighting), 1.0);
+    if (!gl_FrontFacing && useColoredBack >= 0.5)
+        css_MixColor = backColor;
 }

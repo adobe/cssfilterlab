@@ -175,7 +175,7 @@ window.filterConfigs = {
 	warp: {
 	    hasVertex: true,
 	    hasFragment: true,
-	    mix: mix("multiply"),
+	    mix: mix("normal"),
 	    mesh: mesh(20, 20),
 	    meshBox: "border-box",
 	    params: {

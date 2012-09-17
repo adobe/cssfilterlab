@@ -16,24 +16,38 @@
 
 precision mediump float;
 
+// Built-in attributes
+
 attribute vec2 a_texCoord;
 attribute vec2 a_meshCoord;
+
+// Built-in uniforms
 
 uniform mat4 u_projectionMatrix;
 uniform vec4 u_meshBox;
 uniform vec2 u_textureSize;
-varying vec2 v_texCoord;
+
+// Constants
 
 const int cols = 4;
 const int rows = 4;
 const int n = rows - 1;
 const int m = cols - 1;
 
+// Uniforms passed in from CSS
+
 uniform mat4 matrix;
 uniform float k[cols * rows * 3];
 uniform float factor[cols > rows ? cols : rows];
 
-mat4 perspective(float p) {
+// Varyings
+
+varying vec2 v_texCoord;
+
+// Helper functions
+
+mat4 perspectiveMatrix(float p)
+{
     float perspective = - 1.0 / p;
     return mat4(
 	1.0, 0.0, 0.0, 0.0, 
@@ -42,17 +56,20 @@ mat4 perspective(float p) {
 	0.0, 0.0, 0.0, 1.0);
 }
 
-float binomialCoefficient(int n, int i) {
+float binomialCoefficient(int n, int i)
+{
     return factor[n] / (factor[i] * factor[n-i]);
 }
 
-float calculateB(int i, int n, float u) {
+float calculateB(int i, int n, float u)
+{
     float bc = binomialCoefficient(n, i);
     // Adding 0.000001 to avoid having pow(0, 0) which is undefined.
     return bc * pow(u + 0.000001, float(i)) * pow(1.0 - u + 0.00001, float(n - i));
 }
 
-vec3 calculate(float u, float v) {
+vec3 calculate(float u, float v)
+{
     vec3 result = vec3(0.0);
     vec2 offset = vec2(u_meshBox.x + u_meshBox.z / 2.0, 
                        u_meshBox.y + u_meshBox.w / 2.0);
@@ -72,6 +89,5 @@ void main()
 {
     v_texCoord = a_texCoord;
     vec3 pos = calculate(a_meshCoord.x, a_meshCoord.y);
-    gl_Position = u_projectionMatrix * perspective(1000.0) * matrix * vec4(pos, 1.0);
-    
+    gl_Position = u_projectionMatrix * perspectiveMatrix(1000.0) * matrix * vec4(pos, 1.0);
 }
