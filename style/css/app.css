@@ -1777,6 +1777,7 @@ pre,
     .config-panel .config-row input.config-shader-name {
       width: 200px !important; }
   .config-panel h4 {
+    margin: 0 0 10px;
     padding: 5px 10px 5px 10px;
     color: white;
     font-size: 14px;
