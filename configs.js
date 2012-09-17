@@ -282,13 +282,11 @@ window.filterConfigs = {
 	            rotationY: 20,
 	            rotationZ: 20
 	        },
-	        perspective: 1000,
 	        amount: 10,
 	        t: 0
 	    },
 	    config: {
 	        matrix: transform(),
-	        perspective: range(200, 2000, 100),
 	        amount: range(0, 500, 10),
 	        t: range(0, 1, 0.01)
 	    }
@@ -305,7 +303,6 @@ window.filterConfigs = {
 	            rotationY: 0,
 	            rotationZ: 0
 	        },
-	        perspective: 1000,
 	        amount: 1.5,
 	        rotateAngleX: 0,
 	        rotateAngleY: 0,
@@ -317,7 +314,6 @@ window.filterConfigs = {
 	    },
 	    config: {
 	        matrix: transform(),
-	        perspective: range(200, 2000, 100),
 	        amount: range(0, 5, 0.1),
 	        rotateAngleX: range(-180, 180, 0.001),
 	        rotateAngleY: range(-180, 180, 0.001),
@@ -362,14 +358,20 @@ window.filterConfigs = {
 	    	sphereRadius: 0.35,
 	    	ambientLight: 0.0,
 	    	lightPosition: [1.0, -0.25, 0.25],
-	    	lightColor: [1.0, 1.0, 1.0, 1.0]
+	    	lightColor: [1.0, 1.0, 1.0, 1.0],
+	    	transform: {
+	    		rotationX: 0,
+	            rotationY: 0,
+	            rotationZ: 0
+	    	}
 	    },
 	    config: {
 	    	amount: range(0, 1, 0.01),
 	    	sphereRadius: range(0, 0.5, 0.01),
 	    	ambientLight: range(0, 1, 0.01),
 	    	lightPosition: position(-1, 1, 0.01),
-	    	lightColor: color()
+	    	lightColor: color(),
+	    	transform: transform()
 	    }
 	},
 	"tile-flip": {
@@ -381,14 +383,16 @@ window.filterConfigs = {
 	    params: {
 	    	amount: 0.2,
 	    	randomness: 2.0,
-	    	usePerspective: 0,
-	        perspective: 1.0
+	    	transform: {
+	    		rotationX: 0,
+	            rotationY: 0,
+	            rotationZ: 0
+	    	}
 	    },
 	    config: {
 	    	amount: range(0, 1, 0.01),
 	    	randomness: range(0, 3, 0.01),
-	    	usePerspective: range(0, 1, 1),
-	    	perspective: range(0, 10, 0.01)
+	    	transform: transform()
 	    }
 	},
 	"burn": {

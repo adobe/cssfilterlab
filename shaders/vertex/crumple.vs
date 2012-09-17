@@ -48,19 +48,6 @@ varying vec2 v_uv;
 varying float v_height;
 varying float v_light;
 
-// Construct perspective matrix
-
-mat4 perspective( float p ) {
-
-    float perspective = - 1.0 / p;
-    return mat4(
-        1.0, 0.0, 0.0, 0.0,
-        0.0, 1.0, 0.0, 0.0,
-        0.0, 0.0, 1.0, perspective,
-        0.0, 0.0, 0.0, 1.0 );
-
-}
-
 // WebGL noise (start)
 // from https://github.com/ashima/webgl-noise
 
@@ -235,7 +222,7 @@ void main() {
 
 	// Set vertex position
 
-    gl_Position = u_projectionMatrix * perspective( 1000.0 ) * transform * pos;
+    gl_Position = u_projectionMatrix * transform * pos;
 
 	// Pass in varyings
 

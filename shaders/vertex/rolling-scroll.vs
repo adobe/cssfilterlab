@@ -122,16 +122,6 @@ float yToT(float y, bool lower)
 	}
 }
 
-mat4 perspective(float p)
-{
-	float perspective = - 1.0 / p;
-	return mat4(
-	1.0, 0.0, 0.0, 0.0,
-	0.0, 1.0, 0.0, 0.0,
-	0.0, 0.0, 1.0, perspective,
-	0.0, 0.0, 0.0, 1.0);
-}
-
 /*
 Integral of (r^2 + (dr/dtheta)^2) between 0 and the maximum theta.
 Used for computing length of spiral.
@@ -230,8 +220,6 @@ void main()
 	}
 
 	pos.y = pos.y * u_meshBox.w + u_meshBox.y + u_meshBox.w / 2.0;
-
-	vec4 vertex = matrix * pos;
-	gl_Position = u_projectionMatrix * perspective(1000.0) * vertex;
+	gl_Position = u_projectionMatrix * matrix * pos;
 
 }

@@ -40,15 +40,6 @@ uniform float shadow;
 
 const float PI = 3.1415629;
 
-mat4 perspective(float p)
-{
-    float perspective = - 1.0 / p;
-    return mat4(
-	1.0, 0.0, 0.0, 0.0,
-	0.0, 1.0, 0.0, 0.0,
-	0.0, 0.0, 1.0, perspective,
-	0.0, 0.0, 0.0, 1.0);
-}
 
 void main()
 {
@@ -62,5 +53,5 @@ void main()
 
     v_lighting = min(1.0, cos(a_meshCoord.x * PI * 8.0 + PI) + shadow);
 
-    gl_Position = u_projectionMatrix * perspective(1000.0) * matrix * pos;
+    gl_Position = u_projectionMatrix * matrix * pos;
 }

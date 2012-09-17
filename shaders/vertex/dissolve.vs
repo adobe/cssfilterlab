@@ -37,24 +37,11 @@ uniform float amount;
 
 varying vec2 v_uv;
 
-// Construct perspective matrix
-
-mat4 perspective(float p) {
-
-    float perspective = - 1.0 / p;
-    return mat4(
-        1.0, 0.0, 0.0, 0.0,
-        0.0, 1.0, 0.0, 0.0,
-        0.0, 0.0, 1.0, perspective,
-        0.0, 0.0, 0.0, 1.0) ;
-
-}
-
 // Main
 
 void main()
 {
     vec4 pos = a_position;
-    gl_Position = u_projectionMatrix * perspective(1000.0) * transform * pos;
+    gl_Position = u_projectionMatrix * transform * pos;
 	v_uv = a_texCoord;
 }
