@@ -42,10 +42,10 @@ const float PI = 3.1415926;
 
 varying vec2 v_uv;
 
-// Construct perspective matrix
+// Helper functions
 
-mat4 perspective(float p) {
-
+mat4 perspectiveMatrix(float p)
+{
     float perspective = - 1.0 / p;
     return mat4(
         1.0, 0.0, 0.0, 0.0,
@@ -64,7 +64,7 @@ void main()
     vec4 pos = a_position;
     pos.z = 0.1 * amount * (curve - 1.0);
 
-    gl_Position = u_projectionMatrix * perspective(0.9) * transform * pos;
+    gl_Position = u_projectionMatrix * perspectiveMatrix(0.9) * transform * pos;
 
 	v_uv = a_texCoord;
 }

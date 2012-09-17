@@ -21,6 +21,7 @@ precision mediump float;
 // Uniforms passed in from CSS
 
 uniform float amount;
+uniform float randomSeed;
 
 // Varyings passed in from vertex shader
 
@@ -142,7 +143,7 @@ float snoise(vec3 v)
 
 float surface(vec2 p, float time)
 {
-	vec3 coord = vec3(p, -time * 0.001125);
+	vec3 coord = vec3(p, time);
 
 	float n = 0.3;
 
@@ -157,11 +158,9 @@ float surface(vec2 p, float time)
 
 void main()
 {
-	float time = 0.0;
-
 	// Compute height.
 
-	float n = surface(0.035 * v_uv, time);
+	float n = surface(0.035 * v_uv, randomSeed);
 
 	// Height thresholds.
 

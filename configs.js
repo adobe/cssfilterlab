@@ -384,10 +384,12 @@ window.filterConfigs = {
 	    mesh: mesh(50, 50),
 	    meshBox: "border-box detached",
 	    params: {
-	    	amount: 1.0
+	    	amount: 1.0,
+	    	randomSeed: 0.0
 	    },
 	    config: {
-	    	amount: range(0, 1, 0.01)
+	    	amount: range(0, 1, 0.01),
+	    	randomSeed: range(0, 1, 0.01)
 	    }
 	}
 };
