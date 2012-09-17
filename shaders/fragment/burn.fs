@@ -162,44 +162,28 @@ void main()
 
 	float n = surface(0.035 * v_uv, randomSeed);
 
-	// Height thresholds.
+	// Compute color.
 
-	float t0 = amount + 0.2;
-	float t1 = amount + 0.25;
-	float t2 = amount + 0.275;
-	float t3 = amount + 0.3;
+	vec4 c = vec4(0.0);
 
-	float r = 0.0;
-	float g = 0.0;
-	float b = 0.0;
-	float a = 0.0;
-
-	if (n < t0) {
-		r = g = b = n * 0.95;
-		a = 1.0;
+	if (n < amount + 0.2) {
+		c.rgb = vec3(n * 0.95);
+		c.a = 1.0;
 
 		if (n < 0.5) {
-			r = g = b = 0.0;
-			if (n < 0.45) a = 0.0;
+			if (n < 0.45)
+				c.a = 0.0;
 		}
-	} else if (n < t1) {
-		// Do nothing.
-	} else if (n > t3) {
-		r = g = b = a = 1.0;
-	} else if (n > t2) {
-		r = 1.0;
-		g = 0.75;
-		b = 0.5;
-		a = 1.0;
+	} else if (n > amount + 0.275) {
+		c = vec4(1.0);
+	} else if (n > amount + 0.3) {
+		c = vec4(1.0, 0.75, 0.5, 1.0);
 	} else {
-		r = 1.0;
-		g = 0.5;
-		b = 0.5;
-		a = 1.0;
+		c = vec4(1.0, 0.5, 0.5, 1.0);
 	}
 
-	css_ColorMatrix = mat4(r, 0.0, 0.0, 0.0,
-							0.0, g, 0.0, 0.0,
-							0.0, 0.0, b, 0.0,
-							0.0, 0.0, 0.0, a);
+	css_ColorMatrix = mat4(c.r, 0.0, 0.0, 0.0,
+							0.0, c.g, 0.0, 0.0,
+							0.0, 0.0, c.b, 0.0,
+							0.0, 0.0, 0.0, c.a);
 }
