@@ -1864,6 +1864,11 @@ pre,
         background: rgba(255, 255, 255, 0.05);
         color: white; }
 
+.config-parameter-delete {
+  position: absolute;
+  bottom: 10px;
+  right: 15px; }
+
 .code-panel {
   position: relative;
   background: white;
