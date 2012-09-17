@@ -1216,8 +1216,7 @@ input.dark[type=checkbox]:checked + label {
 
 /* End Swatch */
 /* Text Field */
-.text-field, .config-panel .config-row input[type='text'],
-.config-panel .config-row input[type='number'] {
+.text-field {
   border: 1px solid #a5a8a8;
   box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.1);
   color: #000;
@@ -1233,53 +1232,59 @@ input.dark[type=checkbox]:checked + label {
   min-width: 150px;
 }
 
-.text-field.large, .config-panel .config-row input.large[type='text'],
-.config-panel .config-row input.large[type='number'] {
+.text-field.large {
   font-size: 14px;
   padding: 1px 4px 0 4px;
   height: 27px;
 }
 
-.text-field.dark, .config-panel .config-row input.dark[type='text'],
-.config-panel .config-row input.dark[type='number'] {
+.text-field.dark, .config-panel .config-row input[type='text'],
+.config-panel .config-row input[type='number'] {
   background: rgba(255, 255, 255, 0.15);
   border: 1px solid rgba(0, 0, 0, 0.7);
   color: #fff;
+  box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.1);
+  -webkit-border-radius: 4px;
+  border-radius: 3px;
+  font-size: 12px;
+  font-weight: 400;
+  height: 21px;
+  line-height: 21px;
+  margin: 0 3px 3px 0;
+  padding: 0 4px;
+  min-width: 80px;
 }
 
 /* Error state before Focus state on purpose */
-.text-field.error, .config-panel .config-row input.error[type='text'],
+.text-field.error {
+  border: 1px solid #ea015e;
+  -webkit-box-shadow: 0 0 4px #ff0078;
+  box-shadow: 0 0 4px #ff0078, inset 0px 1px 0px rgba(0, 0, 0, 0.15);
+}
+
+.text-field.dark.error, .config-panel .config-row input.error[type='text'],
 .config-panel .config-row input.error[type='number'] {
   border: 1px solid #ea015e;
   -webkit-box-shadow: 0 0 4px #ff0078;
   box-shadow: 0 0 4px #ff0078, inset 0px 1px 0px rgba(0, 0, 0, 0.15);
 }
 
-.text-field.dark.error, .config-panel .config-row input.dark.error[type='text'],
-.config-panel .config-row input.dark.error[type='number'] {
-  border: 1px solid #ea015e;
-  -webkit-box-shadow: 0 0 4px #ff0078;
-  box-shadow: 0 0 4px #ff0078, inset 0px 1px 0px rgba(0, 0, 0, 0.15);
-}
-
-.text-field:focus, .config-panel .config-row input[type='text']:focus,
-.config-panel .config-row input[type='number']:focus {
+.text-field:focus {
   border: 1px solid #0940fd;
   -webkit-box-shadow: 0 0 4px #0088ff;
   box-shadow: 0 0 4px #0088ff;
   outline: none;
 }
 
-.text-field.dark:focus, .config-panel .config-row input.dark[type='text']:focus,
-.config-panel .config-row input.dark[type='number']:focus {
+.text-field.dark:focus, .config-panel .config-row input[type='text']:focus,
+.config-panel .config-row input[type='number']:focus {
   border: 1px solid #000;
   -webkit-box-shadow: 0 0 4px #222;
   box-shadow: 0 0 4px #222;
   outline: none;
 }
 
-.text-field[disabled=disabled], .config-panel .config-row input[disabled=disabled][type='text'],
-.config-panel .config-row input[disabled=disabled][type='number'] {
+.text-field[disabled=disabled] {
   opacity: 0.6;
 }
 
@@ -1827,6 +1832,7 @@ input.dark[type=checkbox]:checked + label {
   font-style: normal;
 }
 
+pre,
 .code,
 .CodeMirror-lines * {
   font-family: "sourcecode", monospace;
@@ -1969,7 +1975,10 @@ input.dark[type=checkbox]:checked + label {
   -ms-flex-direction: row;
   -o-flex-direction: row;
   flex-direction: row;
-  margin: 5px 10px;
+  padding: 7px 10px;
+  text-align: right;
+  height: 23px;
+  line-height: 23px;
 }
 .config-panel .config-row label {
   display: block;
@@ -1987,6 +1996,7 @@ input.dark[type=checkbox]:checked + label {
   font-size: 13px;
   color: #bbb;
   text-shadow: 0px -1px 0 rgba(0, 0, 0, 0.8);
+  margin: 0 7px 0 0;
 }
 .config-panel .config-row input, .config-panel .config-row .value, .config-panel .config-row select {
   display: block;
@@ -2001,12 +2011,20 @@ input.dark[type=checkbox]:checked + label {
   -o-flex: none;
   flex: none;
 }
+.config-panel .config-row input[type='text'],
+.config-panel .config-row input[type='number'] {
+  width: 60px !important;
+}
+.config-panel .config-row input.config-shader-name {
+  width: 200px !important;
+}
 .config-panel h4 {
+  margin: 0 0 10px;
   padding: 5px 10px 5px 10px;
   color: white;
   font-size: 14px;
-  font-weight: bold;
-  text-shadow: 0px 1px 1px black;
+  font-weight: normal;
+  text-shadow: 0px -1px 0 black;
   background: rgba(0, 0, 0, 0.24);
 }
 .config-panel .config-parameters-row {
@@ -2020,7 +2038,10 @@ input.dark[type=checkbox]:checked + label {
   -ms-box-flex: 1;
   -o-box-flex: 1;
   box-flex: 1;
-  margin: 10px 0 0;
+  margin: 10px;
+  border-radius: 4px;
+  box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.8);
+  padding: 0;
 }
 .config-panel .config-parameter {
   -webkit-flex: 1;
@@ -2034,6 +2055,7 @@ input.dark[type=checkbox]:checked + label {
   -o-box-flex: 1;
   box-flex: 1;
   background: rgba(255, 255, 255, 0.05);
+  text-align: left;
 }
 .config-panel .config-parameters-wrapper {
   display: -webkit-box;
@@ -2054,6 +2076,11 @@ input.dark[type=checkbox]:checked + label {
   -ms-flex-direction: column;
   -o-flex-direction: column;
   flex-direction: column;
+  text-align: left;
+}
+.config-panel .config-parameters-wrapper h4 {
+  font-weight: normal;
+  text-shadow: 0 -1px 0 black;
 }
 .config-panel .config-parameters {
   -webkit-flex: 1;
@@ -2075,10 +2102,10 @@ input.dark[type=checkbox]:checked + label {
   padding: 0;
   list-style: none;
   margin: 0px;
-  padding: 5px 10px 5px 10px;
+  padding: 2px 10px;
   cursor: pointer;
   color: #bbb;
-  text-shadow: 0px -1px 0 rgba(0, 0, 0, 0.8);
+  text-shadow: 0px 1px 0 rgba(0, 0, 0, 0.8);
   font-size: 13px;
 }
 .config-panel .config-parameters li > li {
@@ -2091,6 +2118,12 @@ input.dark[type=checkbox]:checked + label {
 .config-panel .config-parameters li.active {
   background: rgba(255, 255, 255, 0.05);
   color: white;
+}
+
+.config-parameter-delete {
+  position: absolute;
+  bottom: 20px;
+  right: 25px;
 }
 
 .code-panel {
@@ -2121,15 +2154,12 @@ input.dark[type=checkbox]:checked + label {
   background: rgba(255, 0, 0, 0.5);
 }
 
-#shader-errors {
-  background: #d7d7d7;
-  color: black;
-}
 #shader-errors > div {
   padding: 10px;
 }
 #shader-errors .header {
-  font-weight: bold;
+  color: #bbb;
+  text-shadow: 0 -1px 0 black;
   margin-top: 5px;
 }
 #shader-errors .inline-shader-errors {
@@ -2142,7 +2172,7 @@ input.dark[type=checkbox]:checked + label {
 }
 #shader-errors pre {
   margin: 0;
-  font-size: 0.9em;
+  font-size: 12px;
 }
 
 .loader .progress-bar {
@@ -2537,6 +2567,11 @@ input.dark[type=checkbox]:checked + label {
   background: #3b3f41;
 }
 
+.panel-column-title {
+  font-weight: normal;
+  text-shadow: 0 -1px 0 black;
+}
+
 .panel-column-close-button {
   float: right;
 }
@@ -2574,7 +2609,7 @@ input.dark[type=checkbox]:checked + label {
   -ms-flex: none;
   -o-flex: none;
   flex: none;
-  background: #000;
+  background: #1f1f1f;
   border-right: 1px solid rgba(0, 0, 0, 0);
   border-left: 1px solid rgba(0, 0, 0, 0);
   cursor: col-resize;
@@ -2592,7 +2627,7 @@ input.dark[type=checkbox]:checked + label {
   -ms-flex: none;
   -o-flex: none;
   flex: none;
-  background: #ced1d1;
+  background: #1f1f1f;
   cursor: row-resize;
 }
 
@@ -2602,11 +2637,6 @@ input.dark[type=checkbox]:checked + label {
   display: none;
 }
 
-.light .panel-column.horizontal > .panel-column-items > .panel-separator {
-  border: none;
-  background: #bdbdbd;
-  border-right: 1px solid white;
-}
 .light section {
   background: white;
 }
@@ -2640,6 +2670,11 @@ input.dark[type=checkbox]:checked + label {
 }
 .light .panel-tab.active:first-child {
   border-left: none;
+}
+
+#main-view .light .panel-separator {
+  border: none;
+  background: #bcbcbc !important;
 }
 
 #active-filters {
@@ -2791,6 +2826,7 @@ table.paramsTable .value-label {
   padding: 0 3px;
   text-shadow: 0 1px 0 #000;
   width: 50px;
+  text-align: left;
 }
 table.paramsTable .value-editor, table.paramsTable .param-color-editor {
   margin: 0 0 0 3px;
@@ -3269,7 +3305,8 @@ aside {
 
 #post-gist-button {
   position: absolute;
-  right: 8px;
+  right: 35px;
+  top: 6px;
 }
 
 .popup section {
