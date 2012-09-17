@@ -185,7 +185,7 @@ window.filterConfigs = {
 	            rotationY: 0,
 	            rotationZ: 0
 	        },
-	        factor: [1, 1, 2, 6],
+	        factor: "array(" + [1, 1, 2, 6].join(", ") + ")",
 	        useColoredBack: 1,
 	        backColor: [1.0, 1.0, 1.0, 1.0],
 	    },
@@ -196,9 +196,7 @@ window.filterConfigs = {
 	            mixer: 'mixVectorOfVectors'
 	        },
 	        factor: {
-	            type: 'hidden',
-	            generator: 'filterArray',
-	            mixer: 'dontMix'
+	            type: 'unknown'
 	        },
 	        matrix: transform(),
 	        useColoredBack: checkbox(),
