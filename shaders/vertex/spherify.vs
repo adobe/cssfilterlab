@@ -26,9 +26,7 @@ attribute vec3 a_triangleCoord;
 
 // Built-in uniforms
 
-// TODO: Enable u_textureSize when its available in Canary.
-//uniform vec2 u_textureSize;
-vec2 textureSize = vec2(680.0, 530.0);
+uniform vec2 u_textureSize;
 uniform mat4 u_projectionMatrix;
 
 // Uniforms passed in from CSS
@@ -132,7 +130,7 @@ vec3 rotatePosition(vec3 p, float aspect, vec3 axis, float angle)
 void main()
 {
     vec4 position = a_position;
-	float aspect = textureSize.x / textureSize.y;
+	float aspect = u_textureSize.x / u_textureSize.y;
 
 	// Map plane to sphere using UV coordinates.
 	vec3 spherePosition = computeSpherePosition(position.xyz, vec2(a_texCoord.x, 1.0 - a_texCoord.y), sphereRadius);
