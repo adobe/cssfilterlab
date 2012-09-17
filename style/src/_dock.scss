@@ -110,7 +110,7 @@
 .panel-column.horizontal > .panel-column-items > .panel-separator {
 	width: 1px;
 	@include noflex;
-	background: #000;
+	background:  #1f1f1f;
     border-right: 1px solid rgba(0,0,0,0);
     border-left: 1px solid rgba(0,0,0,0);
 	cursor: col-resize;
@@ -119,7 +119,7 @@
 .panel-column.vertical > .panel-column-items > .panel-separator {
 	height: 3px;
 	@include noflex;
-	background: #ced1d1;
+	background: #1f1f1f;
 	cursor: row-resize;
 }
 
@@ -130,12 +130,6 @@
 }
 
 .light {
-    
-    .panel-column.horizontal > .panel-column-items > .panel-separator {   
-        border: none;
-        background: #bdbdbd;
-        border-right: 1px solid white;
-    }
     
     section{
         background: white;
@@ -178,6 +172,11 @@
         }
     }
 }
+
+#main-view .light .panel-separator {   
+        border: none;
+        background: #bcbcbc !important;
+    }
 
 #active-filters {
     overflow-x: hidden;
