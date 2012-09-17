@@ -98,6 +98,11 @@
 	background: $baseColorDark;
 }
 
+.panel-column-title {
+    font-weight: normal;
+    text-shadow: 0 -1px 0 #000;
+}
+
 .panel-column-close-button {
 	float: right;
 }

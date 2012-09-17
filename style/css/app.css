@@ -2233,6 +2233,10 @@ pre,
   padding: 8px;
   background: #3b3f41; }
 
+.panel-column-title {
+  font-weight: normal;
+  text-shadow: 0 -1px 0 black; }
+
 .panel-column-close-button {
   float: right; }
 
