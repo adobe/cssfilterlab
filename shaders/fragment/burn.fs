@@ -170,16 +170,12 @@ void main()
 		c.rgb = vec3(n * 0.95);
 		c.a = 1.0;
 
-		if (n < 0.5) {
-			if (n < 0.45)
-				c.a = 0.0;
-		}
-	} else if (n > amount + 0.275) {
-		c = vec4(1.0);
-	} else if (n > amount + 0.3) {
-		c = vec4(1.0, 0.75, 0.5, 1.0);
-	} else {
+		if (n < 0.45)
+			c.a = 0.0;
+	} else if (n < amount + 0.275) {
 		c = vec4(1.0, 0.5, 0.5, 1.0);
+	} else {
+		c = vec4(1.0);
 	}
 
 	css_ColorMatrix = mat4(c.r, 0.0, 0.0, 0.0,
