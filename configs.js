@@ -51,6 +51,17 @@ function range(min, max, step) {
     };
 }
 
+function position(min, max, step) {
+	return {
+		type: 'vec3',
+		generator: 'vector',
+		mixer: 'mixVector',
+		min: min,
+		max: max,
+		step: step
+	}
+}
+
 function units(unit, value) {
 	value.unit = unit;
 	return value;
@@ -349,12 +360,14 @@ window.filterConfigs = {
 	    	amount: 1,
 	    	sphereRadius: 0.35,
 	    	ambientLight: 0.0,
+	    	lightPosition: [1.0, -0.25, 0.25],
 	    	lightColor: [1.0, 1.0, 1.0, 1.0]
 	    },
 	    config: {
 	    	amount: range(0, 1, 0.01),
 	    	sphereRadius: range(0, 0.5, 0.01),
 	    	ambientLight: range(0, 1, 0.01),
+	    	lightPosition: position(-1, 1, 0.01),
 	    	lightColor: color()
 	    }
 	},

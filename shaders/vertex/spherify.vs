@@ -34,8 +34,8 @@ uniform mat4 u_projectionMatrix;
 uniform float amount;
 uniform float sphereRadius;
 // TODO: Enable lightPosition uniform when FilterLab supports vec3 parameter types.
-//uniform vec3 lightPosition;
-vec3 lightPosition = vec3(1.0, -0.25, 0.25);
+uniform vec3 lightPosition;
+//vec3 lightPosition = vec3(1.0, -0.25, 0.25);
 
 // Varyings
 
