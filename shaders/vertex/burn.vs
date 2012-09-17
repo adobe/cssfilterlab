@@ -29,9 +29,7 @@ uniform mat4 u_projectionMatrix;
 
 // Uniforms passed in from CSS
 
-// TODO: Make uniform.
-//uniform mat4 transform;
-mat4 transform = mat4(1.0);
+uniform mat4 transform;
 uniform float amount;
 
 // Constants
@@ -62,9 +60,9 @@ void main()
     float curve = abs(cos(a_meshCoord.x * PI * 6.0));
 
     vec4 pos = a_position;
-    pos.z = 0.1 * amount * (curve - 1.0);
+    pos.z = 100.0 * amount * (curve - 1.0);
 
-    gl_Position = u_projectionMatrix * perspectiveMatrix(0.9) * transform * pos;
+    gl_Position = u_projectionMatrix * perspectiveMatrix(1000.0) * transform * pos;
 
 	v_uv = a_texCoord;
 }
