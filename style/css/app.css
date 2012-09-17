@@ -2144,6 +2144,9 @@ pre,
   font-weight: bold;
   background: rgba(255, 0, 0, 0.5);
 }
+body.wait-dock-layout .code-editor {
+  display: none !important;
+}
 
 #shader-errors > div {
   padding: 10px;
@@ -2670,6 +2673,10 @@ pre,
 
 #active-filters {
   overflow-x: hidden;
+}
+
+body.resizing-dock .panel-view > *:not(.keep-while-resizing) {
+  display: none !important;
 }
 
 /*

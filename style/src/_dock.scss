@@ -186,3 +186,8 @@
 #active-filters {
     overflow-x: hidden;
 }
+
+body.resizing-dock .panel-view > *:not(.keep-while-resizing) {
+    display: none ! important;
+}
+

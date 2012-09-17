@@ -644,6 +644,10 @@ pre,
         font-weight: bold;
         background: rgba(255, 0, 0, 0.5);
     }
+
+    body.wait-dock-layout & {
+        display: none ! important;
+    }
 }
 
 #shader-errors {
