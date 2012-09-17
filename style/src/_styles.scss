@@ -542,7 +542,11 @@ pre,
         input[type='text'], 
         input[type='number']{
             @extend .text-field.dark;
+            width: 60px !important;
         }
+        input.config-shader-name {
+            width: 200px !important;
+        }        
     }
     
     h4 {
@@ -599,6 +603,7 @@ pre,
         }
     }
 }
+
 
 .code-panel {
 	position: relative;
