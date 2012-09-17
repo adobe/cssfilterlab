@@ -541,7 +541,7 @@ pre,
         
         input[type='text'], 
         input[type='number']{
-            @extend .text-field;
+            @extend .text-field.dark;
         }
     }
     
@@ -562,10 +562,16 @@ pre,
     .config-parameter {
         @include flex(1);
         background: rgba(255, 255, 255, 0.05);
+        text-align: left;
     }
 
     .config-parameters-wrapper {
         @include vbox;
+        text-align: left;
+        h4 {
+            font-weight: normal;
+            text-shadow: 0 -1px 0 #000;
+        }
     }
 
     .config-parameters {
