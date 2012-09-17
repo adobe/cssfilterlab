@@ -1608,6 +1608,7 @@ input.dark[type=checkbox]:checked + label {
   font-weight: normal;
   font-style: normal; }
 
+pre,
 .code,
 .CodeMirror-lines * {
   font-family: "sourcecode", monospace;
