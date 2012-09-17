@@ -519,7 +519,10 @@ pre,
 
     .config-row {
         @include hbox;
-        margin: 5px 10px;
+        margin: 7px 10px;
+        text-align: right;
+        height: 23px;
+        line-height: 23px;
 
         label {
             display: block;
@@ -528,6 +531,7 @@ pre,
             font-size: 13px;
             color: #bbb;
             text-shadow: 0px -1px 0 rgba(0, 0, 0, 0.8);
+            margin: 0 7px 0 0;
         }
 
         input, .value, select {

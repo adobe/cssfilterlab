@@ -1733,7 +1733,10 @@ pre,
     -ms-flex-direction: row;
     -o-flex-direction: row;
     flex-direction: row;
-    margin: 5px 10px; }
+    margin: 7px 10px;
+    text-align: right;
+    height: 23px;
+    line-height: 23px; }
     .config-panel .config-row label {
       display: block;
       width: 200px;
@@ -1749,7 +1752,8 @@ pre,
       flex: none;
       font-size: 13px;
       color: #bbb;
-      text-shadow: 0px -1px 0 rgba(0, 0, 0, 0.8); }
+      text-shadow: 0px -1px 0 rgba(0, 0, 0, 0.8);
+      margin: 0 7px 0 0; }
     .config-panel .config-row input, .config-panel .config-row .value, .config-panel .config-row select {
       display: block;
       -webkit-box-flex: 0;
