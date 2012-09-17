@@ -553,8 +553,8 @@ pre,
         padding: 5px 10px 5px 10px;
         color: white;  
         font-size: 14px;
-        font-weight: bold;    
-        text-shadow: 0px 1px 1px black;
+        font-weight: normal;    
+        text-shadow: 0px -1px 0 #000;
         background: rgba(0, 0, 0, 0.24);
     }
     
@@ -593,7 +593,7 @@ pre,
             padding: 2px 10px;
             cursor: pointer;
             color: #bbb;   
-            text-shadow: 0px -1px 0 rgba(0, 0, 0, 0.8);
+            text-shadow: 0px 1px 0 rgba(0, 0, 0, 0.8);
             font-size: 13px;
             
             &:hover {                                 
