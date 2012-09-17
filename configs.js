@@ -376,6 +376,19 @@ window.filterConfigs = {
 	    	usePerspective: range(0, 1, 1),
 	    	perspective: range(0, 10, 0.01)
 	    }
+	},
+	"burn": {
+	    hasVertex: true,
+	    hasFragment: true,
+	    mix: mix("multiply"),
+	    mesh: mesh(50, 50),
+	    meshBox: "border-box detached",
+	    params: {
+	    	amount: 1.0
+	    },
+	    config: {
+	    	amount: range(0, 1, 0.01)
+	    }
 	}
 };
 })()
