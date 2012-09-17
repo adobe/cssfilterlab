@@ -31,6 +31,7 @@ uniform mat4 u_projectionMatrix;
 
 // Uniforms passed in from CSS
 
+uniform mat4 transform;
 uniform float amount;
 uniform float sphereRadius;
 uniform vec3 lightPosition;
@@ -42,18 +43,6 @@ varying float v_light;
 // Constants
 
 const float PI = 3.1415926;
-
-// Construct perspective matrix.
-
-mat4 perspective(float p)
-{
-    float perspective = - 1.0 / p;
-    return mat4(
-        1.0, 0.0, 0.0, 0.0,
-        0.0, 1.0, 0.0, 0.0,
-        0.0, 0.0, 1.0, perspective,
-        0.0, 0.0, 0.0, 1.0);
-}
 
 // Rotate vector.
 
@@ -143,7 +132,7 @@ void main()
 	position.xyz = rotatePosition(position.xyz, aspect, rotationAxis, destinationAngle);
 
 	// Set vertex position.
-	gl_Position = u_projectionMatrix * perspective(0.9) * position;
+	gl_Position = u_projectionMatrix * transform * position;
 
 	// Compute lighting.
 	vec3 lightPosNorm = normalize(lightPosition);

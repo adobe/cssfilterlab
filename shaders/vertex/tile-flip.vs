@@ -40,8 +40,8 @@ uniform float randomness;
 // TODO: Turn axis into a uniform.
 //uniform vec3 axis;
 vec3 axis = vec3(0.0, 1.0, 0.0);
-uniform float usePerspective;
-uniform float perspective;
+
+uniform mat4 transform;
 
 // Varyings
 
@@ -136,10 +136,7 @@ void main()
 	vec3 newPosition = rotateVectorByQuaternion((pos.xyz - centroid)* vec3(aspect, 1., 1.0), qRotation) * vec3(1.0 / aspect, 1.0, 1.0) + centroid;
 	pos.xyz = newPosition;
 
-	if (usePerspective >= 0.5)
-		pos = perspectiveMatrix(perspective) * pos;
-
-	gl_Position = u_projectionMatrix * pos;
+	gl_Position = u_projectionMatrix * transform * pos;
 
 	// Pass varyings to the fragment shader.
 	v_depth = abs(rr)/ PI2;

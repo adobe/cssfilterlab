@@ -28,7 +28,6 @@ attribute vec2 a_meshCoord;
 attribute vec3 a_triangleCoord;
 
 uniform mat4 matrix;
-uniform float perspective;
 
 uniform vec4 u_meshBox;
 uniform vec2 u_tileSize;
@@ -62,15 +61,6 @@ mat4 identity() {
 	0.0, 0.0, 0.0, 1.0);
 }
 
-
-mat4 perspectiveMatrix(float p) {
-    float perspective = - 1.0 / p;
-    return mat4(
-	1.0, 0.0, 0.0, 0.0,
-	0.0, 1.0, 0.0, 0.0,
-	0.0, 0.0, 1.0, perspective,
-	0.0, 0.0, 0.0, 1.0);
-}
 
 mat4 translate(vec3 t) {
     return mat4(
@@ -164,5 +154,5 @@ void main()
     ttfx = translate(vec3(0.0, 0.0, p * amount * sqrt(abs(R2 - d2)) * (0.8 + 0.4 * r))) * ttfx;
     ttfx = translate(vec3(0.0, 0.0, (-0.5 + r) * noise * p)) * ttfx;
 
-    gl_Position = u_projectionMatrix * perspectiveMatrix(perspective) * matrix * ttfx * a_position;
+    gl_Position = u_projectionMatrix * matrix * ttfx * a_position;
 }

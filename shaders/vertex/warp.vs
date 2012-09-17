@@ -46,16 +46,6 @@ varying vec2 v_texCoord;
 
 // Helper functions
 
-mat4 perspectiveMatrix(float p)
-{
-    float perspective = - 1.0 / p;
-    return mat4(
-	1.0, 0.0, 0.0, 0.0, 
-	0.0, 1.0, 0.0, 0.0, 
-	0.0, 0.0, 1.0, perspective, 
-	0.0, 0.0, 0.0, 1.0);
-}
-
 float binomialCoefficient(int n, int i)
 {
     return factor[n] / (factor[i] * factor[n-i]);
@@ -89,5 +79,5 @@ void main()
 {
     v_texCoord = a_texCoord;
     vec3 pos = calculate(a_meshCoord.x, a_meshCoord.y);
-    gl_Position = u_projectionMatrix * perspectiveMatrix(1000.0) * matrix * vec4(pos, 1.0);
+    gl_Position = u_projectionMatrix * matrix * vec4(pos, 1.0);
 }

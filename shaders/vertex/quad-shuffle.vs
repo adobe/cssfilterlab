@@ -27,7 +27,6 @@ attribute vec2 a_texCoord;
 attribute vec3 a_triangleCoord;
 
 uniform mat4 matrix;
-uniform float perspective;
 
 uniform mat4 u_projectionMatrix;
 uniform vec2 u_textureSize;
@@ -41,16 +40,6 @@ float tileWidth = u_textureSize.x / u_meshSize.x;
 float tileHeight = u_textureSize.y / u_meshSize.y;
 
 const float maxRotation = 80.0 * 3.14 / 180.0;
-
-mat4 perspectiveMatrix(float p)
-{
-    float perspective = - 1.0 / p;
-    return mat4(
-	1.0, 0.0, 0.0, 0.0,
-	0.0, 1.0, 0.0, 0.0,
-	0.0, 0.0, 1.0, perspective,
-	0.0, 0.0, 0.0, 1.0);
-}
 
 /**
  * Random function based on the tile coordinate. This will return the same value
@@ -79,6 +68,6 @@ void main()
 
     pos.z += dz;
 
-    gl_Position = u_projectionMatrix * perspectiveMatrix(perspective) * matrix * pos;
+    gl_Position = u_projectionMatrix * matrix * pos;
 
 }
