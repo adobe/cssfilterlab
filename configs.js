@@ -396,6 +396,25 @@ window.filterConfigs = {
 	        transform: transform(),
 	    	amount: range(0, 1, 0.01),
 	    	randomSeed: range(0, 1, 0.01)
+	    },
+	},
+	"dissolve": {
+	    hasVertex: true,
+	    hasFragment: true,
+	    mix: mix("multiply"),
+	    mesh: mesh(50, 50),
+	    meshBox: "border-box detached",
+	    params: {
+	        transform: {
+	        	rotationX: 0,
+	            rotationY: 0,
+	            rotationZ: 0
+	        },
+	    	amount: 0.3
+	    },
+	    config: {
+	        transform: transform(),
+	    	amount: range(0, 1, 0.01)
 	    }
 	}
 };
