@@ -68,7 +68,10 @@ function units(unit, value) {
 }
 
 function checkbox() {
-    return range(0, 1, 1);
+    return {
+		type: 'checkbox',
+		mixer: 'dontMix'
+	};
 }
 
 function mix(blendMode, compositeOperator) {

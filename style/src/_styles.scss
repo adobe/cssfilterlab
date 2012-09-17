@@ -33,8 +33,7 @@
 	padding-bottom: 100px;
 }
 
-#filter-list h2,
-#filter-list label {
+#filter-list h2{
 	color: #777;
 	margin: 10px 0 5px;
 	padding:0 0 0 10px;
@@ -537,6 +536,10 @@
         input[type='text'], 
         input[type='number']{
             @extend .text-field;
+        }
+
+        input[type='checkbox'] {
+            display: none;
         }
     }
     
