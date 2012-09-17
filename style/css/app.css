@@ -1871,7 +1871,8 @@ pre,
 #shader-errors > div {
   padding: 10px; }
 #shader-errors .header {
-  font-weight: bold;
+  color: #bbb;
+  text-shadow: 0 -1px 0 black;
   margin-top: 5px; }
 #shader-errors .inline-shader-errors {
   -webkit-touch-callout: auto;
@@ -1882,7 +1883,7 @@ pre,
   user-select: auto; }
 #shader-errors pre {
   margin: 0;
-  font-size: 0.9em; }
+  font-size: 12px; }
 
 .loader .progress-bar {
   border: 1px solid #333;

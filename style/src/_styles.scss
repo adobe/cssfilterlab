@@ -627,7 +627,8 @@ pre,
 	}
 
 	.header {
-    	font-weight: bold;
+        color: #bbb;
+        text-shadow: 0-1px 0 #000;
     	margin-top: 5px;
     }
 
@@ -637,7 +638,7 @@ pre,
 
     pre {
     	margin: 0;
-    	font-size: 0.9em;
+    	font-size: 12px;
     }
 }
 
