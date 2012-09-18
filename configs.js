@@ -349,8 +349,8 @@ window.filterConfigs = {
 	            rotationZ: 0
 	        },
 	        amount: 1, 
-	        strength: 0.2, 
-	        lightIntensity: 1.05
+	        strength: 0.4, 
+	        lightIntensity: 1.0
 	    },
 	    config: {
 	        transform: transform(),
