@@ -170,6 +170,7 @@
     @include flexbox;
     @include prefixProperty(box-orientation, horizontal);
     @include prefixProperty(align-items, center);
+    -webkit-transform: translate3d(0, 0, 0);
 }
 
 .filter-stock .filter-item .filter-preview {
