@@ -374,6 +374,13 @@ limitations under the License.
             </h2>
             <p>CSS FilterLab is a great way to explore the <a href="http://dvcs.w3.org/hg/FXTF/raw-file/tip/filters/index.html" target="_blank">CSS Filters</a> &amp; <a href="http://html.adobe.com/webstandards/csscustomfilters/" target="_blank">Custom Filters</a> feature.
                 To get started, close this popup and click <b>Add Filter</b> to start exploring. You can always access this dialog by clicking <b>Help</b> on the top right corner of the app. Use the links below to learn more:</p>
+            <span class="button-group">
+                <a href="#" class="button large start selected">Explore</a>
+                <a href="#" class="button large inside">Create</a>
+                <a href="#" class="button large inside">Share</a>
+                <a href="#" class="button large inside">Contribute</a>
+                <a href="#" class="button large end">Suport Us</a>
+            </span>    
             <ul class="button-bar">
                 <li id="li-explore" class="selected"><a href="#" onclick="showView(1)">Explore</a></li>
                 <li id="li-create"><a href="#" onclick="showView(2)">Create</a></li>
@@ -450,6 +457,9 @@ limitations under the License.
         </section>
     </div>
     <script type="text/javascript">
+    $(function(){
+        $("#help-link").click()
+    })
         function showView(view){
             $('#li-explore, #li-create, #li-share, #li-contribute, #li-support').removeClass('selected');
             $('#what-explore, #what-create, #what-share, #what-contribute, #what-support').hide();
