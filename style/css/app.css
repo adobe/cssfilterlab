@@ -1512,8 +1512,12 @@ input.dark[type=checkbox]:checked + label {
   height: 50px;
   margin: 0 10px 0 0;
   background: url(../../images/shaderprincess.svg) center center no-repeat;
-  background-size: 115%;
+  background-size: 100%;
   cursor: pointer;
+}
+
+.filter-stock .custom-filter .filter-preview {
+  background-color: #3b3f41;
 }
 
 .filter-stock .filter-item .filter-label {
@@ -1644,7 +1648,7 @@ input.dark[type=checkbox]:checked + label {
   user-select: none;
 }
 #timeline .title {
-  color: #3B3F41;
+  color: #3b3f41;
   text-shadow: 0 1px 0 white;
   font-size: 12px;
   margin-right: 10px;
@@ -1840,7 +1844,7 @@ pre,
 }
 
 .light .code {
-  color: #3B3F41;
+  color: #3b3f41;
   font-size: 12px;
 }
 
@@ -2649,7 +2653,7 @@ body.wait-dock-layout .code-editor {
 }
 .light .panel-tab {
   border: none;
-  color: #3B3F41;
+  color: #3b3f41;
   margin: -1px 0 0;
   text-shadow: 0 1px 0 white;
   background: none;

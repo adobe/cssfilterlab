@@ -178,8 +178,12 @@
 	height: 50px;
 	margin: 0 10px 0 0;
 	background: url(../../images/shaderprincess.svg) center center no-repeat;
-    background-size: 115%;
+    background-size: 100%;
     cursor: pointer;
+}
+
+.filter-stock .custom-filter .filter-preview {
+    background-color: $baseColorDark;
 }
 
 .filter-stock .filter-item .filter-label {
@@ -248,7 +252,7 @@
 	@include user-select(none);
 
     .title {
-        color: #3B3F41;
+        color: $baseColorDark;
         text-shadow: 0 1px 0 white;
         font-size: 12px;
         margin-right: 10px;
@@ -432,7 +436,7 @@ pre,
 }
   
 .light .code{
-    color: #3B3F41;
+    color: $baseColorDark;
     font-size: 12px;  
 }
 .code {
