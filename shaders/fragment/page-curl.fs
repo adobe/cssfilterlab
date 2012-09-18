@@ -22,7 +22,6 @@ uniform float bleedThrough;
 
 // Varyings
 
-varying vec2 v_texCoord;
 varying vec3 v_normal;
 varying float v_gradient;
 

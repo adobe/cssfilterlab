@@ -61,7 +61,6 @@ uniform float curlRadius;
 
 // Varyings
 
-varying vec2 v_texCoord;
 varying vec3 v_normal;
 varying float v_gradient;
 
@@ -115,7 +114,6 @@ void main()
   
     // Position the vertex.
     gl_Position = u_projectionMatrix * v;
-    v_texCoord = a_texCoord;
   
     // Pass the backface gradient intensity to the fragment shader.
     vec2 vw = v.xy - curlPosition;
