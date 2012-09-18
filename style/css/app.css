@@ -1504,6 +1504,7 @@ input.dark[type=checkbox]:checked + label {
   -ms-align-items: center;
   -o-align-items: center;
   align-items: center;
+  -webkit-transform: translate3d(0, 0, 0);
 }
 
 .filter-stock .filter-item .filter-preview {
