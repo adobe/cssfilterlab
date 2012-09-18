@@ -25,6 +25,8 @@ uniform float useColoredBack;
 
 varying float v_lighting;
 
+// Main.
+
 void main()
 {
     if (!gl_FrontFacing && useColoredBack >= 0.5)

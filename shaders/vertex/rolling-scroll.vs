@@ -16,12 +16,18 @@
 
 precision mediump float;
 
+// Built-in attributes
+
 attribute vec4 a_position;
 attribute vec2 a_texCoord;
 attribute vec2 a_meshCoord;
 
+// Built-in uniforms
+
 uniform mat4 u_projectionMatrix;
 uniform vec4 u_meshBox;
+
+// Uniforms passed in from CSS
 
 uniform float rollRatio;
 uniform float initialRollSize;
@@ -29,37 +35,33 @@ uniform float rollSeparation;
 uniform float depth;
 uniform mat4 matrix;
 
+// Varyings
+
 varying float v_lighting;
 
-const float PI = 3.1415;
+// Constants
 
-/*
-The spiral formula in polar coordinates is r = a + b * theta.
-The following two functions are used for this formula.
-*/
+const float PI = 3.1415926;
 
-/*
-Get the current angle based on the desired number of arcs and the current position (normalized from 0 to 1).
-*/
+// The spiral formula in polar coordinates is r = a + b * theta.
+// The following two functions are used for this formula.
+
+// Get the current angle based on the desired number of arcs and the current position (normalized from 0 to 1).
 float getTheta(float t, float arcs)
 {
 	return t * arcs * 2.0 * PI;
 }
 
-/*
-The current radius based on the current angle.
-*/
+// The current radius based on the current angle.
 float getR(float theta)
 {
 	return initialRollSize + rollSeparation / PI * theta;
 }
 
-/*
-2D rotation matrix
-pos = initial position
-rad = angle in radians to rotate by
-result = final position
-*/
+// 2D rotation matrix
+// pos = initial position
+// rad = angle in radians to rotate by
+// result = final position
 vec2 rotate(vec2 pos, float rad)
 {
 	mat2 rot = mat2(cos(rad), -sin(rad),
@@ -67,36 +69,30 @@ vec2 rotate(vec2 pos, float rad)
 	return rot * pos;
 }
 
-/*
-This method returns the coordinates of the point in the spiral space.
-t = position on the spiral, normalized from 0 to 1
-arcs = number of full rotations the spiral does
-lower = boolean that specifies wheter it's the bottom spiral
-*/
+// This method returns the coordinates of the point in the spiral space.
+// t = position on the spiral, normalized from 0 to 1
+// arcs = number of full rotations the spiral does
+// lower = boolean that specifies wheter it's the bottom spiral
 vec2 createRoll(float t, float arcs, bool lower)
 {
 	vec2 pos;
 	float theta = getTheta(t, arcs);
 	float r = getR(theta);
 
-	// transform from polar coordinates back to carthesian
+	// Transform from polar coordinates back to cartesian.
 	pos.y = r * sin(theta);
 	pos.x = r * cos(theta);
 
-	/*
-	The spiral starts from the center (of the end rest of the scroll) and builds outwards.
-	If it doesn't do a full rotation, the end will not meet up with the rest of the scroll.
-	Rotate the spiral so that the final point is at the same height as the point where the rest of the scroll ends.
-	ceil(arcs) - arcs denotes how much is needed for another full rotation
-	so rotate by that amount so that the ends meet up
-	*/
+	// The spiral starts from the center (of the end rest of the scroll) and builds outwards.
+	// If it doesn't do a full rotation, the end will not meet up with the rest of the scroll.
+	// Rotate the spiral so that the final point is at the same height as the point where the rest of the scroll ends.
+	// ceil(arcs) - arcs denotes how much is needed for another full rotation
+	// so rotate by that amount so that the ends meet up
 	pos = rotate(pos, -1.0 * (ceil(arcs) - arcs) * 2.0*PI);
 
-	/*
-	Now that the end of the spiral is at the same height as the end of the normal scroll
-	translate the whole spiral by the radius of the last point on the spiral
-	so that it aligns perfectly with the rest of the scroll.
-	*/
+	// Now that the end of the spiral is at the same height as the end of the normal scroll
+	// translate the whole spiral by the radius of the last point on the spiral
+	// so that it aligns perfectly with the rest of the scroll.
 	pos.x -= getR(getTheta(1.0, arcs));
 
 	if (lower) {
@@ -107,11 +103,9 @@ vec2 createRoll(float t, float arcs, bool lower)
 	return pos;
 }
 
-/*
-Transform from the original coordinate to a normalized parameter t.
-if t = 0 then that is the center-most point of the spiral
-if t = 1 then that is the outmost point of the spiral (the connection point to the rest of the scroll)
-*/
+// Transform from the original coordinate to a normalized parameter t.
+// if t = 0 then that is the center-most point of the spiral
+// if t = 1 then that is the outmost point of the spiral (the connection point to the rest of the scroll)
 float yToT(float y, bool lower)
 {
 	if (lower) {
@@ -122,10 +116,8 @@ float yToT(float y, bool lower)
 	}
 }
 
-/*
-Integral of (r^2 + (dr/dtheta)^2) between 0 and the maximum theta.
-Used for computing length of spiral.
-*/
+// Integral of (r^2 + (dr/dtheta)^2) between 0 and the maximum theta.
+// Used for computing length of spiral.
 float lengthFunc(float x)
 {
 	float a = initialRollSize;
@@ -133,9 +125,7 @@ float lengthFunc(float x)
 	return 0.5 * (((a + b*x) * sqrt((a + b*x)*(a + b*x) + b*b))/b + b*log(sqrt((a + b*x)*(a + b*x) + b*b) + a + b*x));
 }
 
-/*
-The length of the spiral for a provided angle - a specified length used in getArcs.
-*/
+// The length of the spiral for a provided angle - a specified length used in getArcs.
 float arcLengthFunc(float x, float length)
 {
 	return lengthFunc(x) - lengthFunc(0.0) - length;
@@ -148,14 +138,12 @@ float derivateArcLengthFunc(float x)
 	return sqrt((a + b*x)*(a + b*x) + b*b);
 }
 
-/*
-The length of the spiral is the definite integral of (r^2 + (dr/dtheta)^2) between 0 and the maximum theta
-r = a + b * theta, where a is the initial radius and b is the separation in radians.
-The indefinite integral of that is the formula in the lengthFunc function.
-This gives the equation to solve length(theta) - length(0) = L in order to find the particular angle that would result in a provided length.
-I used the Newton-Raphson method to solve this (http://en.wikipedia.org/wiki/Newton-Raphson)
-The result is then normalized to the number of full rotations needed to arrive at the provided length (the provided ratio of half the element)
-*/
+// The length of the spiral is the definite integral of (r^2 + (dr/dtheta)^2) between 0 and the maximum theta
+// r = a + b * theta, where a is the initial radius and b is the separation in radians.
+// The indefinite integral of that is the formula in the lengthFunc function.
+// This gives the equation to solve length(theta) - length(0) = L in order to find the particular angle that would result in a provided length.
+// I used the Newton-Raphson method to solve this (http://en.wikipedia.org/wiki/Newton-Raphson)
+// The result is then normalized to the number of full rotations needed to arrive at the provided length (the provided ratio of half the element)
 float getArcs(float rollRatio)
 {
 	float length = rollRatio * 0.5;
@@ -221,5 +209,4 @@ void main()
 
 	pos.y = pos.y * u_meshBox.w + u_meshBox.y + u_meshBox.w / 2.0;
 	gl_Position = u_projectionMatrix * matrix * pos;
-
 }

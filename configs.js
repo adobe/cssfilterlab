@@ -221,7 +221,7 @@ window.filterConfigs = {
 	"rolling-scroll": {
 	    hasVertex: true,
 	    hasFragment: true,
-	    mix: mix(),
+	    mix: mix("normal"),
 	    mesh: mesh(500, 1),
 	    meshBox: "border-box",
 	    params: {
