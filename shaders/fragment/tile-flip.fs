@@ -45,7 +45,7 @@ void main()
 	// Fade out.
 	c.a = 1.0 - v_depth;
 
-	// Show grid outline
+	// Show grid outline.
 	if (tileOutline >= 0.5) {
 		float cell_width = u_textureSize.x / u_meshSize.y;
 		float cell_height = u_textureSize.y / u_meshSize.x;
