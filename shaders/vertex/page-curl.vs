@@ -15,8 +15,8 @@
  */
 
 /*
- * This shader is largely based on XBPageCurl:
- * https://github.com/xissburg/XBPageCurl
+ * This shader is largely based on XBPageCurl.
+ * From: https://github.com/xissburg/XBPageCurl
  * 
  * XBPageCurl's copyright notice and license is included below.
  */
