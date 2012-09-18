@@ -164,11 +164,8 @@ void main()
 
 	float arcs = getArcs(rollRatio);
 
-	// The scrolls looked squished at the default sized, added this to make them look normal sized.
-	float scalingFactor = PI / 2.0;
-
 	// rollDepth is the scaling factor for the Z-axis, as that is not based on image size, and needs to be specified.
-	float rollDepth = rollDepth * scalingFactor;
+	float rollDepth = rollDepth;
 
 	// Get the coordinates in spiral space, then convert them back to original space.
 	if (pos.y > (1.0 - rollRatio) * 0.5) {
@@ -176,7 +173,7 @@ void main()
 
 		vec2 rollPos = createRoll(t, arcs, true);
 		pos.z = rollDepth * rollPos.x;
-		pos.y = (1.0 - rollRatio) * 0.5 + scalingFactor * rollPos.y;
+		pos.y = (1.0 - rollRatio) * 0.5 + rollPos.y;
 
 		v_lighting = (1.0 - cos(getTheta(1.0, arcs) - getTheta(t, arcs)))*0.25 + 0.5;
 	}
@@ -185,7 +182,7 @@ void main()
 
 		vec2 rollPos = createRoll(t, arcs, false);
 		pos.z = -rollDepth * rollPos.x;
-		pos.y = (1.0 - rollRatio) * -0.5 + scalingFactor * rollPos.y;
+		pos.y = (1.0 - rollRatio) * -0.5 + rollPos.y;
 
 		v_lighting = (1.0 - cos(getTheta(1.0, arcs) - getTheta(t, arcs)))*0.25 + 0.5;
 	}
@@ -193,7 +190,7 @@ void main()
 		v_lighting = 1.0;
 		// Create slight shadow under the rolls
 		// make it the size of the roll with a linear drop-off.
-		float maxRad = scalingFactor * getR(getTheta(1.0, arcs));
+		float maxRad = getR(getTheta(1.0, arcs));
 
 		if (pos.y > (1.0 - rollRatio) * 0.5 - maxRad) {
 			// bottom
