@@ -397,18 +397,20 @@ window.filterConfigs = {
 	    mesh: mesh(25, 32),
 	    meshBox: "border-box detached",
 	    params: {
-	    	amount: 0.2,
-	    	randomness: 2.0,
 	    	transform: {
 	    		rotationX: 0,
 	            rotationY: 0,
 	            rotationZ: 0
-	    	}
+	    	},
+	    	amount: 0.2,
+	    	randomness: 2.0,
+	    	flipAxis: [0.0, 1.0, 0.0]
 	    },
 	    config: {
+	    	transform: transform(),
 	    	amount: range(0, 1, 0.01),
 	    	randomness: range(0, 3, 0.01),
-	    	transform: transform()
+	    	flipAxis: vec3(-1, 1, 0.01)
 	    }
 	},
 	"burn": {

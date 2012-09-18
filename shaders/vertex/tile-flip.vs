@@ -15,8 +15,6 @@
  * limitations under the License.
  */
 
-// TODO: The tiles don't line up exactly with the borders of the element. This should be investigated.
-
 precision mediump float;
 
 // Built-in attributes
@@ -35,13 +33,10 @@ uniform vec2 u_textureSize;
 
 // Uniform passed in from CSS
 
+uniform mat4 transform;
 uniform float amount;
 uniform float randomness;
-// TODO: Turn axis into a uniform.
-//uniform vec3 axis;
-vec3 axis = vec3(0.0, 1.0, 0.0);
-
-uniform mat4 transform;
+uniform vec3 flipAxis;
 
 // Varyings
 
@@ -50,7 +45,7 @@ varying vec2 v_uv;
 
 // Constants
 
-const float PI2 = 1.5707963267948966 * 1.0;
+const float PI2 = 1.5707963267948966;
 
 // Create perspective matrix
 
@@ -116,6 +111,8 @@ float random(vec2 scale)
     return fract(sin(dot(vec2(a_triangleCoord.x, a_triangleCoord.y), scale)) * 4000.0);
 }
 
+// Main
+
 void main()
 {
 	vec4 pos = a_position;
@@ -130,7 +127,7 @@ void main()
 	float r = random(vec2(10.0, 80.0));
 	float rr = mix(0.0, PI2, amount * (1.0 + randomness * r));
 
-	vec4 rotation = vec4(axis, rr);
+	vec4 rotation = vec4(flipAxis, rr);
 	vec4 qRotation = axisAngleToQuaternion(normalize(rotation.xyz), rotation.w);
 
 	vec3 newPosition = rotateVectorByQuaternion((pos.xyz - centroid)* vec3(aspect, 1., 1.0), qRotation) * vec3(1.0 / aspect, 1.0, 1.0) + centroid;
