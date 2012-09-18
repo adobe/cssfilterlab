@@ -368,6 +368,8 @@ window.filterConfigs = {
 	    params: {
 	    	amount: 1,
 	    	sphereRadius: 0.35,
+	    	sphereAxis: [-0.25, 1.0, 0.0],
+	    	sphereRotation: 90,
 	    	ambientLight: 0.0,
 	    	lightPosition: [1.0, -0.25, 0.25],
 	    	lightColor: [1.0, 1.0, 1.0, 1.0],
@@ -380,6 +382,8 @@ window.filterConfigs = {
 	    config: {
 	    	amount: range(0, 1, 0.01),
 	    	sphereRadius: range(0, 0.5, 0.01),
+	    	sphereAxis: vec3(-1, 1, 0.01),
+	    	sphereRotation: range(0, 360, 1),
 	    	ambientLight: range(0, 1, 0.01),
 	    	lightPosition: vec3(-1, 1, 0.01),
 	    	lightColor: color(),

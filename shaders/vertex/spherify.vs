@@ -34,6 +34,8 @@ uniform mat4 u_projectionMatrix;
 uniform mat4 transform;
 uniform float amount;
 uniform float sphereRadius;
+uniform vec3 sphereAxis;
+uniform float sphereRotation;
 uniform vec3 lightPosition;
 
 // Varyings
@@ -43,6 +45,13 @@ varying float v_light;
 // Constants
 
 const float PI = 3.1415926;
+
+// Helpers.
+
+float rad(float deg)
+{
+	return deg * PI / 180.0;
+}
 
 // Rotate vector.
 
@@ -121,15 +130,13 @@ void main()
 
 	// Map plane to sphere using UV coordinates.
 	vec3 spherePosition = computeSpherePosition(position.xyz, vec2(a_texCoord.x, 1.0 - a_texCoord.y), sphereRadius);
-	spherePosition *= vec3(1.0/aspect, 1.0, 1.0);
+	spherePosition *= vec3(1.0 / aspect, 1.0, 1.0);
 
 	// Blend plane and sphere.
 	position.xyz = mix(position.xyz, spherePosition, amount);
 
 	// Rotate sphere.
-	vec3 rotationAxis = vec3(-0.25, 1.0, 0.0);
-	float destinationAngle = PI * 0.5;
-	position.xyz = rotatePosition(position.xyz, aspect, rotationAxis, destinationAngle);
+	position.xyz = rotatePosition(position.xyz, aspect, sphereAxis, rad(sphereRotation));
 
 	// Set vertex position.
 	gl_Position = u_projectionMatrix * transform * position;
