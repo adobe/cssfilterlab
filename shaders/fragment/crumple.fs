@@ -29,32 +29,26 @@ varying float v_light;
 
 // Main
 
-void main() {
-
+void main()
+{
 	const float a = 1.0;
 	float r, g, b;
 
 	// Depth variant
-
 	/*
 	float n = 1.0 - v_height;
-	float v = mix( 1.0, n, amount );
-
+	float v = mix(1.0, n, amount);
 	r = g = b = v;
 	*/
 
 	// Light variant
-
 	float n = v_light;
-	float v = mix( 1.0, n * n, amount );
-
-	r = g = b = sqrt( v );
+	float v = mix(1.0, n * n, amount);
+	r = g = b = sqrt(v);
 
 	// Set color matrix
-
-	css_ColorMatrix = mat4( r, 0.0, 0.0, 0.0,
+	css_ColorMatrix = mat4(r, 0.0, 0.0, 0.0,
 							0.0, g, 0.0, 0.0,
 							0.0, 0.0, b, 0.0,
-							0.0, 0.0, 0.0, a );
-
+							0.0, 0.0, 0.0, a);
 }
