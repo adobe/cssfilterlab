@@ -51,26 +51,27 @@ function range(min, max, step) {
     };
 }
 
-function position(min, max, step) {
+function vec(type, min, max, step) {
 	return {
-		type: 'vec3',
+		type: type,
 		generator: 'vector',
 		mixer: 'mixVector',
 		min: min,
 		max: max,
 		step: step
-	}
+	};
 }
 
-function position2D(min, max, step) {
-	return {
-		type: 'vec2',
-		generator: 'vector',
-		mixer: 'mixVector',
-		min: min,
-		max: max,
-		step: step
-	}
+function vec4(min, max, step) {
+	return vec("vec4", min, max, step);
+}
+
+function vec3(min, max, step) {
+	return vec("vec3", min, max, step);
+}
+
+function vec2(min, max, step) {
+	return vec("vec2", min, max, step);
 }
 
 function units(unit, value) {
@@ -380,7 +381,7 @@ window.filterConfigs = {
 	    	amount: range(0, 1, 0.01),
 	    	sphereRadius: range(0, 0.5, 0.01),
 	    	ambientLight: range(0, 1, 0.01),
-	    	lightPosition: position(-1, 1, 0.01),
+	    	lightPosition: vec3(-1, 1, 0.01),
 	    	lightColor: color(),
 	    	transform: transform()
 	    }
@@ -453,15 +454,15 @@ window.filterConfigs = {
 	    mesh: mesh(50, 50),
 	    meshBox: "border-box detached",
 	    params: {
-	        cylinderPosition: [0.0, 0.0],
-	        cylinderDirection: [-1.0, 1.0],
-	        cylinderRadius: 0.2,
+	        curlPosition: [0.0, 0.0],
+	        curlDirection: 135,
+	        curlRadius: 0.2,
 	        bleedThrough: 0.5
 	    },
 	    config: {
-	        cylinderPosition: position2D(-1, 1, 0.01),
-	        cylinderDirection: position2D(-1, 1, 0.01),
-	        cylinderRadius: range(0, 3, 0.01),
+	        curlPosition: vec2(-1, 1, 0.01),
+	        curlDirection: range(0, 360, 1.0),
+	        curlRadius: range(0, 3, 0.01),
 	        bleedThrough: range(0, 1, 0.01)
 	    }		
 	}
