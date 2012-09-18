@@ -294,8 +294,8 @@ window.filterConfigs = {
 	            rotationY: 20,
 	            rotationZ: 20
 	        },
-	        amount: 10,
-	        t: 0
+	        amount: 250,
+	        t: 0.5
 	    },
 	    config: {
 	        matrix: transform(),
