@@ -3353,3 +3353,40 @@ aside {
 #browser-popup .popup-inner section + section:after {
   content: none;
 }
+
+#help-popup {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-box;
+  display: -o-box;
+  display: box;
+  /* Flex needs to be last, so that we use the new flex-box when it's available */
+  /* FIXME: Disable the new flex box for now. It seems like stable versions of Chromium don't have the whole implementation yet. */
+  /* @include prefixValue(display, flex); */
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -ms-box-orient: vertical;
+  -o-box-orient: vertical;
+  box-orient: vertical;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  -o-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+}
+#help-popup .popup-inner {
+  margin: 0;
+  height: 400px;
+  position: relative;
+  top: auto;
+  left: auto;
+  right: auto;
+  bottom: auto;
+}
+#help-popup article {
+  margin-top: 25px;
+  max-height: 250px;
+  overflow-y: auto;
+}

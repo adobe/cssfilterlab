@@ -21,7 +21,6 @@ limitations under the License.
     <title>CSS FilterLab</title>
     <link rel="stylesheet" type="text/css" href="style/css/app.css">
     <link rel="stylesheet" href="lib/third_party/CodeMirror/lib/codemirror.css">
-    <link rel="stylesheet" type="text/css" href="style/css/extra.css">
 
     <script src="lib/third_party/jquery/jquery-1.8.0.min.js" type="text/javascript"></script>
     <script src="lib/third_party/jquery/jquery-ui-1.8.23.custom.min.js" type="text/javascript"></script>
@@ -67,6 +66,7 @@ limitations under the License.
     <script type="text/javascript" src="lib/views/preset_store_view.js"></script>
     <script type="text/javascript" src="lib/views/loading_progress_view.js"></script>
     <script type="text/javascript" src="lib/views/logo_view.js"></script>
+    <script type="text/javascript" src="lib/views/help_view.js"></script>
     <script type="text/javascript" src="lib/views/import_filter_view.js"></script>
     <script type="text/javascript" src="lib/views/shader_editor_view.js"></script>
     <script type="text/javascript" src="lib/views/shader_code_editor_view.js"></script>
@@ -268,15 +268,7 @@ limitations under the License.
 
                     </div>
                 </div>
-                
-                 <div class="social-cta">
-                    <ul>
-                        <li><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://ado.be/gsdyu12" data-text="A small step for web design, a huge leap for the web -" data-size="large" data-hashtags="CSSCustomFilters,CSSFilterLab" data-dnt="true">Tweet</a></li>
-                        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="http://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-                        <li><a href="https://www.facebook.com/sharer/sharer.php?u=http://html.adobe.com&t=CSSFilterLab"><img class="fb-img" src="style/img/f_logo.png"/> Help us spread the word</a></li>
-                    </ul>
-                </div>
-            </div>                              
+            </div>
             
         </section>
     </div>
@@ -374,67 +366,64 @@ limitations under the License.
             </h2>
             <p>CSS FilterLab is a great way to explore the <a href="http://dvcs.w3.org/hg/FXTF/raw-file/tip/filters/index.html" target="_blank">CSS Filters</a> &amp; <a href="http://html.adobe.com/webstandards/csscustomfilters/" target="_blank">Custom Filters</a> feature.
                 To get started, close this popup and click <b>Add Filter</b> to start exploring. You can always access this dialog by clicking <b>Help</b> on the top right corner of the app. Use the links below to learn more:</p>
-            <span class="button-group">
-                <a href="#" class="button large start selected">Explore</a>
-                <a href="#" class="button large inside">Create</a>
-                <a href="#" class="button large inside">Share</a>
-                <a href="#" class="button large inside">Contribute</a>
-                <a href="#" class="button large end">Suport Us</a>
+            
+            <span class="button-group" id="help-nav">
+                <a href="#what-explore" class="button large start selected">Explore</a>
+                <a href="#what-create" class="button large inside">Create</a>
+                <a href="#what-share" class="button large inside">Share</a>
+                <a href="#what-contribute" class="button large inside">Contribute</a>
+                <a href="#what-support" class="button large end">Suport Us</a>
             </span>    
-            <ul class="button-bar">
-                <li id="li-explore" class="selected"><a href="#" onclick="showView(1)">Explore</a></li>
-                <li id="li-create"><a href="#" onclick="showView(2)">Create</a></li>
-                <li id="li-share"><a href="#" onclick="showView(3)">Brag</a></li>
-                <li id="li-contribute"><a href="#" onclick="showView(4)">Contribute</a></li>
-                <li id="li-support"><a href="#" onclick="showView(5)">Support Us</a></li>
-            </ul>
-            <div id="what-explore">
-                <h3>How do I get started?</h3>
-                <ul>    
-                    <li>CSS FilterLab lets you add filters on web content. You can combine various filters to create cool effects.</li>
-                    <li>Use the SLIDER to turn filters on and off without removing them.</li>
-                    <li>The app also generates webkit based CSS syntax that you can reuse.</li>
-                    <li>You can also use the Timeline to create CSS animations based on filters.</li>
-                    <li>Once you are done, use <a href="#" class="button">Save as preset</a> to save the filter for later use</li>
-                </ul>
-                <p>P.S: Some parts of the CSS Filters spec are still in the experimental phase. We will prompt you on how you can enable them When you encounter them.</p>
-            </div>   
             
-            <div id="what-create" class="view-hidden">
-                <h3>How can I create my own custom filters?</h3>
-                <ul>
-                    <li>CSS Custom Filters are written in OpenGL Shading Language (or GLSL).</li>
-                    <li>To create your own filter, go to the Add Filter > Custom Filters tab and fork a filter by clicking <a href="#" class="customize-link icon icon-fork"></a></li>
-                    <li>You can edit Filter Configurations or edit the underlying vertex &amp; fragment shaders themselves</li>
-                    <li>Use the Error Panel to identify errors and when you are done, save the filter as a Forked Custom Filter</li>
-                </ul>
-            </div> 
-            
-            <div id="what-share" class="view-hidden">
-                <h3>Want bragging rights?</h3>
-                <ul>
-                    <li>Use <a href="#" class="button dark">Publish to GitHub</a> to publish your custom filter as a Github gist.</li>
-                    <li>Share the gist URL with others and they can see your handy work by importing the gist using the <a href="#" class="button dark">Import filter</a> button.</li>
-                    <li>For <b>maximum bragging rights</b>, consider contributing your shader to <a href="https://github.com/adobe/cssfilterlab" target="_blank">our Github repo</a>. If accepted, it will be part of the the default custom filters list.</li> 
-                </ul>
-                <p>P.S: For us to promptly evaluate your pull requests, please fill out and submit the <a href="https://github.com/adobe/cssfilterlab/dev/cssfilterlab-cla.html" target="_blank">Contributor License Agreement</a>.</p>
-            </div> 
-            
-            <div id="what-contribute" class="view-hidden">
-                <h3>How can I help?</h3>
-                <ul>
-                    <li>Please consider contributing your custom filters to <a href="https://github.com/adobe/cssfilterlab" target="_blank">our Github repo</a>.</li>
-                    <li>If you want new features, implement it and and send a pull request on <a href="https://github.com/adobe/cssfilterlab" target="_blank">our Github repo</a>.</li>
-                </ul>
-                <p>P.S: For us to promptly evaluate your pull requests, please fill out and submit the <a href="https://github.com/adobe/cssfilterlab/dev/cssfilterlab-cla.html" target="_blank">Contributor License Agreement</a>.</p>
-            </div> 
-            <div id="what-support" class="view-hidden">
-                <h3>Support #CSSCustomFilters and #CSSFilterLab</h3>
-                <ul>
-                    <li>We think this feature is awesome and it will make web design so much more intutive.</li>
-                    <li>So if you want these new feature in all browsers, let the browser vendors know. We have a <b>tweet</b> button in the app to help you with this.</li>
-                </ul>
-            </div>
+            <article>
+                <div id="what-explore">
+                    <h3>How do I get started?</h3>
+                    <ul>    
+                        <li>CSS FilterLab lets you add filters on web content. You can combine various filters to create cool effects.</li>
+                        <li>Use the SLIDER to turn filters on and off without removing them.</li>
+                        <li>The app also generates webkit based CSS syntax that you can reuse.</li>
+                        <li>You can also use the Timeline to create CSS animations based on filters.</li>
+                        <li>Once you are done, use <a href="#" class="button">Save as preset</a> to save the filter for later use</li>
+                    </ul>
+                    <p>P.S: Some parts of the CSS Filters spec are still in the experimental phase. We will prompt you on how you can enable them When you encounter them.</p>
+                </div>   
+
+                <div id="what-create">
+                    <h3>How can I create my own custom filters?</h3>
+                    <ul>
+                        <li>CSS Custom Filters are written in OpenGL Shading Language (or GLSL).</li>
+                        <li>To create your own filter, go to the Add Filter > Custom Filters tab and fork a filter by clicking <a href="#" class="customize-link icon icon-fork"></a></li>
+                        <li>You can edit Filter Configurations or edit the underlying vertex &amp; fragment shaders themselves</li>
+                        <li>Use the Error Panel to identify errors and when you are done, save the filter as a Forked Custom Filter</li>
+                    </ul>
+                </div> 
+
+                <div id="what-share">
+                    <h3>Share</h3>
+                    <ul>
+                        <li>Use <a href="#" class="button dark">Publish to GitHub</a> to publish your custom filter as a Github gist.</li>
+                        <li>Share the gist URL with others and they can see your handy work by importing the gist using the <a href="#" class="button dark">Import filter</a> button.</li>
+                        <li>For <b>maximum bragging rights</b>, consider contributing your shader to <a href="https://github.com/adobe/cssfilterlab" target="_blank">our Github repo</a>. If accepted, it will be part of the the default custom filters list.</li> 
+                    </ul>
+                    <p>P.S: For us to promptly evaluate your pull requests, please fill out and submit the <a href="https://github.com/adobe/cssfilterlab/dev/cssfilterlab-cla.html" target="_blank">Contributor License Agreement</a>.</p>
+                </div> 
+
+                <div id="what-contribute">
+                    <h3>How can I help?</h3>
+                    <ul>
+                        <li>Please consider contributing your custom filters to <a href="https://github.com/adobe/cssfilterlab" target="_blank">our Github repo</a>.</li>
+                        <li>If you want new features, implement it and and send a pull request on <a href="https://github.com/adobe/cssfilterlab" target="_blank">our Github repo</a>.</li>
+                    </ul>
+                    <p>P.S: For us to promptly evaluate your pull requests, please fill out and submit the <a href="https://github.com/adobe/cssfilterlab/dev/cssfilterlab-cla.html" target="_blank">Contributor License Agreement</a>.</p>
+                </div> 
+                <div id="what-support">
+                    <h3>Support #CSSCustomFilters and #CSSFilterLab</h3>
+                    <ul>
+                        <li>We think this feature is awesome and it will make web design so much more intutive.</li>
+                        <li>So if you want these new feature in all browsers, let the browser vendors know. We have a <b>tweet</b> button in the app to help you with this.</li>
+                    </ul>
+                </div>
+            </article>
         </div>
     </div>
     
@@ -458,37 +447,37 @@ limitations under the License.
     </div>
     <script type="text/javascript">
     $(function(){
-        // $("#help-link").click()
+        $("#help-link").click()
     })
-        function showView(view){
-            $('#li-explore, #li-create, #li-share, #li-contribute, #li-support').removeClass('selected');
-            $('#what-explore, #what-create, #what-share, #what-contribute, #what-support').hide();
-            switch(view)
-            {
-                case 5:
-                        $('#li-support').addClass('selected');
-                        $('#what-support').show();
-                        break;
-                case 4:
-                        $('#li-contribute').addClass('selected');
-                        $('#what-contribute').show();
-                        break;
-                case 3:
-                        $('#li-share').addClass('selected');
-                        $('#what-share').show();
-                        break;
-                case 2:
-                        $('#li-create').addClass('selected');
-                        $('#what-create').show();
-                        break;
-                case 1:
-                default:
-                        $('#li-explore').addClass('selected');
-                        $('#what-explore').show();
-                        break;
-                    
-            }
-        } 
+        // function showView(view){
+        //     $('#li-explore, #li-create, #li-share, #li-contribute, #li-support').removeClass('selected');
+        //     $('#what-explore, #what-create, #what-share, #what-contribute, #what-support').hide();
+        //     switch(view)
+        //     {
+        //         case 5:
+        //                 $('#li-support').addClass('selected');
+        //                 $('#what-support').show();
+        //                 break;
+        //         case 4:
+        //                 $('#li-contribute').addClass('selected');
+        //                 $('#what-contribute').show();
+        //                 break;
+        //         case 3:
+        //                 $('#li-share').addClass('selected');
+        //                 $('#what-share').show();
+        //                 break;
+        //         case 2:
+        //                 $('#li-create').addClass('selected');
+        //                 $('#what-create').show();
+        //                 break;
+        //         case 1:
+        //         default:
+        //                 $('#li-explore').addClass('selected');
+        //                 $('#what-explore').show();
+        //                 break;
+        //             
+        //     }
+        // } 
     </script>
 </body>
 </html>

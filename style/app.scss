@@ -442,4 +442,26 @@ aside {
     section + section:after{
         content: none;
     }
+} 
+
+#help-popup{
+    @include vbox;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+    
+    .popup-inner{
+        margin: 0;
+        height: 400px;
+        position: relative;
+        top: auto;
+        left: auto;
+        right: auto;
+        bottom: auto;
+    }
+    
+    article{
+        margin-top: 25px;
+        max-height: 250px;
+        overflow-y: auto;
+    }
 }
