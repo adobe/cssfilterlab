@@ -3,7 +3,8 @@
 }
 
 .social-cta{
-    float:right;
+    float:right; 
+    display: none;
 }
 .fb-img{
     width:25px;
