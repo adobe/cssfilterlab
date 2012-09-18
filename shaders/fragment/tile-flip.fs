@@ -20,13 +20,7 @@ precision mediump float;
 // Uniform values from CSS
 
 uniform float amount;
-//uniform float outline;
-float outline = 1.0;
-
-//uniform vec2 meshSize;
-vec2 meshSize = vec2(25.0, 32.0);
-//uniform vec2 textureSize;
-vec2 textureSize = vec2(680.0, 530.0);
+uniform float outline;
 
 // Built-in uniforms
 
@@ -42,26 +36,27 @@ varying vec2 v_uv;
 
 void main()
 {
+	// FIXME: Must swap x and y as a workaround for: 
+	// https://bugs.webkit.org/show_bug.cgi?id=96285
+	vec2 u_meshSize = u_meshSize.yx;
+
 	vec4 c = vec4(1.0);
 
 	// Fade out.
 	c.a = 1.0 - v_depth;
 
 	// Show grid outline
-	if (outline > 0.0) {
-
-		float cell_width = textureSize.x / meshSize.y;
-		float cell_height = textureSize.y / meshSize.x;
+	if (outline >= 0.5) {
+		float cell_width = u_textureSize.x / u_meshSize.y;
+		float cell_height = u_textureSize.y / u_meshSize.x;
 		float dd = 1.0;
 
-		if (mod(v_uv.x * textureSize.x + dd, cell_width) < 2.0
-			|| mod(v_uv.y * textureSize.y + dd, cell_height) < 2.0) {
+		if (mod(v_uv.x * u_textureSize.x + dd, cell_width) < 2.0
+			|| mod(v_uv.y * u_textureSize.y + dd, cell_height) < 2.0) {
 			if (amount > 0.0)
 				c.rgb = vec3(1.0 - sqrt(amount));
 		}
-
 	}
-
 	css_ColorMatrix = mat4(c.r, 0.0, 0.0, 0.0,
 							0.0, c.g, 0.0, 0.0,
 							0.0, 0.0, c.b, 0.0,
