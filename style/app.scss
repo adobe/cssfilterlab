@@ -288,7 +288,7 @@ aside {
     #multi-col {
         @include prefixProperty(column-count, 2);
         @include prefixProperty(column-gap, 2em);
-        height: 500px;
+        height: 400px;
 
         h2{
             color: #60C5DF;
@@ -301,8 +301,8 @@ aside {
     #svg-img {
         display: block;
         position: absolute;
-        right: -40px;
-        top: 70px;
+        right: 20px;
+        top: 100px;
     }
 
     #png-img {
