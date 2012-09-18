@@ -20,7 +20,7 @@ precision mediump float;
 // Uniform values from CSS
 
 uniform float amount;
-uniform float outline;
+uniform float tileOutline;
 
 // Built-in uniforms
 
@@ -46,7 +46,7 @@ void main()
 	c.a = 1.0 - v_depth;
 
 	// Show grid outline
-	if (outline >= 0.5) {
+	if (tileOutline >= 0.5) {
 		float cell_width = u_textureSize.x / u_meshSize.y;
 		float cell_height = u_textureSize.y / u_meshSize.x;
 		float dd = 1.0;
