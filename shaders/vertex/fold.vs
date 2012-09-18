@@ -16,16 +16,20 @@
 
 precision mediump float;
 
+// Built-in attributes.
+
 attribute vec4 a_position;
 attribute vec2 a_texCoord;
 attribute vec2 a_meshCoord;
 
+// Built-in uniforms.
+
 uniform mat4 u_projectionMatrix;
 uniform vec2 u_textureSize;
 
-varying float v_lighting;
+// Uniforms passed-in from CSS
 
-uniform mat4 matrix;
+uniform mat4 transform;
 
 uniform float direction;
 
@@ -38,8 +42,15 @@ uniform float spins;
 uniform float phase;
 uniform float shadow;
 
+// Varyings
+
+varying float v_lighting;
+
+// Constants
+
 const float PI = 3.1415629;
 
+// Main
 
 void main()
 {
@@ -53,5 +64,5 @@ void main()
 
     v_lighting = min(1.0, cos(a_meshCoord.x * PI * 8.0 + PI) + shadow);
 
-    gl_Position = u_projectionMatrix * matrix * pos;
+    gl_Position = u_projectionMatrix * transform * pos;
 }

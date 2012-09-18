@@ -14,16 +14,16 @@
  * limitations under the License.
  */
 
-
 precision mediump float;
 
-varying float v_lighting;
+// Uniforms passed in from CSS
 
-// This uniform value is passed in using CSS.
 uniform vec4 backColor;
 uniform float useColoredBack;
 
-const float PI = 3.1415;
+// Varyings
+
+varying float v_lighting;
 
 void main()
 {

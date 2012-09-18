@@ -254,7 +254,7 @@ window.filterConfigs = {
 	    mesh: mesh(40, 8),
 	    meshBox: "border-box",
 	    params: {
-	        matrix: {
+	        transform: {
 	            rotationX: 0,
 	            rotationY: -30,
 	            rotationZ: 0
@@ -264,13 +264,13 @@ window.filterConfigs = {
 	        phase: -0.7,
 	        shadow: 1.5,
 	        mapDepth: 40,
-	        mapCurve: -0.32,
-	        minSpacing: 0.37,
+	        mapCurve: -0.3,
+	        minSpacing: 0.3,
 	        useColoredBack: 1,
-	        backColor: [0.0, 0.0, 0.0, 0.4],
+	        backColor: [0.5, 0.5, 0.5, 1.0],
 	    },
 	    config: {
-	        matrix: transform(),
+	        transform: transform(),
 	        t: range(0, 1, 0.01),
 	        spins: range(0.5, 10, 0.01),
 	        phase: range(-3.14, 3.14, 0.01),
