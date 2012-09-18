@@ -3313,11 +3313,15 @@ aside {
   border-right: 1px solid #ddd;
   padding-right: 4%;
   margin-right: 4%;
+  margin-top: 10px;
 }
 .popup section + section {
   margin-right: 0;
   padding-right: 0;
   border: none;
+}
+.popup section strong {
+  font-family: source-sb;
 }
 .popup section ol {
   padding-left: 30px;
@@ -3330,4 +3334,22 @@ aside {
 #browser-popup .popup-inner {
   width: 700px;
   margin-left: -350px;
+  margin-top: -200px;
+}
+#browser-popup .popup-inner section:after {
+  position: absolute;
+  top: 55%;
+  left: 46.5%;
+  background: white;
+  padding: 7px 0;
+  font-style: italic;
+  font-family: source-l;
+  -webkit-font-smoothing: antialiased;
+  content: "or";
+  text-align: center;
+  color: gray;
+  font-size: 2em;
+}
+#browser-popup .popup-inner section + section:after {
+  content: none;
 }
