@@ -14,20 +14,16 @@
  * limitations under the License.
  */
 
-/**
-
-- a_triangleCoord should be an ivec3 not a vec3?
-- do not 'separate' the quads. Keep together.
-*/
-
 precision mediump float;
+
+// Built-in attributes
 
 attribute vec4 a_position;
 attribute vec2 a_texCoord;
 attribute vec2 a_meshCoord;
 attribute vec3 a_triangleCoord;
 
-uniform mat4 matrix;
+// Built-in uniforms
 
 uniform vec4 u_meshBox;
 uniform vec2 u_tileSize;
@@ -36,31 +32,20 @@ uniform vec2 u_meshSize;
 uniform mat4 u_projectionMatrix;
 uniform vec2 u_textureSize;
 
+// Uniforms passed in from CSS
+
+uniform mat4 transform;
 uniform float t;
-uniform float amount;
-uniform float rotateAngleX;
-uniform float rotateAngleY;
-uniform float rotateAngleZ;
+uniform float explosiveness;
+uniform vec3 tileRotation;
+uniform vec2 center;
 
-uniform float centerX;
-uniform float centerY;
+// Constants
 
-/* Noise used to have the tiles move a little bit when they are out
-   of the explosion sphere.
- */
+// Noise used to have the tiles move a little bit when they are out of the explosion sphere.
 const float noise = 200.0;
 
-/* Aspect ratio */
-float ar = u_textureSize.x / u_textureSize.y;
-
-mat4 identity() {
-    return mat4(
-	1.0, 0.0, 0.0, 0.0,
-	0.0, 1.0, 0.0, 0.0,
-	0.0, 0.0, 1.0, 0.0,
-	0.0, 0.0, 0.0, 1.0);
-}
-
+// Helper functions
 
 mat4 translate(vec3 t) {
     return mat4(
@@ -106,39 +91,39 @@ mat4 rotate(vec3 a) {
     return rotateX(a.x) * rotateY(a.y) * rotateZ(a.z);
 }
 
-/**
- * Random function based on the tile coordinate. This will return the same value
- * for all the vertices in the same tile (i.e., two triangles)
- */
-float random(vec2 scale) {
-    /* use the fragment position for a different seed per-pixel */
+// Random function based on the tile coordinate. This will return the same value
+// for all the vertices in the same tile (i.e., two triangles).
+
+float random(vec2 scale)
+{
+    // Use the fragment position for a different seed per-pixel.
     return fract(sin(dot(vec2(a_triangleCoord.x, a_triangleCoord.y), scale)) * 4000.0);
 }
 
-/**
- * This effect is using a center point for an 'explosion' effect. The further a point is from the
- * center, the more it moves along the x and y axis, radially. The closer to the explosion, the move
- * the point moves along the z axis.
- */
+// Main
+
+// This effect is using a center point for an 'explosion' effect. The further a point is from the
+// center, the more it moves along the x and y axis, radially. The closer to the explosion, the move
+// the point moves along the z axis.
+
 void main()
 {
     // r is dependent on the tile coordinates.
     float r = random(vec2(10.0, 80.0));
 
-    // Tile transform
-    mat4 ttfx = identity();
+    // Complete tile transform
+    mat4 ttfx = mat4(1.0);
 
     // R is the explosion sphere radius
     float p = 2.0 * t;
-    if (p > 1.0) {
+    if (p > 1.0)
         p = 2.0 - p;
-    }
 
     float R2 = p * max(u_textureSize.x, u_textureSize.y);
     R2 *= R2;
 
-    float dx = abs(centerX - a_meshCoord.x) * u_textureSize.x;
-    float dy = abs(centerY - a_meshCoord.y) * u_textureSize.y;
+    float dx = abs(center.x - a_meshCoord.x) * u_textureSize.x;
+    float dy = abs(center.y - a_meshCoord.y) * u_textureSize.y;
     float d2 = dx * dx + dy * dy;
 
     // Find the tile center.
@@ -148,11 +133,11 @@ void main()
 
     // Rotate about the tile center along the z-axis
     ttfx = translate(trc) *
-           rotate(radians(vec3(rotateAngleX * r * p, 2.0 * rotateAngleY * r * p, 0.5 * r * p * rotateAngleZ))) *
+           rotate(radians(vec3(tileRotation.x * r * p, 2.0 * tileRotation.y * r * p, 0.5 * r * p * tileRotation.z))) *
            translate(-trc);
 
-    ttfx = translate(vec3(0.0, 0.0, p * amount * sqrt(abs(R2 - d2)) * (0.8 + 0.4 * r))) * ttfx;
+    ttfx = translate(vec3(0.0, 0.0, p * explosiveness * sqrt(abs(R2 - d2)) * (0.8 + 0.4 * r))) * ttfx;
     ttfx = translate(vec3(0.0, 0.0, (-0.5 + r) * noise * p)) * ttfx;
 
-    gl_Position = u_projectionMatrix * matrix * ttfx * a_position;
+    gl_Position = u_projectionMatrix * transform * ttfx * a_position;
 }

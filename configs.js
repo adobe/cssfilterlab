@@ -310,28 +310,28 @@ window.filterConfigs = {
 	    mesh: mesh(76, 100),
 	    meshBox: "border-box detached",
 	    params: {
-	        matrix: {
+	        transform: {
 	            rotationX: 0,
 	            rotationY: 0,
 	            rotationZ: 0
 	        },
-	        amount: 1.5,
-	        rotateAngleX: 0,
-	        rotateAngleY: 0,
-	        rotateAngleZ: 0,
-	        centerX: 0.5,
-	        centerY: 0.5,
-	        t: 0.5,
-	        fade: 0.7
+	        tileTransform: {
+	            rotationX: 0,
+	            rotationY: 0,
+	            rotationZ: 0
+	        },
+	        explosiveness: 1.5,
+	        tileRotation: [0.0, 0.0, 0.0],
+	        center: [0.5, 0.5],
+	        t: 0.2,
+	        fade: 0.8
 	    },
 	    config: {
-	        matrix: transform(),
-	        amount: range(0, 5, 0.1),
-	        rotateAngleX: range(-180, 180, 0.001),
-	        rotateAngleY: range(-180, 180, 0.001),
-	        rotateAngleZ: range(-180, 180, 0.001),
-	        centerX: range(-1, 2, 0.001),
-	        centerY: range(-1, 2, 0.001),
+	        transform: transform(),
+	        tileTransform: transform(),
+	        explosiveness: range(0, 5, 0.1),
+	        tileRotation: vec3(-180, 180, 1),
+	        center: vec2(-1, 1, 0.01),
 	        t: range(0, 1, 0.01),
 	        fade: range(0, 1, 0.01)
 	    }

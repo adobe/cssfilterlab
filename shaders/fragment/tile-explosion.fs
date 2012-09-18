@@ -14,21 +14,24 @@
  * limitations under the License.
  */
 
-
 precision mediump float;
+
+// Uniforms passed in in from CSS
 
 uniform float t;
 uniform float fade;
 
+// Main
+
 void main()
 {
-    /*
-    // As t increases like [0 -> 0.5 -> 1],
-    // fadeFactor increases and then decreases like [0 -> 1 -> 0].
+    // As t increases from [0 -> 0.5 -> 1],
+    // fadeFactor increases and then decreases from [0 -> 1 -> 0].
     float fadeFactor = 2.0 * t;
     if (fadeFactor > 1.0)
         fadeFactor = 2.0 - fadeFactor;
 
     float currentFade = 1.0 - fadeFactor * fade;
-    css_MixColor = vec4(currentFade);*/
+    css_ColorMatrix = mat4(1.0);
+    css_ColorMatrix[3][3] = currentFade;
 }
