@@ -1511,7 +1511,7 @@ input.dark[type=checkbox]:checked + label {
   height: 50px;
   margin: 0 10px 0 0;
   background: url(../../images/shaderprincess.svg) center center no-repeat;
-  background-size: 100%;
+  background-size: 115%;
   cursor: pointer;
 }
 
@@ -3218,7 +3218,7 @@ aside {
   -ms-column-gap: 2em;
   -o-column-gap: 2em;
   column-gap: 2em;
-  height: 500px;
+  height: 400px;  
 }
 #container #multi-col h2 {
   color: #60C5DF;
@@ -3229,8 +3229,8 @@ aside {
 #container #svg-img {
   display: block;
   position: absolute;
-  right: -40px;
-  top: 70px;
+  right: 20px;
+  top: 100px;
 }
 #container #png-img {
   display: block;
