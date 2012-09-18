@@ -282,7 +282,7 @@ window.filterConfigs = {
 	        backColor: color(),
 	    }
 	},
-	"quad-shuffle": {
+	"tile-shuffle": {
 	    hasVertex: true,
 	    hasFragment: true,
 	    mix: mix(),
@@ -303,7 +303,7 @@ window.filterConfigs = {
 	        t: range(0, 1, 0.01)
 	    }
 	},
-	"quad-explosion": {
+	"tile-explosion": {
 	    hasVertex: true,
 	    hasFragment: true,
 	    mix: mix(),

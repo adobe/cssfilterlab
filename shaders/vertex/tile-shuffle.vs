@@ -14,45 +14,36 @@
  * limitations under the License.
  */
 
-/**
-
-- a_triangleCoord should be an ivec3 not a vec3?
-- do not 'separate' the quads. Keep together.
-*/
-
 precision mediump float;
+
+// Built-in attributes
 
 attribute vec4 a_position;
 attribute vec2 a_texCoord;
 attribute vec3 a_triangleCoord;
 
-uniform mat4 matrix;
+// Uniforms
 
 uniform mat4 u_projectionMatrix;
 uniform vec2 u_textureSize;
 
+// Uniforms passed in from CSS
+
+uniform mat4 matrix;
 uniform float t;
 uniform float amount;
 
-const vec2 u_meshSize = vec2(2.0, 2.0);
+// Random function based on the tile coordinate. This will return the same value
+// for all the vertices in the same tile (i.e., two triangles).
 
-float tileWidth = u_textureSize.x / u_meshSize.x;
-float tileHeight = u_textureSize.y / u_meshSize.y;
-
-const float maxRotation = 80.0 * 3.14 / 180.0;
-
-/**
- * Random function based on the tile coordinate. This will return the same value
- * for all the vertices in the same tile (i.e., two triangles)
- */
-float random(vec2 scale) {
-    /* use the fragment position for a different seed per-pixel */
+float random(vec2 scale)
+{
+    // Use the fragment position for a different seed per-pixel.
     return fract(sin(dot(vec2(a_triangleCoord.x, a_triangleCoord.y), scale)) * 4000.0);
 }
 
-/**
- *
- */
+// Main
+
 void main()
 {
     float r = random(vec2(10.0, 80.0));
@@ -69,5 +60,4 @@ void main()
     pos.z += dz;
 
     gl_Position = u_projectionMatrix * matrix * pos;
-
 }
