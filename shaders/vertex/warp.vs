@@ -75,6 +75,8 @@ vec3 calculate(float u, float v)
     return result;
 }
 
+// Main.
+
 void main()
 {
     v_texCoord = a_texCoord;
