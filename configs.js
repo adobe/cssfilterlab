@@ -256,7 +256,7 @@ window.filterConfigs = {
 	    params: {
 	        matrix: {
 	            rotationX: 0,
-	            rotationY: -24,
+	            rotationY: -30,
 	            rotationZ: 0
 	        },
 	        t: 0.5,
@@ -273,11 +273,11 @@ window.filterConfigs = {
 	        matrix: transform(),
 	        t: range(0, 1, 0.01),
 	        spins: range(0.5, 10, 0.01),
-	        phase: range(-3.14, 3.14, 0.001),
+	        phase: range(-3.14, 3.14, 0.01),
 	        shadow: range(0, 2, 0.01),
-	        mapDepth: range(0.0, 200, 0.0001),
-	        mapCurve: range(-0.5, 0.5, 0.001),
-	        minSpacing: range(0, 0.5, 0.001),
+	        mapDepth: range(0.0, 200, 1),
+	        mapCurve: range(-0.5, 0.5, 0.01),
+	        minSpacing: range(0, 0.5, 0.01),
 	        useColoredBack: checkbox(),
 	        backColor: color(),
 	    }
