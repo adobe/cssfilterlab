@@ -55,6 +55,7 @@ uniform mat4 u_projectionMatrix;
 
 // Uniforms passed in from CSS
 
+uniform mat4 transform;
 uniform vec2 curlPosition;
 uniform float curlDirection;
 uniform float curlRadius;
@@ -111,9 +112,12 @@ void main()
     v_normal = mix(vec3(0.0, 0.0, 1.0), (center - v.xyz)/curlRadius, br1);
     v_normal = mix(v_normal, vec3(0.0, 0.0, -1.0), br2);
     v_normal = normalize(v_normal);
+
+    // Scale the z axis appropriately for perspective values around 1000.  
+    v.z *= 500.0;
   
     // Position the vertex.
-    gl_Position = u_projectionMatrix * v;
+    gl_Position = u_projectionMatrix * transform * v;
   
     // Pass the backface gradient intensity to the fragment shader.
     vec2 vw = v.xy - curlPosition;
