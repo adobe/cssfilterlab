@@ -462,12 +462,18 @@ window.filterConfigs = {
 	    mesh: mesh(50, 50),
 	    meshBox: "border-box detached",
 	    params: {
+	        transform: {
+	        	rotationX: 0,
+	            rotationY: 0,
+	            rotationZ: 0
+	        },
 	        curlPosition: [0.0, 0.0],
 	        curlDirection: 135,
 	        curlRadius: 0.2,
 	        bleedThrough: 0.5
 	    },
 	    config: {
+	        transform: transform(),
 	        curlPosition: vec2(-1, 1, 0.01),
 	        curlDirection: range(0, 360, 1.0),
 	        curlRadius: range(0.05, 3, 0.01),
