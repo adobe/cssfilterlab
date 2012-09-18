@@ -26,9 +26,7 @@ attribute vec3 a_triangleCoord;
 // Built-in uniforms
 
 uniform mat4 u_projectionMatrix;
-// TODO: Use u_meshSize as a uniform.
-//uniform vec2 u_meshSize;
-vec2 u_meshSize = vec2(25.0, 32.0);
+uniform vec2 u_meshSize;
 uniform vec2 u_textureSize;
 
 // Uniform passed in from CSS
@@ -115,11 +113,13 @@ float random(vec2 scale)
 
 void main()
 {
-	vec4 pos = a_position;
+	// FIXME: We must swap x and y as a workaround for: 
+	// https://bugs.webkit.org/show_bug.cgi?id=96285
+	vec2 u_meshSize = u_meshSize.yx;
+
+  	vec4 pos = a_position;
 	float aspect = u_textureSize.x / u_textureSize.y;
 
-	// FIXME: Must swap x and y as a workaround for: 
-	// https://bugs.webkit.org/show_bug.cgi?id=96285
 	float cx = a_triangleCoord.x / u_meshSize.y - 0.5 + 0.5 / u_meshSize.y;
 	float cy = a_triangleCoord.y / u_meshSize.x - 0.5 + 0.5 / u_meshSize.x;
 

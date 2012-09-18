@@ -404,13 +404,15 @@ window.filterConfigs = {
 	    	},
 	    	amount: 0.2,
 	    	randomness: 2.0,
-	    	flipAxis: [0.0, 1.0, 0.0]
+	    	flipAxis: [0.0, 1.0, 0.0],
+	    	tileOutline: 1.0
 	    },
 	    config: {
 	    	transform: transform(),
 	    	amount: range(0, 1, 0.01),
 	    	randomness: range(0, 3, 0.01),
-	    	flipAxis: vec3(-1, 1, 0.01)
+	    	flipAxis: vec3(-1, 1, 0.01),
+	    	tileOutline: checkbox()
 	    }
 	},
 	"burn": {
