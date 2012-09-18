@@ -62,6 +62,17 @@ function position(min, max, step) {
 	}
 }
 
+function position2D(min, max, step) {
+	return {
+		type: 'vec2',
+		generator: 'vector',
+		mixer: 'mixVector',
+		min: min,
+		max: max,
+		step: step
+	}
+}
+
 function units(unit, value) {
 	value.unit = unit;
 	return value;
@@ -434,6 +445,25 @@ window.filterConfigs = {
 	        transform: transform(),
 	    	amount: range(0, 1, 0.01)
 	    }
+	},
+	"page-curl": {
+	    hasVertex: true,
+	    hasFragment: true,
+	    mix: mix("normal"),
+	    mesh: mesh(50, 50),
+	    meshBox: "border-box detached",
+	    params: {
+	        cylinderPosition: [0.0, 0.0],
+	        cylinderDirection: [-1.0, 1.0],
+	        cylinderRadius: 0.2,
+	        bleedThrough: 0.5
+	    },
+	    config: {
+	        cylinderPosition: position2D(-1, 1, 0.01),
+	        cylinderDirection: position2D(-1, 1, 0.01),
+	        cylinderRadius: range(0, 3, 0.01),
+	        bleedThrough: range(0, 1, 0.01)
+	    }		
 	}
 };
 })()
