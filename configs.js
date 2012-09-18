@@ -470,7 +470,7 @@ window.filterConfigs = {
 	    config: {
 	        curlPosition: vec2(-1, 1, 0.01),
 	        curlDirection: range(0, 360, 1.0),
-	        curlRadius: range(0, 3, 0.01),
+	        curlRadius: range(0.05, 3, 0.01),
 	        bleedThrough: range(0, 1, 0.01)
 	    }		
 	}
