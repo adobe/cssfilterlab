@@ -29,11 +29,11 @@ uniform vec4 u_meshBox;
 
 // Uniforms passed in from CSS
 
-uniform float rollRatio;
+uniform mat4 transform;
 uniform float initialRollSize;
+uniform float rollRatio;
 uniform float rollSeparation;
-uniform float depth;
-uniform mat4 matrix;
+uniform float rollDepth;
 
 // Varyings
 
@@ -168,7 +168,7 @@ void main()
 	float scalingFactor = PI / 2.0;
 
 	// rollDepth is the scaling factor for the Z-axis, as that is not based on image size, and needs to be specified.
-	float rollDepth = depth * scalingFactor;
+	float rollDepth = rollDepth * scalingFactor;
 
 	// Get the coordinates in spiral space, then convert them back to original space.
 	if (pos.y > (1.0 - rollRatio) * 0.5) {
@@ -208,5 +208,5 @@ void main()
 	}
 
 	pos.y = pos.y * u_meshBox.w + u_meshBox.y + u_meshBox.w / 2.0;
-	gl_Position = u_projectionMatrix * matrix * pos;
+	gl_Position = u_projectionMatrix * transform * pos;
 }

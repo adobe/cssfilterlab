@@ -225,24 +225,24 @@ window.filterConfigs = {
 	    mesh: mesh(500, 1),
 	    meshBox: "border-box",
 	    params: {
-	        matrix: {
+	        transform: {
 	            rotationX: 0,
 	            rotationY: 60,
 	            rotationZ: 0
 	        },
-	        rollRatio: 0.5,
 	        initialRollSize: 0.02,
+	        rollRatio: 0.5,
 	        rollSeparation: 0.005,
-	        depth: 500,
+	        rollDepth: 500,
 	        useColoredBack: 1,
 	        backColor: [1.0, 1.0, 1.0, 0.9],
 	    },
 	    config: {
-	        matrix: transform(),
-	        rollRatio: range(0, 1, 0.01),
+	        transform: transform(),
 	        initialRollSize: range(0, 0.1, 0.0001),
+	        rollRatio: range(0, 1, 0.01),
 	        rollSeparation: range(0, 0.1, 0.0001),
-	        depth: range(0, 2000, 1),
+	        rollDepth: range(0, 2000, 1),
 	        useColoredBack: checkbox(),
 	        backColor: color(),
 	    }
