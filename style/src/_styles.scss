@@ -464,6 +464,7 @@ pre,
     }
 
     .css-property-value {
+        @include flex(1);
         padding-left: 10px;
     }
 
