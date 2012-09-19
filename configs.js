@@ -227,11 +227,12 @@ window.filterConfigs = {
 	    params: {
 	        transform: {
 	            rotationX: 0,
-	            rotationY: 60,
-	            rotationZ: 0
+	            rotationY: 0,
+	            rotationZ: 0,
+	            perspective: 1000
 	        },
-	        initialRollSize: 0.02,
-	        rollRatio: 0.5,
+	        initialRollSize: 0.05,
+	        rollRatio: 0.7,
 	        rollSeparation: 0.005,
 	        rollDepth: 500,
 	        useColoredBack: 1,
@@ -420,7 +421,7 @@ window.filterConfigs = {
 	    hasFragment: true,
 	    mix: mix("multiply"),
 	    mesh: mesh(50, 50),
-	    meshBox: "border-box detached",
+	    meshBox: "border-box",
 	    params: {
 	        transform: {
 	        	rotationX: 0,
@@ -441,7 +442,7 @@ window.filterConfigs = {
 	    hasFragment: true,
 	    mix: mix("multiply"),
 	    mesh: mesh(50, 50),
-	    meshBox: "border-box detached",
+	    meshBox: "border-box",
 	    params: {
 	        transform: {
 	        	rotationX: 0,
@@ -460,7 +461,7 @@ window.filterConfigs = {
 	    hasFragment: true,
 	    mix: mix("normal"),
 	    mesh: mesh(50, 50),
-	    meshBox: "border-box detached",
+	    meshBox: "border-box",
 	    params: {
 	        transform: {
 	        	rotationX: 0,
