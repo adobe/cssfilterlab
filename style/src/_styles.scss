@@ -553,6 +553,9 @@ pre,
             @extend .text-field.dark;
             width: 60px !important;
         }
+        select > option {
+            color: black;
+        }
         input.config-shader-name {
             width: 200px !important;
         }        
