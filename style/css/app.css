@@ -1886,18 +1886,11 @@ pre,
 .code > * {
   font-size: 1.05em;
 }
+.code .css-property-name {
+  width: 130px;
+}
 .code .css-property-value {
   padding-left: 10px;
-  -webkit-flex: 1;
-  -moz-flex: 1;
-  -ms-flex: 1;
-  -o-flex: 1;
-  flex: 1;
-  -webkit-box-flex: 1;
-  -moz-box-flex: 1;
-  -ms-box-flex: 1;
-  -o-box-flex: 1;
-  box-flex: 1;
 }
 .code .data-uri {
   display: inline-block;
@@ -2683,7 +2676,7 @@ body.wait-dock-layout .code-editor {
   overflow-x: hidden;
 }
 
-body.resizing-dock .panel-view > *:not(.keep-while-resizing) {
+body.resizing-dock .hide-while-resizing {
   display: none !important;
 }
 

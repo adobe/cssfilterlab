@@ -454,12 +454,11 @@ pre,
     }
 
     .css-property-name {
-        
+        width: 130px;
     }
 
     .css-property-value {
         padding-left: 10px;
-        @include flex(1);
     }
 
     .data-uri {

@@ -187,7 +187,7 @@
     overflow-x: hidden;
 }
 
-body.resizing-dock .panel-view > *:not(.keep-while-resizing) {
+body.resizing-dock .hide-while-resizing {
     display: none ! important;
 }
 
