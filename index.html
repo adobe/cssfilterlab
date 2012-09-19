@@ -429,15 +429,15 @@ limitations under the License.
     <div id="import-filter">
         <section>
             
-            <p>You can import a filter from a GitHub gist url. Once imported your filter will appear under the 'Forked custom filters' tab.</p>
+            <p>You can import a filter from a GitHub gist url. Once imported your filter will appear under the 'Forked Custom' tab.</p>
 
             <div class="notice error">
                 <strong>Oops!</strong>
                 There was an error importing from that URL. Please check that it points to a filter gist and try again.
             </div>        
 
+            <label for="gist-url">Filter Gist URL:</label>
             <form action="#">
-                <label for="gist-url">Filter Gist URL:</label>
                 <input type="url" class="text-field dark" name="gist-url" placeholder="gist URL" required/>
                 <a href="#" class="button dark disabled cta">Import</a>
             </form>
@@ -447,7 +447,7 @@ limitations under the License.
     <script type="text/javascript">
     $(function(){
         $('#filter-store-toggle').click()
-        $('#filter-dock .panel-tab-list .panel-tab:nth-child(3)').click()
+        $('#filter-dock .panel-tab-list .panel-tab:nth-child(4)').click()
         // $('[data-filtername="spherify1"]').find('.customize-link').click()
         //     $('#config-editor .config-parameters li:last').click()
         //     $('.clicks-catcher').click()

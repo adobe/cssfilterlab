@@ -2297,11 +2297,6 @@ body.wait-dock-layout .code-editor {
 }
 #import-filter form {
   width: 100%;
-}
-#import-filter form input[type='url'] {
-  width: 320px;
-}
-#import-filter form fieldset {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-box;
@@ -2320,9 +2315,26 @@ body.wait-dock-layout .code-editor {
   -ms-flex-direction: row;
   -o-flex-direction: row;
   flex-direction: row;
-  margin: 0;
-  padding: 0;
-  border: none;
+}
+#import-filter form input[type='url'] {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-box;
+  display: -o-box;
+  display: box;
+  /* Flex needs to be last, so that we use the new flex-box when it's available */
+  /* FIXME: Disable the new flex box for now. It seems like stable versions of Chromium don't have the whole implementation yet. */
+  /* @include prefixValue(display, flex); */
+  -webkit-flex: 1;
+  -moz-flex: 1;
+  -ms-flex: 1;
+  -o-flex: 1;
+  flex: 1;
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -ms-box-flex: 1;
+  -o-box-flex: 1;
+  box-flex: 1;
 }
 #import-filter form a {
   width: 40px;
@@ -3131,7 +3143,7 @@ aside {
 
 #filter-dock {
   box-shadow: 0 3px 15px 3px rgba(0, 0, 0, 0.4);
-  width: 450px;
+  width: 350px;
   height: 70%;
   top: 0;
   position: absolute;

@@ -820,23 +820,19 @@ pre,
         display: block;
         margin: 0 0 5px 0 ;
         color: #a4b4b7;
-        font-size: 12px;
+        font-size: 12px; 
         text-shadow: 0 -1px 0 #000000;
     }
     
     form {     
         width: 100%;
         
-        input[type='url']{ 
-            width: 320px;
-        }
+        @include hbox;
         
-        fieldset{
-            @include hbox; 
-            margin: 0;
-            padding: 0;
-            border: none;
-        }                 
+        input[type='url']{  
+            @include flexbox;
+            @include flex(1);
+        }
         
         a{
             width: 40px;
