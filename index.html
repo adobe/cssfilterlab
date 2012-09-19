@@ -81,7 +81,7 @@ limitations under the License.
 <body>     
 
     <div id="components">
-        <div id="logo" class="keep-while-resizing">
+        <div id="logo">
             <h1 class="title left">CSS FilterLab</h1>
             <a href="#" id="filter-store-toggle" class="button drop-down dark">Add Filter<i class="icon drop-down-triangle dark"></i></a>
         </div>
@@ -90,8 +90,8 @@ limitations under the License.
             <div>Your browser does not support custom filters. <a href="#" class="filters-not-supported-help">Help</a></div>
         </div>
 
-        <div id="filter-code" class="code"></div>
-        <div id="animation-code" class="code"></div>
+        <div id="filter-code" class="code hide-while-resizing"></div>
+        <div id="animation-code" class="code hide-while-resizing"></div>
 
         <div id="timeline">
             <h4 class="title">Timeline</h4>
@@ -119,7 +119,7 @@ limitations under the License.
             </ul>
         </aside>
        
-        <div id="animations-container" class="keep-while-resizing">
+        <div id="animations-container">
             <ul class="nav left">
                 <li class="preset"> 
                     <a id="active-animation" class="button drop-down">
@@ -162,7 +162,7 @@ limitations under the License.
 
                 <div class="config-row">
                     <label for="config-shader-mix-blend-mode">Blend Mode:</label>
-                    <select type="text" class="config-shader-mix-blend-mode" name="config-shader-mix-blend-mode">
+                    <select type="text" class="button dark config-shader-mix-blend-mode" name="config-shader-mix-blend-mode">
                         <option value="normal">normal</option>
                         <option value="darken">darken</option>
                         <option value="multiply">multiply</option>

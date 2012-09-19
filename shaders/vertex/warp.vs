@@ -18,14 +18,12 @@ precision mediump float;
 
 // Built-in attributes
 
-attribute vec2 a_texCoord;
 attribute vec2 a_meshCoord;
 
 // Built-in uniforms
 
 uniform mat4 u_projectionMatrix;
 uniform vec4 u_meshBox;
-uniform vec2 u_textureSize;
 
 // Constants
 
@@ -38,17 +36,17 @@ const int m = cols - 1;
 
 uniform mat4 matrix;
 uniform float k[cols * rows * 3];
-uniform float factor[cols > rows ? cols : rows];
-
-// Varyings
-
-varying vec2 v_texCoord;
 
 // Helper functions
 
+float factor_fn(int n)
+{
+    return (n < 2) ? 1.0 : ((n < 3) ? 2.0 : 6.0);
+}
+
 float binomialCoefficient(int n, int i)
 {
-    return factor[n] / (factor[i] * factor[n-i]);
+    return factor_fn(n) / (factor_fn(i) * factor_fn(n-i));
 }
 
 float calculateB(int i, int n, float u)
@@ -79,7 +77,6 @@ vec3 calculate(float u, float v)
 
 void main()
 {
-    v_texCoord = a_texCoord;
     vec3 pos = calculate(a_meshCoord.x, a_meshCoord.y);
     gl_Position = u_projectionMatrix * matrix * vec4(pos, 1.0);
 }
