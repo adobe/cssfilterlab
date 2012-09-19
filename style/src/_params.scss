@@ -34,7 +34,12 @@ table.paramsTable {
     }
 
     tr.field {
-        & > td.field-label {
+
+        .multi-control-table {
+            width: 100%;
+        }
+
+        td.field-label {
             padding: 0 6px 0 0;
             text-align: right;
             width: 75px;
@@ -43,14 +48,9 @@ table.paramsTable {
             overflow: hidden;
         }
 
-        & > td:nth-child(2) {
-            min-width: 100px;
-/*            width: 100%;*/
-        }
-
-        & > td:last-child {
-            min-width: 50px;
-            max-width: 50px;
+        td.field-value-label {
+            width: 65px;
+            padding-right: 5px;
         }
     }
 
@@ -61,56 +61,26 @@ table.paramsTable {
         text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.2);
     }
 
-    tr > td:nth-child(3) {
-    	width: 20px;
-    }
-
-    .param-color {   
-        width: 100%;
-        td:nth-child(1) {
-            width: 10px;
-        }
-
-        td:nth-child(2) {
-            min-width: 100px;
-        }
-
-        td:nth-child(3) {
-            min-width: 25px;
-        }
-    }
-
     .color-preview {
-        padding: 0;
+        padding: 0px 30px 0px 30px;
+        color: transparent;
     }
 
     .param-color-preview {
         cursor: pointer;
         @include prefixProperty(appearance, none);
-        width: 21px;
+        width: 100%;
         height: 21px;
-        margin: 10px 0 0 -20px;
+        margin: 10px 0 0 0px;
         border: 1px solid rgba(0,0,0,.8);
         border-radius: 3px;
         @include prefixProperty(box-shadow, inset 0 1px 2px rgba(0, 0, 0, 0.4));
-        @include prefixProperty(transition, all 0.2s ease-out);
     }
 
     .param-color-preview::-webkit-color-swatch-wrapper {
         display: none;
     }
     
-    .param-transform td:first-child {
-        min-width: 40px;
-    }
-    .param-transform td:nth-child(2) {
-        min-width: 80px;  
-        width: 100%;
-    }
-    .param-transform td:nth-child(3) {
-        min-width: 20px;
-    }
-
     .warp-control {
         background-color: #202020;
         border-radius: 4px;
@@ -131,11 +101,14 @@ table.paramsTable {
 
     .value-label {
         display: block;
+        text-align: center;
         margin: 0 0 0 3px; 
         padding: 0 3px;
         text-shadow: 0 1px 0 #000;
-        width: 50px;
-        text-align: left;
+        width: 100%;
+        font-size: 1.2em;
+        cursor: pointer;
+        text-decoration: underline;
     }
 
     .value-editor {
@@ -144,11 +117,12 @@ table.paramsTable {
         @include prefixProperty(box-shadow, 0px 0px 3px 1px black);
         outline: none;
         border: none;
-        width: 99%;
+        width: 100%;
         padding: 0 3px;
         border-radius: 3px;
         background: rgba(255,255,255,.15);
         color: #fff;
+        text-align: center;
     }
     .param-color-editor{
         @extend .value-editor;
