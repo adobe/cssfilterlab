@@ -421,7 +421,7 @@ window.filterConfigs = {
 	    hasFragment: true,
 	    mix: mix("multiply"),
 	    mesh: mesh(50, 50),
-	    meshBox: "border-box detached",
+	    meshBox: "border-box",
 	    params: {
 	        transform: {
 	        	rotationX: 0,
@@ -442,7 +442,7 @@ window.filterConfigs = {
 	    hasFragment: true,
 	    mix: mix("multiply"),
 	    mesh: mesh(50, 50),
-	    meshBox: "border-box detached",
+	    meshBox: "border-box",
 	    params: {
 	        transform: {
 	        	rotationX: 0,
@@ -461,7 +461,7 @@ window.filterConfigs = {
 	    hasFragment: true,
 	    mix: mix("normal"),
 	    mesh: mesh(50, 50),
-	    meshBox: "border-box detached",
+	    meshBox: "border-box",
 	    params: {
 	        transform: {
 	        	rotationX: 0,
