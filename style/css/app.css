@@ -1451,7 +1451,7 @@ input.dark[type=checkbox]:checked + label {
 }
 
 #animations li:hover,
-.filter-stock .filter-item .customize-link:hover {
+.filter-stock .filter-item {
   cursor: pointer;
 }
 
@@ -1513,7 +1513,6 @@ input.dark[type=checkbox]:checked + label {
   margin: 0 10px 0 0;
   background: url(../../images/shaderprincess.svg) center center no-repeat;
   background-size: 100%;
-  cursor: pointer;
 }
 
 .filter-stock .custom-filter .filter-preview {
@@ -1537,7 +1536,6 @@ input.dark[type=checkbox]:checked + label {
   max-width: 100px;
   color: #bfbfbf;
   text-shadow: 0px 1px 1px black;
-  cursor: pointer;
 }
 
 .filter-stock .filter-item .button-box {
@@ -1578,7 +1576,14 @@ input.dark[type=checkbox]:checked + label {
 }
 
 .filter-stock .filter-item .button-box > a {
+  opacity: 0.75;
   margin-left: 5px;
+  padding: 5px 5px 7px 5px;
+  border-radius: 5px;
+}
+.filter-stock .filter-item .button-box > a:hover {
+  opacity: 1;
+  box-shadow: 0 0px 2px rgba(0, 0, 0, 0.6);
 }
 
 #animations-container {
@@ -2222,6 +2227,10 @@ body.wait-dock-layout .code-editor {
 
 .icon-remove {
   background: transparent url(../img/remove.png) center center no-repeat;
+}
+
+.icon-edit {
+  background: transparent url(../img/edit.png) center center no-repeat;
 }
 
 .icon-fork {
