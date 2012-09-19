@@ -200,7 +200,6 @@ window.filterConfigs = {
 	            rotationY: 0,
 	            rotationZ: 0
 	        },
-	        factor: "array(" + [1, 1, 2, 6].join(", ") + ")",
 	        useColoredBack: 1,
 	        backColor: [1.0, 1.0, 1.0, 1.0],
 	    },
@@ -209,9 +208,6 @@ window.filterConfigs = {
 	            type: 'warp',
 	            generator: 'warpArray',
 	            mixer: 'mixVectorOfVectors'
-	        },
-	        factor: {
-	            type: 'unknown'
 	        },
 	        matrix: transform(),
 	        useColoredBack: checkbox(),
