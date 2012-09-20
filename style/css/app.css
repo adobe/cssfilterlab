@@ -2424,7 +2424,8 @@ table.paramsTable {
     overflow: hidden; }
   table.paramsTable tr.field td.field-value-label {
     width: 65px;
-    padding-right: 5px; }
+    padding-right: 5px;
+    text-align: left; }
   table.paramsTable tr.header {
     font-weight: bold;
     background: rgba(0, 0, 0, 0.2);
@@ -2476,13 +2477,11 @@ table.paramsTable {
     transform-origin: 0 50%;
     margin: 0 0 0 15px; }
   table.paramsTable .value-label {
-    display: block;
-    text-align: center;
+    text-align: left;
     margin: 0 0 0 3px;
-    padding: 0 3px;
+    padding: 0 3px 0 2px;
     text-shadow: 0 1px 0 #000;
-    width: 100%;
-    font-size: 1.2em;
+    font-size: 1.1em;
     cursor: pointer;
     text-decoration: underline; }
   table.paramsTable .value-editor, table.paramsTable .param-color-editor {
@@ -2500,7 +2499,7 @@ table.paramsTable {
     border-radius: 3px;
     background: rgba(255, 255, 255, 0.15);
     color: #fff;
-    text-align: center; }
+    text-align: left; }
   table.paramsTable .param-color-editor {
     -webkit-transition: all 0.2s ease-out;
     -moz-transition: all 0.2s ease-out;
