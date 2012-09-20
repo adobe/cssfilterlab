@@ -2949,6 +2949,7 @@ a:not([class~="button"]):hover {
   box-align: center;
   padding: 5px 10px 0 15px;
   box-sizing: border-box;
+  overflow: hidden;
   -webkit-justify-content: space-between;
 }
 #logo h1, #logo h2, #logo h3, #animations-container h1, #animations-container h2, #animations-container h3 {
@@ -3120,7 +3121,7 @@ a:not([class~="button"]):hover {
   min-width: 320px;
 }
 
-.right {
+.panel-right {
   position: absolute;
   right: 0px;
   top: 0px;
@@ -3128,13 +3129,13 @@ a:not([class~="button"]):hover {
   left: 320px;
   overflow: hidden;
 }
-.right .nav {
+.panel-right .nav {
   position: absolute;
   right: 15px;
   top: 13px;
   min-width: 200px;
 }
-body.hosted-version .right .nav {
+body.hosted-version .panel-right .nav {
   right: 74px;
 }
 
