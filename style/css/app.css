@@ -3084,6 +3084,10 @@ a:not([class~="button"]):hover {
   box-flex: 1;
 }
 
+#animations-container {
+  overflow: hidden;
+}
+
 .nav {
   margin: 0;
   padding: 0;
@@ -3115,11 +3119,23 @@ a:not([class~="button"]):hover {
 .nav li + li {
   margin-left: 15px;
 }
+.nav.left {
+  min-width: 320px;
+}
 
-.nav.right {
+.right {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  left: 320px;
+  overflow: hidden;
+}
+.right .nav {
   position: absolute;
   right: 15px;
   top: 13px;
+  min-width: 200px;
 }
 
 .modal {
