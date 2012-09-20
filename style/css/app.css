@@ -1326,8 +1326,8 @@ input.dark[type=checkbox]:checked + label {
 .filter-stock .filter-item .filter-preview {
   width: 75px;
   height: 50px;
-  margin: 0 10px 0 0;
-  background: url(../../images/shaderprincess.svg) center center no-repeat;
+  margin: 0 15px 0 5px;
+  background: url(../../images/shaderprincess.svg) center 6px no-repeat;
   background-size: 100%; }
 
 .filter-stock .custom-filter .filter-preview {
