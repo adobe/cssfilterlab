@@ -2843,6 +2843,21 @@ table.paramsTable .param-color-editor {
   padding: 0 3px 0 3px;
   width: 55px;
 }
+table.paramsTable .multi-control-table.param-color input[type='range'] {
+  height: 5px;
+}
+table.paramsTable .multi-control-table.param-color .range-r {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(245, 248, 250, 0.1))), -webkit-gradient(linear, left top, right top, from(black), to(red));
+}
+table.paramsTable .multi-control-table.param-color .range-g {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(245, 248, 250, 0.1))), -webkit-gradient(linear, left top, right top, from(black), to(lime));
+}
+table.paramsTable .multi-control-table.param-color .range-b {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(245, 248, 250, 0.1))), -webkit-gradient(linear, left top, right top, from(black), to(blue));
+}
+table.paramsTable .multi-control-table.param-color .range-a {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(245, 248, 250, 0.1))), -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0)), to(white)), -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.4)), to(rgba(245, 248, 250, 0.4))), url(../img/color_bg.png);
+}
 
 body {
   font: 14px "Source Sans Pro", "source", helvetica, arial, sans-serif;

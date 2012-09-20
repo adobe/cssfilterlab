@@ -85,7 +85,7 @@ table.paramsTable {
     .param-color-preview::-webkit-color-swatch-wrapper {
         display: none;
     }
-    
+
     .warp-control {
         background-color: #202020;
         border-radius: 4px;
@@ -132,5 +132,32 @@ table.paramsTable {
         @include prefixProperty(transition, all 0.2s ease-out);
         padding: 0 3px 0 3px;
         width: 55px;
+    }
+
+    .multi-control-table.param-color {
+        input[type='range'] {
+            height: 5px;
+        }
+        .range-r {
+            background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(245, 248, 250, 0.1))),
+                        -webkit-gradient(linear, left top, right top, from(#000), to(#f00));
+        }
+
+        .range-g {
+            background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(245, 248, 250, 0.1))),
+                        -webkit-gradient(linear, left top, right top, from(#000), to(#0f0));
+        }
+
+        .range-b {
+            background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(245, 248, 250, 0.1))),
+                        -webkit-gradient(linear, left top, right top, from(#000), to(#00f));
+        }
+
+        .range-a {
+            background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(245, 248, 250, 0.1))),
+                        -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0)), to(#fff)),
+                        -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.4)), to(rgba(245, 248, 250, 0.4))),
+                        url(../img/color_bg.png);
+        }
     }
 }
