@@ -1898,8 +1898,17 @@ pre,
   width: 130px;
 }
 .code .css-property-value {
-  padding-left: 0;
-  width: 90% !important;
+  -webkit-flex: 1;
+  -moz-flex: 1;
+  -ms-flex: 1;
+  -o-flex: 1;
+  flex: 1;
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -ms-box-flex: 1;
+  -o-box-flex: 1;
+  box-flex: 1;
+  padding-left: 10px;
 }
 .code .data-uri {
   display: inline-block;

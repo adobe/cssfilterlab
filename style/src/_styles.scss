@@ -466,8 +466,8 @@ pre,
     }
 
     .css-property-value {
-        padding-left: 0;
-        width: 90% !important;
+        @include flex(1);
+        padding-left: 10px;
     }
 
     .data-uri {
