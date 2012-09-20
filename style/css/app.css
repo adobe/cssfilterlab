@@ -2519,6 +2519,7 @@ body.wait-dock-layout .code-editor {
   -ms-box-flex: 1;
   -o-box-flex: 1;
   box-flex: 1;
+  position: relative;
 }
 
 .panel-column.horizontal,
@@ -2992,10 +2993,10 @@ a:not([class~="button"]):hover {
 }
 
 #animations-container {
+  overflow: hidden;
   background: #fff;
   border-bottom: 1px solid #fff;
   box-shadow: none;
-  -webkit-justify-content: space-between;
 }
 #animations-container h1, #animations-container h2, #animations-container h3 {
   margin: 0 auto;
@@ -3084,10 +3085,6 @@ a:not([class~="button"]):hover {
   box-flex: 1;
 }
 
-#animations-container {
-  overflow: hidden;
-}
-
 .nav {
   margin: 0;
   padding: 0;
@@ -3136,6 +3133,9 @@ a:not([class~="button"]):hover {
   right: 15px;
   top: 13px;
   min-width: 200px;
+}
+body.hosted-version .right .nav {
+  right: 74px;
 }
 
 .modal {
@@ -3296,19 +3296,6 @@ aside {
 #github-popup #gist-link {
   display: block;
   padding-top: 5px;
-}
-
-.logo {
-  display: block;
-  width: 40px;
-  height: 64px;
-  background: url(../../images/logo.svg) center center no-repeat;
-  text-indent: -9999px;
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin-right: 16px;
-  z-index: 1000;
 }
 
 .drop-down, .drop-down:hover {
