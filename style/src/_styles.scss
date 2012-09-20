@@ -176,8 +176,8 @@
 .filter-stock .filter-item .filter-preview {
 	width: 75px;
 	height: 50px;
-	margin: 0 10px 0 0;
-	background: url(../../images/shaderprincess.svg) center center no-repeat;
+	margin: 0 15px 0 5px;
+	background: url(../../images/shaderprincess.svg) center 6px no-repeat;
     background-size: 100%;
 }
 
@@ -199,14 +199,14 @@
     @include prefixProperty(box-align, center);
     @include prefixProperty(box-pack, end);
     @include prefixProperty(flex, 0);
-    padding: 0 15px 0 10px;
+    padding: 0 0 0 10px;
 }
 
 .filter-stock .filter-item .button-box > a {
     opacity: 0.75;
     margin-left: 5px;
-    padding: 5px 5px 7px 5px;
-    border-radius: 5px;
+    padding: 0 5px 10px 5px;
+    border-radius: 3px;
     
     &:hover{
         opacity: 1;
@@ -447,12 +447,14 @@ pre,
 }
 .code {
     color: #000; 
-    padding: 10px;
+    padding: 15px;
     @include user-select(auto);
     @include prefixProperty(box-sizing, border-box);
 
     &#filter-code {
         @include hbox;
+        overflow-x: hidden;
+        overflow-y: auto;
     }
 
     > * {
@@ -464,7 +466,8 @@ pre,
     }
 
     .css-property-value {
-        padding-left: 10px;
+        padding-left: 0;
+        width: 90% !important;
     }
 
     .data-uri {
@@ -531,13 +534,15 @@ pre,
         position: relative;
         padding: 7px 10px;
         line-height: 23px;
+        overflow-x: hidden;
 
         label {
             display: block;
-            width: 200px;
+            width: 180px;
             @include noflex; 
             font-size: 13px;
             color: #bbb;
+            text-align: right;
             text-shadow: 0px -1px 0 rgba(0, 0, 0, 0.8);
             margin: 0 7px 0 0;
         }
@@ -581,7 +586,7 @@ pre,
     
     .config-parameters-row {
         position: relative;
-        margin: 10px;
+        margin: 15px;
         border-radius: 4px;
         box-shadow: inset 0 0 4px rgba(0,0,0,.8);
         padding: 0; 
@@ -591,6 +596,7 @@ pre,
         @include flex(1); 
         background: rgba(255, 255, 255, 0.05);
         text-align: left;
+        padding-bottom: 10px;
     }
 
     .config-parameters-wrapper {
@@ -750,15 +756,15 @@ pre,
 } 
 
 .icon-remove{
-    background: transparent url(../img/remove.png) center center no-repeat;
+    background: transparent url(../img/remove.png) center 4px no-repeat;
 }
 
 .icon-edit{
-    background: transparent url(../img/edit.png) center center no-repeat;
+    background: transparent url(../img/edit.png) center 4px no-repeat;
 }
 
 .icon-fork{
-    background: transparent url(../img/fork.png) center center no-repeat;
+    background: transparent url(../img/fork.png) center 3px no-repeat;
 }   
 
 .icon-close{
