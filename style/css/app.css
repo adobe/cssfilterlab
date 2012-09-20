@@ -2529,6 +2529,7 @@ body.wait-dock-layout .code-editor {
   -ms-box-flex: 1;
   -o-box-flex: 1;
   box-flex: 1;
+  position: relative;
 }
 
 .panel-column.horizontal,
@@ -2958,6 +2959,7 @@ a:not([class~="button"]):hover {
   box-align: center;
   padding: 5px 10px 0 15px;
   box-sizing: border-box;
+  overflow: hidden;
   -webkit-justify-content: space-between;
 }
 #logo h1, #logo h2, #logo h3, #animations-container h1, #animations-container h2, #animations-container h3 {
@@ -2978,6 +2980,15 @@ a:not([class~="button"]):hover {
   box-flex: 1;
   margin: -6px 0 0;
 }
+#logo .experiment, #animations-container .experiment {
+  display: inline-block;
+  background: url(../img/experiment.png) no-repeat;
+  width: 69px;
+  height: 18px;
+  text-indent: -9999px;
+  vertical-align: bottom;
+  padding-bottom: 3px;
+}
 #logo .button.drop-down, #animations-container .button.drop-down {
   min-width: 50px;
   text-indent: 2px;
@@ -2993,10 +3004,10 @@ a:not([class~="button"]):hover {
 }
 
 #animations-container {
+  overflow: hidden;
   background: #fff;
   border-bottom: 1px solid #fff;
   box-shadow: none;
-  -webkit-justify-content: space-between;
 }
 #animations-container h1, #animations-container h2, #animations-container h3 {
   margin: 0 auto;
@@ -3116,11 +3127,26 @@ a:not([class~="button"]):hover {
 .nav li + li {
   margin-left: 15px;
 }
+.nav.left {
+  min-width: 320px;
+}
 
-.nav.right {
+.panel-right {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  left: 320px;
+  overflow: hidden;
+}
+.panel-right .nav {
   position: absolute;
   right: 15px;
   top: 13px;
+  min-width: 200px;
+}
+body.hosted-version .panel-right .nav {
+  right: 74px;
 }
 
 .modal {
@@ -3165,6 +3191,10 @@ aside {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+
+#filter-dock.hidden {
+  display: none;
 }
 
 .clicks-catcher {
@@ -3279,19 +3309,6 @@ aside {
   padding-top: 5px;
 }
 
-.logo {
-  display: block;
-  width: 40px;
-  height: 64px;
-  background: url(../../images/logo.svg) center center no-repeat;
-  text-indent: -9999px;
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin-right: 16px;
-  z-index: 1000;
-}
-
 .drop-down, .drop-down:hover {
   background-image: url(../img/drop-down-triangle.png), linear-gradient(top, #f5f8fa, #e3e5e5);
   background-image: url(../img/drop-down-triangle.png), -webkit-gradient(linear, left top, left bottom, from(#f5f8fa), to(#e3e5e5));
@@ -3394,4 +3411,16 @@ aside {
   margin-top: 25px;
   max-height: 250px;
   overflow-y: auto;
+}
+#help-popup article .button {
+  vertical-align: middle;
+  margin-left: 5px;
+}
+
+#help-popup.hidden {
+  display: none;
+}
+
+#fork-github a.button {
+  margin: 5px;
 }

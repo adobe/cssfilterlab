@@ -118,6 +118,7 @@ a:not([class~="button"]):hover {
     @include valign;
     padding: 5px 10px 0 15px;
     box-sizing: border-box;
+    overflow: hidden;
     
     -webkit-justify-content: space-between;
 
@@ -130,6 +131,16 @@ a:not([class~="button"]):hover {
     > .title.left { 
         @include flex(1);
         margin: -6px 0 0;
+    }
+
+    .experiment {
+        display: inline-block;
+        background: url(../img/experiment.png) no-repeat;
+        width: 69px;
+        height: 18px;
+        text-indent: -9999px;
+        vertical-align: bottom;
+        padding-bottom: 3px;
     }
     
     .button.drop-down{
@@ -148,10 +159,10 @@ a:not([class~="button"]):hover {
 }
 
 #animations-container {
+    overflow: hidden;
     background: #fff;
     border-bottom: 1px solid #fff;
     box-shadow: none;
-    -webkit-justify-content: space-between; 
 
     h1, h2, h3 {
         margin: 0 auto;
@@ -194,14 +205,31 @@ a:not([class~="button"]):hover {
     li + li{
         margin-left: 15px;
     }
+
+    &.left {
+        min-width: 320px;
+    }
 }
 
-.nav.right {
+.panel-right {
     position: absolute;
-    right: 15px;
-    top: 13px;
-}
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    left: 320px;
+    overflow: hidden;
 
+    .nav {
+        position: absolute;
+        right: 15px;
+        top: 13px;
+        min-width: 200px;
+
+        body.hosted-version & {
+            right: 74px;
+        }
+    }
+}
 
 .modal {
     @include box-shadow;
@@ -240,7 +268,11 @@ aside {
     -khtml-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
-    user-select: none;    
+    user-select: none;
+}
+
+#filter-dock.hidden {
+    display: none;
 }
 
 .clicks-catcher {
@@ -357,19 +389,6 @@ aside {
     }
     
 }
-
-.logo{
-    display: block;
-    width: 40px;
-    height: 64px;
-    background: url(../../images/logo.svg) center center no-repeat;
-    text-indent: -9999px;
-    position: absolute;
-    top: 0;     
-    right: 0;
-    margin-right: 16px;
-    z-index: 1000;
-}
  
 .drop-down, .drop-down:hover{
     background-image: url(../img/drop-down-triangle.png), linear-gradient(top, #f5f8fa, #e3e5e5);
@@ -448,7 +467,7 @@ aside {
     @include vbox;
     -webkit-box-pack: center;
     -webkit-box-align: center;
-    
+
     .popup-inner{
         margin: 0;
         height: 400px;
@@ -463,5 +482,20 @@ aside {
         margin-top: 25px;
         max-height: 250px;
         overflow-y: auto;
+
+        .button {
+            vertical-align: middle;
+            margin-left: 5px;
+        }
+    }
+}
+
+#help-popup.hidden {
+    display: none;
+}
+
+#fork-github {
+    a.button {
+        margin: 5px;
     }
 }

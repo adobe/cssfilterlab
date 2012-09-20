@@ -78,6 +78,7 @@
 .panel-column {
     @include flexbox;
     @include flex;
+    position: relative;
 }
 
 .panel-column.horizontal,
