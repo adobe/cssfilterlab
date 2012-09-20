@@ -200,6 +200,13 @@ a:not([class~="button"]):hover {
 
 #animations-container {
     overflow: hidden;
+    .right {
+        position: absolute;
+        right: 15px;
+        top: 13px;
+        bottom: 0px;
+        overflow: hidden;
+    }      
 }
 
 .nav {
@@ -213,16 +220,8 @@ a:not([class~="button"]):hover {
 
     &.left {
         min-width: 320px;
-    }
-    &.right {
-        position: absolute;
-        right: 15px;
-        top: 13px;
-        bottom: 0px;
-        overflow: hidden;
-    }    
+    }  
 }
-
 
 
 
