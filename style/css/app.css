@@ -3354,7 +3354,7 @@ aside {
   width: 44%;
   border-right: 1px solid #ddd;
   padding-right: 4%;
-  margin-right: 4%;
+  margin-right: 6%;
   margin-top: 10px;
 }
 .popup section + section {
@@ -3366,7 +3366,7 @@ aside {
   font-family: source-sb;
 }
 .popup section ol {
-  padding-left: 30px;
+  padding-left: 20px;
 }
 .popup section h3 {
   font-size: 20px;
@@ -3377,6 +3377,9 @@ aside {
   width: 700px;
   margin-left: -350px;
   margin-top: -200px;
+}
+#browser-popup .popup-inner li {
+  padding-right: 0;
 }
 #browser-popup .popup-inner section:after {
   position: absolute;

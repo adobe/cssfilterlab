@@ -429,7 +429,7 @@ aside {
     width: 44%;
     border-right: 1px solid #ddd;
     padding-right: 4%;
-    margin-right: 4%; 
+    margin-right: 6%; 
     margin-top: 10px;
     
     & + section{
@@ -443,7 +443,7 @@ aside {
     }
     
     ol{
-        padding-left: 30px;
+        padding-left: 20px;
     }
     
     h3{
@@ -456,6 +456,10 @@ aside {
     width: 700px;
     margin-left: -350px;
     margin-top: -200px;
+    
+    li{
+        padding-right: 0;
+    }
     
     section:after{
         position: absolute;
