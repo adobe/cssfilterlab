@@ -1632,7 +1632,7 @@ pre,
 
 .code {
   color: #000;
-  padding: 10px;
+  padding: 15px;
   -webkit-touch-callout: auto;
   -webkit-user-select: auto;
   -khtml-user-select: auto;
@@ -1662,13 +1662,16 @@ pre,
     -moz-flex-direction: row;
     -ms-flex-direction: row;
     -o-flex-direction: row;
-    flex-direction: row; }
+    flex-direction: row;
+    overflow-x: hidden;
+    overflow-y: auto; }
   .code > * {
     font-size: 1.05em; }
   .code .css-property-name {
     width: 130px; }
   .code .css-property-value {
-    padding-left: 10px; }
+    padding-left: 0;
+    width: 90% !important; }
   .code .data-uri {
     display: inline-block;
     width: 200px;
@@ -2756,18 +2759,12 @@ a:not([class~="button"]):hover {
     margin-left: 15px; }
   .nav.left {
     min-width: 320px; }
-
-.right {
-  position: absolute;
-  right: 15px;
-  top: 13px;
-  bottom: 0px;
-  overflow: hidden; }
-  .right .nav {
+  .nav.right {
     position: absolute;
     right: 15px;
     top: 13px;
-    min-width: 200px; }
+    bottom: 0px;
+    overflow: hidden; }
 
 .modal {
   box-shadow: 0 3px 15px 3px rgba(0, 0, 0, 0.4);

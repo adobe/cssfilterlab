@@ -447,12 +447,14 @@ pre,
 }
 .code {
     color: #000; 
-    padding: 10px;
+    padding: 15px;
     @include user-select(auto);
     @include prefixProperty(box-sizing, border-box);
 
     &#filter-code {
         @include hbox;
+        overflow-x: hidden;
+        overflow-y: auto;
     }
 
     > * {
@@ -464,7 +466,8 @@ pre,
     }
 
     .css-property-value {
-        padding-left: 10px;
+        padding-left: 0;
+        width: 90% !important;
     }
 
     .data-uri {

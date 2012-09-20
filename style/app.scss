@@ -214,22 +214,16 @@ a:not([class~="button"]):hover {
     &.left {
         min-width: 320px;
     }
-}
-
-.right {
-    position: absolute;
-    right: 15px;
-    top: 13px;
-    bottom: 0px;
-    overflow: hidden;
-
-    .nav {
+    &.right {
         position: absolute;
         right: 15px;
         top: 13px;
-        min-width: 200px;
-    }
+        bottom: 0px;
+        overflow: hidden;
+    }    
 }
+
+
 
 
 .modal {
