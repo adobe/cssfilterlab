@@ -82,18 +82,31 @@ a:not([class~="button"]):hover {
     background: rgba(0, 0, 0, 0.3);
     z-index: 2000;
     
-    p {
+    p, li {
         line-height: 1.3em;
+        padding-right: 15px;
         
         a{
-            margin: 0;
+            margin: 0; 
         }
+    }
+    
+    ul{
+        padding-left: 20px;
+    }
+    
+    li + li{
+        margin-top:5px;
     }
     
     .icon-close{
         float: right;
         margin: -15px -20px 0 0;
     }
+}
+
+.popup .popup-inner :last-child{
+    margin-bottom:0;
 }
 
 .popup .popup-inner {

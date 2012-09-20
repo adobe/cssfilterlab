@@ -2923,15 +2923,26 @@ a:not([class~="button"]):hover {
   background: rgba(0, 0, 0, 0.3);
   z-index: 2000;
 }
-.popup p {
+.popup p, .popup li {
   line-height: 1.3em;
+  padding-right: 15px;
 }
-.popup p a {
+.popup p a, .popup li a {
   margin: 0;
+}
+.popup ul {
+  padding-left: 20px;
+}
+.popup li + li {
+  margin-top: 5px;
 }
 .popup .icon-close {
   float: right;
   margin: -15px -20px 0 0;
+}
+
+.popup .popup-inner :last-child {
+  margin-bottom: 0;
 }
 
 .popup .popup-inner {
