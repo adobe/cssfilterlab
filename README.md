@@ -27,11 +27,14 @@ Running
 The CodeMirror library is linked as a git submodule.
 After you clone the project on your machine you'll need to setup the submodules and pull in their code.
 
-`$ git submodule init && git submodule update`
+<pre>
+cd ./path/to/css/filterlab/
+$ git submodule init && git submodule update
+</pre>
 
 ### File System Access
 
-CSS FilterLab requires HTML5 File System access, but that doesn't work very well when loaded from file:/ URLs. For that reason running CSS FilterLab requires serving it from a server. The easiest way to do that on a Mac would be to use python's simple server:
+CSS FilterLab requires HTML5 File System access, but that doesn't work very well when loaded from file:// URLs. For that reason running CSS FilterLab requires serving it from a server. The easiest way to do that on a Mac would be to use python's simple server:
 
 <pre>
 cd ./path/to/css/filterlab/
