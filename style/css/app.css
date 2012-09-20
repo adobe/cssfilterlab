@@ -2994,12 +2994,12 @@ a:not([class~="button"]):hover {
 }
 #logo .experiment, #animations-container .experiment {
   display: inline-block;
-  background: url(../img/stamp1.png) no-repeat;
+  background: url(../img/v1_distressed_label.png) no-repeat;
   position: relative;
   left: 2px;
-  top: 2px;
-  width: 78px;
-  height: 27px;
+  top: 3px;
+  width: 69px;
+  height: 18px;
   text-indent: -9999px;
 }
 #logo .button.drop-down, #animations-container .button.drop-down {
