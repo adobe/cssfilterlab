@@ -1742,10 +1742,11 @@ pre,
     flex-direction: row;
     position: relative;
     padding: 7px 10px;
-    line-height: 23px; }
+    line-height: 23px;
+    overflow-x: hidden; }
     .config-panel .config-row label {
       display: block;
-      width: 200px;
+      width: 180px;
       -webkit-box-flex: 0;
       -moz-box-flex: 0;
       -ms-box-flex: 0;
@@ -1795,7 +1796,7 @@ pre,
     background: rgba(0, 0, 0, 0.24); }
   .config-panel .config-parameters-row {
     position: relative;
-    margin: 10px;
+    margin: 15px;
     border-radius: 4px;
     box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.8);
     padding: 0; }
