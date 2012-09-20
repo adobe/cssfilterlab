@@ -3411,6 +3411,10 @@ aside {
   max-height: 250px;
   overflow-y: auto;
 }
+#help-popup article .button {
+  vertical-align: middle;
+  margin-left: 15px;
+}
 
 #help-popup.hidden {
   display: none;

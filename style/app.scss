@@ -492,6 +492,11 @@ aside {
         margin-top: 25px;
         max-height: 250px;
         overflow-y: auto;
+
+        .button {
+            vertical-align: middle;
+            margin-left: 15px;
+        }
     }
 }
 
