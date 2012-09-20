@@ -21,10 +21,6 @@ precision mediump float;
 uniform vec4 backColor;
 uniform float useColoredBack;
 
-// Varyings
-
-varying float v_lighting;
-
 // Main
 
 void main()
