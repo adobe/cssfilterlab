@@ -15,7 +15,7 @@ CSS FilterLab is using some cutting-edge technology that is available in the lat
 
 ### WebKit
 - Download and install [Webkkit nightly](http://nightly.webkit.org/)
-- In the browser's menu click **Develop** > **Enable WebGL**
+- In the browser's menu select **Develop** > **Enable WebGL**
 
 Enjoy CSS FilterLab!
 
