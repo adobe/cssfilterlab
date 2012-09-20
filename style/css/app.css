@@ -2583,7 +2583,7 @@ a:not([class~="button"]):hover {
   background: white;
   border-radius: 4px;
   border: none;
-  padding: 12px 15px;
+  padding: 30px 35px;
   box-shadow: 0 15px 36px rgba(0, 0, 0, 0.6);
   position: absolute;
   top: 50%;
