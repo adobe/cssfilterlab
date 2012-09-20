@@ -227,7 +227,7 @@ a:not([class~="button"]):hover {
 
 .panel-right {
     position: absolute;
-    right: 0px;
+    right: 15px;
     top: 0px;
     bottom: 0px;
     left: 320px;
@@ -235,13 +235,13 @@ a:not([class~="button"]):hover {
 
     .nav {
         position: absolute;
-        right: 15px;
+        right: 0px;
         top: 13px;
         min-width: 200px;
+    }
 
-        body.hosted-version & {
-            right: 74px;
-        }
+    body.hosted-version & {
+        right: 74px;
     }
 }
 
