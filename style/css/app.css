@@ -1385,7 +1385,7 @@ input.dark[type=checkbox]:checked + label {
   -ms-flex: 0;
   -o-flex: 0;
   flex: 0;
-  padding: 0 15px 0 10px; }
+  padding: 0 0 0 10px; }
 
 .filter-stock .filter-item .button-box > a {
   opacity: 0.75;
