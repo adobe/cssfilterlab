@@ -2409,6 +2409,8 @@ table.paramsTable {
     vertical-align: middle;
     text-align: right;
     -webkit-font-smoothing: antialiased; }
+  table.paramsTable .field-column {
+    text-align: left; }
   table.paramsTable tr.field .multi-control-table {
     width: 100%; }
   table.paramsTable tr.field td.field-label {
