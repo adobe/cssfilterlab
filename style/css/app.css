@@ -408,6 +408,7 @@ a:active {
   vertical-align: top;
   white-space: nowrap;
   user-select: none;
+  -webkit-font-smoothing: antialiased !important;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   background-image: none, linear-gradient(top, #f5f8fa, #e3e5e5);
