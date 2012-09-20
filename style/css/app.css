@@ -2434,7 +2434,6 @@ table.paramsTable {
     color: white;
     text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.2); }
   table.paramsTable .color-preview {
-    padding: 0px 30px 0px 30px;
     color: transparent; }
   table.paramsTable .param-color-preview {
     cursor: pointer;
