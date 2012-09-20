@@ -1950,7 +1950,7 @@ pre,
   text-indent: -9999px; }
 
 .icon-remove {
-  background: transparent url(../img/remove.png) center center no-repeat; }
+  background: transparent url(../img/remove.png) center 4px no-repeat; }
 
 .icon-edit {
   background: transparent url(../img/edit.png) center center no-repeat; }
