@@ -1870,24 +1870,6 @@ pre,
   box-sizing: border-box;
 }
 .code#filter-code {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-box;
-  display: -o-box;
-  display: box;
-  /* Flex needs to be last, so that we use the new flex-box when it's available */
-  /* FIXME: Disable the new flex box for now. It seems like stable versions of Chromium don't have the whole implementation yet. */
-  /* @include prefixValue(display, flex); */
-  -webkit-box-orient: horizontal;
-  -moz-box-orient: horizontal;
-  -ms-box-orient: horizontal;
-  -o-box-orient: horizontal;
-  box-orient: horizontal;
-  -webkit-flex-direction: row;
-  -moz-flex-direction: row;
-  -ms-flex-direction: row;
-  -o-flex-direction: row;
-  flex-direction: row;
   overflow-x: hidden;
   overflow-y: auto;
 }
@@ -1898,17 +1880,11 @@ pre,
   width: 130px;
 }
 .code .css-property-value {
-  -webkit-flex: 1;
-  -moz-flex: 1;
-  -ms-flex: 1;
-  -o-flex: 1;
-  flex: 1;
-  -webkit-box-flex: 1;
-  -moz-box-flex: 1;
-  -ms-box-flex: 1;
-  -o-box-flex: 1;
-  box-flex: 1;
-  padding-left: 10px;
+  position: absolute;
+  left: 150px;
+  top: 15px;
+  right: 15px;
+  padding-bottom: 15px;
 }
 .code .data-uri {
   display: inline-block;
@@ -2154,6 +2130,9 @@ pre,
 
 .code-editor {
   background: white;
+  visibility: hidden;
+  position: absolute;
+  top: 0px;
 }
 .code-editor .error-line {
   background: rgba(255, 0, 0, 0.7);
@@ -2164,6 +2143,9 @@ pre,
 .code-editor .error-bookmark {
   font-weight: bold;
   background: rgba(255, 0, 0, 0.5);
+}
+.code-editor.active-shader-view {
+  visibility: visible;
 }
 body.wait-dock-layout .code-editor {
   display: none !important;
@@ -2713,10 +2695,6 @@ body.wait-dock-layout .code-editor {
   overflow-x: hidden;
 }
 
-body.resizing-dock .hide-while-resizing {
-  display: none !important;
-}
-
 /*
  * Copyright (c) 2012 Adobe Systems Incorporated. All rights reserved.
  * 
@@ -2865,6 +2843,21 @@ table.paramsTable .param-color-editor {
   padding: 0 3px 0 3px;
   width: 55px;
 }
+table.paramsTable .multi-control-table.param-color input[type='range'] {
+  height: 5px;
+}
+table.paramsTable .multi-control-table.param-color .range-r {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(245, 248, 250, 0.1))), -webkit-gradient(linear, left top, right top, from(black), to(red));
+}
+table.paramsTable .multi-control-table.param-color .range-g {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(245, 248, 250, 0.1))), -webkit-gradient(linear, left top, right top, from(black), to(lime));
+}
+table.paramsTable .multi-control-table.param-color .range-b {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(245, 248, 250, 0.1))), -webkit-gradient(linear, left top, right top, from(black), to(blue));
+}
+table.paramsTable .multi-control-table.param-color .range-a {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(245, 248, 250, 0.1))), -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0)), to(white)), -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.4)), to(rgba(245, 248, 250, 0.4))), url(../img/color_bg.png);
+}
 
 body {
   font: 14px "Source Sans Pro", "source", helvetica, arial, sans-serif;
@@ -3001,12 +2994,12 @@ a:not([class~="button"]):hover {
 }
 #logo .experiment, #animations-container .experiment {
   display: inline-block;
-  background: url(../img/experiment.png) no-repeat;
+  background: url(../img/stamp1.png) no-repeat;
   position: relative;
   left: 2px;
-  top: 3px;
-  width: 69px;
-  height: 18px;
+  top: 2px;
+  width: 78px;
+  height: 27px;
   text-indent: -9999px;
 }
 #logo .button.drop-down, #animations-container .button.drop-down {
@@ -3153,7 +3146,7 @@ a:not([class~="button"]):hover {
 
 .panel-right {
   position: absolute;
-  right: 0px;
+  right: 15px;
   top: 0px;
   bottom: 0px;
   left: 320px;
@@ -3161,11 +3154,11 @@ a:not([class~="button"]):hover {
 }
 .panel-right .nav {
   position: absolute;
-  right: 15px;
+  right: 0px;
   top: 13px;
   min-width: 200px;
 }
-body.hosted-version .panel-right .nav {
+body.hosted-version .panel-right {
   right: 74px;
 }
 
