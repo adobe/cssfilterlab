@@ -205,8 +205,8 @@
 .filter-stock .filter-item .button-box > a {
     opacity: 0.75;
     margin-left: 5px;
-    padding: 5px 5px 7px 5px;
-    border-radius: 5px;
+    padding: 0 5px 10px 5px;
+    border-radius: 3px;
     
     &:hover{
         opacity: 1;
@@ -758,7 +758,7 @@ pre,
 }
 
 .icon-fork{
-    background: transparent url(../img/fork.png) center center no-repeat;
+    background: transparent url(../img/fork.png) center 3px no-repeat;
 }   
 
 .icon-close{
