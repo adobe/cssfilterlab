@@ -269,6 +269,7 @@ aside {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;    
+    display: none;
 }
 
 .clicks-catcher {
@@ -476,7 +477,7 @@ aside {
     @include vbox;
     -webkit-box-pack: center;
     -webkit-box-align: center;
-    
+
     .popup-inner{
         margin: 0;
         height: 400px;
@@ -492,4 +493,8 @@ aside {
         max-height: 250px;
         overflow-y: auto;
     }
+}
+
+#help-popup.hidden {
+    display: none;
 }

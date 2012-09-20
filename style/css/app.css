@@ -3180,6 +3180,7 @@ aside {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  display: none;
 }
 
 .clicks-catcher {
@@ -3409,4 +3410,8 @@ aside {
   margin-top: 25px;
   max-height: 250px;
   overflow-y: auto;
+}
+
+#help-popup.hidden {
+  display: none;
 }
