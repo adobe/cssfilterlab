@@ -4,7 +4,7 @@ CSS FilterLab
 Supported Browsers
 -----
 
-CSS FilterLab is using some cutting-edge technology that is available in the latest Google Chrome Canary and Webkit nightly builds. To enjoy the full experience you'll need to turn a few knobs:
+CSS FilterLab is using some cutting-edge technology that is available in the latest Google Chrome Canary and WebKit nightly builds. To enjoy the full experience you'll need to turn a few knobs:
 
 ### Google Chrome Canary
 - Download and install [Google Chrome Canary](https://tools.google.com/dlpage/chromesxs)
