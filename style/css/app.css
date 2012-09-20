@@ -1870,24 +1870,6 @@ pre,
   box-sizing: border-box;
 }
 .code#filter-code {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-box;
-  display: -o-box;
-  display: box;
-  /* Flex needs to be last, so that we use the new flex-box when it's available */
-  /* FIXME: Disable the new flex box for now. It seems like stable versions of Chromium don't have the whole implementation yet. */
-  /* @include prefixValue(display, flex); */
-  -webkit-box-orient: horizontal;
-  -moz-box-orient: horizontal;
-  -ms-box-orient: horizontal;
-  -o-box-orient: horizontal;
-  box-orient: horizontal;
-  -webkit-flex-direction: row;
-  -moz-flex-direction: row;
-  -ms-flex-direction: row;
-  -o-flex-direction: row;
-  flex-direction: row;
   overflow-x: hidden;
   overflow-y: auto;
 }
@@ -1898,17 +1880,11 @@ pre,
   width: 130px;
 }
 .code .css-property-value {
-  -webkit-flex: 1;
-  -moz-flex: 1;
-  -ms-flex: 1;
-  -o-flex: 1;
-  flex: 1;
-  -webkit-box-flex: 1;
-  -moz-box-flex: 1;
-  -ms-box-flex: 1;
-  -o-box-flex: 1;
-  box-flex: 1;
-  padding-left: 10px;
+  position: absolute;
+  left: 150px;
+  top: 15px;
+  right: 15px;
+  padding-bottom: 15px;
 }
 .code .data-uri {
   display: inline-block;
@@ -2154,6 +2130,8 @@ pre,
 
 .code-editor {
   background: white;
+  visibility: hidden;
+  position: absolute;
 }
 .code-editor .error-line {
   background: rgba(255, 0, 0, 0.7);
@@ -2164,6 +2142,9 @@ pre,
 .code-editor .error-bookmark {
   font-weight: bold;
   background: rgba(255, 0, 0, 0.5);
+}
+.code-editor.active-shader-view {
+  visibility: visible;
 }
 body.wait-dock-layout .code-editor {
   display: none !important;
@@ -2711,10 +2692,6 @@ body.wait-dock-layout .code-editor {
 
 #active-filters {
   overflow-x: hidden;
-}
-
-body.resizing-dock .hide-while-resizing {
-  display: none !important;
 }
 
 /*

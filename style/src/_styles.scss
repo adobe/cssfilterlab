@@ -452,7 +452,6 @@ pre,
     @include prefixProperty(box-sizing, border-box);
 
     &#filter-code {
-        @include hbox;
         overflow-x: hidden;
         overflow-y: auto;
     }
@@ -466,8 +465,11 @@ pre,
     }
 
     .css-property-value {
-        @include flex(1);
-        padding-left: 10px;
+        position: absolute;
+        left: 150px;
+        top: 15px;
+        right: 15px;
+        padding-bottom: 15px;
     }
 
     .data-uri {
@@ -651,6 +653,9 @@ pre,
 
 .code-editor {
     background: white;
+    visibility: hidden;
+    position: absolute;
+    
     .error-line {
         background: rgba(255, 0, 0, 0.7);
         color: white;
@@ -661,6 +666,10 @@ pre,
     .error-bookmark {
         font-weight: bold;
         background: rgba(255, 0, 0, 0.5);
+    }
+
+    &.active-shader-view {
+        visibility: visible;
     }
 
     body.wait-dock-layout & {
