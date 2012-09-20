@@ -3182,6 +3182,10 @@ aside {
   user-select: none;
 }
 
+#filter-dock.hidden {
+  display: none;
+}
+
 .clicks-catcher {
   position: absolute;
   top: 0;
