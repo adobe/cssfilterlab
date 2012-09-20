@@ -2132,6 +2132,7 @@ pre,
   background: white;
   visibility: hidden;
   position: absolute;
+  top: 0px;
 }
 .code-editor .error-line {
   background: rgba(255, 0, 0, 0.7);
