@@ -131,6 +131,16 @@ a:not([class~="button"]):hover {
         @include flex(1);
         margin: -6px 0 0;
     }
+
+    .experiment {
+        display: inline-block;
+        background: url(../img/experiment.png) no-repeat;
+        width: 69px;
+        height: 18px;
+        text-indent: -9999px;
+        vertical-align: bottom;
+        padding-bottom: 3px;
+    }
     
     .button.drop-down{
         min-width: 50px;

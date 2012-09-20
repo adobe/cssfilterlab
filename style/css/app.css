@@ -2968,6 +2968,15 @@ a:not([class~="button"]):hover {
   box-flex: 1;
   margin: -6px 0 0;
 }
+#logo .experiment, #animations-container .experiment {
+  display: inline-block;
+  background: url(../img/experiment.png) no-repeat;
+  width: 69px;
+  height: 18px;
+  text-indent: -9999px;
+  vertical-align: bottom;
+  padding-bottom: 3px;
+}
 #logo .button.drop-down, #animations-container .button.drop-down {
   min-width: 50px;
   text-indent: 2px;
