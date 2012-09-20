@@ -27,10 +27,15 @@ table.paramsTable {
     	color: #bfbfbf;
         font-weight: normal;
     	font-size: 12px;
-        padding: 1px 0;
+        padding: 1px 4px 1px 2px;
         text-shadow: 0px -1px 0 rgba(0, 0, 0, 0.8);
         vertical-align: middle;
+        text-align: right;
         -webkit-font-smoothing: antialiased;
+    }
+
+    .field-column {
+        text-align: left;
     }
 
     tr.field {
@@ -51,6 +56,7 @@ table.paramsTable {
         td.field-value-label {
             width: 65px;
             padding-right: 5px;
+            text-align: left;
         }
     }
 
@@ -62,7 +68,6 @@ table.paramsTable {
     }
 
     .color-preview {
-        padding: 0px 30px 0px 30px;
         color: transparent;
     }
 
@@ -100,13 +105,11 @@ table.paramsTable {
     }
 
     .value-label {
-        display: block;
-        text-align: center;
+        text-align: left;
         margin: 0 0 0 3px; 
-        padding: 0 3px;
+        padding: 0 3px 0 2px;
         text-shadow: 0 1px 0 #000;
-        width: 100%;
-        font-size: 1.2em;
+        font-size: 1.1em;
         cursor: pointer;
         text-decoration: underline;
     }
@@ -122,7 +125,7 @@ table.paramsTable {
         border-radius: 3px;
         background: rgba(255,255,255,.15);
         color: #fff;
-        text-align: center;
+        text-align: left;
     }
     .param-color-editor{
         @extend .value-editor;

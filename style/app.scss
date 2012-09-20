@@ -92,7 +92,7 @@ a:not([class~="button"]):hover {
     
     .icon-close{
         float: right;
-        margin: 0 -3px 0 0;
+        margin: -15px -20px 0 0;
     }
 }
 
@@ -105,7 +105,7 @@ a:not([class~="button"]):hover {
     background: white;
     border-radius: 4px;
     border: none;
-    padding: 12px 15px;
+    padding: 30px 35px;
     box-shadow: 0 15px 36px rgba(0,0,0,0.6);
     position: absolute;
     top: 50%;
@@ -136,11 +136,12 @@ a:not([class~="button"]):hover {
     .experiment {
         display: inline-block;
         background: url(../img/experiment.png) no-repeat;
+        position: relative;
+        left: 2px;
+        top: 3px;
         width: 69px;
         height: 18px;
         text-indent: -9999px;
-        vertical-align: bottom;
-        padding-bottom: 3px;
     }
     
     .button.drop-down{
@@ -208,7 +209,7 @@ a:not([class~="button"]):hover {
 
     &.left {
         min-width: 320px;
-    }
+    }  
 }
 
 .panel-right {

@@ -378,6 +378,7 @@
    vertical-align: top;
    white-space: nowrap;
    user-select: none;
+   -webkit-font-smoothing: antialiased !important;
    -webkit-touch-callout: none;
    -webkit-user-select: none;
    background-image: none, linear-gradient(top, #f5f8fa, #e3e5e5);
@@ -964,13 +965,13 @@
    display: none;
  }
  input[type=checkbox] + label {
-   background: url("../img/checkbox_unchecked.png") no-repeat 0 50%;
+   background: url("../img/checkbox_unchecked_dark.png") no-repeat 0 50%;
    display: inline-block;
    font-weight: 400;
    padding: 0 0 0 20px;
  }
  input[type=checkbox]:checked + label {
-   background: url("../img/checkbox_checked.png") no-repeat 0 50%;
+   background: url("../img/checkbox_checked_dark.png") no-repeat 0 50%;
    display: inline-block;
    padding: 0 0 0 20px;
  }

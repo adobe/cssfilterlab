@@ -453,6 +453,7 @@ a:active {
   vertical-align: top;
   white-space: nowrap;
   user-select: none;
+  -webkit-font-smoothing: antialiased !important;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   background-image: none, linear-gradient(top, #f5f8fa, #e3e5e5);
@@ -1129,14 +1130,14 @@ input[type=checkbox] {
 }
 
 input[type=checkbox] + label {
-  background: url("../img/checkbox_unchecked.png") no-repeat 0 50%;
+  background: url("../img/checkbox_unchecked_dark.png") no-repeat 0 50%;
   display: inline-block;
   font-weight: 400;
   padding: 0 0 0 20px;
 }
 
 input[type=checkbox]:checked + label {
-  background: url("../img/checkbox_checked.png") no-repeat 0 50%;
+  background: url("../img/checkbox_checked_dark.png") no-repeat 0 50%;
   display: inline-block;
   padding: 0 0 0 20px;
 }
@@ -1510,8 +1511,8 @@ input.dark[type=checkbox]:checked + label {
 .filter-stock .filter-item .filter-preview {
   width: 75px;
   height: 50px;
-  margin: 0 10px 0 0;
-  background: url(../../images/shaderprincess.svg) center center no-repeat;
+  margin: 0 15px 0 5px;
+  background: url(../../images/shaderprincess.svg) center 6px no-repeat;
   background-size: 100%;
 }
 
@@ -1572,14 +1573,14 @@ input.dark[type=checkbox]:checked + label {
   -ms-flex: 0;
   -o-flex: 0;
   flex: 0;
-  padding: 0 15px 0 10px;
+  padding: 0 0 0 10px;
 }
 
 .filter-stock .filter-item .button-box > a {
   opacity: 0.75;
   margin-left: 5px;
-  padding: 5px 5px 7px 5px;
-  border-radius: 5px;
+  padding: 0 5px 10px 5px;
+  border-radius: 3px;
 }
 .filter-stock .filter-item .button-box > a:hover {
   opacity: 1;
@@ -1855,7 +1856,7 @@ pre,
 
 .code {
   color: #000;
-  padding: 10px;
+  padding: 15px;
   -webkit-touch-callout: auto;
   -webkit-user-select: auto;
   -khtml-user-select: auto;
@@ -1887,6 +1888,8 @@ pre,
   -ms-flex-direction: row;
   -o-flex-direction: row;
   flex-direction: row;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 .code > * {
   font-size: 1.05em;
@@ -1895,7 +1898,8 @@ pre,
   width: 130px;
 }
 .code .css-property-value {
-  padding-left: 10px;
+  padding-left: 0;
+  width: 90% !important;
 }
 .code .data-uri {
   display: inline-block;
@@ -1980,10 +1984,11 @@ pre,
   position: relative;
   padding: 7px 10px;
   line-height: 23px;
+  overflow-x: hidden;
 }
 .config-panel .config-row label {
   display: block;
-  width: 200px;
+  width: 180px;
   -webkit-box-flex: 0;
   -moz-box-flex: 0;
   -ms-box-flex: 0;
@@ -1996,6 +2001,7 @@ pre,
   flex: none;
   font-size: 13px;
   color: #bbb;
+  text-align: right;
   text-shadow: 0px -1px 0 rgba(0, 0, 0, 0.8);
   margin: 0 7px 0 0;
 }
@@ -2040,7 +2046,7 @@ pre,
 }
 .config-panel .config-parameters-row {
   position: relative;
-  margin: 10px;
+  margin: 15px;
   border-radius: 4px;
   box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.8);
   padding: 0;
@@ -2058,6 +2064,7 @@ pre,
   box-flex: 1;
   background: rgba(255, 255, 255, 0.05);
   text-align: left;
+  padding-bottom: 10px;
 }
 .config-panel .config-parameters-wrapper {
   display: -webkit-box;
@@ -2226,15 +2233,15 @@ body.wait-dock-layout .code-editor {
 }
 
 .icon-remove {
-  background: transparent url(../img/remove.png) center center no-repeat;
+  background: transparent url(../img/remove.png) center 4px no-repeat;
 }
 
 .icon-edit {
-  background: transparent url(../img/edit.png) center center no-repeat;
+  background: transparent url(../img/edit.png) center 4px no-repeat;
 }
 
 .icon-fork {
-  background: transparent url(../img/fork.png) center center no-repeat;
+  background: transparent url(../img/fork.png) center 3px no-repeat;
 }
 
 .icon-close {
@@ -2729,10 +2736,14 @@ table.paramsTable td {
   color: #bfbfbf;
   font-weight: normal;
   font-size: 12px;
-  padding: 1px 0;
+  padding: 1px 4px 1px 2px;
   text-shadow: 0px -1px 0 rgba(0, 0, 0, 0.8);
   vertical-align: middle;
+  text-align: right;
   -webkit-font-smoothing: antialiased;
+}
+table.paramsTable .field-column {
+  text-align: left;
 }
 table.paramsTable tr.field .multi-control-table {
   width: 100%;
@@ -2752,6 +2763,7 @@ table.paramsTable tr.field td.field-label {
 table.paramsTable tr.field td.field-value-label {
   width: 65px;
   padding-right: 5px;
+  text-align: left;
 }
 table.paramsTable tr.header {
   font-weight: bold;
@@ -2760,7 +2772,6 @@ table.paramsTable tr.header {
   text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.2);
 }
 table.paramsTable .color-preview {
-  padding: 0px 30px 0px 30px;
   color: transparent;
 }
 table.paramsTable .param-color-preview {
@@ -2811,13 +2822,11 @@ table.paramsTable input[type=range].vertical {
   margin: 0 0 0 15px;
 }
 table.paramsTable .value-label {
-  display: block;
-  text-align: center;
+  text-align: left;
   margin: 0 0 0 3px;
-  padding: 0 3px;
+  padding: 0 3px 0 2px;
   text-shadow: 0 1px 0 #000;
-  width: 100%;
-  font-size: 1.2em;
+  font-size: 1.1em;
   cursor: pointer;
   text-decoration: underline;
 }
@@ -2836,7 +2845,7 @@ table.paramsTable .value-editor, table.paramsTable .param-color-editor {
   border-radius: 3px;
   background: rgba(255, 255, 255, 0.15);
   color: #fff;
-  text-align: center;
+  text-align: left;
 }
 table.paramsTable .param-color-editor {
   -webkit-transition: all 0.2s ease-out;
@@ -2913,7 +2922,7 @@ a:not([class~="button"]):hover {
 }
 .popup .icon-close {
   float: right;
-  margin: 0 -3px 0 0;
+  margin: -15px -20px 0 0;
 }
 
 .popup .popup-inner {
@@ -2925,7 +2934,7 @@ a:not([class~="button"]):hover {
   background: white;
   border-radius: 4px;
   border: none;
-  padding: 12px 15px;
+  padding: 30px 35px;
   box-shadow: 0 15px 36px rgba(0, 0, 0, 0.6);
   position: absolute;
   top: 50%;
@@ -2973,11 +2982,12 @@ a:not([class~="button"]):hover {
 #logo .experiment, #animations-container .experiment {
   display: inline-block;
   background: url(../img/experiment.png) no-repeat;
+  position: relative;
+  left: 2px;
+  top: 3px;
   width: 69px;
   height: 18px;
   text-indent: -9999px;
-  vertical-align: bottom;
-  padding-bottom: 3px;
 }
 #logo .button.drop-down, #animations-container .button.drop-down {
   min-width: 50px;
