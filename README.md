@@ -13,8 +13,8 @@ CSS FilterLab is using some cutting-edge technology that is available in the lat
 - Find the **GPU Accelerated SVG Filters** flag and turn it on
 - Relaunch the browser
 
-### WebKit
-- Download and install [WebKit nightly](http://nightly.webkit.org/)
+### WebKit (Mac only)
+- Download and install [WebKit nightly](http://nightly.webkit.org/) for Mac OSX
 - Open the browser's preferences panel. Go to the **Advanced** tab and tick to show the **Develop** menu in the menu bar.
 - In the browser's menu bar select **Develop** > **Enable WebGL**
 
