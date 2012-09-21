@@ -1,30 +1,30 @@
 @font-face
 {
     font-family: "LeagueGothic";
-    src: url('../fonts/League_Gothic-webfont.ttf'),
-        url('../fonts/League_Gothic-webfont.svg'),
-        url('../fonts/League_Gothic-webfont.woff'),
-        url('../fonts/League_Gothic-webfont.eot');
+    src: url('../fonts/league_gothic/League_Gothic-webfont.ttf'),
+        url('../fonts/league_gothic/League_Gothic-webfont.svg'),
+        url('../fonts/league_gothic/League_Gothic-webfont.woff'),
+        url('../fonts/league_gothic/League_Gothic-webfont.eot');
         /*  "League Gothic" Copyright (c) 2010, Caroline Hadilaksono & Micha Rich */
         /*  http://theleagueofmoveabletype.com */
 }
 @font-face
 {
     font-family: "Source";
-    src: url('../fonts/sourcesans-regular-webfont.ttf'),
-        url('../fonts/sourcesans-regular-webfont.svg'),
-        url('../fonts/sourcesans-regular-webfont.woff'),
-        url('../fonts/sourcesans-regualr-webfont.eot');
+    src: url('../fonts/sourcesans/sourcesans-regular-webfont.ttf'),
+        url('../fonts/sourcesans/sourcesans-regular-webfont.svg'),
+        url('../fonts/sourcesans/sourcesans-regular-webfont.woff'),
+        url('../fonts/sourcesans/sourcesans-regualr-webfont.eot');
         /*  "Source Sans" Copyright (c) 2012, Adobe Systems Inc */
         /*  http://sourceforge.net/projects/sourcesans.adobe/ */
 }
 @font-face
 {
     font-family: "Source Semibold";
-    src: url('../fonts/sourcesans-semibold-webfont.ttf'),
-        url('../fonts/sourcesans-semibold-webfont.svg'),
-        url('../fonts/sourcesans-semibold-webfont.woff'),
-        url('../fonts/sourcesans-semibold-webfont.eot');
+    src: url('../fonts/sourcesans/sourcesans-semibold-webfont.ttf'),
+        url('../fonts/sourcesans/sourcesans-semibold-webfont.svg'),
+        url('../fonts/sourcesans/sourcesans-semibold-webfont.woff'),
+        url('../fonts/sourcesans/sourcesans-semibold-webfont.eot');
         /*  "Source Sans Semibold" Copyright (c) 2012, Adobe Systems Inc */
         /*  http://sourceforge.net/projects/sourcesans.adobe/ */
 }
