@@ -48,7 +48,7 @@ $selectedBg: rgba(0,0,0,.24) /* Slate Gray */;
 
 @mixin noflex{
     @include prefixProperty(box-flex, 0);
-	@include prefixProperty(flex, none);
+    @include prefixProperty(flex, none);
 }
 
 @mixin hbox{
@@ -73,12 +73,12 @@ $selectedBg: rgba(0,0,0,.24) /* Slate Gray */;
 }
 
 @mixin user-select($value: auto){
-	-webkit-touch-callout: $value;
-	-webkit-user-select: $value;
-	-khtml-user-select: $value;
-	-moz-user-select: $value;
-	-ms-user-select: $value;
-	user-select: $value;
+    -webkit-touch-callout: $value;
+    -webkit-user-select: $value;
+    -khtml-user-select: $value;
+    -moz-user-select: $value;
+    -ms-user-select: $value;
+    user-select: $value;
 }
 
 @mixin northstar-bg{
