@@ -30,7 +30,7 @@ After you clone the project on your machine you'll need to setup the submodules 
 
 <pre>
 cd ./path/to/css/filterlab/
-$ git submodule init && git submodule update
+$ git submodule update --init
 </pre>
 
 ### File System Access
