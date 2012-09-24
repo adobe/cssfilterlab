@@ -1,12 +1,12 @@
 /*
  * Copyright (c) 2012 Adobe Systems Incorporated. All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *     http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -15,7 +15,7 @@
  */
 
 (function () {
-	
+
 function builtin(fn, params) {
 	return {
 		fn: fn,
@@ -128,19 +128,19 @@ function normalAmountConfig (defaultValue, min, max, step) {
 	if (min === undefined) {
 		min = 0.0;
 	}
-	
+
 	if (max === undefined) {
 		max = 0.0;
 	}
-	
+
 	if (defaultValue === undefined) {
 		defaultValue = (max - min) / 2;
 	}
-	
+
 	if (step === undefined) {
 		step = (max - min) / 100;
 	}
-	
+
 	return {
 	    params: {
 	        amount: defaultValue
@@ -167,7 +167,7 @@ window.filterConfigs = {
             flood_color: color(true)
         }
     },
-    
+
     "blur": {
     	type: builtin("blur", ["deviation"]),
         params: {
@@ -177,7 +177,7 @@ window.filterConfigs = {
             deviation: units("px", range(0, 10, 0.5))
         }
     },
-    
+
     grayscale: builtinPercent("grayscale", 100),
     'hue-rotate': builtinDeg("hue-rotate", 180),
     invert: builtinPercent("invert", 100),
@@ -186,7 +186,7 @@ window.filterConfigs = {
 	sepia: builtinPercent("sepia", 100),
 	brightness: builtinPercent("brightness", 25),
 	contrast:  builtinPercent("contrast", 50),
-	
+
 	warp: {
 	    hasVertex: true,
 	    hasFragment: true,
@@ -345,8 +345,8 @@ window.filterConfigs = {
 	            rotationY: 0,
 	            rotationZ: 0
 	        },
-	        amount: 1, 
-	        strength: 0.4, 
+	        amount: 1,
+	        strength: 0.4,
 	        lightIntensity: 1.0
 	    },
 	    config: {
@@ -475,7 +475,7 @@ window.filterConfigs = {
 	        curlDirection: range(0, 360, 1.0),
 	        curlRadius: range(0.05, 3, 0.01),
 	        bleedThrough: range(0, 1, 0.01)
-	    }		
+	    }
 	}
 };
 })()

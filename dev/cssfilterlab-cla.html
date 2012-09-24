@@ -15,25 +15,25 @@
 <body>
     <section id="CLA">
         <h1>CSS FILTERLAB CONTRIBUTOR LICENSE AND DISTRIBUTION AGREEMENT ("AGREEMENT")</h1>
-        
+
         <p class="well" id="pleaseread"><strong>PLEASE READ THIS AGREEMENT CAREFULLY. BY SUBMITTING YOUR CONTRIBUTIONS (DEFINED BELOW) AND CLICKING ["ACCEPT"], YOU ARE AGREEING TO BE BOUND BY ALL THE TERMS AND CONDITIONS OF THIS AGREEMENT.</strong></p>
-        
+
         <p>This license is for your protection as well as the protection of CSS FilterLab and its licensees; it does not change your rights to use your own Contributions for any other purpose.</p>
-        
+
         <p>Adobe Systems Incorporated ("Adobe") appreciates your willingness to grant permission to use your software code checked directly into a source control system made available by GitHub Inc ("Contributions") ”) in conjunction with the CSS FilterLab project ("CSS FilterLab"). By clicking ["ACCEPT"] you ("you" or "You") hereby grant to Adobe and to recipients of software distributed through CSS FilterLab a perpetual, worldwide, non-exclusive, no-charge, royalty-free, irrevocable license to use, make, have made, offer to sell, sell, import, reproduce, prepare derivative works of, publicly display, publicly perform, sublicense, and distribute Your Contributions and such derivative works as part of CSS FilterLab.</p>
-        
+
         <p>Just as we are respectful of your rights in the Contributions, we want to insure that we will not need to seek additional permission to use the Contributions from any third party.</p>
-        
+
         <ul>
             <li>You represent and warrant that you are the sole owner of the Contributions and/or have sufficient rights in your Contribution to grant all rights you grant hereunder.</li>
             <li>You represent that the Contributions are your original works of authorship, that you created the Contributions and did not copy them from another source, and no other person claims, or has the right to claim, any right in any invention or patent related to the Contributions.</li>
             <li>You represent that you are legally entitled to grant the above license. If your employer has rights to intellectual property that you create, you represent that you have received permission to make the Contributions on behalf of that employer, or that your employer has waived such rights for the Contributions.</li>
             <li>Finally, it means that you have not entered into any agreements that would prevent you from granting the rights provided in this Agreement. You understand that the decision to include the Contribution in any product or source repository is entirely that of Adobe and this agreement does not guarantee that the Contributions will be included in any product, technology or services.</li>
         </ul>
-        
+
         <p>If you become aware of any facts or circumstances related to the representation above that would make these representations inaccurate or untrue, you agree to notify Adobe promptly with any details.</p>
     </section>
-    
+
     <form class="form-horizontal well" action="http://23.23.234.18/cssfilterlab/submit_cla.cfm" method="post">
         <fieldset>
             <!---<legend>If you agree to the terms of this agreement...</legend>--->
@@ -363,30 +363,30 @@
                 <button type="submit" id="btn-submit" class="btn btn-inverse btn-large"> <span class="add-on"><i class="icon-ok icon-white"></i></span> Accept</button>
             </div>
         </div>
-        
+
     </form>
 
 <script>
-    $(document).ready(function() { 
-     
-        $('#btn-submit').click(function() {  
+    $(document).ready(function() {
+
+        $('#btn-submit').click(function() {
             $(".alert").remove();
             $(".error").removeClass("error");
             $(".help-inline").remove();
             $(".add-on").remove();
-            
+
             var hasError = false;
             var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
             var item;
-            
+
             // full name
             item = $("#fullname").val();
             if(item == '')
             {
                 invalid("#fullname");
-                hasError = true;  
+                hasError = true;
             }
-            
+
             // email
             item = $("#email").val();
             if(item == '') {
@@ -397,45 +397,45 @@
                 invalid("#email", "Invalid email address.");
                 hasError = true;
             }
-            
+
             // street address
             item = $("#street1").val();
             if(item == '')
             {
                 invalid("#street1");
-                hasError = true;  
+                hasError = true;
             }
-            
+
             // city
             item = $("#city").val();
             if(item == '')
             {
                 invalid("#city");
-                hasError = true;  
+                hasError = true;
             }
-            
+
             // state / province
             item = $("#state").val();
             if(item == '')
             {
                 invalid("#state");
-                hasError = true;  
+                hasError = true;
             }
-            
+
             // zip
             item = $("#zip").val();
             if(item == '')
             {
                 invalid("#zip");
-                hasError = true;  
+                hasError = true;
             }
-            
+
             // country
             item = $("#country option:selected").val();
             if(item == '')
             {
                 invalid("#country");
-                hasError = true;  
+                hasError = true;
             }
 
             if(hasError == true)
@@ -449,7 +449,7 @@
                 return true;
             }
         });
-        
+
         function invalid(input, msg)
         {
             $(input).parents(".control-group").addClass("error");
@@ -458,9 +458,9 @@
             $(input).after("<span class='add-on'><i class='icon-exclamation-sign'></i></span>");
             return;
         }
-        
+
     });
 </script>
-    
+
 </body>
 </html>
