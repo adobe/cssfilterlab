@@ -83,7 +83,7 @@ and (max-width: 320px)
     {
         font-size: 2em;
     }
-    
+
     .well
     {
         font-size: 1em;
@@ -102,12 +102,12 @@ and (min-width: 320px) and (max-width: 600px)
     {
         font-size: 3em;
     }
-    
+
     body
     {
         margin: 0;
     }
-    
+
     .well
     {
         font-size: 1em;
