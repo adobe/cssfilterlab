@@ -1,0 +1,13 @@
+{
+	"name": "CSSFilterLab",
+	"version": 0.1,
+	"homepage": "http://html.adobe.com/webstandards/csscustomfilters/cssfilterlab/",
+	"author": {
+		"name": "Adobe Systems Inc."
+	},
+	"licenses": [
+		{
+			"type": "MIT"
+		}
+	]
+}
