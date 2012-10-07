@@ -10,16 +10,57 @@ module.exports = function(grunt) {
                 '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;' +
                 ' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */'
         },
+        copy: {
+            assets: {
+                files: {
+                    "dist/dev/images/": "images/**",
+                    "dist/dev/style/img/": "style/img/**",
+                    "dist/dev/style/font/": "style/font/**",
+                    "dist/dev/third_party/angle/": "third_party/angle/**",
+                    "dist/dev/third_party/CodeMirror/": 
+                        [
+                            "third_party/CodeMirror/lib/codemirror.css", 
+                            "third_party/CodeMirror/lib/codemirror.js",
+                            "third_party/CodeMirror/mode/clike/clike.js"
+                        ],
+                    "dist/dev/third_party/jquery/": "third_party/jquery/**",
+                    
+                    "dist/prod/images/": "images/**",
+                    "dist/prod/style/img/": "style/img/**",
+                    "dist/prod/style/font/": "style/font/**",
+                    "dist/prod/third_party/angle/": "third_party/angle/**",
+                    "dist/prod/third_party/CodeMirror/": 
+                        [
+                            "third_party/CodeMirror/lib/codemirror.css", 
+                            "third_party/CodeMirror/lib/codemirror.js",
+                            "third_party/CodeMirror/mode/clike/clike.js"
+                        ],
+                    "dist/prod/third_party/jquery/": "third_party/jquery/**"
+                }
+            }
+        },
         concat: {
             dist: {
                 src: ['<banner:meta.banner>', '<config:lint.all>'],
-                dest: 'dist/<%= pkg.name %>.js'
+                dest: 'dist/dev/js/<%= pkg.name %>.js'
+            },
+            css: {
+                src: ['<banner:meta.banner>', '<config:cssmin.css.dest>'],
+                dest: '<config:cssmin.css.dest>'
+            },
+            index_dev: {
+                src: ['<html:index.html:lint.all>'],
+                dest: 'dist/dev/index.html'
+            },
+            index_prod: {
+                src: ['<html:index.html:min.dist.dest>'],
+                dest: 'dist/prod/index.html'
             }
         },
         min: {
             dist: {
                 src: ['<banner:meta.banner>', '<config:concat.dist.dest>'],
-                dest: 'dist/<%= pkg.name %>.min.js'
+                dest: 'dist/prod/js/<%= pkg.name %>.min.js'
             }
         },
         lint: {
@@ -77,8 +118,28 @@ module.exports = function(grunt) {
             ]
         },
         watch: {
-            files: '<config:lint.files>',
-            tasks: 'lint'
+            js: {
+                files: '<config:lint.all>',
+                tasks: 'lint'
+            },
+            css: {
+                files: 'style/app.scss',
+                tasks: ['compass:dev', 'compass:prod']
+            }
+        },
+        compass: {
+            dev: {
+                src: 'style/',
+                dest: 'dist/dev/style/css/',
+                linecomments: true,
+                forcecompile: true
+            },
+            prod: {
+                src: 'style/',
+                dest: 'dist/prod/style/css/',
+                linecomments: false,
+                forcecompile: true
+            }
         },
         jshint: {
             options: {
@@ -105,10 +166,35 @@ module.exports = function(grunt) {
                 CodeMirror: true
             }
         },
-        uglify: {}
+        uglify: {},
+        cssmin: {
+            css: {
+                src: 'dist/prod/style/css/app.css',
+                dest: 'dist/prod/style/css/app.min.css'
+            }
+        }
     });
 
+    grunt.registerHelper('scripts', function(scriptsVariable) {
+        var scripts = grunt.helper("config", scriptsVariable);
+        if (!Array.isArray(scripts))
+            scripts = [scripts];
+        return grunt.utils._.map(scripts, function(script) { return "    <script src=\"" + script + "\"></script>\n"; }).join("");
+    });
+
+    grunt.registerHelper('html', function(fileSrc, scripts) {
+        var fileContents = grunt.task.directive(fileSrc, grunt.file.read),
+            scriptsTags = grunt.template.process(grunt.helper("scripts", scripts));
+        return grunt.template.process(fileContents, {
+            scripts: scriptsTags
+        })
+    });
+
+    grunt.loadNpmTasks('grunt-contrib');
+    grunt.loadNpmTasks('grunt-compass');
+    grunt.loadNpmTasks('grunt-css');
+
     // Default task.
-    grunt.registerTask('default', 'lint concat min');
+    grunt.registerTask('default', 'concat:index_dev concat:index_prod copy:assets lint concat:dist min compass cssmin concat:css');
 
 };
