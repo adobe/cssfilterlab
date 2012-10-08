@@ -76,7 +76,7 @@
         "html/help-popup.html"
     ],
     "qunit": [
-        "tests/qunit.html"
+        "html/qunit.html"
     ],
     "qunit_lib": "http://code.jquery.com/qunit/qunit-1.10.0.js",
     "qunit_css": "http://code.jquery.com/qunit/qunit-1.10.0.css"

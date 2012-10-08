@@ -121,7 +121,7 @@ module.exports = function(grunt) {
                 tasks: 'sass cssmin concat:css'
             },
             html: {
-                files: ['index.html', 'tests/qunit.html'],
+                files: ['index.html', 'html/**/*.html'],
                 tasks: 'html'
             }
         },
