@@ -2,7 +2,7 @@ module.exports = function(grunt) {
 
     var project = JSON.parse(grunt.file.read("project.json"));
 
-    function generateHTMLConfig(dest, scripts, css, addQunit) {
+    function generateHTMLConfig(dest, scripts, css, addThirdPartyLibs, addQunit) {
         scripts = Array.isArray(scripts) ? scripts : [scripts];
         css = Array.isArray(css) ? css : [css];
 
@@ -12,8 +12,10 @@ module.exports = function(grunt) {
             css.push(project.qunit_css);
         }
 
-        scripts = grunt.utils._.union(project.third_party_libs, scripts);
-        css = grunt.utils._.union(css, project.third_party_css);
+        if (addThirdPartyLibs) {
+            scripts = grunt.utils._.union(project.third_party_libs, scripts);
+            css = grunt.utils._.union(css, project.third_party_css);
+        }
 
         var config = {
             src: 'index.html',
@@ -66,25 +68,30 @@ module.exports = function(grunt) {
             }
         },
         concat: {
-            dist: {
+            js: {
                 src: ['<banner:meta.banner>', '<config:lint.all>'],
-                dest: 'dist/<%= concat.dist.name %>',
+                dest: 'dist/<%= concat.js.name %>',
                 name: 'lib/<%= pkg.name %>.concat.js'
             },
+            min_js: {
+                src: [project.third_party_libs, '<config:min.dist.dest>'],
+                dest: 'dist/<%= concat.min_js.name %>',
+                name: 'lib/<%= pkg.name %>.min.js'
+            },
             css: {
-                src: ['<banner:meta.banner>', '<config:cssmin.css.dest>'],
+                src: ['<banner:meta.banner>', '<config:cssmin.css.dest>', project.third_party_css],
                 dest: '<config:cssmin.css.dest>'
             }
         },
         html: {
-            index_dev: generateHTMLConfig('dist/index.dev.html', '<config:lint.all>', 'style/css/app.dev.css'),
-            index_dev_qunit: generateHTMLConfig('dist/index.dev.qunit.html', '<config:lint.all>', 'style/css/app.dev.css', true),
+            index_dev: generateHTMLConfig('dist/index.dev.html', '<config:lint.all>', 'style/css/app.dev.css', true),
+            index_dev_qunit: generateHTMLConfig('dist/index.dev.qunit.html', '<config:lint.all>', 'style/css/app.dev.css', true, true),
 
-            index_prod: generateHTMLConfig('dist/index.html', '<config:min.dist.name>', 'style/css/app.min.css'),
-            index_prod_qunit: generateHTMLConfig('dist/index.qunit.html', '<config:min.dist.name>', 'style/css/app.min.css', true),
+            index_prod: generateHTMLConfig('dist/index.html', '<config:concat.min_js.name>', 'style/css/app.min.css', false),
+            index_prod_qunit: generateHTMLConfig('dist/index.qunit.html', '<config:concat.min_js.name>', 'style/css/app.min.css', false, true),
 
-            index_concat: generateHTMLConfig('dist/index.concat.html', '<config:concat.dist.name>', 'style/css/app.dev.css'),
-            index_concat_qunit: generateHTMLConfig('dist/index.concat.qunit.html', '<config:concat.dist.name>', 'style/css/app.concat.css', true)
+            index_concat: generateHTMLConfig('dist/index.concat.html', '<config:concat.js.name>', 'style/css/app.concat.css', true),
+            index_concat_qunit: generateHTMLConfig('dist/index.concat.qunit.html', '<config:concat.js.name>', 'style/css/app.concat.css', true, true)
         },
         qunit: {
             dev: "dist/index.dev.qunit.html",
@@ -93,9 +100,9 @@ module.exports = function(grunt) {
         },
         min: {
             dist: {
-                src: ['<banner:meta.banner>', '<config:concat.dist.dest>'],
+                src: ['<banner:meta.banner>', '<config:concat.js.dest>'],
                 dest: 'dist/<%= min.dist.name %>',
-                name: 'lib/<%= pkg.name %>.min.js'
+                name: 'lib/<%= pkg.name %>.concat.min.js'
             }
         },
         lint: {
@@ -107,7 +114,7 @@ module.exports = function(grunt) {
         watch: {
             js: {
                 files: '<config:lint.all>',
-                tasks: 'lint concat:dist min'
+                tasks: 'lint concat:js min concat:min_js'
             },
             css: {
                 files: 'style/app.scss',
@@ -212,7 +219,11 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-css');
 
-    grunt.registerTask('default', 'html lint sass copy concat:dist min cssmin concat:css');
+    grunt.registerTask('check-sources', 'html lint sass');
+    grunt.registerTask('minify-js', 'concat:js min concat:min_js');
+    grunt.registerTask('minify-css', 'cssmin concat:css');
+
+    grunt.registerTask('default', 'check-sources copy minify-js minify-css');
     grunt.registerTask('test', 'copy:tests qunit:dev');
 
 };
