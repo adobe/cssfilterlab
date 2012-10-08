@@ -33,12 +33,34 @@ cd ./path/to/css/filterlab/
 $ git submodule update --init
 </pre>
 
-### File System Access
+### Build
 
-CSS FilterLab requires HTML5 File System access, but that doesn't work very well when loaded from file:// URLs. For that reason running CSS FilterLab requires serving it from a server. The easiest way to do that on a Mac would be to use python's simple server:
+CSS FilterLab uses [Grunt.js](http://gruntjs.com/) to concatenate and minify JavaScript & CSS resources. [Grunt.js](http://gruntjs.com/) is build on nodejs, so if you don't have it already installed, go to [node.js website](http://nodejs.org/) and follow the instructions to install it. After that use the command line node package manager to install grunt.js:
+
+<pre>
+$ sudo npm install -g grunt
+</pre>
+
+The grunt.js project file uses other node.js modules. To quicly install all the required libraries run "npm install" in the extracted folder.
 
 <pre>
 cd ./path/to/css/filterlab/
+$ npm install
+</pre>
+
+To build CSS FilterLab, you need to run the "grunt" command line tool in the project folder. This will generate the "dist/dev" and "dist/prod" folders. The "dev" folder will use the expanded JS files, while the "prod" version will use minified versions instead.
+
+<pre>
+cd ./path/to/css/filterlab/
+$ grunt
+</pre>
+
+### File System Access
+
+CSS FilterLab requires XHR access, but that doesn't work very well when loaded from file:// URLs. For that reason running CSS FilterLab requires serving it from a server. The easiest way to do that on a Mac would be to use python's simple server:
+
+<pre>
+cd [./path/to/css/filterlab]/dist/prod/
 python -m SimpleHTTPServer
 </pre>
 
