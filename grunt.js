@@ -60,6 +60,7 @@ module.exports = function(grunt) {
                     "third_party/jquery/jquery-1.8.0.min.js",
                     "third_party/jquery/jquery-ui-1.8.23.custom.min.js",
                     "third_party/CodeMirror/lib/codemirror.js",
+                    "third_party/CodeMirror/mode/clike/clike.js",
                     '<config:lint.all>'
                 ],
                 css: ['style/css/app.css', 'third_party/CodeMirror/lib/codemirror.css']
@@ -83,6 +84,7 @@ module.exports = function(grunt) {
                     "third_party/jquery/jquery-1.8.0.min.js",
                     "third_party/jquery/jquery-ui-1.8.23.custom.min.js",
                     "third_party/CodeMirror/lib/codemirror.js",
+                    "third_party/CodeMirror/mode/clike/clike.js",
                     '<config:concat.dist.name>'
                 ],
                 css: ['style/css/app.css', 'third_party/CodeMirror/lib/codemirror.css']
