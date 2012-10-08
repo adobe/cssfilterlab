@@ -1,5 +1,19 @@
 module.exports = function(grunt) {
 
+    var third_party_libs = [
+        "third_party/jquery/jquery-1.8.0.min.js",
+        "third_party/jquery/jquery-ui-1.8.23.custom.min.js",
+        "third_party/CodeMirror/lib/codemirror.js",
+        "third_party/CodeMirror/mode/clike/clike.js"
+    ];
+
+    var third_party_css = [
+        'third_party/CodeMirror/lib/codemirror.css'
+    ];
+
+    var qunit_lib = 'http://code.jquery.com/qunit/qunit-1.10.0.js';
+    var qunit_css = 'http://code.jquery.com/qunit/qunit-1.10.0.css';
+
     // Project configuration.
     grunt.initConfig({
         pkg: '<json:package.json>',
@@ -57,37 +71,58 @@ module.exports = function(grunt) {
                 src: ['<html:index.html:concat.index_dev.js:concat.index_dev.css>'],
                 dest: 'dist/dev/index.html',
                 js: [
-                    "third_party/jquery/jquery-1.8.0.min.js",
-                    "third_party/jquery/jquery-ui-1.8.23.custom.min.js",
-                    "third_party/CodeMirror/lib/codemirror.js",
-                    "third_party/CodeMirror/mode/clike/clike.js",
+                    third_party_libs,
                     '<config:lint.all>'
                 ],
-                css: ['style/css/app.css', 'third_party/CodeMirror/lib/codemirror.css']
+                css: ['style/css/app.css', third_party_css]
+            },
+            index_dev_qunit: {
+                src: ['<html:index.html:concat.index_dev_qunit.js:concat.index_dev_qunit.css>'],
+                dest: 'dist/dev/index.qunit.html',
+                js: [
+                    third_party_libs,
+                    qunit_lib,
+                    '<config:lint.all>'
+                ],
+                css: ['style/css/app.css', third_party_css, qunit_css]
             },
             index_prod_min: {
                 src: ['<html:index.html:concat.index_prod_min.js:concat.index_prod_min.css>'],
                 dest: 'dist/prod/index.html',
                 js: [
-                    "third_party/jquery/jquery-1.8.0.min.js",
-                    "third_party/jquery/jquery-ui-1.8.23.custom.min.js",
-                    "third_party/CodeMirror/lib/codemirror.js",
-                    "third_party/CodeMirror/mode/clike/clike.js",
+                    third_party_libs,
                     '<config:min.dist.name>'
                 ],
-                css: ['style/css/app.min.css', 'third_party/CodeMirror/lib/codemirror.css']
+                css: ['style/css/app.min.css', third_party_css]
+            },
+            index_prod_min_qunit: {
+                src: ['<html:index.html:concat.index_prod_min_qunit.js:concat.index_prod_min_qunit.css>'],
+                dest: 'dist/prod/index.qunit.html',
+                js: [
+                    third_party_libs,
+                    qunit_lib,
+                    '<config:min.dist.name>'
+                ],
+                css: ['style/css/app.min.css', third_party_css, qunit_css]
             },
             index_prod_dev: {
                 src: ['<html:index.html:concat.index_prod_dev.js:concat.index_prod_dev.css>'],
                 dest: 'dist/prod/index.dev.html',
                 js: [
-                    "third_party/jquery/jquery-1.8.0.min.js",
-                    "third_party/jquery/jquery-ui-1.8.23.custom.min.js",
-                    "third_party/CodeMirror/lib/codemirror.js",
-                    "third_party/CodeMirror/mode/clike/clike.js",
+                    third_party_libs,
                     '<config:concat.dist.name>'
                 ],
-                css: ['style/css/app.css', 'third_party/CodeMirror/lib/codemirror.css']
+                css: ['style/css/app.css', third_party_css]
+            },
+            index_prod_dev_qunit: {
+                src: ['<html:index.html:concat.index_prod_dev_qunit.js:concat.index_prod_dev_qunit.css>'],
+                dest: 'dist/prod/index.dev.qunit.html',
+                js: [
+                    third_party_libs,
+                    qunit_lib,
+                    '<config:concat.dist.name>'
+                ],
+                css: ['style/css/app.css', third_party_css, qunit_css]
             }
         },
         min: {
@@ -244,6 +279,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-css');
 
     // Default task.
-    grunt.registerTask('default', 'lint sass concat:index_dev concat:index_prod_min concat:index_prod_dev copy:assets concat:dist min cssmin concat:css');
+    grunt.registerTask('default', 'lint sass concat:index_dev concat:index_dev_qunit concat:index_prod_min concat:index_prod_min_qunit concat:index_prod_dev concat:index_prod_dev_qunit copy:assets concat:dist min cssmin concat:css');
 
 };
