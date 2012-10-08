@@ -26,13 +26,17 @@ module.exports = function(grunt) {
                 ' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */'
         },
         copy: {
+            tests: {
+                files: {
+                    "dist/tests/": "tests/**",
+                }
+            },
             assets: {
                 files: {
                     "dist/images/": "images/**",
                     "dist/lib/": "lib/**",
                     "dist/configs.js": "configs.js",
                     "dist/shaders/": "shaders/**",
-                    "dist/tests/": "tests/**",
                     "dist/style/img/": "style/img/**",
                     "dist/style/font/": "style/font/**",
                     "dist/third_party/angle/": "third_party/angle/**",
@@ -127,6 +131,11 @@ module.exports = function(grunt) {
                     qunit: qunit_html
                 }
             }
+        },
+        qunit: {
+            dev: "dist/index.dev.qunit.html",
+            concat: "dist/index.concat.qunit.html",
+            prod: "dist/index.qunit.html"
         },
         min: {
             dist: {
@@ -300,7 +309,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-css');
 
-    // Default task.
-    grunt.registerTask('default', 'html lint sass copy:assets concat:dist min cssmin concat:css');
+    grunt.registerTask('default', 'html lint sass copy concat:dist min cssmin concat:css');
+    grunt.registerTask('test', 'copy:tests qunit:dev');
 
 };
