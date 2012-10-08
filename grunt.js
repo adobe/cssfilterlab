@@ -54,18 +54,37 @@ module.exports = function(grunt) {
                 dest: '<config:cssmin.css.dest>'
             },
             index_dev: {
-                src: ['<html:index.html:lint.all:concat.index_dev.css>'],
+                src: ['<html:index.html:concat.index_dev.js:concat.index_dev.css>'],
                 dest: 'dist/dev/index.html',
+                js: [
+                    "third_party/jquery/jquery-1.8.0.min.js",
+                    "third_party/jquery/jquery-ui-1.8.23.custom.min.js",
+                    "third_party/CodeMirror/lib/codemirror.js",
+                    '<config:lint.all>'
+                ],
                 css: ['style/css/app.css', 'third_party/CodeMirror/lib/codemirror.css']
             },
             index_prod_min: {
-                src: ['<html:index.html:min.dist.name:concat.index_prod_min.css>'],
+                src: ['<html:index.html:concat.index_prod_min.js:concat.index_prod_min.css>'],
                 dest: 'dist/prod/index.html',
+                js: [
+                    "third_party/jquery/jquery-1.8.0.min.js",
+                    "third_party/jquery/jquery-ui-1.8.23.custom.min.js",
+                    "third_party/CodeMirror/lib/codemirror.js",
+                    "third_party/CodeMirror/mode/clike/clike.js",
+                    '<config:min.dist.name>'
+                ],
                 css: ['style/css/app.min.css', 'third_party/CodeMirror/lib/codemirror.css']
             },
             index_prod_dev: {
-                src: ['<html:index.html:concat.dist.name:concat.index_prod_dev.css>'],
+                src: ['<html:index.html:concat.index_prod_dev.js:concat.index_prod_dev.css>'],
                 dest: 'dist/prod/index.dev.html',
+                js: [
+                    "third_party/jquery/jquery-1.8.0.min.js",
+                    "third_party/jquery/jquery-ui-1.8.23.custom.min.js",
+                    "third_party/CodeMirror/lib/codemirror.js",
+                    '<config:concat.dist.name>'
+                ],
                 css: ['style/css/app.css', 'third_party/CodeMirror/lib/codemirror.css']
             }
         },
@@ -190,16 +209,14 @@ module.exports = function(grunt) {
 
     grunt.registerHelper('scripts', function(scriptsVariable) {
         var scripts = grunt.helper("config", scriptsVariable);
-        if (!Array.isArray(scripts))
-            scripts = [scripts];
-        return grunt.utils._.map(scripts, function(script) { return "<script src=\"" + script + "\"></script>\n"; }).join("    ");
+        scripts = Array.isArray(scripts) ? scripts : [scripts];
+        return grunt.utils._(scripts).chain().flatten().map(function(script) { return "<script src=\"" + script + "\"></script>\n"; }).value().join("    ");
     });
 
     grunt.registerHelper('css', function(cssVariable) {
         var css = grunt.helper("config", cssVariable);
-        if (!Array.isArray(css))
-            css = [css];
-        return grunt.utils._.map(css, function(cssFile) { return "<link rel=\"stylesheet\" href=\"" + cssFile + "\">\n"; }).join("    ");
+        css = Array.isArray(css) ? css : [css];
+        return grunt.utils._(css).chain().flatten().map(function(cssFile) { return "<link rel=\"stylesheet\" href=\"" + cssFile + "\">\n"; }).value().join("    ");
     });
 
     grunt.registerHelper('html', function(fileSrc, scripts, css) {
