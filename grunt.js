@@ -8,6 +8,7 @@ module.exports = function(grunt) {
 
         if (addQunit) {
             scripts.unshift(project.qunit_lib);
+            scripts.push("<config:lint.tests>");
             css.push(project.qunit_css);
         }
 
