@@ -25,13 +25,10 @@ limitations under the License.
 </head>
 
 <body>
-
     <div id="components">
-
         <% project.components.forEach(function(component){ %>
             <%- file(component) %>
         <% }) %>
-
     </div>
 
     <div id="main-view">
@@ -52,9 +49,12 @@ limitations under the License.
         <%- file(popup) %>
     <% }) %>
 
-    <% if (typeof(qunit) != 'undefined') { %>
-        <%- qunit %>
+    <% if (qunit) { %>
+        <% project.qunit.forEach(function(qunit){ %>
+            <%- file(qunit) %>
+        <% }) %>
     <% } %>
+
     <%- scripts %>
 </body>
 </html>

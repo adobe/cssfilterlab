@@ -2,7 +2,6 @@ module.exports = function(grunt) {
 
     var qunit_lib = 'http://code.jquery.com/qunit/qunit-1.10.0.js';
     var qunit_css = 'http://code.jquery.com/qunit/qunit-1.10.0.css';
-    var qunit_html = grunt.file.read("tests/qunit.html");
 
     var project = JSON.parse(grunt.file.read("project.json"));
 
@@ -24,11 +23,12 @@ module.exports = function(grunt) {
             js: scripts,
             css: css,
             options: {
-                qunit: qunit_html,
+                qunit: !!addQunit,
                 file: grunt.file.read,
                 project: project
             }
         };
+
         return config;
     }
 
