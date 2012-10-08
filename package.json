@@ -7,10 +7,11 @@
   },
   "licenses": [
     {
-      "type": "MIT"
+      "type": "Apache License 2.0"
     }
   ],
   "dependencies": {
+    "grunt": "0.3.x",
     "grunt-contrib": "~0.2.0",
     "grunt-compass": "~0.3.0",
     "grunt-css": "~0.2.1"
