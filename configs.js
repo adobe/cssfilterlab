@@ -476,6 +476,61 @@ window.filterConfigs = {
             curlRadius: range(0.05, 3, 0.01),
             bleedThrough: range(0, 1, 0.01)
         }       
+    },
+    "curtains": {
+        "hasVertex": true,
+        "hasFragment": true,
+        "mix": {
+            "blendMode": "multiply",
+            "compositeOperator": "source-atop"
+        },
+        "mesh": {
+            "columns": "80",
+            "rows": "80"
+        },
+        "meshBox": "border-box",
+        "params": {
+            "transform": {
+                "rotationX": 0,
+                "rotationY": 0,
+                "rotationZ": 0,
+                "perspective": 2000,
+                "scale": 0.99
+            },
+            "numFolds": 4,
+            "foldSize": 2.5,
+            "amount": 0.3
+        },
+        "config": {
+            "transform": {
+                "type": "transform",
+                "generator": "transform",
+                "mixer": {
+                    "fn": "mixHash",
+                    "params": [
+                        "mixNumber"
+                    ]
+                }
+            },
+            "numFolds": {
+                "type": "range",
+                "min": "1",
+                "max": "8",
+                "step": "0.01"
+            },
+            "foldSize": {
+                "type": "range",
+                "min": "1.0",
+                "max": "16.0",
+                "step": "0.01"
+            },
+            "amount": {
+                "type": "range",
+                "min": "0.0",
+                "max": "1.0",
+                "step": "0.01"
+            }
+        }
     }
 };
 })();
