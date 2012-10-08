@@ -24,7 +24,9 @@ module.exports = function(grunt) {
             js: scripts,
             css: css,
             options: {
-                qunit: qunit_html
+                qunit: qunit_html,
+                file: grunt.file.read,
+                project: project
             }
         };
         return config;
