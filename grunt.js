@@ -3,8 +3,32 @@ module.exports = function(grunt) {
     var qunit_lib = 'http://code.jquery.com/qunit/qunit-1.10.0.js';
     var qunit_css = 'http://code.jquery.com/qunit/qunit-1.10.0.css';
     var qunit_html = grunt.file.read("tests/qunit.html");
-    
+
     var project = JSON.parse(grunt.file.read("project.json"));
+
+    function generateHTMLConfig(dest, scripts, css, addQunit) {
+        scripts = Array.isArray(scripts) ? scripts : [scripts];
+        css = Array.isArray(css) ? css : [css];
+
+        if (addQunit) {
+            scripts.unshift(qunit_lib);
+            css.push(qunit_css);
+        }
+
+        scripts = grunt.utils._.union(project.third_party_libs, scripts);
+        css = grunt.utils._.union(css, project.third_party_css);
+
+        var config = {
+            src: 'index.html',
+            dest: dest,
+            js: scripts,
+            css: css,
+            options: {
+                qunit: qunit_html
+            }
+        };
+        return config;
+    }
 
     // Project configuration.
     grunt.initConfig({
@@ -31,9 +55,9 @@ module.exports = function(grunt) {
                     "dist/style/img/": "style/img/**",
                     "dist/style/font/": "style/font/**",
                     "dist/third_party/angle/": "third_party/angle/**",
-                    "dist/third_party/CodeMirror/": 
+                    "dist/third_party/CodeMirror/":
                         [
-                            "third_party/CodeMirror/lib/codemirror.css", 
+                            "third_party/CodeMirror/lib/codemirror.css",
                             "third_party/CodeMirror/lib/codemirror.js",
                             "third_party/CodeMirror/mode/clike/clike.js"
                         ],
@@ -53,75 +77,14 @@ module.exports = function(grunt) {
             }
         },
         html: {
-            index_dev: {
-                src: 'index.html',
-                dest: 'dist/index.dev.html',
-                js: [
-                    project.third_party_libs,
-                    '<config:lint.all>'
-                ],
-                css: ['style/css/app.dev.css', project.third_party_css]
-            },
-            index_dev_qunit: {
-                src: 'index.html',
-                dest: 'dist/index.dev.qunit.html',
-                js: [
-                    project.third_party_libs,
-                    qunit_lib,
-                    '<config:lint.all>',
-                    '<config:lint.tests>'
-                ],
-                css: ['style/css/app.dev.css', project.third_party_css, qunit_css],
-                options: {
-                    qunit: qunit_html
-                }
-            },
-            index_prod_min: {
-                src: 'index.html',
-                dest: 'dist/index.html',
-                js: [
-                    project.third_party_libs,
-                    '<config:min.dist.name>'
-                ],
-                css: ['style/css/app.min.css', project.third_party_css]
-            },
-            index_prod_min_qunit: {
-                src: 'index.html',
-                dest: 'dist/index.qunit.html',
-                js: [
-                    project.third_party_libs,
-                    qunit_lib,
-                    '<config:min.dist.name>',
-                    '<config:lint.tests>'
-                ],
-                css: ['style/css/app.min.css', project.third_party_css, qunit_css],
-                options: {
-                    qunit: qunit_html
-                }
-            },
-            index_prod_concat: {
-                src: 'index.html',
-                dest: 'dist/index.concat.html',
-                js: [
-                    project.third_party_libs,
-                    '<config:concat.dist.name>'
-                ],
-                css: ['style/css/app.concat.css', project.third_party_css]
-            },
-            index_prod_concat_qunit: {
-                src: 'index.html',
-                dest: 'dist/index.concat.qunit.html',
-                js: [
-                    project.third_party_libs,
-                    qunit_lib,
-                    '<config:concat.dist.name>',
-                    '<config:lint.tests>'
-                ],
-                css: ['style/css/app.concat.css', project.third_party_css, qunit_css],
-                options: {
-                    qunit: qunit_html
-                }
-            }
+            index_dev: generateHTMLConfig('dist/index.dev.html', '<config:lint.all>', 'style/css/app.dev.css'),
+            index_dev_qunit: generateHTMLConfig('dist/index.dev.qunit.html', '<config:lint.all>', 'style/css/app.dev.css', true),
+
+            index_prod: generateHTMLConfig('dist/index.html', '<config:min.dist.name>', 'style/css/app.min.css'),
+            index_prod_qunit: generateHTMLConfig('dist/index.qunit.html', '<config:min.dist.name>', 'style/css/app.min.css', true),
+
+            index_concat: generateHTMLConfig('dist/index.concat.html', '<config:concat.dist.name>', 'style/css/app.dev.css'),
+            index_concat_qunit: generateHTMLConfig('dist/index.concat.qunit.html', '<config:concat.dist.name>', 'style/css/app.concat.css', true)
         },
         qunit: {
             dev: "dist/index.dev.qunit.html",
