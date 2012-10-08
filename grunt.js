@@ -13,6 +13,7 @@ module.exports = function(grunt) {
 
     var qunit_lib = 'http://code.jquery.com/qunit/qunit-1.10.0.js';
     var qunit_css = 'http://code.jquery.com/qunit/qunit-1.10.0.css';
+    var qunit_html = grunt.file.read("tests/qunit.html");
 
     // Project configuration.
     grunt.initConfig({
@@ -29,6 +30,7 @@ module.exports = function(grunt) {
                 files: {
                     "dist/dev/images/": "images/**",
                     "dist/dev/shaders/": "shaders/**",
+                    "dist/dev/tests/": "tests/**",
                     "dist/dev/lib/": "lib/**",
                     "dist/dev/configs.js": "configs.js",
                     "dist/dev/style/img/": "style/img/**",
@@ -44,6 +46,7 @@ module.exports = function(grunt) {
                     
                     "dist/prod/images/": "images/**",
                     "dist/prod/shaders/": "shaders/**",
+                    "dist/prod/tests/": "tests/**",
                     "dist/prod/style/img/": "style/img/**",
                     "dist/prod/style/font/": "style/font/**",
                     "dist/prod/third_party/angle/": "third_party/angle/**",
@@ -66,9 +69,11 @@ module.exports = function(grunt) {
             css: {
                 src: ['<banner:meta.banner>', '<config:cssmin.css.dest>'],
                 dest: '<config:cssmin.css.dest>'
-            },
+            }
+        },
+        html: {
             index_dev: {
-                src: ['<html:index.html:concat.index_dev.js:concat.index_dev.css>'],
+                src: 'index.html',
                 dest: 'dist/dev/index.html',
                 js: [
                     third_party_libs,
@@ -77,17 +82,21 @@ module.exports = function(grunt) {
                 css: ['style/css/app.css', third_party_css]
             },
             index_dev_qunit: {
-                src: ['<html:index.html:concat.index_dev_qunit.js:concat.index_dev_qunit.css>'],
+                src: 'index.html',
                 dest: 'dist/dev/index.qunit.html',
                 js: [
                     third_party_libs,
                     qunit_lib,
-                    '<config:lint.all>'
+                    '<config:lint.all>',
+                    '<config:lint.tests>'
                 ],
-                css: ['style/css/app.css', third_party_css, qunit_css]
+                css: ['style/css/app.css', third_party_css, qunit_css],
+                options: {
+                    qunit: qunit_html
+                }
             },
             index_prod_min: {
-                src: ['<html:index.html:concat.index_prod_min.js:concat.index_prod_min.css>'],
+                src: 'index.html',
                 dest: 'dist/prod/index.html',
                 js: [
                     third_party_libs,
@@ -96,17 +105,21 @@ module.exports = function(grunt) {
                 css: ['style/css/app.min.css', third_party_css]
             },
             index_prod_min_qunit: {
-                src: ['<html:index.html:concat.index_prod_min_qunit.js:concat.index_prod_min_qunit.css>'],
+                src: 'index.html',
                 dest: 'dist/prod/index.qunit.html',
                 js: [
                     third_party_libs,
                     qunit_lib,
-                    '<config:min.dist.name>'
+                    '<config:min.dist.name>',
+                    '<config:lint.tests>'
                 ],
-                css: ['style/css/app.min.css', third_party_css, qunit_css]
+                css: ['style/css/app.min.css', third_party_css, qunit_css],
+                options: {
+                    qunit: qunit_html
+                }
             },
             index_prod_dev: {
-                src: ['<html:index.html:concat.index_prod_dev.js:concat.index_prod_dev.css>'],
+                src: 'index.html',
                 dest: 'dist/prod/index.dev.html',
                 js: [
                     third_party_libs,
@@ -115,14 +128,18 @@ module.exports = function(grunt) {
                 css: ['style/css/app.css', third_party_css]
             },
             index_prod_dev_qunit: {
-                src: ['<html:index.html:concat.index_prod_dev_qunit.js:concat.index_prod_dev_qunit.css>'],
+                src: 'index.html',
                 dest: 'dist/prod/index.dev.qunit.html',
                 js: [
                     third_party_libs,
                     qunit_lib,
-                    '<config:concat.dist.name>'
+                    '<config:concat.dist.name>',
+                    '<config:lint.tests>'
                 ],
-                css: ['style/css/app.css', third_party_css, qunit_css]
+                css: ['style/css/app.css', third_party_css, qunit_css],
+                options: {
+                    qunit: qunit_html
+                }
             }
         },
         min: {
@@ -134,6 +151,9 @@ module.exports = function(grunt) {
         },
         lint: {
             grunt: ['grunt.js'],
+            tests: [
+                'tests/tests.js'
+            ],
             /* Note that the order of loading the files is important. */
             all: [  
                 "configs.js", 
@@ -194,6 +214,10 @@ module.exports = function(grunt) {
             css: {
                 files: 'style/app.scss',
                 tasks: 'sass cssmin concat:css'
+            },
+            html: {
+                files: ['index.html', 'tests/qunit.html'],
+                tasks: 'html'
             }
         },
         sass: {
@@ -241,6 +265,14 @@ module.exports = function(grunt) {
                 Global: true,
                 filterConfigs: true,
                 CodeMirror: true
+            },
+            grunt: {
+                options: {},
+                globals: {require: true}
+            },
+            tests: {
+                options: {},
+                globals: {module: true, test: true, ok: true, equal: true, deepEqual: true, QUnit: true}
             }
         },
         uglify: {},
@@ -252,26 +284,30 @@ module.exports = function(grunt) {
         }
     });
 
-    grunt.registerHelper('scripts', function(scriptsVariable) {
-        var scripts = grunt.helper("config", scriptsVariable);
+    grunt.registerHelper('scripts', function(scripts) {
         scripts = Array.isArray(scripts) ? scripts : [scripts];
         return grunt.utils._(scripts).chain().flatten().map(function(script) { return "<script src=\"" + script + "\"></script>\n"; }).value().join("    ");
     });
 
-    grunt.registerHelper('css', function(cssVariable) {
-        var css = grunt.helper("config", cssVariable);
+    grunt.registerHelper('css', function(css) {
         css = Array.isArray(css) ? css : [css];
         return grunt.utils._(css).chain().flatten().map(function(cssFile) { return "<link rel=\"stylesheet\" href=\"" + cssFile + "\">\n"; }).value().join("    ");
     });
 
-    grunt.registerHelper('html', function(fileSrc, scripts, css) {
-        var fileContents = grunt.task.directive(fileSrc, grunt.file.read),
-            scriptsTags = grunt.template.process(grunt.helper("scripts", scripts)),
+    grunt.registerHelper('html', function(content, scripts, css, options) {
+        var scriptsTags = grunt.template.process(grunt.helper("scripts", scripts)),
             cssTags = grunt.template.process(grunt.helper("css", css));
-        return grunt.template.process(fileContents, {
+        options = options || {};
+        return require('ejs').render(content, grunt.utils._.extend(options, {
             scripts: scriptsTags,
             css: cssTags
-        })
+        }));
+    });
+
+    grunt.registerMultiTask('html', 'Generates the index.html file injecting the css and script tags.', function() {
+        var fileContents = grunt.task.directive(this.data.src, grunt.file.read);
+        var output = grunt.helper("html", fileContents, this.data.js, this.data.css, this.data.options);
+        grunt.file.write(this.data.dest, output);
     });
 
     grunt.loadNpmTasks('grunt-contrib');
@@ -279,6 +315,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-css');
 
     // Default task.
-    grunt.registerTask('default', 'lint sass concat:index_dev concat:index_dev_qunit concat:index_prod_min concat:index_prod_min_qunit concat:index_prod_dev concat:index_prod_dev_qunit copy:assets concat:dist min cssmin concat:css');
+    grunt.registerTask('default', 'html lint sass copy:assets concat:dist min cssmin concat:css');
 
 };

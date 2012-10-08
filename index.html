@@ -21,8 +21,7 @@ limitations under the License.
     <meta http-equiv="X-UA-Compatible" content="IE=9">
     <title>CSS FilterLab</title>
 
-    <%= css %>
-
+    <%- css %>
 </head>
 
 <body>
@@ -224,6 +223,24 @@ limitations under the License.
             </div>
 
         </section>
+
+        <div id="import-filter">
+            <section>
+                <p>You can import a filter from a GitHub gist URL. Once imported your filter will appear under the 'Forked Custom' tab.</p>
+
+                <div class="notice error">
+                    <strong>Oops!</strong>
+                    There was an error importing from that URL. Please check that it points to a filter gist and try again.
+                </div>
+
+                <label for="gist-url">Filter Gist URL:</label>
+                <form action="#">
+                    <input type="url" class="text-field dark" name="gist-url" placeholder="gist URL" required/>
+                    <a href="#" class="button dark disabled cta">Import</a>
+                </form>
+
+            </section>
+        </div>
     </div>
 
     <div id="main-view">
@@ -389,25 +406,9 @@ limitations under the License.
         </div>
     </div>
 
-    <div id="import-filter">
-        <section>
-
-            <p>You can import a filter from a GitHub gist URL. Once imported your filter will appear under the 'Forked Custom' tab.</p>
-
-            <div class="notice error">
-                <strong>Oops!</strong>
-                There was an error importing from that URL. Please check that it points to a filter gist and try again.
-            </div>
-
-            <label for="gist-url">Filter Gist URL:</label>
-            <form action="#">
-                <input type="url" class="text-field dark" name="gist-url" placeholder="gist URL" required/>
-                <a href="#" class="button dark disabled cta">Import</a>
-            </form>
-
-        </section>
-    </div>
-
-    <%= scripts %>
+    <% if (typeof(qunit) != 'undefined') { %>
+        <%- qunit %>
+    <% } %>
+    <%- scripts %>
 </body>
 </html>
