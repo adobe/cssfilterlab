@@ -54,16 +54,19 @@ module.exports = function(grunt) {
                 dest: '<config:cssmin.css.dest>'
             },
             index_dev: {
-                src: ['<html:index.html:lint.all>'],
-                dest: 'dist/dev/index.html'
+                src: ['<html:index.html:lint.all:concat.index_dev.css>'],
+                dest: 'dist/dev/index.html',
+                css: ['style/css/app.css', 'third_party/CodeMirror/lib/codemirror.css']
             },
             index_prod_min: {
-                src: ['<html:index.html:min.dist.name>'],
-                dest: 'dist/prod/index.html'
+                src: ['<html:index.html:min.dist.name:concat.index_prod_min.css>'],
+                dest: 'dist/prod/index.html',
+                css: ['style/css/app.min.css', 'third_party/CodeMirror/lib/codemirror.css']
             },
             index_prod_dev: {
-                src: ['<html:index.html:concat.dist.name>'],
-                dest: 'dist/prod/index.dev.html'
+                src: ['<html:index.html:concat.dist.name:concat.index_prod_dev.css>'],
+                dest: 'dist/prod/index.dev.html',
+                css: ['style/css/app.css', 'third_party/CodeMirror/lib/codemirror.css']
             }
         },
         min: {
@@ -192,11 +195,20 @@ module.exports = function(grunt) {
         return grunt.utils._.map(scripts, function(script) { return "<script src=\"" + script + "\"></script>\n"; }).join("    ");
     });
 
-    grunt.registerHelper('html', function(fileSrc, scripts) {
+    grunt.registerHelper('css', function(cssVariable) {
+        var css = grunt.helper("config", cssVariable);
+        if (!Array.isArray(css))
+            css = [css];
+        return grunt.utils._.map(css, function(cssFile) { return "<link rel=\"stylesheet\" href=\"" + cssFile + "\">\n"; }).join("    ");
+    });
+
+    grunt.registerHelper('html', function(fileSrc, scripts, css) {
         var fileContents = grunt.task.directive(fileSrc, grunt.file.read),
-            scriptsTags = grunt.template.process(grunt.helper("scripts", scripts));
+            scriptsTags = grunt.template.process(grunt.helper("scripts", scripts)),
+            cssTags = grunt.template.process(grunt.helper("css", css));
         return grunt.template.process(fileContents, {
-            scripts: scriptsTags
+            scripts: scriptsTags,
+            css: cssTags
         })
     });
 
