@@ -14,7 +14,7 @@
     "grunt": "0.3.x",
     "grunt-contrib": "~0.2.0",
     "grunt-css": "~0.2.1",
-    "grunt-contrib-sass": "git://github.com/chicu123/grunt-contrib-sass.git#origin/darwin-fix",
+    "grunt-contrib-sass": "~0.1.1",
     "ejs": "~0.8.3"
   }
 }
