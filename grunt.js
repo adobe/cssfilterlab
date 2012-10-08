@@ -28,43 +28,29 @@ module.exports = function(grunt) {
         copy: {
             assets: {
                 files: {
-                    "dist/dev/images/": "images/**",
-                    "dist/dev/shaders/": "shaders/**",
-                    "dist/dev/tests/": "tests/**",
-                    "dist/dev/lib/": "lib/**",
-                    "dist/dev/configs.js": "configs.js",
-                    "dist/dev/style/img/": "style/img/**",
-                    "dist/dev/style/font/": "style/font/**",
-                    "dist/dev/third_party/angle/": "third_party/angle/**",
-                    "dist/dev/third_party/CodeMirror/": 
+                    "dist/images/": "images/**",
+                    "dist/lib/": "lib/**",
+                    "dist/configs.js": "configs.js",
+                    "dist/shaders/": "shaders/**",
+                    "dist/tests/": "tests/**",
+                    "dist/style/img/": "style/img/**",
+                    "dist/style/font/": "style/font/**",
+                    "dist/third_party/angle/": "third_party/angle/**",
+                    "dist/third_party/CodeMirror/": 
                         [
                             "third_party/CodeMirror/lib/codemirror.css", 
                             "third_party/CodeMirror/lib/codemirror.js",
                             "third_party/CodeMirror/mode/clike/clike.js"
                         ],
-                    "dist/dev/third_party/jquery/": "third_party/jquery/**",
-                    
-                    "dist/prod/images/": "images/**",
-                    "dist/prod/shaders/": "shaders/**",
-                    "dist/prod/tests/": "tests/**",
-                    "dist/prod/style/img/": "style/img/**",
-                    "dist/prod/style/font/": "style/font/**",
-                    "dist/prod/third_party/angle/": "third_party/angle/**",
-                    "dist/prod/third_party/CodeMirror/": 
-                        [
-                            "third_party/CodeMirror/lib/codemirror.css", 
-                            "third_party/CodeMirror/lib/codemirror.js",
-                            "third_party/CodeMirror/mode/clike/clike.js"
-                        ],
-                    "dist/prod/third_party/jquery/": "third_party/jquery/**"
+                    "dist/third_party/jquery/": "third_party/jquery/**"
                 }
             }
         },
         concat: {
             dist: {
                 src: ['<banner:meta.banner>', '<config:lint.all>'],
-                dest: 'dist/prod/<%= concat.dist.name %>',
-                name: 'lib/<%= pkg.name %>.js'
+                dest: 'dist/<%= concat.dist.name %>',
+                name: 'lib/<%= pkg.name %>.concat.js'
             },
             css: {
                 src: ['<banner:meta.banner>', '<config:cssmin.css.dest>'],
@@ -74,30 +60,30 @@ module.exports = function(grunt) {
         html: {
             index_dev: {
                 src: 'index.html',
-                dest: 'dist/dev/index.html',
+                dest: 'dist/index.dev.html',
                 js: [
                     third_party_libs,
                     '<config:lint.all>'
                 ],
-                css: ['style/css/app.css', third_party_css]
+                css: ['style/css/app.dev.css', third_party_css]
             },
             index_dev_qunit: {
                 src: 'index.html',
-                dest: 'dist/dev/index.qunit.html',
+                dest: 'dist/index.dev.qunit.html',
                 js: [
                     third_party_libs,
                     qunit_lib,
                     '<config:lint.all>',
                     '<config:lint.tests>'
                 ],
-                css: ['style/css/app.css', third_party_css, qunit_css],
+                css: ['style/css/app.dev.css', third_party_css, qunit_css],
                 options: {
                     qunit: qunit_html
                 }
             },
             index_prod_min: {
                 src: 'index.html',
-                dest: 'dist/prod/index.html',
+                dest: 'dist/index.html',
                 js: [
                     third_party_libs,
                     '<config:min.dist.name>'
@@ -106,7 +92,7 @@ module.exports = function(grunt) {
             },
             index_prod_min_qunit: {
                 src: 'index.html',
-                dest: 'dist/prod/index.qunit.html',
+                dest: 'dist/index.qunit.html',
                 js: [
                     third_party_libs,
                     qunit_lib,
@@ -118,25 +104,25 @@ module.exports = function(grunt) {
                     qunit: qunit_html
                 }
             },
-            index_prod_dev: {
+            index_prod_concat: {
                 src: 'index.html',
-                dest: 'dist/prod/index.dev.html',
+                dest: 'dist/index.concat.html',
                 js: [
                     third_party_libs,
                     '<config:concat.dist.name>'
                 ],
-                css: ['style/css/app.css', third_party_css]
+                css: ['style/css/app.concat.css', third_party_css]
             },
-            index_prod_dev_qunit: {
+            index_prod_concat_qunit: {
                 src: 'index.html',
-                dest: 'dist/prod/index.dev.qunit.html',
+                dest: 'dist/index.concat.qunit.html',
                 js: [
                     third_party_libs,
                     qunit_lib,
                     '<config:concat.dist.name>',
                     '<config:lint.tests>'
                 ],
-                css: ['style/css/app.css', third_party_css, qunit_css],
+                css: ['style/css/app.concat.css', third_party_css, qunit_css],
                 options: {
                     qunit: qunit_html
                 }
@@ -145,7 +131,7 @@ module.exports = function(grunt) {
         min: {
             dist: {
                 src: ['<banner:meta.banner>', '<config:concat.dist.dest>'],
-                dest: 'dist/prod/<%= min.dist.name %>',
+                dest: 'dist/<%= min.dist.name %>',
                 name: 'lib/<%= pkg.name %>.min.js'
             }
         },
@@ -229,7 +215,7 @@ module.exports = function(grunt) {
                     trace: true
                 },
                 files: {
-                    'dist/dev/style/css/app.css': 'style/app.scss'
+                    'dist/style/css/app.dev.css': 'style/app.scss'
                 }
             },
             prod: {
@@ -238,7 +224,7 @@ module.exports = function(grunt) {
                     style: 'compact'
                 },
                 files: {
-                    'dist/prod/style/css/app.css': 'style/app.scss'
+                    'dist/style/css/app.concat.css': 'style/app.scss'
                 }
             }
         },
@@ -278,8 +264,8 @@ module.exports = function(grunt) {
         uglify: {},
         cssmin: {
             css: {
-                src: 'dist/prod/style/css/app.css',
-                dest: 'dist/prod/style/css/app.min.css'
+                src: 'dist/style/css/app.concat.css',
+                dest: 'dist/style/css/app.min.css'
             }
         }
     });
