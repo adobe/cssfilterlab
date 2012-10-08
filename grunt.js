@@ -14,6 +14,9 @@ module.exports = function(grunt) {
             assets: {
                 files: {
                     "dist/dev/images/": "images/**",
+                    "dist/dev/shaders/": "shaders/**",
+                    "dist/dev/lib/": "lib/**",
+                    "dist/dev/configs.js": "configs.js",
                     "dist/dev/style/img/": "style/img/**",
                     "dist/dev/style/font/": "style/font/**",
                     "dist/dev/third_party/angle/": "third_party/angle/**",
@@ -26,6 +29,7 @@ module.exports = function(grunt) {
                     "dist/dev/third_party/jquery/": "third_party/jquery/**",
                     
                     "dist/prod/images/": "images/**",
+                    "dist/prod/shaders/": "shaders/**",
                     "dist/prod/style/img/": "style/img/**",
                     "dist/prod/style/font/": "style/font/**",
                     "dist/prod/third_party/angle/": "third_party/angle/**",
@@ -42,7 +46,8 @@ module.exports = function(grunt) {
         concat: {
             dist: {
                 src: ['<banner:meta.banner>', '<config:lint.all>'],
-                dest: 'dist/dev/js/<%= pkg.name %>.js'
+                dest: 'dist/prod/<%= concat.dist.name %>',
+                name: 'lib/<%= pkg.name %>.js'
             },
             css: {
                 src: ['<banner:meta.banner>', '<config:cssmin.css.dest>'],
@@ -52,15 +57,20 @@ module.exports = function(grunt) {
                 src: ['<html:index.html:lint.all>'],
                 dest: 'dist/dev/index.html'
             },
-            index_prod: {
-                src: ['<html:index.html:min.dist.dest>'],
+            index_prod_min: {
+                src: ['<html:index.html:min.dist.name>'],
                 dest: 'dist/prod/index.html'
+            },
+            index_prod_dev: {
+                src: ['<html:index.html:concat.dist.name>'],
+                dest: 'dist/prod/index.dev.html'
             }
         },
         min: {
             dist: {
                 src: ['<banner:meta.banner>', '<config:concat.dist.dest>'],
-                dest: 'dist/prod/js/<%= pkg.name %>.min.js'
+                dest: 'dist/prod/<%= min.dist.name %>',
+                name: 'lib/<%= pkg.name %>.min.js'
             }
         },
         lint: {
@@ -179,7 +189,7 @@ module.exports = function(grunt) {
         var scripts = grunt.helper("config", scriptsVariable);
         if (!Array.isArray(scripts))
             scripts = [scripts];
-        return grunt.utils._.map(scripts, function(script) { return "    <script src=\"" + script + "\"></script>\n"; }).join("");
+        return grunt.utils._.map(scripts, function(script) { return "<script src=\"" + script + "\"></script>\n"; }).join("    ");
     });
 
     grunt.registerHelper('html', function(fileSrc, scripts) {
@@ -195,6 +205,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-css');
 
     // Default task.
-    grunt.registerTask('default', 'concat:index_dev concat:index_prod copy:assets lint concat:dist min compass cssmin concat:css');
+    grunt.registerTask('default', 'concat:index_dev concat:index_prod_min concat:index_prod_dev copy:assets lint concat:dist min compass cssmin concat:css');
 
 };

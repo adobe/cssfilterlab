@@ -478,4 +478,4 @@ window.filterConfigs = {
         }       
     }
 };
-})()
+})();
