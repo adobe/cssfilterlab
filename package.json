@@ -1,13 +1,18 @@
 {
-	"name": "CSSFilterLab",
-	"version": 0.1,
-	"homepage": "http://html.adobe.com/webstandards/csscustomfilters/cssfilterlab/",
-	"author": {
-		"name": "Adobe Systems Inc."
-	},
-	"licenses": [
-		{
-			"type": "MIT"
-		}
-	]
+  "name": "CSSFilterLab",
+  "version": "0.1.0",
+  "homepage": "http://html.adobe.com/webstandards/csscustomfilters/cssfilterlab/",
+  "author": {
+    "name": "Adobe Systems Inc."
+  },
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+  ],
+  "dependencies": {
+    "grunt-contrib": "~0.2.0",
+    "grunt-compass": "~0.3.0",
+    "grunt-css": "~0.2.1"
+  }
 }

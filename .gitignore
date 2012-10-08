@@ -2,3 +2,4 @@
 .sass-cache/
 *dwsync.xml
 dist/
+node_modules/
