@@ -13,7 +13,7 @@
   "dependencies": {
     "grunt": "0.3.x",
     "grunt-contrib": "~0.2.0",
-    "grunt-compass": "~0.3.0",
-    "grunt-css": "~0.2.1"
+    "grunt-css": "~0.2.1",
+    "grunt-contrib-sass": "git://github.com/chicu123/grunt-contrib-sass.git"
   }
 }

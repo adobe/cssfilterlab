@@ -154,25 +154,33 @@ module.exports = function(grunt) {
         watch: {
             js: {
                 files: '<config:lint.all>',
-                tasks: 'lint'
+                tasks: 'lint concat:dist min'
             },
             css: {
                 files: 'style/app.scss',
-                tasks: ['compass:dev', 'compass:prod']
+                tasks: 'sass cssmin concat:css'
             }
         },
-        compass: {
+        sass: {
             dev: {
-                src: 'style/',
-                dest: 'dist/dev/style/css/',
-                linecomments: true,
-                forcecompile: true
+                options: {
+                    style: 'expanded',
+                    debugInfo: true,
+                    lineNumbers: true,
+                    trace: true
+                },
+                files: {
+                    'dist/dev/style/css/app.css': 'style/app.scss'
+                }
             },
             prod: {
-                src: 'style/',
-                dest: 'dist/prod/style/css/',
-                linecomments: false,
-                forcecompile: true
+                options: {
+                    // Using compact here, so that debugging is not a nightmare. We minify it later.
+                    style: 'compact'
+                },
+                files: {
+                    'dist/prod/style/css/app.css': 'style/app.scss'
+                }
             }
         },
         jshint: {
@@ -232,10 +240,10 @@ module.exports = function(grunt) {
     });
 
     grunt.loadNpmTasks('grunt-contrib');
-    grunt.loadNpmTasks('grunt-compass');
+    grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-css');
 
     // Default task.
-    grunt.registerTask('default', 'concat:index_dev concat:index_prod_min concat:index_prod_dev copy:assets lint concat:dist min compass cssmin concat:css');
+    grunt.registerTask('default', 'lint sass concat:index_dev concat:index_prod_min concat:index_prod_dev copy:assets concat:dist min cssmin concat:css');
 
 };
