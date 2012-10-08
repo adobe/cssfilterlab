@@ -1,19 +1,10 @@
 module.exports = function(grunt) {
 
-    var third_party_libs = [
-        "third_party/jquery/jquery-1.8.0.min.js",
-        "third_party/jquery/jquery-ui-1.8.23.custom.min.js",
-        "third_party/CodeMirror/lib/codemirror.js",
-        "third_party/CodeMirror/mode/clike/clike.js"
-    ];
-
-    var third_party_css = [
-        'third_party/CodeMirror/lib/codemirror.css'
-    ];
-
     var qunit_lib = 'http://code.jquery.com/qunit/qunit-1.10.0.js';
     var qunit_css = 'http://code.jquery.com/qunit/qunit-1.10.0.css';
     var qunit_html = grunt.file.read("tests/qunit.html");
+    
+    var project = JSON.parse(grunt.file.read("project.json"));
 
     // Project configuration.
     grunt.initConfig({
@@ -28,7 +19,7 @@ module.exports = function(grunt) {
         copy: {
             tests: {
                 files: {
-                    "dist/tests/": "tests/**",
+                    "dist/tests/": "tests/**"
                 }
             },
             assets: {
@@ -66,21 +57,21 @@ module.exports = function(grunt) {
                 src: 'index.html',
                 dest: 'dist/index.dev.html',
                 js: [
-                    third_party_libs,
+                    project.third_party_libs,
                     '<config:lint.all>'
                 ],
-                css: ['style/css/app.dev.css', third_party_css]
+                css: ['style/css/app.dev.css', project.third_party_css]
             },
             index_dev_qunit: {
                 src: 'index.html',
                 dest: 'dist/index.dev.qunit.html',
                 js: [
-                    third_party_libs,
+                    project.third_party_libs,
                     qunit_lib,
                     '<config:lint.all>',
                     '<config:lint.tests>'
                 ],
-                css: ['style/css/app.dev.css', third_party_css, qunit_css],
+                css: ['style/css/app.dev.css', project.third_party_css, qunit_css],
                 options: {
                     qunit: qunit_html
                 }
@@ -89,21 +80,21 @@ module.exports = function(grunt) {
                 src: 'index.html',
                 dest: 'dist/index.html',
                 js: [
-                    third_party_libs,
+                    project.third_party_libs,
                     '<config:min.dist.name>'
                 ],
-                css: ['style/css/app.min.css', third_party_css]
+                css: ['style/css/app.min.css', project.third_party_css]
             },
             index_prod_min_qunit: {
                 src: 'index.html',
                 dest: 'dist/index.qunit.html',
                 js: [
-                    third_party_libs,
+                    project.third_party_libs,
                     qunit_lib,
                     '<config:min.dist.name>',
                     '<config:lint.tests>'
                 ],
-                css: ['style/css/app.min.css', third_party_css, qunit_css],
+                css: ['style/css/app.min.css', project.third_party_css, qunit_css],
                 options: {
                     qunit: qunit_html
                 }
@@ -112,21 +103,21 @@ module.exports = function(grunt) {
                 src: 'index.html',
                 dest: 'dist/index.concat.html',
                 js: [
-                    third_party_libs,
+                    project.third_party_libs,
                     '<config:concat.dist.name>'
                 ],
-                css: ['style/css/app.concat.css', third_party_css]
+                css: ['style/css/app.concat.css', project.third_party_css]
             },
             index_prod_concat_qunit: {
                 src: 'index.html',
                 dest: 'dist/index.concat.qunit.html',
                 js: [
-                    third_party_libs,
+                    project.third_party_libs,
                     qunit_lib,
                     '<config:concat.dist.name>',
                     '<config:lint.tests>'
                 ],
-                css: ['style/css/app.concat.css', third_party_css, qunit_css],
+                css: ['style/css/app.concat.css', project.third_party_css, qunit_css],
                 options: {
                     qunit: qunit_html
                 }
@@ -146,60 +137,9 @@ module.exports = function(grunt) {
         },
         lint: {
             grunt: ['grunt.js'],
-            tests: [
-                'tests/tests.js'
-            ],
+            tests: project.tests,
             /* Note that the order of loading the files is important. */
-            all: [  
-                "configs.js", 
-                "lib/utils/utils.js", 
-                "lib/utils/event_dispatcher.js", 
-                "lib/application.js", 
-                "lib/controls/base_control.js", 
-                "lib/controls/code_editor.js", 
-                "lib/controls/multi_control.js", 
-                "lib/controls/color_control.js", 
-                "lib/controls/checkbox_control.js", 
-                "lib/controls/vector_control.js", 
-                "lib/controls/editable_label.js", 
-                "lib/controls/range_control.js", 
-                "lib/controls/transform_control.js", 
-                "lib/controls/text_control.js", 
-                "lib/controls/warp_control.js", 
-                "lib/models/active_object.js", 
-                "lib/models/animation.js", 
-                "lib/models/preset_store.js", 
-                "lib/models/filter_config.js", 
-                "lib/models/filter.js", 
-                "lib/models/filter_store.js", 
-                "lib/models/filter_list.js", 
-                "lib/models/github.js", 
-                "lib/models/keyframe.js", 
-                "lib/utils/angle_lib.js", 
-                "lib/utils/color_scheme.js", 
-                "lib/utils/config.js", 
-                "lib/utils/css_generators.js", 
-                "lib/utils/local_storage.js", 
-                "lib/utils/mixers.js", 
-                "lib/utils/timer.js", 
-                "lib/utils/warp_helpers.js", 
-                "lib/views/filter_store_view.js", 
-                "lib/views/active_filter_list_view.js", 
-                "lib/views/css_code_view.js", 
-                "lib/views/filter_item_view.js", 
-                "lib/views/preset_store_view.js", 
-                "lib/views/loading_progress_view.js", 
-                "lib/views/logo_view.js", 
-                "lib/views/help_view.js", 
-                "lib/views/import_filter_view.js", 
-                "lib/views/shader_editor_view.js", 
-                "lib/views/shader_code_editor_view.js", 
-                "lib/views/timeline_view.js", 
-                "lib/views/dock_column.js", 
-                "lib/views/dock_view.js", 
-                "lib/views/dock_container.js", 
-                "lib/views/dock_panel.js"
-            ]
+            all: project.scripts
         },
         watch: {
             js: {
