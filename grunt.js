@@ -1,8 +1,5 @@
 module.exports = function(grunt) {
 
-    var qunit_lib = 'http://code.jquery.com/qunit/qunit-1.10.0.js';
-    var qunit_css = 'http://code.jquery.com/qunit/qunit-1.10.0.css';
-
     var project = JSON.parse(grunt.file.read("project.json"));
 
     function generateHTMLConfig(dest, scripts, css, addQunit) {
@@ -10,8 +7,8 @@ module.exports = function(grunt) {
         css = Array.isArray(css) ? css : [css];
 
         if (addQunit) {
-            scripts.unshift(qunit_lib);
-            css.push(qunit_css);
+            scripts.unshift(project.qunit_lib);
+            css.push(project.qunit_css);
         }
 
         scripts = grunt.utils._.union(project.third_party_libs, scripts);
