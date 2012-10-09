@@ -1,0 +1,27 @@
+<div id="filters-not-supported-popup" class="filters-not-supported">
+    <div><span class="message"></span> <a href="#" class="filters-not-supported-help">Help</a></div>
+</div>
+
+<aside id="active-filters">
+    <ul id="filter-list">
+        <li id="filter-list-empty">No filter applied. Add a filter to style the content.</li>
+    </ul>
+</aside>
+
+<div id="import-filter">
+    <section>
+        <p>You can import a filter from a GitHub gist URL. Once imported your filter will appear under the 'Forked Custom' tab.</p>
+
+        <div class="notice error">
+            <strong>Oops!</strong>
+            There was an error importing from that URL. Please check that it points to a filter gist and try again.
+        </div>
+
+        <label for="gist-url">Filter Gist URL:</label>
+        <form action="#">
+            <input type="url" class="text-field dark" name="gist-url" placeholder="gist URL" required/>
+            <a href="#" class="button dark disabled cta">Import</a>
+        </form>
+
+    </section>
+</div>

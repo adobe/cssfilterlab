@@ -1,0 +1,110 @@
+<div id="config-editor">
+    <div class="config-panel">
+
+        <div class="config-row">
+            <label for="config-shader-name">Custom Filter Name:</label>
+            <input type="text" class="config-shader-name" name="config-shader-name" />
+        </div>
+
+        <div class="config-row">
+            <label for="config-shader-mesh-columns">Custom Filter Mesh Columns:</label>
+            <input type="number" class="config-shader-mesh-columns" name="config-shader-mesh-columns" min="1" max="100" />
+        </div>
+
+        <div class="config-row">
+            <label for="config-shader-mesh-rows">Custom Filter Mesh Rows:</label>
+            <input type="number" class="config-shader-mesh-rows" name="config-shader-mesh-rows" min="1" max="100" />
+        </div>
+
+        <div class="config-row">
+            <label for="config-shader-mix-blend-mode">Blend Mode:</label>
+            <select type="text" class="button dark config-shader-mix-blend-mode" name="config-shader-mix-blend-mode">
+                <option value="normal">normal</option>
+                <option value="darken">darken</option>
+                <option value="multiply">multiply</option>
+                <option value="lighten">lighten</option>
+                <option value="screen">screen</option>
+                <option value="difference">difference</option>
+                <option value="exclusion">exclusion</option>
+            </select>
+        </div>
+
+        <div class="config-row config-parameters-row">
+            <div class="config-parameters-wrapper">
+                <h4>Parameters</h4>
+                <ul class="config-parameters">
+
+                </ul>
+            </div>
+
+            <div class="config-parameter">
+                <h4>Parameter "<span class="config-parameter-label"></span>"</h4>
+
+                <div class="config-row">
+                    <label for="config-parameter-type">Parameter Type:</label>
+                    <select type="text" class="button dark config-parameter-type" name="config-parameter-type">
+                        <option value="checkbox">Checkbox</option>
+                        <option value="range">Range</option>
+                        <option value="vec2">Vec2</option>
+                        <option value="vec3">Vec3</option>
+                        <option value="vec4">Vec4</option>
+                        <option value="color">Color</option>
+                        <option value="transform">Transform</option>
+                        <option value="warp">Warp</option>
+                        <option value="unknown">Other</option>
+                    </select>
+                </div>
+
+                <div class="config-parameter-range">
+                    <div class="config-row">
+                        <label for="config-parameter-range-min">Parameter Range Minimum:</label>
+                        <input type="number" class="config-parameter-range-min" name="config-parameter-range-min" />
+                    </div>
+                    <div class="config-row">
+                        <label for="config-parameter-range-max">Parameter Range Maximum:</label>
+                        <input type="number" class="config-parameter-range-max" name="config-parameter-range-max" />
+                    </div>
+                    <div class="config-row">
+                        <label for="config-parameter-range-step">Parameter Range Step:</label>
+                        <input type="number" class="config-parameter-range-step" name="config-parameter-range-step" />
+                    </div>
+                </div>
+
+                <div class="config-row">
+                    <label for="config-default-value">Parameter Default Value:</label>
+                    <div class="value config-default-value">
+                    </div>
+                </div>
+
+                <div class="config-row">
+                    <label for="config-parameter-delete"></label>
+                    <div class="value">
+                        <a href="#" class="button dark config-parameter-delete" name="config-parameter-delete">Delete Parameter</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="#" id="post-gist-button" class="button dark">Publish to GitHub</a>
+    </div>
+</div>
+<div id="vertex-shader" class="code-panel">
+    <div class="code-view"></div>
+</div>
+<div id="fragment-shader" class="code-panel">
+    <div class="code-view"></div>
+</div>
+
+<div class="notice error" id="code-view-error">
+    <strong>The CodeMirror library is missing!</strong><br />CodeMirror is used for editing code. See the README file on git submodules to learn how to get it.
+</div>
+
+<div id="shader-errors">
+    <div>
+        <div class="loader">
+            <div class="progress-bar"></div>
+            <div class="label"></div>
+        </div>
+        <div class="vertex-shader inline-shader-errors"></div>
+        <div class="fragment-shader inline-shader-errors"></div>
+    </div>
+</div>

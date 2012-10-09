@@ -48,7 +48,7 @@ cd ./path/to/css/filterlab/
 $ npm install
 </pre>
 
-To build CSS FilterLab, you need to run the "grunt" command line tool in the project folder. This will generate the "dist/dev" and "dist/prod" folders. The "dev" folder will use the expanded JS files, while the "prod" version will use minified versions instead.
+To build CSS FilterLab, you need to run the "grunt" command line tool in the project folder. This will generate the "dist/" folder.
 
 <pre>
 cd ./path/to/css/filterlab/
@@ -60,7 +60,7 @@ $ grunt
 CSS FilterLab requires XHR access, but that doesn't work very well when loaded from file:// URLs. For that reason running CSS FilterLab requires serving it from a server. The easiest way to do that on a Mac would be to use python's simple server:
 
 <pre>
-cd [./path/to/css/filterlab]/dist/prod/
+cd [./path/to/css/filterlab]/dist/
 python -m SimpleHTTPServer
 </pre>
 

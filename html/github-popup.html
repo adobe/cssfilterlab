@@ -1,0 +1,41 @@
+<div id="github-popup" class="popup">
+    <div class="popup-inner">
+        <div class="state gist-info">
+            <h2 class="title">
+                <a href="#" class="gist-popup-close icon icon-close">Close</a>
+                Publish to GitHub
+            </h2>
+            <p>This will publish your shader code as an anonymous <a href="https://gist.github.com/" target="_blank">gist on GitHub</a>. You can share your gist with others so that they can enjoy and edit the filter you've created.</p>
+            <p>Additionally, you can share your filters with the world by contributing them to CSS FilterLab. Read our <a href="https://github.com/adobe/cssfilterlab/blob/master/CONTIBUTING.md" target="_blank">contribution guidelines</a> for more details.</p>
+            <p><input type="checkbox" id="save-public-gist" name="save-public-gist" checked><label for="save-public-gist">Save public gist</label></p>
+            <a href='#' id="save-anonymous-gist" class="button">Publish gist</a>
+        </div>
+        <div class="state gist-login">
+            <h2 class="title">
+                <a href="#" class="gist-popup-close icon icon-close">Close</a>
+                GitHub Login
+            </h2>
+            <p>
+                GitHub login window has been opened. If you cannot see the window please
+                <a id="github-login-link" href="#">click here</a> to open it again.
+            </p>
+            <p class="gist-login-failed">Login failed.</p>
+        </div>
+        <div class="state gist-saving">
+            <h2 class="title">Creating GitHub gist...</h2>
+            <p><center><span class="spinner large"></span></center></p>
+        </div>
+        <div class="state gist-result">
+            <h2 class="title">
+                <a href="#" class="gist-popup-close icon icon-close">Close</a>
+                GitHub gist created!
+            </h2>
+            <p>
+                Your new gist was created at: <a href="" target="_blank" id="gist-link"></a>
+            </p>
+            <p>
+                Share this link so that others can import your custom filter into CSS FilterLab.
+            </p>
+        </div>
+    </div>
+</div>
