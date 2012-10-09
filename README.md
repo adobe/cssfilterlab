@@ -41,7 +41,7 @@ CSS FilterLab uses [Grunt.js](http://gruntjs.com/) to concatenate and minify Jav
 $ sudo npm install -g grunt
 </pre>
 
-The grunt.js project file uses other node.js modules. To quicly install all the required libraries run "npm install" in the extracted folder.
+The grunt.js project file uses other node.js modules. To quicly install all the required libraries run "npm install" in the project folder.
 
 <pre>
 cd ./path/to/css/filterlab/
