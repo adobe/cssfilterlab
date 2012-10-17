@@ -45,8 +45,10 @@ The grunt.js project file uses other node.js modules. To quicly install all the 
 
 <pre>
 cd ./path/to/css/filterlab/
-$ npm install
+$ sudo npm install
 </pre>
+
+You also need to make sure you have Ruby & Sass installed.  If you're on OS X or Linux you probably already have them installed.  Try <code>ruby -v</code> in your terminal.  When you've confirmed you have Ruby installed, run <code>sudo gem install sass</code> to get Sass.
 
 To build CSS FilterLab, you need to run the "grunt" command line tool in the project folder. This will generate the "dist/" folder.
 
