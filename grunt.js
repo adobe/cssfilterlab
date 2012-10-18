@@ -269,5 +269,8 @@ module.exports = function(grunt) {
 
     grunt.registerTask('default', 'check-sources copy minify-js minify-css');
     grunt.registerTask('test', 'copy:tests server qunit:dev');
+    grunt.registerTask('test-concat', 'copy:tests server qunit:concat');
+    grunt.registerTask('test-prod', 'copy:tests server qunit:prod');
+    grunt.registerTask('test-all', 'copy:tests server qunit');
 
 };
