@@ -10,6 +10,9 @@
 
     <div class="panel-right">
         <ul class="nav">
+            <% if (project.branding) { %>
+                <%- file(project.branding.rightPanel) %>
+            <% } %>
             <li>
                 <a href="http://html.adobe.com/webstandards/csscustomfilters/" target='_blank' title="About CSS Custom Filters on html.adobe.com">What are CSS Custom Filters?</a>
             </li>

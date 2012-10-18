@@ -1,6 +1,19 @@
 module.exports = function(grunt) {
 
-    var project = JSON.parse(grunt.file.read("project.json"));
+    var ejs = require('ejs'),
+        fs = require('fs');
+
+    var brandingFile = "./branding/config.js",
+        branding = fs.existsSync(brandingFile) ? require(brandingFile) : null;
+
+    if (!branding) {
+        branding = {
+            initGruntConfig: function(config) { return config; },
+            initProject: function(project) { return project; }
+        };
+    }
+
+    var project = branding.initProject(JSON.parse(grunt.file.read("project.json")));
 
     function generateHTMLConfig(dest, scripts, css, addThirdPartyLibs, addQunit) {
         scripts = Array.isArray(scripts) ? scripts : [scripts];
@@ -24,7 +37,10 @@ module.exports = function(grunt) {
             css: css,
             options: {
                 qunit: !!addQunit,
-                file: grunt.file.read,
+                file: function(file, data) {
+                    var content = grunt.file.read(file);
+                    return ejs.render(content, grunt.utils._.extend({}, config.options, data ? data : {}));
+                },
                 project: project
             }
         };
@@ -33,7 +49,7 @@ module.exports = function(grunt) {
     }
 
     // Project configuration.
-    grunt.initConfig({
+    grunt.initConfig(branding.initGruntConfig({
         pkg: '<json:package.json>',
         meta: {
             banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
@@ -187,7 +203,7 @@ module.exports = function(grunt) {
                 dest: 'dist/style/css/app.min.css'
             }
         }
-    });
+    }));
 
     grunt.registerHelper('scripts', function(scripts) {
         scripts = Array.isArray(scripts) ? scripts : [scripts];
@@ -203,7 +219,7 @@ module.exports = function(grunt) {
         var scriptsTags = grunt.template.process(grunt.helper("scripts", scripts)),
             cssTags = grunt.template.process(grunt.helper("css", css));
         options = options || {};
-        return require('ejs').render(content, grunt.utils._.extend(options, {
+        return ejs.render(content, grunt.utils._.extend({}, options, {
             scripts: scriptsTags,
             css: cssTags
         }));

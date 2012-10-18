@@ -26,10 +26,17 @@ limitations under the License.
 
 <body>
     <div id="components">
+        <% if (project.branding) { %>
+            <%- file(project.branding.logo) %>
+        <% } %>
         <% project.components.forEach(function(component){ %>
             <%- file(component) %>
         <% }) %>
     </div>
+
+    <% if (project.branding) { %>
+        <%- file(project.branding.main) %>
+    <% } %>
 
     <div id="main-view">
         <div id="app" class="container">
