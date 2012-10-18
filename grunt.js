@@ -116,14 +116,14 @@ module.exports = function(grunt) {
             }
         },
         html: {
-            index_dev: generateHTMLConfig('dist/index.dev.html', '<config:lint.all>', 'style/css/app.dev.css', true),
-            index_dev_qunit: generateHTMLConfig('dist/index.dev.qunit.html', '<config:lint.all>', 'style/css/app.dev.css', true, true),
+            index_dev: generateHTMLConfig('dist/index.dev.html', '<config:lint.all>', ['style/css/app.dev.css', project.injected_dev_css], true),
+            index_dev_qunit: generateHTMLConfig('dist/index.dev.qunit.html', '<config:lint.all>', ['style/css/app.dev.css', project.injected_dev_css], true, true),
+
+            index_concat: generateHTMLConfig('dist/index.concat.html', '<config:concat.js.name>', ['style/css/app.concat.css', project.injected_concat_css], true),
+            index_concat_qunit: generateHTMLConfig('dist/index.concat.qunit.html', '<config:concat.js.name>', ['style/css/app.concat.css', project.injected_concat_css], true, true),
 
             index_prod: generateHTMLConfig('dist/index.html', '<config:concat.min_js.name>', 'style/css/app.min.css', false),
-            index_prod_qunit: generateHTMLConfig('dist/index.qunit.html', '<config:concat.min_js.name>', 'style/css/app.min.css', false, true),
-
-            index_concat: generateHTMLConfig('dist/index.concat.html', '<config:concat.js.name>', 'style/css/app.concat.css', true),
-            index_concat_qunit: generateHTMLConfig('dist/index.concat.qunit.html', '<config:concat.js.name>', 'style/css/app.concat.css', true, true)
+            index_prod_qunit: generateHTMLConfig('dist/index.qunit.html', '<config:concat.min_js.name>', 'style/css/app.min.css', false, true)
         },
         qunit: {
             dev: "http://localhost:9000/index.dev.qunit.html",
@@ -235,12 +235,12 @@ module.exports = function(grunt) {
 
     grunt.registerHelper('scripts', function(scripts) {
         scripts = Array.isArray(scripts) ? scripts : [scripts];
-        return grunt.utils._(scripts).chain().flatten().map(function(script) { return "<script src=\"" + script + "\"></script>\n"; }).value().join("    ");
+        return grunt.utils._(scripts).chain().flatten().compact().map(function(script) { return "<script src=\"" + script + "\"></script>\n"; }).value().join("    ");
     });
 
     grunt.registerHelper('css', function(css) {
         css = Array.isArray(css) ? css : [css];
-        return grunt.utils._(css).chain().flatten().map(function(cssFile) { return "<link rel=\"stylesheet\" href=\"" + cssFile + "\">\n"; }).value().join("    ");
+        return grunt.utils._(css).chain().flatten().compact().map(function(cssFile) { return "<link rel=\"stylesheet\" href=\"" + cssFile + "\">\n"; }).value().join("    ");
     });
 
     grunt.registerHelper('html', function(content, scripts, css, options) {
