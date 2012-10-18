@@ -126,9 +126,9 @@ module.exports = function(grunt) {
             index_concat_qunit: generateHTMLConfig('dist/index.concat.qunit.html', '<config:concat.js.name>', 'style/css/app.concat.css', true, true)
         },
         qunit: {
-            dev: "dist/index.dev.qunit.html",
-            concat: "dist/index.concat.qunit.html",
-            prod: "dist/index.qunit.html"
+            dev: "http://localhost:9000/index.dev.qunit.html",
+            concat: "http://localhost:9000/index.concat.qunit.html",
+            prod: "http://localhost:9000/index.qunit.html"
         },
         min: {
             dist: {
@@ -226,6 +226,10 @@ module.exports = function(grunt) {
                 src: project.third_party_css,
                 dest: 'dist/style/css/third_party.min.css'
             }
+        },
+        server: {
+            port: 9000,
+            base: './dist/'
         }
     }));
 
@@ -264,6 +268,6 @@ module.exports = function(grunt) {
     grunt.registerTask('minify-css', 'cssmin concat:css');
 
     grunt.registerTask('default', 'check-sources copy minify-js minify-css');
-    grunt.registerTask('test', 'copy:tests qunit:dev');
+    grunt.registerTask('test', 'copy:tests server qunit:dev');
 
 };
