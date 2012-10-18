@@ -1,7 +1,9 @@
 {
 	"third_party_libs": [
         "third_party/jquery/jquery-1.8.0.min.js",
-        "third_party/jquery/jquery-ui-1.8.23.custom.min.js",
+        "third_party/jquery/jquery-ui-1.8.23.custom.min.js"
+    ],
+    "third_party_unminified_libs": [
         "third_party/CodeMirror/lib/codemirror.js",
         "third_party/CodeMirror/mode/clike/clike.js"
     ],

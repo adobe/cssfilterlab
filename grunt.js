@@ -42,7 +42,7 @@ module.exports = function(grunt) {
         }
 
         if (addThirdPartyLibs) {
-            scripts = grunt.utils._.union(project.third_party_libs, scripts);
+            scripts = grunt.utils._.union(project.third_party_libs, project.third_party_unminified_libs, scripts);
             css = grunt.utils._.union(css, project.third_party_css);
         }
 
@@ -106,12 +106,12 @@ module.exports = function(grunt) {
                 name: 'lib/<%= pkg.name %>.concat.js'
             },
             min_js: {
-                src: [project.third_party_libs, '<config:min.dist.dest>'],
+                src: [project.third_party_libs, '<config:min.third_party.dest>', '<config:min.dist.dest>'],
                 dest: 'dist/<%= concat.min_js.name %>',
                 name: 'lib/<%= pkg.name %>.min.js'
             },
             css: {
-                src: ['<banner:meta.banner>', '<config:cssmin.css.dest>', project.third_party_css],
+                src: ['<banner:meta.banner>', '<config:cssmin.css.dest>', '<config:cssmin.third_party.dest>'],
                 dest: '<config:cssmin.css.dest>'
             }
         },
@@ -135,6 +135,10 @@ module.exports = function(grunt) {
                 src: ['<banner:meta.banner>', '<config:concat.js.dest>'],
                 dest: 'dist/<%= min.dist.name %>',
                 name: 'lib/<%= pkg.name %>.concat.min.js'
+            },
+            third_party: {
+                src: project.third_party_unminified_libs,
+                dest: 'dist/lib/third_party.min.js'
             }
         },
         lint: {
@@ -217,6 +221,10 @@ module.exports = function(grunt) {
             css: {
                 src: 'dist/style/css/app.concat.css',
                 dest: 'dist/style/css/app.min.css'
+            },
+            third_party: {
+                src: project.third_party_css,
+                dest: 'dist/style/css/third_party.min.css'
             }
         }
     }));
