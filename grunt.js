@@ -216,7 +216,9 @@ module.exports = function(grunt) {
                 globals: {module: true, test: true, ok: true, equal: true, deepEqual: true, QUnit: true}
             }
         },
-        uglify: {},
+        uglify: {
+            codegen: { ascii_only: true }
+        },
         cssmin: {
             css: {
                 src: 'dist/style/css/app.concat.css',
