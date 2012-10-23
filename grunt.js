@@ -80,10 +80,14 @@ module.exports = function(grunt) {
                     "dist/tests/": "tests/**"
                 }
             },
+            js: {
+                files: {
+                    "dist/lib/": "lib/**"
+                }
+            },
             assets: {
                 files: {
                     "dist/images/": "images/**",
-                    "dist/lib/": "lib/**",
                     "dist/configs.js": "configs.js",
                     "dist/shaders/": "shaders/**",
                     "dist/style/img/": "style/img/**",
@@ -150,7 +154,7 @@ module.exports = function(grunt) {
         watch: {
             js: {
                 files: '<config:lint.all>',
-                tasks: 'lint concat:js min concat:min_js'
+                tasks: 'copy:js lint concat:js min concat:min_js'
             },
             css: {
                 files: ['style/app.scss'],
