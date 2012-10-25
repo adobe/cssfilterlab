@@ -34,10 +34,6 @@ limitations under the License.
         <% }) %>
     </div>
 
-    <% if (project.branding) { %>
-        <%- file(project.branding.main) %>
-    <% } %>
-
     <div id="main-view">
         <div id="app" class="container">
         </div>
@@ -63,5 +59,9 @@ limitations under the License.
     <% } %>
 
     <%- scripts %>
+
+    <% if (project.branding) { %>
+        <%- file(project.branding.main) %>
+    <% } %>
 </body>
 </html>
