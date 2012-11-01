@@ -22,7 +22,6 @@ precision mediump float;
 attribute vec4 a_position;
 attribute vec2 a_texCoord;
 attribute vec2 a_meshCoord;
-attribute vec3 a_triangleCoord;
 
 // Built-in uniforms
 

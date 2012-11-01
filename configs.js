@@ -218,7 +218,7 @@ window.filterConfigs = {
         hasVertex: true,
         hasFragment: true,
         mix: mix("normal"),
-        mesh: mesh(500, 1),
+        mesh: mesh(1, 500),
         meshBox: "border-box",
         params: {
             transform: {
@@ -248,7 +248,7 @@ window.filterConfigs = {
         hasVertex: true,
         hasFragment: true,
         mix: mix("multiply"),
-        mesh: mesh(40, 8),
+        mesh: mesh(8, 50),
         meshBox: "border-box",
         params: {
             transform: {
@@ -304,7 +304,7 @@ window.filterConfigs = {
         hasVertex: true,
         hasFragment: true,
         mix: mix(),
-        mesh: mesh(76, 100),
+        mesh: mesh(100, 100),
         meshBox: "border-box detached",
         params: {
             transform: {
@@ -391,7 +391,7 @@ window.filterConfigs = {
         hasVertex: true,
         hasFragment: true,
         mix: mix("multiply"),
-        mesh: mesh(25, 32),
+        mesh: mesh(32, 25),
         meshBox: "border-box detached",
         params: {
             transform: {
@@ -416,7 +416,7 @@ window.filterConfigs = {
         hasVertex: true,
         hasFragment: true,
         mix: mix("multiply"),
-        mesh: mesh(50, 50),
+        mesh: mesh(50, 1),
         meshBox: "border-box",
         params: {
             transform: {
@@ -437,7 +437,7 @@ window.filterConfigs = {
         hasVertex: true,
         hasFragment: true,
         mix: mix("multiply"),
-        mesh: mesh(50, 50),
+        mesh: mesh(1, 1),
         meshBox: "border-box",
         params: {
             transform: {
@@ -480,14 +480,8 @@ window.filterConfigs = {
     "curtains": {
         "hasVertex": true,
         "hasFragment": true,
-        "mix": {
-            "blendMode": "multiply",
-            "compositeOperator": "source-atop"
-        },
-        "mesh": {
-            "columns": "80",
-            "rows": "80"
-        },
+        "mix": mix("multiply"),
+        "mesh": mesh(100, 1),
         "meshBox": "border-box",
         "params": {
             "transform": {
@@ -497,39 +491,15 @@ window.filterConfigs = {
                 "perspective": 2000,
                 "scale": 0.99
             },
-            "numFolds": 4,
+            "numFolds": 5,
             "foldSize": 2.5,
             "amount": 0.3
         },
         "config": {
-            "transform": {
-                "type": "transform",
-                "generator": "transform",
-                "mixer": {
-                    "fn": "mixHash",
-                    "params": [
-                        "mixNumber"
-                    ]
-                }
-            },
-            "numFolds": {
-                "type": "range",
-                "min": "1",
-                "max": "8",
-                "step": "0.01"
-            },
-            "foldSize": {
-                "type": "range",
-                "min": "1.0",
-                "max": "16.0",
-                "step": "0.01"
-            },
-            "amount": {
-                "type": "range",
-                "min": "0.0",
-                "max": "1.0",
-                "step": "0.01"
-            }
+            "transform": transform(),
+            "numFolds": range(1, 10, 1),
+            "foldSize": range(1, 20, 0.1),
+            "amount": range(0, 1, 0.01)
         }
     }
 };
