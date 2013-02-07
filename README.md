@@ -20,7 +20,11 @@ CSS FilterLab is using some cutting-edge technology that is available in the lat
 
 Enjoy CSS FilterLab!
 
-Running
+Contributing to FilterLab
+-----
+Pull requests are accepted. Note that the FilterLab team may not be able to respond immediately because they are hard at work implementing CSS Custom Filters in browsers. Nonetheless, they can usually respond to you and review your change within a couple of weeks.
+
+Running FilterLab Locally
 -----
 
 ### Git Submodules
