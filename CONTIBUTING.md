@@ -1,7 +1,7 @@
 Contributing to CSS FilterLab
 =====
 
-To contribute pull requests back to Adobe, please fill out and submit the [Contributor License Agreement](http://html.adobe.com/webstandards/csscustomfilters/cssfilterlab/dev/cssfilterlab-cla.html).
+To contribute pull requests back to Adobe, please fill out and submit the [Contributor License Agreement](http://html.adobe.com/webplatform/graphics/customfilters/dev/cssfilterlab-cla.html).
 
 ## CSS Styles
 The project uses [SASS](http://sass-lang.com/) to streamline working with CSS files. 
@@ -21,7 +21,7 @@ See the [SASS tutorial](http://sass-lang.com/tutorial.html) for more details on 
 
 The best way to share custom filters is to use the built-in gist sharing feature. However, if you want to include your filter with the CSS FilterLab project, you need to send us a [pull-request](https://help.github.com/articles/using-pull-requests).
 
-Before submitting your code you need to fill out and submit the [Contributor License Agreement](http://html.adobe.com/webstandards/csscustomfilters/cssfilterlab/dev/cssfilterlab-cla.html).
+Before submitting your code you need to fill out and submit the [Contributor License Agreement](http://html.adobe.com/webplatform/graphics/customfilters/dev/cssfilterlab-cla.html).
 
 ### Creating new custom filters
 
