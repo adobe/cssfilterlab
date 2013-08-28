@@ -22,7 +22,7 @@ Enjoy CSS FilterLab!
 
 Articles about FilterLab
 -----
-[Introducing CSS FilterLab](http://www.adobe.com/devnet/html5/articles/css-filterlab.html) by Razvan Caliman at Adobe 
+[Introducing CSS FilterLab](http://www.adobe.com/devnet/html5/articles/css-filterlab.html) by Razvan Caliman at Adobe<br>
 [CSS FilterLab Detailed Walkthrough](http://blattchat.com/2012/10/02/css-filterlab/) from Alan Greenblatt's blog
 
 Contributing to FilterLab
