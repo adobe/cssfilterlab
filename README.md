@@ -20,6 +20,11 @@ CSS FilterLab is using some cutting-edge technology that is available in the lat
 
 Enjoy CSS FilterLab!
 
+Articles about FilterLab
+-----
+[Introducing CSS FilterLab](http://www.adobe.com/devnet/html5/articles/css-filterlab.html) by Razvan Caliman at Adobe<br>
+[CSS FilterLab Detailed Walkthrough](http://blattchat.com/2012/10/02/css-filterlab/) from Alan Greenblatt's blog
+
 Contributing to FilterLab
 -----
 Pull requests are accepted. Note that the FilterLab team may not be able to respond immediately because they are hard at work implementing CSS Custom Filters in browsers. Nonetheless, they can usually respond to you and review your change within a couple of weeks.
