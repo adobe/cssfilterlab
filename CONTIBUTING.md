@@ -1,7 +1,7 @@
 Contributing to CSS FilterLab
 =====
 
-To contribute pull requests back to Adobe, please fill out and submit the [Contributor License Agreement](http://html.adobe.com/webplatform/graphics/customfilters/dev/cssfilterlab-cla.html).
+To contribute pull requests back to Adobe, please fill out and submit the [Contributor License Agreement](http://html.adobe.com/webplatform/graphics/customfilters/cssfilterlab/dev/cssfilterlab-cla.html).
 
 ## CSS Styles
 The project uses [SASS](http://sass-lang.com/) to streamline working with CSS files. 
