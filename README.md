@@ -4,30 +4,23 @@ CSS FilterLab
 Supported Browsers
 -----
 
-CSS FilterLab is using some cutting-edge technology that is available in the latest Google Chrome Canary and WebKit nightly builds. To enjoy the full experience you'll need to turn a few knobs:
-
-### Google Chrome Canary
-- Download and install [Google Chrome Canary](https://tools.google.com/dlpage/chromesxs)
-- Type `chrome://flags/` in the browser's address bar
-- Find the **Enable CSS Shaders** flag and turn it on
-- Find the **GPU Accelerated SVG Filters** flag and turn it on
-- Relaunch the browser
-
-### WebKit (Mac only)
-- Download and install [WebKit nightly](http://nightly.webkit.org/) for Mac OSX
-- Open the browser's preferences panel. Go to the **Advanced** tab and tick to show the **Develop** menu in the menu bar.
-- In the browser's menu bar select **Develop** > **Enable WebGL**
-
-Enjoy CSS FilterLab!
+CSS FilterLab uses CSS Filters, an exciting web technology that's becoming available in more and more browsers.
+Check out [Can I Use](http://caniuse.com/css-filters) for availability information.
 
 Articles about FilterLab
 -----
-[Introducing CSS FilterLab](http://www.adobe.com/devnet/html5/articles/css-filterlab.html) by Razvan Caliman at Adobe<br>
+
+[Introducing CSS FilterLab](http://www.adobe.com/devnet/html5/articles/css-filterlab.html) by Razvan Caliman at Adobe
+
 [CSS FilterLab Detailed Walkthrough](http://blattchat.com/2012/10/02/css-filterlab/) from Alan Greenblatt's blog
+
+Note: These articles mention CSS Custom Filters, an experimental technology no longer available in CSS FilterLab.
 
 Contributing to FilterLab
 -----
-Pull requests are accepted. Note that the FilterLab team may not be able to respond immediately because they are hard at work implementing CSS Custom Filters in browsers. Nonetheless, they can usually respond to you and review your change within a couple of weeks.
+Pull requests are reviewed and accepted.
+
+Check out our [contributing page](CONTRIBUTING.md) for more info.
 
 Running FilterLab Locally
 -----

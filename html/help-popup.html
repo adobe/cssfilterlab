@@ -4,13 +4,15 @@
             <a href="#" id="help-popup-close" class="icon icon-close">Close</a>
             Welcome to CSS FilterLab!
         </h2>
-        <p>CSS FilterLab is a great way to explore <a href="http://dvcs.w3.org/hg/FXTF/raw-file/tip/filters/index.html" target="_blank">CSS Filters</a> &amp; <a href="<%= project.homepage %>" target="_blank">CSS Custom Filters</a>.</p>
+        <p>CSS FilterLab is a great way to explore <a href="http://dvcs.w3.org/hg/FXTF/raw-file/tip/filters/index.html" target="_blank">CSS Filters</a>.</p>
 
         <span class="button-group" id="help-nav">
             <a href="#what-explore" class="button large start selected">Explore</a>
             <a href="#what-animate" class="button large inside">Animate</a>
+            <!-- Disable CSS Custom Filters
             <a href="#what-create" class="button large inside">Create</a>
             <a href="#what-share" class="button large inside">Share</a>
+            -->
             <a href="#what-contribute" class="button large end">Contribute</a>
         </span>
 
@@ -19,12 +21,14 @@
                 <h3>Getting Started</h3>
                 <p>Click on the <strong>Add Filter</strong> button on the top left corner to start exploring available filters you can apply on the sample content.</p>
 
+                <!-- Disable CSS Custom Filters
                 <ul>
                     <li><strong>Built-in filters</strong> are those that are available by default in your browser.</li>
                     <li><strong>Custom filters</strong> use GLSL shaders and provide textures &amp; effects that are not possible with built-in filters.</li>
                     <li><strong>Forked custom filters</strong> are filters that you create, stored locally. If you think they are worthy of being available as custom filters for everyone to use, please contribute!</li>
                     <li><strong>Import via Gist</strong> allows you to open a GitHub gist file that contains a shader and see how it works on the sample content.</li>
                 </ul>
+                -->
 
                 <p>Apply filters by clicking on them. You can tweak them for cool effects using the controls they display once activated. Controls to reorder filters, toggle them on or off, and to remove them are available next to their names.</p>
                 <p>Once you're happy with your tweaks, use the <strong>Save as Preset</strong> button, located above the sample content, to save them for later.</p>
@@ -47,6 +51,7 @@
                 <p>This is valid CSS code you can reuse in your own projects.</p>
             </div>
 
+            <!-- Disable CSS Custom Filters
             <div id="what-create">
                 <h3>Creating Custom Filters</h3>
                 <ul>
@@ -66,11 +71,15 @@
                     <li>Other people can use that gist URL to import your filter using <strong>Import via Gist</strong> from the <strong>Add Filter</strong> menu.</li>
                 </ul>
             </div>
+            -->
 
             <div id="what-contribute">
                 <h3>Contributing to CSS FilterLab</h3>
+                <p>If you would like to contribute to CSS FilterLab, please submit a pull request to <a href="https://github.com/adobe/cssfilterlab" target="_blank">our GitHub repository</a>.</p>
+                <p>We do require you to sign a <a href="<%= project.homepage %>dev/cssfilterlab-cla.html" target="_blank">Contributor's License Agreement</a>.</p>
+                <!-- Disable CSS Custom Filters
                 <p>If you would like to get your filter in the Custom Filters directory, please submit a pull request to <a href="https://github.com/adobe/cssfilterlab" target="_blank">our GitHub repository</a>.</p>
-                <p>We do require you to sign a <a href="<%= project.homepage %>dev/cssfilterlab-cla.html" target="_blank">Contributor's License Agreement</a> so we can use your filter within CSS FilterLab.</p>
+                -->
             </div>
         </article>
     </div>
