@@ -184,7 +184,7 @@ window.filterConfigs = {
     opacity: builtinPercent("opacity", 50),
     saturate: builtinPercent("saturate", 1000, 1000),
     sepia: builtinPercent("sepia", 100),
-    brightness: builtinPercent("brightness", 25),
+    brightness: builtinPercent("brightness", 200, 1000),
     contrast:  builtinPercent("contrast", 50),
     
     warp: {
