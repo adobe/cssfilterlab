@@ -37,20 +37,31 @@ $ git submodule update --init
 
 ### Build
 
-CSS FilterLab uses [Grunt.js](http://gruntjs.com/) to concatenate and minify JavaScript & CSS resources. [Grunt.js](http://gruntjs.com/) is build on nodejs, so if you don't have it already installed, go to [node.js website](http://nodejs.org/) and follow the instructions to install it. After that use the command line node package manager to install grunt.js:
+CSS FilterLab uses [Grunt.js](http://gruntjs.com/) to concatenate and minify JavaScript & CSS resources. [Grunt.js](http://gruntjs.com/) is build on nodejs, so if you don't have it already installed, go to [node.js website](http://nodejs.org/) and follow the instructions to install the 4.4.x LTS version. After that use the command line node package manager to install grunt.js:
 
 <pre>
-$ sudo npm install -g grunt
+$ sudo npm install -g grunt-cli
 </pre>
 
-The grunt.js project file uses other node.js modules. To quicly install all the required libraries run "npm install" in the project folder.
+The grunt.js project file uses other node.js modules. To quickly install all the required libraries run "npm install" in the project folder.
 
 <pre>
 cd ./path/to/css/filterlab/
-$ sudo npm install
+$ npm install
 </pre>
 
-You also need to make sure you have Ruby & Sass installed.  If you're on OS X or Linux you probably already have them installed.  Try <code>ruby -v</code> in your terminal.  When you've confirmed you have Ruby installed, run <code>sudo gem install sass</code> to get Sass.
+You also need to make sure you have Ruby & Sass installed.  If you're on OS X or Linux you probably already have them installed.  Try <code>ruby -v</code> in your terminal.  When you've confirmed you have Ruby installed, run <code>sudo gem install sass -v 3.1.21 </code> to get Sass.  Note that this project currently needs an older version of Sass.
+
+CSS FilterLab depends on some older node modules.  One of those was renamed, and including it causes some problems, so to work around this, run
+
+<pre>
+cd [./path/to/css/filterlab]/node_modules
+$ mv grunt-contrib-mincss grunt-contrib-mincss.bak
+$ git clone https://github.com/gruntjs/grunt-contrib-cssmin grunt-contrib-mincss
+$ cd grunt-contrib-mincss
+$ git checkout 7b9d499
+$ cd ../..
+</pre>
 
 To build CSS FilterLab, you need to run the "grunt" command line tool in the project folder. This will generate the "dist/" folder.
 
