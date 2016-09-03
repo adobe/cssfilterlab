@@ -79,13 +79,13 @@ Notices, terms and conditions pertaining to third party software are located at 
 
 Copyright 2012 jQuery Foundation and other contributors [http://jquery.com/](http://jquery.com/)
 
-[MIT license](https://github.com/jquery/jquery/blob/master/MIT-LICENSE.txt)
+[MIT license](https://github.com/jquery/jquery/blob/master/LICENSE.txt)
 
 ### jQuery UI
 
 Copyright (c) 2012 Paul Bakaus, [http://jqueryui.com/](http://jqueryui.com/)
 
-[MIT license](http://jquery-ui.googlecode.com/svn/tags/latest/MIT-LICENSE.txt)
+[MIT license](https://github.com/jquery/jquery-ui/blob/master/LICENSE.txt)
 
 ### ANGLE
 
