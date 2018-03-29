@@ -1,6 +1,11 @@
 CSS FilterLab
 =====
 
+Deprecation
+-----
+
+This repo is unmaintained and has been archived. 
+
 Supported Browsers
 -----
 
